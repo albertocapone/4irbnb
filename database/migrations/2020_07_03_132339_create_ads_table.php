@@ -20,6 +20,15 @@ class CreateAdsTable extends Migration
             $table->string('duration');
             $table->timestamps();
         });
+        DB::table('ads')
+       ->insert(
+           array(
+               array('name' => 'Basic','price' => 299,'duration'=>'24'),
+               array('name' => 'Intermediate','price' => 599,'duration'=>'72'),
+               array('name' => 'Advanced','price' => 999,'duration'=>'144')
+           )
+       );
+
     }
 
     /**

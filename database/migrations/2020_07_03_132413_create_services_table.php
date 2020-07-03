@@ -18,6 +18,17 @@ class CreateServicesTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+        DB::table('services')
+       ->insert(
+           array(
+               array('name' => 'Wifi'),
+               array('name' => 'Parking'),
+               array('name' => 'Pool'),
+               array('name' => 'Concierge'),
+               array('name' => 'Sauna'),
+               array('name' => 'Seaview')
+           )
+       );
     }
 
     /**
