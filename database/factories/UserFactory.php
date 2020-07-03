@@ -21,7 +21,7 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker-> firstName(),
         'last_name' => $faker -> lastName(),
-        'date_of_birth' => $faker-> dateOfBirth(),
+        'date_of_birth' => $faker-> date(),
         'email' => $faker-> unique()-> safeEmail(),
         'email_verified_at' => now(),
         'braintree_id' => rand(10000, 50000),

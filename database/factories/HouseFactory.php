@@ -2,11 +2,21 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model;
+use App\House;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(House::class, function (Faker $faker) {
     return [
-        //
+      "title"=>$faker->word(),
+      "description"=>$faker->sentence(),
+      "rooms"=>rand(1,5),
+      "beds"=>rand(1,10),
+      "bathrooms"=>rand(1,3),
+      "sqm"=>rand(40,150),
+      "address"=>$faker->address(),
+      "lat"=>$faker->latitude(),
+      "long"=>$faker->longitude(),
+      "img_url"=>$faker->imageurl(),
+      "visibility"=>$faker->boolean()
     ];
 });

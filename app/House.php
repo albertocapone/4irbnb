@@ -8,7 +8,7 @@ class House extends Model
 {
     protected $table = 'houses';
 
-    public function service()
+    public function services()
     {
         return $this->belongsToMany(Service::class);
     }

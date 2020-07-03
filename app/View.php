@@ -8,7 +8,7 @@ class View extends Model
 {
     protected $table = 'views';
 
-    public function houses() {
+    public function house() {
         return $this->belongsTo(House::class);
     }
 }

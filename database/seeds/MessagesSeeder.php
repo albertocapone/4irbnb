@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Message;
+use App\House;
+
 
 class MessagesSeeder extends Seeder
 {
@@ -11,6 +14,10 @@ class MessagesSeeder extends Seeder
      */
     public function run()
     {
-        //
+      factory(Message::class,328) ->make() -> each(function($house) {
+        $house =House::inRandomOrder() ->first();
+        $message -> house() -> associate($house);
+        $message -> save();
+      });
     }
 }

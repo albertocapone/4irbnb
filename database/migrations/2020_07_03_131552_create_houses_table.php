@@ -21,7 +21,7 @@ class CreateHousesTable extends Migration
             $table->tinyInteger('rooms');
             $table->tinyInteger('beds');
             $table->tinyInteger('bathrooms');
-            $table->tinyInteger('sqm');
+            $table->smallInteger('sqm');
             $table->string('address');
             $table->string('lat');
             $table->string('long');
@@ -30,7 +30,7 @@ class CreateHousesTable extends Migration
             $table->timestamps();
         });
     }
-    
+
 
     /**
      * Reverse the migrations.
