@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Ad;
 use App\House;
+use App\Ad;
 
 class AdsSeeder extends Seeder
 {
@@ -11,11 +11,9 @@ class AdsSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-      factory(Ad::class, 100)->create()->each(function($ad)
-      {
-          $house = House::inRandomOrder()->first();
+    public function run(){
+      factory(Ad::class,3)->create()->each(function($ad){
+          $house = House::inRandomOrder()->take(rand(0,8))->get();
           $ad-> houses() -> attach($house);
       });
     }
