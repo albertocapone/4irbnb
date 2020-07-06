@@ -2,14 +2,15 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
         {{-- <script type="text/javascript" src=" {{asset('js/app.js') }}"> </script> --}}
-        <script src="js/main.js" charset="utf-8"></script>
+        <script src="{{ asset('js/app.js') }}" defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
     </head>
     <body>
-        <div class=>
+        <div id='app'>
             @if (Route::has('login'))
                 <div>
                     @auth
@@ -24,7 +25,9 @@
                 </div>
             @endif
         </div>
-        {{-- <form class="" action="{{route('index')}}" method="get"> --}}
+        <input type="search" id="address-input" placeholder="Where are we going?" />
+        <button id='bottone'type="button" name="button">DADADADADADA</button>
+       {{-- <form class="" action="{{route('index')}}" method="get">
           <div class="geoqualcosa">
             <label for="address">Address</label>
             <input id="address" type="text" name="address" value="">
@@ -32,6 +35,6 @@
             <input id='state' type="text" name="state" value="">
             <button id='button' type="button" name="button">Bottone</button>
           </div>
-        {{-- </form> --}}
+        </form> --}}
     </body>
 </html>
