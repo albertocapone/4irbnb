@@ -22,19 +22,31 @@
         </div>
 
          <div>
-            <label for="lastname" >{{ __('Name') }}</label>
+            <label for="last_name" >{{ __('Lastname') }}</label>
 
             <div class="">
-                <input id="lastname" type="text" @error('name') is-invalid @enderror name="name" value="{{ old('name') }}" autofocus>
+                <input id="last_name" type="text" @error('last_name') is-invalid @enderror name="last_name" value="{{ old('last_name') }}" >
 
-                @error('name')
+                @error('last_name')
                     <span role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
             </div>
         </div>
+        <div >
+          <label for="date_of_birth">{{ __('Date Of Birth')}}</label>
 
+          <div class="">
+              <input id='date_of_birth' type="date" @error('date_of_birth') is-invalid @enderror name="date_of_birth" value="{{ old('date_of_birth') }}">
+
+              @error('date_of_birth')
+                <span role='alert'>
+                  <strong>{{ $message }}</strong>
+                </span>
+              @enderror
+          </div>
+        </div>
         <div>
             <label for="email">{{ __('E-Mail Address') }}</label>
 
