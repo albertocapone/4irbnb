@@ -29,14 +29,3 @@ const app = new Vue({
     el: '#app',
 });
 //qui è nostro sopra tutta merda laravel
-var places = require('places.js');
-console.log(places);
-var placesAutocomplete = places({
-  appId: 'plPUBO3OQ2IL',
-  apiKey: 'dda3705a9ef3646ee382a746f2868aec',
-  container: document.querySelector('#address-input')
-});
-$("#bottone").click(function () {
-    var query=$('#address-input').val()
-
-})

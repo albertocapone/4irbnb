@@ -12,5 +12,6 @@
 
             {{ __('You are logged in!') }}
         </div>
+        <a href="{{route('house-create')}}">Metti cosa posto dormire</a>
     </div>
 @endsection

@@ -26,7 +26,7 @@
             @endif
         </div>
         <input type="search" id="address-input" placeholder="Where are we going?" />
-        <button id='bottone'type="button" name="button">DADADADADADA</button>
+        
        {{-- <form class="" action="{{route('index')}}" method="get">
           <div class="geoqualcosa">
             <label for="address">Address</label>
