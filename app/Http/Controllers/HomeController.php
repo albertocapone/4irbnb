@@ -87,4 +87,9 @@ class HomeController extends Controller
       $house->services()->sync($validatedData["services"]);
 
     }
+    public function delete($id){
+      $house = House::findOrFail($id);
+      $house->delete();
+      return redirect()->route('home');
+    }
 }

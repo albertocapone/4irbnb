@@ -32,7 +32,7 @@
     </div>
     <div class="">
       <label for="img_url">Immagine</label>
-      <input type="file" name="img_url" value="{{old('img_url',$house['img_url'])}}">
+      <input type="text" name="img_url" value="{{old('img_url',$house['img_url'])}}">
     </div>
     <div class="">
       <label for="services[]">Servizi</label><br>
@@ -61,13 +61,11 @@
     var query;
 
     placesAutocomplete.on('change', e => query = e.suggestion);
-    console.log(query);
     $("#houseEdit").submit(function () {
         var services = [];
         $(':checkbox:checked').each(function(i){
         services[i] = $(this).val();
         });
-        console.log('ei');
         var data = {
           'title': $('input[name="title"]').val(),
           'description': $('input[name="description"]').val(),
@@ -81,6 +79,7 @@
           'img_url': $('input[name="img_url"]').val(),
           'services': services,
         };
+        console.log(data);
         $.ajax({
           headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

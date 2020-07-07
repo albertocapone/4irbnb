@@ -27,3 +27,4 @@ Route::post('/house-store', 'HouseController@store')->name('house-store');
 Route::get('/show-personal/{id}', 'HomeController@show')->name('show-personal');
 Route::get('/edit-personal/{id}', 'HomeController@edit')->name('edit-personal');
 Route::post('/update-personal/{id}', 'HomeController@update')->name('update-personal');
+Route::get('/delete-personal/{id}', 'HomeController@delete')->name('delete-personal');
