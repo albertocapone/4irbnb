@@ -1,8 +1,7 @@
 @extends('layouts.layout-base')
 @section('content')
-  <form class="" action="{{route('house-store')}}" method="POST">
+  <form id="houseCreation">
     @csrf
-    @method('POST')
     <div class="">
       <label for="title">Titolo</label>
       <input type="text" name="title" value="">
@@ -36,44 +35,63 @@
       <input type="text" name="img_url" value="">
     </div>
     <div class="">
-      <label for="services[]">Servizi</label>
+      <label for="services[]">Servizi</label><br>
       @foreach ($services as $service)
         <input type="checkbox" name="services[]" value="{{$service->id}}">
         {{$service->name}}
       @endforeach
     </div>
     <input id='bottone'type="submit" name="" value="SUBMITTA">
-  </form>
-  <script type="text/javascript">
-  // var places = require('places.js');
-  var placesAutocomplete = places({
-    appId: 'plPUBO3OQ2IL',
-    apiKey: 'dda3705a9ef3646ee382a746f2868aec',
-    container: document.querySelector('#address-input'),
-  });
-  var query;
-  placesAutocomplete.on('change', e => query = e.suggestion);
 
-  // console.log(query);
-  $("#bottone").click(function () {
-      var data = {
-        'lat':query.latlng.lat,
-        'lng':query.latlng.lng,
-        'address':query.name
-      };
-      console.log(data);
-      $.ajax({
-        headers: {'X-CSRF-Token': '{{ csrf_token() }}'},
-        url:'/house-store',
-        method:'POST',
-        data:data,
-        success:function (data) {
-            console.log(data);
-        },
-        error:function (error) {
-          console.error(error);
-        }
-      })
-  })
+  <script type="text/javascript">
+
+    var placesAutocomplete = places({
+      appId: 'plPUBO3OQ2IL',
+      apiKey: 'dda3705a9ef3646ee382a746f2868aec',
+      container: document.querySelector('#address-input'),
+    });
+
+    var query;
+
+    placesAutocomplete.on('change', e => query = e.suggestion);
+  
+    $("#houseCreation").submit(function () {
+        var services = [];
+        $(':checkbox:checked').each(function(i){
+        services[i] = $(this).val();
+        });
+
+        var data = {
+          'title': $('input[name="title"]').val(),
+          'description': $('input[name="description"]').val(),
+          'rooms': $('input[name="rooms"]').val(),
+          'beds': $('input[name="beds"]').val(),
+          'bathrooms': $('input[name="bathrooms"]').val(),
+          'sqm': $('input[name="sqm"]').val(),
+          'address':query.name,
+          'lat':query.latlng.lat,
+          'long':query.latlng.lng,
+          'img_url': $('input[name="img_url"]').val(),
+          'services': services,
+        };
+        
+        $.ajax({
+          headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+          url: '/house-store', 
+          method: "POST",
+          data: data,
+          success: function(res) {
+          console.log(res);
+          window.location.replace("http://localhost:8000");
+          }, 
+          error: function(err){
+            console.log(err)
+          }
+        });
+      });
+
   </script>
+  </form>
 @endsection
