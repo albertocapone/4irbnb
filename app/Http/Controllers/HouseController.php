@@ -30,7 +30,7 @@ class HouseController extends Controller
       "long" => 'required',
       "services" => 'required|array'
     ]);
-   
+
     $house = new House;
     $id = Auth::user()->id;
 
@@ -51,6 +51,6 @@ class HouseController extends Controller
     $house->services()->sync($validatedData["services"]);
     // return redirect()->route('welcome');
   }
-}
 
   
+}

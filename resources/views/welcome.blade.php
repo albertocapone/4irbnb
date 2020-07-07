@@ -26,15 +26,7 @@
             @endif
         </div>
         <input type="search" id="address-input" placeholder="Where are we going?" />
-        
-       {{-- <form class="" action="{{route('index')}}" method="get">
-          <div class="geoqualcosa">
-            <label for="address">Address</label>
-            <input id="address" type="text" name="address" value="">
-            <label for="state">State</label>
-            <input id='state' type="text" name="state" value="">
-            <button id='button' type="button" name="button">Bottone</button>
-          </div>
-        </form> --}}
+
     </body>
 </html>
+{{-- qua ricerca appartamento + log in o registrazione --}}
