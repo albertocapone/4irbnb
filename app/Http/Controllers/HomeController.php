@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\House;
 use App\Ad;
+use App\Service;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -39,13 +40,18 @@ class HomeController extends Controller
       $messages = $house->messages;
       $views = $house->views;
       $ads = Ad::all();
-      return view('show-personal',compact('messages','views','ads'));
+      return view('show-personal',compact('messages','views','ads','house'));
     }
+
+
     public function edit($id){
       $services=Service::all();
-
-      return view('edit-personal',compact('services'));
+      $house = House::findOrFail($id);
+      return view('edit-personal',compact('services','house'));
     }
+
+
+
     public function update(Request $request, $id){
 
       $validatedData = $request->validate([

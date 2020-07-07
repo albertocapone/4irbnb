@@ -24,5 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/house-create', 'HouseController@create')->name('house-create');
 Route::post('/house-store', 'HouseController@store')->name('house-store');
 // end
-Route::get('/house-edit{id}', 'HomeController@edit')->name('home-edit');
 Route::get('/show-personal/{id}', 'HomeController@show')->name('show-personal');
+Route::get('/edit-personal/{id}', 'HomeController@edit')->name('edit-personal');
+Route::post('/update-personal/{id}', 'HomeController@update')->name('update-personal');

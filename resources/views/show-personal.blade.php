@@ -17,7 +17,7 @@
   </div>
   <div class="modifica">
     <div class="edit">
-
+      <a href="{{route('edit-personal',$house->id)}}">EDITAMI</a>
     </div>
     <div class="sponsor">
       {{-- questo forse da spostare su pagina a parte --}}
