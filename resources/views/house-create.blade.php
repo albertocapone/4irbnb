@@ -55,7 +55,8 @@
 
     placesAutocomplete.on('change', e => query = e.suggestion);
   
-    $("#houseCreation").submit(function () {
+    $("#houseCreation").submit(function (event) {
+        event.preventDefault();
         var services = [];
         $(':checkbox:checked').each(function(i){
         services[i] = $(this).val();

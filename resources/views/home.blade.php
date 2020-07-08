@@ -18,7 +18,6 @@
           @foreach ($houses as $house)
             <a href="{{route('show-personal',$house->id)}}">
               {{$house->title}}
-
             </a>
           @endforeach
         </div>

@@ -35,6 +35,7 @@ class HomeController extends Controller
 
       return view('home',compact('houses'));
     }
+
     public function show($id){
       $house = House::findOrFail($id);
       $messages = $house->messages;
@@ -53,7 +54,7 @@ class HomeController extends Controller
 
 
     public function update(Request $request, $id){
-
+      
       $validatedData = $request->validate([
         "title" => 'required|string',
         "description" => 'required|string',
@@ -65,8 +66,7 @@ class HomeController extends Controller
         "address" => 'required',
         "lat" => 'required',
         "long" => 'required',
-        "services" => 'required|array',
-        "visibility" => 'boolean'
+        "services" => 'required|array'
       ]);
 
       $house = House::findOrFail($id);
@@ -81,12 +81,16 @@ class HomeController extends Controller
       $house['address'] = $validatedData["address"];
       $house['lat'] = $validatedData["lat"];
       $house['long'] = $validatedData["long"];
-      $house['visibility'] = $validateData['visibility'];
       $house->save();
 
       $house->services()->sync($validatedData["services"]);
 
+    return response()->json([
+      'name' => "success"
+    ]);
+    
     }
+
     public function delete($id){
       $house = House::findOrFail($id);
       $house->delete();

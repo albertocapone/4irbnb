@@ -49,9 +49,9 @@
     <input id='bottone'type="submit" name="" value="SUBMITTA">
 
   <script type="text/javascript">
+  
     var pathname = window.location.pathname
     var id = pathname.slice(15)
-    console.log(id);
     var placesAutocomplete = places({
       appId: 'plPUBO3OQ2IL',
       apiKey: 'dda3705a9ef3646ee382a746f2868aec',
@@ -61,11 +61,14 @@
     var query;
 
     placesAutocomplete.on('change', e => query = e.suggestion);
-    $("#houseEdit").submit(function () {
+    $("#houseEdit").submit(function (event) {
+      event.preventDefault();
         var services = [];
+        
         $(':checkbox:checked').each(function(i){
         services[i] = $(this).val();
         });
+
         var data = {
           'title': $('input[name="title"]').val(),
           'description': $('input[name="description"]').val(),
@@ -79,16 +82,16 @@
           'img_url': $('input[name="img_url"]').val(),
           'services': services,
         };
-        console.log(data);
+
         $.ajax({
           headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
           },
-          url:'/update-personal'+ id,
+          url:'/update-personal/'+ id,
           method: "POST",
           data: data,
           success: function(res) {
-            console.log(res);
+          console.log(res)
           window.location.replace("http://localhost:8000");
           },
           error: function(err){
@@ -100,3 +103,4 @@
   </script>
   </form>
 @endsection
+
