@@ -15,7 +15,7 @@ class HouseController extends Controller
     $data = json_decode($data);
     $lat = $data->lat;
     $lng = $data->long;
-    $radius = 600;
+    $radius = 300;
 
     $houses = House::select(
       DB::raw("*,

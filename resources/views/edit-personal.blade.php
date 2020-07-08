@@ -92,7 +92,7 @@
           data: data,
           success: function(res) {
           console.log(res)
-          window.location.replace("http://localhost:8000");
+          window.location.assign("http://localhost:8000");
           },
           error: function(err){
             console.log(err)

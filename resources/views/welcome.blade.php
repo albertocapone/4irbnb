@@ -54,7 +54,7 @@
                 'long':query.latlng.lng,
               };
               data=JSON.stringify(data);
-              window.location.replace("http://localhost:8000/houses-index/" + data);
+              window.location.assign("http://localhost:8000/houses-index/" + data);
 
             });
 

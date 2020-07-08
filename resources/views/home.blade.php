@@ -12,9 +12,10 @@
 
             {{ __('You are logged in!') }}
         </div>
-        <a href="{{route('house-create')}}">Metti cosa posto dormire</a>
+        <a href="{{route('house-create')}}">Metti cosa posto dormire</a><br><br>
         {{-- inizio cose nuove good luck frontend --}}
         <div class="casette">
+          <h2>Casette</h2>
           @foreach ($houses as $house)
             <a href="{{route('show-personal',$house->id)}}">
               {{$house->title}}
