@@ -75,18 +75,18 @@
           'img_url': $('input[name="img_url"]').val(),
           'services': services,
         };
-        
+
         $.ajax({
           headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
           },
-          url: '/house-store', 
+          url: '/house-store',
           method: "POST",
           data: data,
           success: function(res) {
           console.log(res);
           window.location.replace("http://localhost:8000");
-          }, 
+          },
           error: function(err){
             console.log(err)
           }
