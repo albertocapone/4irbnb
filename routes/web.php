@@ -19,15 +19,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 // cambiare rotte e pagine
-Route::get('/house-create', 'HouseController@create')->name('house-create');
-Route::post('/house-store', 'HouseController@store')->name('house-store');
+Route::get('/houses-index/{data}', 'HouseController@index')->name('houses-index');
 Route::get('/show-house/{id}', 'HouseController@show')->name('show-house');
-// end
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/house-create', 'HomeController@create')->name('house-create');
+Route::post('/house-store', 'HomeController@store')->name('house-store');
 Route::get('/show-personal/{id}', 'HomeController@show')->name('show-personal');
 Route::get('/edit-personal/{id}', 'HomeController@edit')->name('edit-personal');
 Route::post('/update-personal/{id}', 'HomeController@update')->name('update-personal');
 Route::get('/delete-personal/{id}', 'HomeController@delete')->name('delete-personal');
-Route::get('/houses-index/{data}', 'HouseController@index')->name('houses-index');
 Route::post('/store-message/{house_id}','MessageController@store')->name('store-message');

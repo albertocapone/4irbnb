@@ -69,7 +69,7 @@
           'beds': $('input[name="beds"]').val(),
           'bathrooms': $('input[name="bathrooms"]').val(),
           'sqm': $('input[name="sqm"]').val(),
-          'address':query.name,
+          'address':query.value,
           'lat':query.latlng.lat,
           'long':query.latlng.lng,
           'img_url': $('input[name="img_url"]').val(),
