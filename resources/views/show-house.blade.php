@@ -34,4 +34,14 @@
              @endforeach
         </ul>
     </div>
+    <div class="">
+      <h2>Messaggio</h2>
+      <form class="" action="{{route('store-message',$house->id)}}" method="post">
+        @csrf
+        @method('POST')
+        <input type="email" name="email" value="">
+        <input type="textarea" name="text" value="">
+        <button type="submit" name="button">AAAAAAAAAA</button>
+      </form>
+    </div>
 @endsection
