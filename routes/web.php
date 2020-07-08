@@ -23,6 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // cambiare rotte e pagine
 Route::get('/house-create', 'HouseController@create')->name('house-create');
 Route::post('/house-store', 'HouseController@store')->name('house-store');
+Route::get('/show-house/{id}', 'HouseController@show')->name('show-house');
 // end
 Route::get('/show-personal/{id}', 'HomeController@show')->name('show-personal');
 Route::get('/edit-personal/{id}', 'HomeController@edit')->name('edit-personal');

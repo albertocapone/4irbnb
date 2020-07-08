@@ -45,46 +45,40 @@ class HouseController extends Controller
     $house['sqm'] = $validatedData["sqm"];
     $house['img_url'] = $validatedData["img_url"];
     $house['lat'] = $validatedData["lat"];
-    $house['long'] = $validatedData["long"];
+    $house['lng'] = $validatedData["long"];
     $house['visibility'] = 1;
     $house->save();
 
     $house->services()->sync($validatedData["services"]);
-    // return redirect()->route('welcome');
+
   }
+
   public function index($data){
-    $data =json_decode($data);
-    // $data = json_encode($data);
-    // $value = $data->value;
+    $data = json_decode($data);
     $lat = $data->lat;
     $lng = $data->long;
-    $radius = 300;
-    // $unit = ($unit === 'km') ? 6378.10 : 3963.17;
-    $houses = DB::table('houses');
-    $houses->select(DB::raw("*, (6378.10 * acos(cos(radians(?)) * cos(radians(lat))
-                                 * cos(radians(long) - radians(?)) + sin(radians(?))
-                                 * sin(radians(lat)))) AS distance"))
-    ->having('distance', '<', '?')
-    ->orderBy('distance')
-    ->setBindings(array($lat, $lng, $lat, $radius))
-    ->get();
-    // $houses = DB::table('houses')
-    //     ->select(DB::raw("id, title, description, lat, long,
-    //                  ( 6371 * acos( cos( radians(?) ) *
-    //                    cos( radians( lat ) )
-    //                    * cos( radians( long ) - radians(?)
-    //                    ) + sin( radians(?) ) *
-    //                    sin( radians( lat ) ) )
-    //                  ) AS distance", [$lat, $lng, $lat]))
-    //     ->where('visibility', '=', 1)
-    //     ->having("distance", "<", 300)
-    //     ->orderBy("distance",'asc')
-    //     ->offset(0)
-    //     ->limit(20)
-    //     ->get();
-    //
-        dd($houses);
-    return view('houses-index',compact('houses'));
+    $radius = 600;
 
+    $houses = House::select(
+      DB::raw("*,
+                              ( 6371 * acos( cos( radians(?) ) *
+                                cos( radians( lat ) )
+                                * cos( radians( lng ) - radians(?)
+                                ) + sin( radians(?) ) *
+                                sin( radians( lat ) ) )
+                              ) AS distance"))
+      ->having("distance", "<", "?")
+      ->orderBy("distance")
+      ->setBindings([$lat, $lng, $lat, $radius])
+      ->get();
+
+    return view('houses-index',compact('houses'));
+  }
+
+  public function show($id) 
+  {
+    $house = House::findOrFail($id);
+
+    return view('show-house', compact('house'));
   }
 }

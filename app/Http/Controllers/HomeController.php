@@ -80,7 +80,7 @@ class HomeController extends Controller
       $house['img_url'] = $validatedData["img_url"];
       $house['address'] = $validatedData["address"];
       $house['lat'] = $validatedData["lat"];
-      $house['long'] = $validatedData["long"];
+      $house['lng'] = $validatedData["long"];
       $house->save();
 
       $house->services()->sync($validatedData["services"]);
