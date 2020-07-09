@@ -45,10 +45,11 @@
           </a>
         </div>
     @endforeach
+  </div><br><br>
+  <div>
+    {{ $houses->links() }}
   </div>
 
-  {{ $houses->links() }}
-  
   <script>
 
     function housesFilter() {
