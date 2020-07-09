@@ -15,7 +15,9 @@ class HouseController extends Controller
     $data = json_decode($data);
     $lat = $data->lat;
     $lng = $data->long;
-    $radius = 300;
+    $radius = 50;    // 1km = 1radius
+    $maxRooms = 10;
+    $maxBeds = 10;
 
     $houses = House::select(
       DB::raw("*,
@@ -30,7 +32,8 @@ class HouseController extends Controller
       ->setBindings([$lat, $lng, $lat, $radius])
       ->get();
 
-    return view('houses-index',compact('houses'));
+    $servicesList = Service::all();
+    return view('houses-index',compact('houses', 'maxRooms', 'maxBeds', 'servicesList', 'lat', 'lng'));
   }
 
   public function show($id) 
