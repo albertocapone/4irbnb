@@ -47,6 +47,8 @@
     @endforeach
   </div>
 
+  {{ $houses->links() }}
+  
   <script>
 
     function housesFilter() {
@@ -68,8 +70,6 @@
 
         var houseHasService = function() {
           for(var service of filter.services){
-            house.services.pop();
-            console.log("aferpop", house)
             if(!house.services.includes(service)) {
               return false;
             }

@@ -30,8 +30,8 @@ class HouseController extends Controller
       ->having("distance", "<", "?")
       ->orderBy("distance")
       ->setBindings([$lat, $lng, $lat, $radius])
-      ->get();
-
+      ->paginate(25);
+ 
     $servicesList = Service::all();
     return view('houses-index',compact('houses', 'maxRooms', 'maxBeds', 'servicesList', 'lat', 'lng'));
   }
