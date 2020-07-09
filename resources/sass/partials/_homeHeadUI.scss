@@ -1,0 +1,42 @@
+.flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a{
+  color: #000;
+}
+
+header{
+  height: 70px;
+
+  nav{
+    padding-top: 1%;
+
+    #logo{
+      width:30%;
+      .fa-airbnb{
+        font-size: 40px;
+        color: #2aace1;
+      }
+    }
+
+    .rightheader{
+      width:13%;
+      margin-left: 10%;
+      font-size:16px;
+      .fa-globe{
+        font-size: 25px;
+        color: #000;
+        padding-top: 2%;
+      }
+      .fa-chevron-down{
+        font-size: 10px;
+        color: #000;
+        vertical-align:super;
+      }
+    }
+  }
+}

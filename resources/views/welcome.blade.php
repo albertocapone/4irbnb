@@ -7,59 +7,55 @@
         {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>Airbnb</title>
     </head>
     <body>
-        <div id='app'>
-            @if (Route::has('login'))
-                <div>
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        @extends('layouts.layout-base')
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </div>
-        <form id="houseCreation">
-          @csrf
-          <div class="">
-            <label for="address">Indirizzo</label>
-            <input type="search" id="address-input" placeholder="Casa dove dimmi dai su" />
-          </div>
-          <input id='bottone'type="submit" name="" value="SUBMITTA">
+        @section('content')
 
-        <script type="text/javascript">
+          <main>
 
-          var placesAutocomplete = places({
-            appId: 'plPUBO3OQ2IL',
-            apiKey: 'dda3705a9ef3646ee382a746f2868aec',
-            container: document.querySelector('#address-input'),
-          });
+            <div class="blulogo">
+              <h1>AirBnBool</h1>
+            </div>
 
-          var query;
+            <form id="houseCreation" >
+              @csrf
+              <div class="flex-two">
+                <input type="search" id="address-input" placeholder="Dove?" />
+                <input id='bottone' type="submit" name="" value="CERCA">
+              </div>
+            <script type="text/javascript">
 
-          placesAutocomplete.on('change', e => query = e.suggestion);
+              var placesAutocomplete = places({
+                appId: 'plPUBO3OQ2IL',
+                apiKey: 'dda3705a9ef3646ee382a746f2868aec',
+                container: document.querySelector('#address-input'),
+              });
 
-          $("#houseCreation").submit(function (event) {
-              event.preventDefault();
+              var query;
 
-              var data = {
-                'value':query.value,
-                'lat':query.latlng.lat,
-                'long':query.latlng.lng,
-              };
-              data=JSON.stringify(data);
-              window.location.assign("http://localhost:8000/houses-index/" + data);
+              placesAutocomplete.on('change', e => query = e.suggestion);
 
-            });
+              $("#houseCreation").submit(function (event) {
+                  event.preventDefault();
 
-        </script>
-        </form>
+                  var data = {
+                    'value':query.value,
+                    'lat':query.latlng.lat,
+                    'long':query.latlng.lng,
+                  };
+                  data=JSON.stringify(data);
+                  window.location.replace("http://localhost:8000/houses-index/" + data);
+
+                });
+
+            </script>
+            </form>
+          </main>
+          @endsection
+
       </body>
 </html>
 {{-- qua ricerca appartamento + log in o registrazione --}}

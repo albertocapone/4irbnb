@@ -9,16 +9,19 @@
     <script src="https://cdn.jsdelivr.net/leaflet/1/leaflet.js"></script>
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     <title></title>
+    <script src="https://kit.fontawesome.com/f544440f57.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
   </head>
   <body >
-    <div id='app'>
-      <h1>Ciao</h1>
-    </div>
+    <header>
+      @include('components.header')
+    </header>
     <div class="">
       @yield('content')
     </div>
-    <div class="">
-      <h3>Ariciao</h3>
-    </div>
+    <footer>
+      @include('components.footer')
+    </footer>
   </body>
 </html>
