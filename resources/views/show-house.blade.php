@@ -24,7 +24,7 @@
         </div>
         <div>
             <h3>Pic</h3>
-            {{$house->img_url}}
+            {{$house->house_img}}
         </div>
         <div>
             <h3>Indirizzo</h3>

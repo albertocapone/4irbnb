@@ -16,7 +16,7 @@ $factory->define(House::class, function (Faker $faker) {
       "address"=>$faker->address(),
       "lat"=>$faker->latitude($min = 45, $max = 46),
       "lng"=>$faker->longitude($min = 9, $max = 10),
-      "img_url"=>$faker->imageurl(),
+      "house_img"=>$faker->imageurl(),
       "visibility"=>$faker->boolean()
     ];
 });

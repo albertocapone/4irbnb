@@ -1,6 +1,6 @@
 @extends('layouts.layout-base')
 @section('content')
-  <form id="houseEdit">
+  <form id="houseEdit" enctype="multipart/form-data">
     @csrf
     <div class="">
       <label for="title">Titolo</label>
@@ -31,8 +31,8 @@
       <input type="search" id="address-input" value="{{old('address',$house['address'])}}"  />
     </div>
     <div class="">
-      <label for="img_url">Immagine</label>
-      <input type="text" name="img_url" value="{{old('img_url',$house['img_url'])}}">
+      <label for="house_img">Immagine</label>
+      <input type="file" name="house_img" id="house_img" value="{{old('house_img',$house['house_img'])}}">
     </div>
     <div class="">
       <label for="services[]">Servizi</label><br>
@@ -61,6 +61,7 @@
     var query;
 
     placesAutocomplete.on('change', e => query = e.suggestion);
+
     $("#houseEdit").submit(function (event) {
       event.preventDefault();
         var services = [];
@@ -68,20 +69,32 @@
         $(':checkbox:checked').each(function(i){
         services[i] = $(this).val();
         });
-
-        var data = {
-          'title': $('input[name="title"]').val(),
-          'description': $('input[name="description"]').val(),
-          'rooms': $('input[name="rooms"]').val(),
-          'beds': $('input[name="beds"]').val(),
-          'bathrooms': $('input[name="bathrooms"]').val(),
-          'sqm': $('input[name="sqm"]').val(),
-          'address':query.name,
-          'lat':query.latlng.lat,
-          'long':query.latlng.lng,
-          'img_url': $('input[name="img_url"]').val(),
-          'services': services,
-        };
+         var data = new FormData();
+        data.append("title", $('input[name="title"]').val());
+        data.append("description", $('input[name="description"]').val());
+        data.append("rooms", $('input[name="rooms"]').val());
+        data.append("beds", $('input[name="beds"]').val());
+        data.append("bathrooms", $('input[name="bathrooms"]').val());
+        data.append("sqm", $('input[name="sqm"]').val());
+        data.append("address", query.value);
+        data.append("lat", query.latlng.lat);
+        data.append("long", query.latlng.lng);
+        data.append("house_img", document.getElementById('house_img').files[0]);
+        data.append("services", services);
+        
+        // var data = {
+        //   'title': $('input[name="title"]').val(),
+        //   'description': $('input[name="description"]').val(),
+        //   'rooms': $('input[name="rooms"]').val(),
+        //   'beds': $('input[name="beds"]').val(),
+        //   'bathrooms': $('input[name="bathrooms"]').val(),
+        //   'sqm': $('input[name="sqm"]').val(),
+        //   'address':query.name,
+        //   'lat':query.latlng.lat,
+        //   'long':query.latlng.lng,
+        //   'house_img': $('input[name="house_img"]').val(),
+        //   'services': services,
+        // };
 
         $.ajax({
           headers: {
@@ -90,6 +103,8 @@
           url:'/update-personal/'+ id,
           method: "POST",
           data: data,
+          processData: false,
+          contentType: false,
           success: function(res) {
           console.log(res)
           window.location.assign("http://localhost:8000");
