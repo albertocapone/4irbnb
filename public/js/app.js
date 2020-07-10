@@ -49705,6 +49705,12 @@ var app = new Vue({
   el: '#app'
 }); //qui è nostro sopra tutta merda laravel
 
+$(document).ready(function () {
+  $('.dropdown').click(function () {
+    $('div.dropcontent').fadeToggle();
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
