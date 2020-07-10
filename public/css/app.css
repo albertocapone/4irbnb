@@ -34,7 +34,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: "Montserrat", "Nunito", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -66,7 +66,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Montserrat", "Nunito", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6400,7 +6400,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Montserrat", "Nunito", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6525,7 +6525,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Montserrat", "Nunito", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10974,14 +10974,32 @@ header nav .rightheader .fa-chevron-down {
   vertical-align: super;
 }
 
-.flex-two {
+header nav .rightheader span {
+  cursor: pointer;
+}
+
+header nav .rightheader span .dropcontent {
+  display: none;
+  position: absolute;
+  background-color: #ffff;
+  min-width: 180px;
+  border-radius: 5px;
+  padding: 1%;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  line-height: 2;
+  font-size: 15px;
+}
+
+.fullwidth .flex-two {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 }
 
-main {
+.fullwidth main {
   background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
   min-width: 100%;
   min-height: calc(100vh - 70px - 60px);
@@ -10993,7 +11011,7 @@ main {
   align-items: center;
 }
 
-main .blulogo {
+.fullwidth main .blulogo {
   background-color: #2aace1;
   height: 130px;
   width: 30%;
@@ -11005,9 +11023,9 @@ main .blulogo {
   opacity: 0.6;
 }
 
-main #houseCreation {
+.fullwidth main #houseCreation {
   background-color: #fff;
-  width: 60%;
+  width: 62%;
   height: 70px;
   padding: 1%;
   border-top-left-radius: 10px;
@@ -11015,11 +11033,11 @@ main #houseCreation {
   opacity: 0.7;
 }
 
-main #houseCreation #address-input {
+.fullwidth main #houseCreation #address-input {
   width: 99%;
 }
 
-main #houseCreation #bottone {
+.fullwidth main #houseCreation #bottone {
   border-radius: 5px;
   border: none;
   padding: 1%;
@@ -11037,5 +11055,92 @@ footer .left .lingua {
 
 footer .right {
   margin: 1.4% 4% 0 0;
+}
+
+.fullwidth main {
+  background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
+  min-width: 100%;
+  min-height: calc(100vh - 70px - 60px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fullwidth main .register {
+  margin: 0 0 0 30%;
+  background-color: #fff;
+  width: 45%;
+  padding: 1% 7%;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+.fullwidth main .register h5 {
+  border-bottom: 1px groove #C0C0C0;
+  text-align: center;
+  padding-bottom: 4%;
+}
+
+.fullwidth main .register label {
+  margin: 1.5% 0 -1% 8%;
+}
+
+.fullwidth main .register input {
+  width: 400px;
+  margin: 0 0 2% 8%;
+}
+
+.fullwidth main .register button {
+  padding: 1% 2%;
+  border-radius: 5px;
+  margin: 3% 0 2% 44%;
+  border: 1px groove #C0C0C0;
+  font-size: 12px;
+}
+
+.fullwidth main {
+  background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
+  min-width: 100%;
+  min-height: calc(100vh - 70px - 60px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fullwidth main .login {
+  margin: 2% 0 0 30%;
+  background-color: #fff;
+  width: 45%;
+  padding: 2% 7%;
+  border-radius: 5px;
+  opacity: 0.9;
+}
+
+.fullwidth main .login .title {
+  border-bottom: 1px groove #C0C0C0;
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+.fullwidth main .login .email {
+  margin-top: 3%;
+}
+
+.fullwidth main .login label {
+  margin: 3% 0 1% 0;
+}
+
+.fullwidth main .login .form-check-input {
+  margin-top: 4%;
+}
+
+.fullwidth main .login .form-group {
+  margin-top: 5%;
 }
 
