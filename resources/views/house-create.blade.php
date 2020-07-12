@@ -1,43 +1,47 @@
 @extends('layouts.layout-base')
 @section('content')
-  <form id="houseCreation" enctype="multipart/form-data">
+  <form id="houseCreation" enctype="multipart/form-data" data-parsley-validate>
     @csrf
-    <div class="">
+  <div class="">
       <label for="title">Titolo</label>
-      <input type="text" name="title" value="">
+      <input type="text" name="title" value="" data-parsley-trigger="focusout" required autofocus>
     </div>
     <div class="">
       <label for="description">Descizione</label>
-      <input type="text" name="description" value="">
+      <input type="text" name="description" value="" data-parsley-trigger="focusout" required>
     </div>
     <div class="">
       <label for="rooms">Stanze</label>
-      <input type="text" name="rooms" value="">
+      <input type="number" name="rooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
     </div>
     <div class="">
       <label for="beds">Letti</label>
-      <input type="text" name="beds" value="">
+      <input type="number" name="beds" value="" data-parsley-trigger="focusout" required min="1" max="20">
     </div>
     <div class="">
       <label for="bathrooms">Bagni</label>
-      <input type="text" name="bathrooms" value="">
+      <input type="number" name="bathrooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
     </div>
     <div class="">
       <label for="sqm">Metri🟪</label>
-      <input type="text" name="sqm" value="">
+      <input type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5">
     </div>
     <div class="">
       <label for="address">Indirizzo</label>
-      <input type="search" id="address-input" placeholder="Casa dove dimmi dai su" />
+      <input type="search" id="address-input" value="" data-parsley-trigger="focusout" required/>
     </div>
     <div class="">
       <label for="house_img">Immagine</label>
-      <input type="file" id="house_img" name="house_img" value="">
+      <input type="file" name="house_img" id="house_img" value="" data-parsley-trigger="focusout" required>
     </div>
     <div class="">
       <label for="services[]">Servizi</label><br>
       @foreach ($services as $service)
-        <input type="checkbox" name="services[]" value="{{$service->id}}">
+        <input type="checkbox" name="services[]" value="{{$service->id}}"
+        @if($service->id == 1)
+          required
+        @endif
+        >
         {{$service->name}}
       @endforeach
     </div>

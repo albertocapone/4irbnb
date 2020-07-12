@@ -45,11 +45,11 @@
     </div>
     <div class="">
       <h2>Messaggio</h2>
-      <form class="" action="{{route('store-message',$house->id)}}" method="post">
+      <form class="" action="{{route('store-message',$house->id)}}" method="post" data-parsley-validate>
         @csrf
         @method('POST')
-        <input type="email" name="email" value="">
-        <input type="textarea" name="text" value="">
+        <input type="email" name="email" value="" data-parsley-trigger="change">
+        <input type="textarea" name="text" value="" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="255" data-parsley-minlength-message="Minimo caratteri per inviare: 20...">
         <button type="submit" name="button">Send</button>
       </form>
     </div>
