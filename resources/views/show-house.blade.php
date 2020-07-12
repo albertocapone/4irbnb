@@ -24,7 +24,7 @@
         </div>
         <div>
             <h3>Pic</h3>
-            {{$house->house_img}}
+            <img src="{{asset($house->house_img)}}" alt="">
         </div>
         <div>
             <h3>Indirizzo</h3>

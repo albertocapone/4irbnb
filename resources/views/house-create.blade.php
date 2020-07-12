@@ -32,7 +32,7 @@
     </div>
     <div class="">
       <label for="house_img">Immagine</label>
-      <input type="file" id="houseImg" name="house_img" value="">
+      <input type="file" id="house_img" name="house_img" value="">
     </div>
     <div class="">
       <label for="services[]">Servizi</label><br>
@@ -73,23 +73,8 @@
         data.append("address", query.value);
         data.append("lat", query.latlng.lat);
         data.append("long", query.latlng.lng);
-        data.append("house_img", document.getElementById('houseImg').files[0]);
+        data.append("house_img", $('#house_img').prop("files")[0]);
         data.append("services", services);
-        
-        // var data = {
-        //   'title': $('input[name="title"]').val(),
-        //   'description': $('input[name="description"]').val(),
-        //   'rooms': $('input[name="rooms"]').val(),
-        //   'beds': $('input[name="beds"]').val(),
-        //   'bathrooms': $('input[name="bathrooms"]').val(),
-        //   'sqm': $('input[name="sqm"]').val(),
-        //   'address':query.value,
-        //   'lat':query.latlng.lat,
-        //   'long':query.latlng.lng,
-        //   'house_img': $('input[name="house_img"]').val(),
-        //   'services': services,
-        // };
-        // console.log(data)
 
         $.ajax({
           headers: {

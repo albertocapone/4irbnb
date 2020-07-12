@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Symfony\Component\Console\Input\Input;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\User;
@@ -132,8 +132,7 @@ class HomeController extends Controller
 
 
   public function update(Request $request, $id)
-  {
-
+  { 
     $validatedData = $request->validate([
       "title" => 'required|string',
       "description" => 'required|string',
