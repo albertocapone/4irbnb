@@ -11059,6 +11059,10 @@ footer .right {
 
 .sidebarLayout {
   font-family: "Montserrat", "Nunito", sans-serif;
+  /* ---- CAROUSEL ---- */
+  /* regole generali blocco slider */
+  /* regole del blocco imgs */
+  /* regole navigazione */
 }
 
 .sidebarLayout * {
@@ -11168,6 +11172,271 @@ footer .right {
   height: 30%;
 }
 
+.sidebarLayout .features-container {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.sidebarLayout .box {
+  width: calc( 50% - 20px);
+  height: 250px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  box-shadow: 0px 0px 3px 1px #0000002b;
+  border-radius: 3px;
+}
+
+.sidebarLayout .house-name {
+  width: 100%;
+  height: 30%;
+  padding: 20px 20px 0px 20px;
+}
+
+.sidebarLayout .description {
+  width: 100%;
+  height: 40%;
+  padding: 5px 20px 0px 20px;
+}
+
+.sidebarLayout .services {
+  width: 100%;
+  min-height: 30%;
+  padding: 5px 20px 20px 20px;
+}
+
+.sidebarLayout .services h5 {
+  margin-bottom: 5px;
+}
+
+.sidebarLayout .services span {
+  padding: 5px;
+}
+
+.sidebarLayout .info {
+  padding: 20px;
+  text-align: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.sidebarLayout .info .square {
+  width: 50%;
+  height: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebarLayout .info .rooms {
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.sidebarLayout .info .beds {
+  border-bottom: 1px solid grey;
+}
+
+.sidebarLayout .info .baths {
+  border-right: 1px solid grey;
+}
+
+.sidebarLayout .message {
+  padding: 20px;
+}
+
+.sidebarLayout .message h3 {
+  margin-bottom: 10px;
+}
+
+.sidebarLayout .message form {
+  flex-direction: column;
+}
+
+.sidebarLayout .message form input {
+  width: 100%;
+  border: 1px solid grey;
+  background: white;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+}
+
+.sidebarLayout .message form input[type=textarea] {
+  height: 85px;
+}
+
+.sidebarLayout .message form input[type=submit] {
+  transition: all 0.3s linear;
+}
+
+.sidebarLayout .message form input[type=submit]:hover {
+  background: #6cb2eb;
+}
+
+.sidebarLayout .container {
+  width: 100%;
+}
+
+.sidebarLayout .slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  height: 350px;
+  position: relative;
+  border-radius: 3px;
+}
+
+.sidebarLayout .images {
+  width: 100%;
+}
+
+.sidebarLayout .images img {
+  width: 100%;
+  display: none;
+}
+
+.sidebarLayout .images img.active {
+  display: inline-block;
+}
+
+.sidebarLayout .prev,
+.sidebarLayout .next {
+  position: absolute;
+  cursor: pointer;
+}
+
+.sidebarLayout .prev i,
+.sidebarLayout .next i {
+  font-size: 40px;
+  color: white;
+}
+
+.sidebarLayout .prev {
+  top: 50%;
+  left: 5px;
+  transform: translate(0, -50%);
+}
+
+.sidebarLayout .next {
+  top: 50%;
+  right: 5px;
+  transform: translate(0, -50%);
+}
+
+.sidebarLayout .nav i {
+  cursor: pointer;
+}
+
+.sidebarLayout .nav i img {
+  width: 80px;
+  height: 80px;
+  margin: 10px 5px;
+  border-radius: 3px;
+}
+
+.sidebarLayout .nav i.active {
+  color: red;
+}
+
+.sidebarLayout .property-features .property-title {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sidebarLayout .property-features .box {
+  padding: 20px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.sidebarLayout .property-features .box .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ffffffb3;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.5s linear;
+}
+
+.sidebarLayout .property-features .box .overlay:hover {
+  background: none;
+}
+
+.sidebarLayout .property-features .promuovi {
+  background: url(/images/promote.jpg?d278a4b1632c761d6e1502a558ca9ef2);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: grayscale(0.9);
+          filter: grayscale(0.9);
+  transition: all 0.5s linear;
+}
+
+.sidebarLayout .property-features .promuovi:hover {
+  -webkit-filter: grayscale(0.1);
+          filter: grayscale(0.1);
+}
+
+.sidebarLayout .property-features .statistiche {
+  background: url(/images/stats.png?3475b3e330f017cf374f68164c6517f4);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: grayscale(0.9);
+          filter: grayscale(0.9);
+  transition: all 0.5s linear;
+}
+
+.sidebarLayout .property-features .statistiche:hover {
+  -webkit-filter: grayscale(0.1);
+          filter: grayscale(0.1);
+}
+
+.sidebarLayout .property-features .bottoni {
+  padding: 0px;
+  justify-content: center;
+  box-shadow: none;
+  border-radius: none;
+}
+
+.sidebarLayout .property-features .bottoni a {
+  width: 100%;
+  height: 33%;
+  text-align: center;
+  margin: 2px;
+  border-radius: 2px;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s linear;
+  text-decoration: none;
+}
+
+.sidebarLayout .property-features .bottoni a:hover {
+  opacity: 0.8;
+}
+
+.sidebarLayout .property-features .bottoni .edit {
+  background: #6cb2eb;
+}
+
+.sidebarLayout .property-features .bottoni .delete {
+  background: #e3342f;
+}
+
+.sidebarLayout .property-features .bottoni .view-message {
+  background: #38c172;
+}
+
 .fullwidth main {
   background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
   min-width: 100%;
@@ -11235,6 +11504,10 @@ footer .right {
   padding: 2% 7%;
   border-radius: 5px;
   opacity: 0.9;
+}
+
+.fullwidth main .login input {
+  width: 400px;
 }
 
 .fullwidth main .login .title {
