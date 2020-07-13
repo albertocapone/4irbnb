@@ -31,3 +31,4 @@ Route::get('/edit-personal/{id}', 'HomeController@edit')->name('edit-personal');
 Route::post('/update-personal/{id}', 'HomeController@update')->name('update-personal');
 Route::get('/delete-personal/{id}', 'HomeController@delete')->name('delete-personal');
 Route::post('/store-message/{house_id}','MessageController@store')->name('store-message');
+Route::get('/msg-index/{house_id}', 'MessageController@index')->name('msg-index');

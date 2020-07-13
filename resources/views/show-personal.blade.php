@@ -8,7 +8,7 @@
     <div class="messages">
       <h2>MESSAGGI</h2>
       @foreach ($messages as $message)
-        <a href="#">
+        <a href={{route('msg-index', $house->id)}}>
           <div class="">
             {{$message->email}}<br>
             {{$message->text}}<br><br>

@@ -54,13 +54,13 @@
                     <label for="email">{{ __('E-Mail Address') }}</label>
 
                     <div class="">
-                        <input id="email" type="email" {{--@error('email') is-invalid @enderror--}} name="email" value="{{ old('email') }}" required data-parsley-trigger="focusout">
+                        <input id="email" type="email" @error('email') is-invalid @enderror name="email" value="{{ old('email') }}" required data-parsley-trigger="focusout">
 
-                        {{-- @error('email')
+                        @error('email')
                             <span role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                        @enderror --}}
+                        @enderror
                     </div>
                 </div>
 
