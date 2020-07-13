@@ -2,7 +2,9 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: 'Montserrat', 'Nunito', sans-serif;
+$font-family-sans-serif: 'Montserrat',
+'Nunito',
+sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
@@ -17,3 +19,55 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+$borders: grey;
+
+// grandezze
+$margin-right: 140px;
+
+// mixins [martina]
+@mixin full-witdh-and-padding {
+    width: 100%;
+    padding: 20px;
+}
+
+@mixin width-side {
+    width: 20%;
+    min-width: 220px;
+}
+
+@mixin width-main {
+    width: 80%;
+    min-width: 500px;
+}
+
+@mixin button {
+    text-decoration: none;
+    padding: 10px;
+    margin: 0px 5px;
+    border: 1px solid $highlight-color;
+    border-radius: 2px;
+    color: $highlight-color;
+    background: $thin-color;
+
+    &:hover {
+        background: $dark-color;
+    }
+}
+
+@mixin show-personal-boxes {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(0.9);
+    transition: all 0.5s linear;
+
+    &:hover {
+        filter: grayscale(0.1);
+    }
+}
+
+// transition: all 0.3s linear;
+//
+// &:hover{
+//   background: $cyan;
+// }

@@ -1,4 +1,53 @@
-@extends('layouts.layout-base')
+
+@extends('layouts.layout-sidebar')
+
+@section('sidebar')
+  {{-- @include('components.sidebar-show') --}}
+@endsection
+
+@section('main-content')
+  <div class="features-container flex-container property-features">
+
+    <h1 class="property-title">{{$house->title}}</h1>
+
+      <div class="box visualizzazioni flex-container">
+        <a href="{{route('msg-index', $house->id)}}">
+          <h3>Messaggi</h3>
+        </a>
+      </div>
+
+      <div class="box promuovi flex-container">
+        <div class="overlay flex-container">
+          <h3>Promuovi questa proprietà</h3>
+          <p>Ottieni più visite, contatti e aumenta i tuoi guadagni</p>
+        </div>
+      </div>
+
+      <div class="box statistiche flex-container">
+        <div class="overlay flex-container">
+           <a href="{{route('stats-index', $house->id)}}">
+          <h3>Statistiche</h3>
+        </a>
+        </div>
+      </div>
+
+      <div class="box bottoni flex-container">
+        <a class="edit flex-container" href="{{route('edit-personal', $house->id)}}"> <p>Modifica</p> </a>
+        <a class="delete flex-container" href="{{route('delete-personal', $house->id)}}"><p>Elimina</p></a>
+      </div>
+
+  </div>
+
+
+@endsection
+
+
+
+
+
+
+
+{{-- @extends('layouts.layout-base')
 @section('content')
   <div class="">
     <div class="stats">
@@ -24,11 +73,11 @@
     <br><br><br><br><br><br><br><br>
     
     <div class="sponsor">
-      {{-- questo forse da spostare su pagina a parte --}}
+     
       @foreach ($ads as $ad)
         <p>{{$ad->price/100}}&euro; per la sponsorizzazione {{$ad->name}} della durata di {{$ad->duration}}</p>
       @endforeach
       <button type="submit" name="button">SPONSORIZZAMELO</button>
     </div>
   </div>
-@endsection
+@endsection --}}

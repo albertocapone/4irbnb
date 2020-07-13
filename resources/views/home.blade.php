@@ -1,28 +1,32 @@
-@extends('layouts.layout-base')
+@extends('layouts.layout-sidebar')
 
-@section('content')
-    <div>
-        <div class="card-header">{{ __('Dashboard') }}</div>
-        <div class="card-body">
-            @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
-
-            {{ __('You are logged in!') }}
-        </div>
-        <a href="{{route('house-create')}}">Metti cosa posto dormire</a><br><br>
-        {{-- inizio cose nuove good luck frontend --}}
-        <div class="casette">
-          <h2>Casette</h2>
-          @foreach ($houses as $house)
-            <a href="{{route('show-personal',$house->id)}}">
-              {{$house->title}}
-            </a>
-          @endforeach
-        </div>
-        {{-- qua abbiamo finito --}}
-    </div>
+@section('sidebar')
+  {{-- @include('components.sidebar-home') --}}
 @endsection
-{{-- profilo edit ecc --}}
+
+@section('main-content')
+
+    @if (count($houses) == 0)
+      <div class="prova">
+        <p>non ci sono case</p> {{-- <?php // TODO:  ?> --}}
+      </div>
+    @else
+      <div class="houses-preview-container flex-container">
+        @foreach ($houses as $house)
+          <div class="house-preview">
+            <div class="immagine">{{$house -> img_url}}</div>
+            <div class="title">
+              <a href="{{route('show-personal', $house->id)}}">
+                <h6>{{$house -> title}}</h6>
+              </a>
+              @foreach ($house -> services as $service)
+                <span>{{$service -> name}}</span>
+              @endforeach
+            </div>
+          </div>
+        @endforeach
+      </div>
+    @endif
+
+
+@endsection

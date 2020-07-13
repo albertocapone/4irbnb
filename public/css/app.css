@@ -11057,6 +11057,117 @@ footer .right {
   margin: 1.4% 4% 0 0;
 }
 
+.sidebarLayout {
+  font-family: "Montserrat", "Nunito", sans-serif;
+}
+
+.sidebarLayout * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebarLayout .flex-container {
+  display: flex;
+}
+
+.sidebarLayout main {
+  flex-wrap: nowrap;
+  width: 100%;
+  min-height: calc(100vh - 70px - 60px);
+  background-image: none;
+}
+
+.sidebarLayout main aside {
+  width: 20%;
+  min-width: 220px;
+}
+
+.sidebarLayout main aside .side-container {
+  width: 100%;
+  height: 100%;
+  padding: 20px 15px;
+  border-right: 1px solid grey;
+  font-family: "Montserrat", "Nunito", sans-serif;
+}
+
+.sidebarLayout main aside .side-container ul {
+  list-style-type: none;
+}
+
+.sidebarLayout main aside .side-container ul a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebarLayout main aside .side-container ul li {
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px #00000057;
+  transition: all 0.3s linear;
+}
+
+.sidebarLayout main aside .side-container ul li:hover {
+  background: #6cb2eb;
+}
+
+.sidebarLayout main section {
+  width: 80%;
+  min-width: 500px;
+}
+
+.sidebarLayout main section .main-container {
+  width: 100%;
+  padding: 20px;
+  padding-right: 140px;
+  height: 100%;
+}
+
+.sidebarLayout main section .main-container ul {
+  list-style-type: none;
+}
+
+.sidebarLayout main section .main-container ul a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.sidebarLayout main section .main-container ul a:hover {
+  color: #3490dc;
+}
+
+.sidebarLayout .houses-preview-container {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.sidebarLayout .house-preview {
+  width: calc( 50% - 30px);
+  height: 250px;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 3px 1px #0000002b;
+  border-radius: 3px;
+}
+
+.sidebarLayout .house-preview:first-child {
+  margin-right: 30px;
+}
+
+.sidebarLayout .house-preview .immagine {
+  width: 100%;
+  height: 70%;
+}
+
+.sidebarLayout .house-preview .title {
+  padding: 10px;
+  background: white;
+  width: 100%;
+  height: 30%;
+}
+
 .fullwidth main {
   background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
   min-width: 100%;

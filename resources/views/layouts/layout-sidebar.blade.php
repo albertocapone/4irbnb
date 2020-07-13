@@ -17,18 +17,40 @@
   </head>
 
   <body >
+    
+    <div class="sidebarLayout">
+
     <header>
       @include('components.header')
     </header>
+    
+     {{-- **** SIDEBAR **** --}}
+      <main class="flex-container">
+        {{-- side --}}
+        <aside>
+          <div class="side-container">
+            <nav>
+              <ul>
+                @yield('sidebar')
+              </ul>
+            </nav>
+          </div>
+        </aside>
 
-    <div class="">
-      @yield('content')
-    </div>
+        {{-- **** MAIN **** --}}
+        <section>
+          <div class="main-container">
+            @yield('main-content')
+          </div>
+        </section>
+      </main>
 
     <footer>
       @include('components.footer')
     </footer>
 
-  </body>
+  </div>
+
+</body>
 
 </html>
