@@ -11101,6 +11101,10 @@ footer .right {
   font-size: 12px;
 }
 
+.fullwidth main .register strong {
+  margin-left: 8%;
+}
+
 .fullwidth main {
   background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
   min-width: 100%;

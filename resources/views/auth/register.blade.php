@@ -17,9 +17,9 @@
                         <input id="name" type="text" @error('name') is-invalid @enderror name="name" value="{{ old('name') }}" autofocus>
 
                         @error('name')
-                            <span role="alert">
+                            <div role="alert">
                                 <strong>{{ $message }}</strong>
-                            </span>
+                            </div>
                         @enderror
                     </div>
                 </div>
@@ -31,9 +31,9 @@
                         <input id="last_name" type="text" @error('last_name') is-invalid @enderror name="last_name" value="{{ old('last_name') }}" >
 
                         @error('last_name')
-                            <span role="alert">
+                            <div role="alert">
                                 <strong>{{ $message }}</strong>
-                            </span>
+                            </div>
                         @enderror
                     </div>
                 </div>
@@ -44,9 +44,9 @@
                       <input id='date_of_birth' type="date" @error('date_of_birth') is-invalid @enderror name="date_of_birth" value="{{ old('date_of_birth') }}">
 
                       @error('date_of_birth')
-                        <span role='alert'>
+                        <div role='alert'>
                           <strong>{{ $message }}</strong>
-                        </span>
+                        </div>
                       @enderror
                   </div>
                 </div>
@@ -57,9 +57,9 @@
                         <input id="email" type="email" @error('email') is-invalid @enderror name="email" value="{{ old('email') }}" required autocomplete="email">
 
                         @error('email')
-                            <span role="alert">
+                            <div role="alert">
                                 <strong>{{ $message }}</strong>
-                            </span>
+                            </div>
                         @enderror
                     </div>
                 </div>
@@ -71,9 +71,9 @@
                         <input id="password" type="password" @error('password') is-invalid @enderror name="password" required autocomplete="new-password">
 
                         @error('password')
-                            <span role="alert">
+                            <div role="alert">
                                 <strong>{{ $message }}</strong>
-                            </span>
+                            </div>
                         @enderror
                     </div>
                 </div>
