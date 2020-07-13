@@ -2,19 +2,14 @@
 @section('content')
   <div class="">
     <div class="stats">
-        <h2>VISUALIZZAZIONI</h2>
-        {{count($views)}}
-    </div>
+      <a href="{{route('stats-index', $house->id)}}">
+        <h2>VISUALIZZAZIONI (cliccami)</h2>
+      </a>
+    </div><br><br>
     <div class="messages">
-      <h2>MESSAGGI</h2>
-      @foreach ($messages as $message)
-        <a href={{route('msg-index', $house->id)}}>
-          <div class="">
-            {{$message->email}}<br>
-            {{$message->text}}<br><br>
-          </div>
-        </a>
-      @endforeach
+      <a href="{{route('msg-index', $house->id)}}">
+        <h2>MESSAGGI (cliccami)</h2>
+      </a>
     </div>
   </div>
   <div class="modifica">
