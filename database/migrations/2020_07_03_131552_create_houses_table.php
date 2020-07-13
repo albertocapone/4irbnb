@@ -25,7 +25,7 @@ class CreateHousesTable extends Migration
             $table->string('address');
             $table->string('lat');
             $table->string('lng');
-            $table->string('img_url');
+            $table->string('house_img');
             $table->boolean('visibility');
             $table->timestamps();
         });

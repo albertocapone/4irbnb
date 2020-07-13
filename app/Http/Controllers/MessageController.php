@@ -21,4 +21,10 @@ class MessageController extends Controller
       $message->save();
       return redirect()->route('show-house',$house_id);
     }
+
+    public function index($id) { 
+      $house  = House::findOrFail($id);
+      $messages  = $house->messages;
+      return view('msg-index', compact('messages'));
+    }
 }
