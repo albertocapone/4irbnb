@@ -9,14 +9,14 @@ $factory->define(House::class, function (Faker $faker) {
     return [
       "title"=>$faker->word(),
       "description"=>$faker->sentence(),
-      "rooms"=>rand(1,5),
-      "beds"=>rand(1,10),
-      "bathrooms"=>rand(1,3),
-      "sqm"=>rand(40,150),
+      "rooms"=>rand(1,10),
+      "beds"=>rand(1,20),
+      "bathrooms"=>rand(1,10),
+      "sqm"=>rand(5,500),
       "address"=>$faker->address(),
       "lat"=>$faker->latitude($min = 45, $max = 46),
       "lng"=>$faker->longitude($min = 9, $max = 10),
-      "img_url"=>$faker->imageurl(),
+      "house_img"=> "https://www.domusweb.it/content/domusweb20/en/architecture/archive/2017/07/03/straw_bale_house/jcr:content/image-preview.img.rmedium.jpg/1499154280967.jpg",
       "visibility"=>$faker->boolean()
     ];
 });

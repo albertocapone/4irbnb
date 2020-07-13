@@ -14,7 +14,7 @@ class HousesSeeder extends Seeder
     public function run()
     {
 
-        factory(House::class,1000)
+        factory(House::class,100)
             ->make()->each(function($house){
             $user=User::inRandomOrder()->first();
             $house->user()->associate($user);
