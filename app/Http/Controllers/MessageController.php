@@ -22,8 +22,8 @@ class MessageController extends Controller
       return redirect()->route('show-house',$house_id);
     }
 
-    public function index($id) { 
-      $house  = House::findOrFail($id);
+    public function index($house_id) { 
+      $house  = House::findOrFail($house_id);
       $messages  = $house->messages;
       return view('msg-index', compact('messages'));
     }
