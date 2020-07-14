@@ -19,7 +19,7 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
-$borders: grey;
+$borders: #ececec;
 
 // grandezze
 $margin-right: 140px;
@@ -71,3 +71,18 @@ $margin-right: 140px;
 // &:hover{
 //   background: $cyan;
 // }
+
+@mixin main-fullwidth-ui{
+  min-width:100%;
+  min-height:calc(100vh - 70px - 60px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin background-jpg{
+  background-image: url("../assets/images/gre3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

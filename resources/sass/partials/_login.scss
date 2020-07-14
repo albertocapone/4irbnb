@@ -3,15 +3,8 @@
 
   main{
 
-    background-image: url("../assets/images/gre3.jpg");
-    min-width:100%;
-    min-height:calc(100vh - 70px - 60px);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    @include main-fullwidth-ui;
+    @include background-jpg;
 
     .login{
       margin: 2% 0 0 30%;
@@ -22,8 +15,7 @@
       opacity: 0.9;
 
       input {
-         width: 400px;
-         // margin: 0 0 2% 8%;
+         width: 450px;
       }
 
       .title{
@@ -46,6 +38,10 @@
 
       .form-group{
         margin-top: 5%;
+      }
+
+      strong{
+        margin-left: 8%;
       }
     }
   }

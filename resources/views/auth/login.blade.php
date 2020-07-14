@@ -20,7 +20,7 @@
 
                       @error('email')
                           <div class="invalid-feedback" role="alert">
-                              <strong style="margin-left:8%">{{ $message }}</strong>
+                              <strong>{{ $message }}</strong>
                           </div>
                       @enderror
                   </div>
@@ -33,7 +33,7 @@
                       <input class="error" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                       @error('password')
-                          <div style='margin-left:8%;' class="invalid-feedback" role="alert">
+                          <div class="invalid-feedback" role="alert">
                               <strong >{{ $message }}</strong>
                           </div>
                       @enderror
@@ -43,7 +43,6 @@
 
               <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
                   <label class="form-check-label" for="remember">
                       {{ __('Remember Me') }}
                   </label>

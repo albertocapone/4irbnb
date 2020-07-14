@@ -18,8 +18,8 @@
 
       <div class="box promuovi flex-container">
         <div class="overlay flex-container">
-          <h3>Promuovi questa proprietà</h3>
-          <p>Ottieni più visite, contatti e aumenta i tuoi guadagni</p>
+          <h3>Promuovi</h3>
+           {{-- comparsa tendina sotto pulsanti --}}
         </div>
       </div>
 
@@ -71,9 +71,9 @@
     </div>
 
     <br><br><br><br><br><br><br><br>
-    
+
     <div class="sponsor">
-     
+
       @foreach ($ads as $ad)
         <p>{{$ad->price/100}}&euro; per la sponsorizzazione {{$ad->name}} della durata di {{$ad->duration}}</p>
       @endforeach

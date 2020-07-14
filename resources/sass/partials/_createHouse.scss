@@ -1,0 +1,82 @@
+
+.fullwidthcreate{
+  main{
+
+    // @include scrollbar-content;
+
+    min-width:100%;
+    min-height:calc(100vh - 70px - 60px);
+    // padding-top:4%;
+
+    #houseCreation{
+      padding: 2% 12% 0 12%;
+
+      display: flex;
+      flex-direction:row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    label{
+      margin: 3.5% 0 -1% 0;
+    }
+
+    .right{
+      height: 70%;
+      width: 50%;
+        .title{
+          width: 300px;
+          height: 40px;
+        }
+        .description{
+          width: 400px;
+          height: 100px;
+        }
+        .sqm{
+          width: 65px;
+        }
+    }
+
+    .left{
+      height: 70%;
+      width: 50%;
+      margin-bottom: 22.5%;
+
+      #address-input{
+        width: 570px;
+        border: 1px solid grey;
+
+      }
+
+      img{
+        margin-top: 4%;
+      }
+
+      .wrap{
+        margin-top: 5%;
+        flex-direction: row;
+        label{
+          margin-bottom: 1.5%;
+          input{
+            margin-left: 3%;
+          }
+        }
+      }
+
+
+    }
+
+    #bottone{
+      margin:4% 0 2% 0;
+      padding: 1% 2%;
+      border-radius: 5px;
+      border: 1px solid grey;
+    }
+
+
+
+
+
+  }
+
+}
