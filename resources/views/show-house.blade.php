@@ -83,8 +83,13 @@
                 <i class=""><img class="last" src="https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg" alt=""></i>
             </div>
         </div>
+        <div id="map" data-lat="{{$house->lat}}" data-lng="{{$house->lng}}"style="height:300px; width:500px;"></div> 
 
         <script type="text/javascript">
+
+var lat = $('#map').data('lat'); var lng = $('#map').data('lng'); console.log(lat,lng); var map = L.map('map',{ scrollWheelZoom: false, zoomControl: false }).setView([lat, lng], 13); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { minZoom: 5, maxZoom: 16, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map); L.marker([lat, lng]).addTo(map)
+
+
 
         // creare uno slider
 $(document).ready(function(){

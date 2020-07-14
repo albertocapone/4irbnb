@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 // cambiare rotte e pagine
-Route::get('/houses-index/{data}', 'HouseController@index')->name('houses-index');
+Route::get('/houses-index', 'HouseController@index')->name('houses-index');
 Route::get('/show-house/{id}', 'HouseController@show')->name('show-house');
 
 Route::get('/home', 'HomeController@index')->name('home');
