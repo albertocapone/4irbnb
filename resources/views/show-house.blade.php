@@ -8,7 +8,7 @@
   <div class="features-container flex-container">
 
     <div class="img-container">
-      <img src="https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?cs=srgb&dl=clouds-country-daylight-371633.jpg&fm=jpg" alt="">
+      <img src="{{$house -> img_url}}" alt="">
     </div>
 
       <div class="box title">

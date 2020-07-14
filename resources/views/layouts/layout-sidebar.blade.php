@@ -17,13 +17,13 @@
   </head>
 
   <body >
-    
+
     <div class="sidebarLayout">
 
     <header>
       @include('components.header')
     </header>
-    
+
      {{-- **** SIDEBAR **** --}}
       <main class="flex-container">
         {{-- side --}}

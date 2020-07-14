@@ -10,10 +10,12 @@
 
     <h1 class="property-title">{{$house->title}}</h1>
 
-      <div class="box visualizzazioni flex-container">
-        <a href="{{route('msg-index', $house->id)}}">
-          <h3>Messaggi</h3>
-        </a>
+      <div class="box messaggi flex-container">
+        <div class="overlay flex-container">
+          <a href="{{route('msg-index', $house->id)}}">
+            <h3>Messaggi</h3>
+          </a>
+        </div>
       </div>
 
       <div class="box promuovi flex-container">
@@ -32,8 +34,8 @@
       </div>
 
       <div class="box bottoni flex-container">
-        <a class="edit flex-container" href="{{route('edit-personal', $house->id)}}"> <p>Modifica</p> </a>
-        <a class="delete flex-container" href="{{route('delete-personal', $house->id)}}"><p>Elimina</p></a>
+        <a class="edit flex-container" href="{{route('edit-personal', $house->id)}}"> <h3>Modifica</h3> </a>
+        <a class="delete flex-container" href="{{route('delete-personal', $house->id)}}"><h3>Elimina</h3></a>
       </div>
 
   </div>
@@ -48,29 +50,7 @@
 
 
 {{-- @extends('layouts.layout-base')
-@section('content')
-  <div class="">
-    <div class="stats">
-      <a href="{{route('stats-index', $house->id)}}">
-        <h2>VISUALIZZAZIONI (cliccami)</h2>
-      </a>
-    </div><br><br>
-    <div class="messages">
-      <a href="{{route('msg-index', $house->id)}}">
-        <h2>MESSAGGI (cliccami)</h2>
-      </a>
-    </div>
-  </div>
-  <div class="modifica">
-    <div class="edit">
 
-      <br><br><br><br><br>
-
-      <a href="{{route('edit-personal',$house->id)}}">EDITAMI</a>
-      <a href="{{route('delete-personal',$house->id)}}">ELIMINAMI</a>
-    </div>
-
-    <br><br><br><br><br><br><br><br>
 
     <div class="sponsor">
 
