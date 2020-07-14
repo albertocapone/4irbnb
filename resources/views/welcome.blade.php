@@ -27,21 +27,18 @@
 
           var query;
 
-          placesAutocomplete.on('change', e => query = e.suggestion);
-
-          $("#houseCreation").submit(function (event) {
-              event.preventDefault();
-
-              var data = {
-                'value':query.value,
-                'lat':query.latlng.lat,
-                'long':query.latlng.lng,
-              };
-              data=JSON.stringify(data);
-              window.location.replace("http://localhost:8000/houses-index/" + data);
-
-            });
-
+           placesAutocomplete.on('change', e => query = e.suggestion);
+           
+                $("#houseCreation").submit(function (event) {
+                    event.preventDefault();
+                    var data = {
+                      'address':query.value,
+                      'lat':query.latlng.lat,
+                      'lng':query.latlng.lng,
+                    };
+                    data = $.param(data);
+                    window.location.replace("http://localhost:8000/houses-index/?" + data);
+                  });
         </script>
         </form>
       </main>
