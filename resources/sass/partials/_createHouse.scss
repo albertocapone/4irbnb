@@ -2,20 +2,17 @@
 .fullwidthcreate{
   main{
 
-    // @include scrollbar-content;
-
-    min-width:100%;
-    min-height:calc(100vh - 70px - 60px);
-    // padding-top:4%;
+    min-width: 100%;
+    min-height: calc(100vh - 70px - 60px);
 
     #houseCreation{
       padding: 2% 12% 0 12%;
 
       display: flex;
-      flex-direction:row;
+      flex-direction: row;
       justify-content: space-around;
       flex-wrap: wrap;
-    }
+
 
     label{
       margin: 3.5% 0 -1% 0;
@@ -24,17 +21,18 @@
     .right{
       height: 70%;
       width: 50%;
-        .title{
-          width: 300px;
-          height: 40px;
-        }
-        .description{
-          width: 400px;
-          height: 100px;
-        }
-        .sqm{
-          width: 65px;
-        }
+
+      .title{
+        width: 300px;
+        height: 40px;
+      }
+      .description{
+        width: 400px;
+        height: 100px;
+      }
+      .sqm{
+        width: 65px;
+      }
     }
 
     .left{
@@ -42,25 +40,17 @@
       width: 50%;
       margin-bottom: 23%;
 
-      #address-input{
+      #adress-input{
         width: 570px;
         border: 1px solid grey;
-
       }
 
-      img{
+      input.hide-clear[type="search"]::-webkit-search-cancel-button{
+        display: none;
+      }
+
+      .img{
         margin-top: 4%;
-        #house_img{
-          border: 1px solid #ffff;
-          background-color: #83cfe5;
-          color: #ffff;
-          font-weight: bold;
-
-          &:hover{
-            background-color: #31b0d5;
-          }
-
-        }
       }
 
       .wrap{
@@ -77,24 +67,21 @@
 
     }
 
-    #bottone{
-      margin:4% 0 2% 0;
+    .button{
+      margin: 4% 0 2% 0;
       padding: 1% 2%;
       border-radius: 5px;
-      border: 1px solid #ffff;
-      background-color: #83cfe5;
-      color: #ffff;
-      font-weight: bold;
+      border: 1px solid #ececec;
+      background-color: #ffff;
+      color: #212529;
 
       &:hover{
-        background-color: #31b0d5;
+        background-color: #3490dc;
       }
     }
 
 
-
-
+    }
 
   }
-
 }

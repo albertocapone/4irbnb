@@ -5,6 +5,7 @@
   <div class="fullwidthcreate">
 
     <main>
+
       <form class="flex" id="houseCreation" enctype="multipart/form-data" data-parsley-validate>
         @csrf
 
@@ -55,7 +56,7 @@
           <label for="address">Indirizzo</label>
         </div>
         <div class="">
-          <input type="search" id="address-input" value="" data-parsley-trigger="focusout" required/>
+          <input type="search" id="address-input" value="" data-parsley-trigger="focusout" required class="hide-clear"/>
         </div>
         <div class="">
           <label for="house_img">Immagine</label>
@@ -78,7 +79,7 @@
       </div>
 
 
-      <input id='bottone' type="submit" name="" value="Crea Appartamento">
+      <input class="button" id='bottone' type="submit" name="" value="Crea Appartamento">
 
     </main>
   </div>
@@ -107,7 +108,7 @@
 
         var data = new FormData();
         data.append("title", $('input[name="title"]').val());
-        data.append("description", $('input[name="description"]').val());
+        data.append("description", $('textarea[name="description"]').val());
         data.append("rooms", $('input[name="rooms"]').val());
         data.append("beds", $('input[name="beds"]').val());
         data.append("bathrooms", $('input[name="bathrooms"]').val());

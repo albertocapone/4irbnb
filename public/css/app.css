@@ -11040,6 +11040,10 @@ header nav .rightheader span .dropcontent {
   width: 99%;
 }
 
+.fullwidth main #houseCreation input.hide-clear[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+
 .fullwidth main #houseCreation #bottone {
   border-radius: 5px;
   border: none;
@@ -11070,8 +11074,6 @@ footer .right {
   font-family: "Montserrat", "Nunito", sans-serif;
   /* ---- CAROUSEL ---- */
   /* regole generali blocco slider */
-  /* regole del blocco imgs */
-  /* regole navigazione */
 }
 
 .sidebarLayout .flex-container {
@@ -11088,6 +11090,7 @@ footer .right {
 .sidebarLayout main aside {
   width: 20%;
   min-width: 220px;
+  background: white;
 }
 
 .sidebarLayout main aside .side-container {
@@ -11155,12 +11158,9 @@ footer .right {
   width: calc( 50% - 30px);
   height: 250px;
   margin-bottom: 30px;
+  margin-right: 30px;
   box-shadow: 0px 0px 3px 1px #0000002b;
   border-radius: 3px;
-}
-
-.sidebarLayout .house-preview:first-child {
-  margin-right: 30px;
 }
 
 .sidebarLayout .house-preview .immagine {
@@ -11180,6 +11180,22 @@ footer .right {
   flex-wrap: wrap;
 }
 
+.sidebarLayout .features-container .img-container {
+  width: 100%;
+  height: 250px;
+  box-shadow: 0px 0px 3px 1px #0000002b;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  margin: 0px 20px 20px 0px;
+  border-radius: 3px;
+}
+
+.sidebarLayout .features-container .img-container img {
+  width: 100%;
+}
+
 .sidebarLayout .box {
   width: calc( 50% - 20px);
   height: 250px;
@@ -11187,6 +11203,7 @@ footer .right {
   margin-right: 20px;
   box-shadow: 0px 0px 3px 1px #0000002b;
   border-radius: 3px;
+  background: white;
 }
 
 .sidebarLayout .house-name {
@@ -11243,6 +11260,11 @@ footer .right {
   border-right: 1px solid #ececec;
 }
 
+.sidebarLayout #map {
+  width: 100%;
+  height: 100%;
+}
+
 .sidebarLayout .message {
   padding: 20px;
 }
@@ -11274,72 +11296,6 @@ footer .right {
 
 .sidebarLayout .message form input[type=submit]:hover {
   background: #6cb2eb;
-}
-
-.sidebarLayout .container {
-  width: 100%;
-}
-
-.sidebarLayout .slider-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  overflow: hidden;
-  height: 350px;
-  position: relative;
-  border-radius: 3px;
-}
-
-.sidebarLayout .images {
-  width: 100%;
-}
-
-.sidebarLayout .images img {
-  width: 100%;
-  display: none;
-}
-
-.sidebarLayout .images img.active {
-  display: inline-block;
-}
-
-.sidebarLayout .prev,
-.sidebarLayout .next {
-  position: absolute;
-  cursor: pointer;
-}
-
-.sidebarLayout .prev i,
-.sidebarLayout .next i {
-  font-size: 40px;
-  color: white;
-}
-
-.sidebarLayout .prev {
-  top: 50%;
-  left: 5px;
-  transform: translate(0, -50%);
-}
-
-.sidebarLayout .next {
-  top: 50%;
-  right: 5px;
-  transform: translate(0, -50%);
-}
-
-.sidebarLayout .nav i {
-  cursor: pointer;
-}
-
-.sidebarLayout .nav i img {
-  width: 80px;
-  height: 80px;
-  margin: 10px 5px;
-  border-radius: 3px;
-}
-
-.sidebarLayout .nav i.active {
-  color: red;
 }
 
 .sidebarLayout .property-features .property-title {
@@ -11556,80 +11512,72 @@ footer .right {
   flex-wrap: wrap;
 }
 
-.fullwidthcreate main label {
+.fullwidthcreate main #houseCreation label {
   margin: 3.5% 0 -1% 0;
 }
 
-.fullwidthcreate main .right {
+.fullwidthcreate main #houseCreation .right {
   height: 70%;
   width: 50%;
 }
 
-.fullwidthcreate main .right .title {
+.fullwidthcreate main #houseCreation .right .title {
   width: 300px;
   height: 40px;
 }
 
-.fullwidthcreate main .right .description {
+.fullwidthcreate main #houseCreation .right .description {
   width: 400px;
   height: 100px;
 }
 
-.fullwidthcreate main .right .sqm {
+.fullwidthcreate main #houseCreation .right .sqm {
   width: 65px;
 }
 
-.fullwidthcreate main .left {
+.fullwidthcreate main #houseCreation .left {
   height: 70%;
   width: 50%;
   margin-bottom: 23%;
 }
 
-.fullwidthcreate main .left #address-input {
+.fullwidthcreate main #houseCreation .left #adress-input {
   width: 570px;
   border: 1px solid grey;
 }
 
-.fullwidthcreate main .left img {
+.fullwidthcreate main #houseCreation .left input.hide-clear[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.fullwidthcreate main #houseCreation .left .img {
   margin-top: 4%;
 }
 
-.fullwidthcreate main .left img #house_img {
-  border: 1px solid #ffff;
-  background-color: #83cfe5;
-  color: #ffff;
-  font-weight: bold;
-}
-
-.fullwidthcreate main .left img #house_img:hover {
-  background-color: #31b0d5;
-}
-
-.fullwidthcreate main .left .wrap {
+.fullwidthcreate main #houseCreation .left .wrap {
   margin-top: 5%;
   flex-direction: row;
 }
 
-.fullwidthcreate main .left .wrap label {
+.fullwidthcreate main #houseCreation .left .wrap label {
   margin-bottom: 1.5%;
 }
 
-.fullwidthcreate main .left .wrap label input {
+.fullwidthcreate main #houseCreation .left .wrap label input {
   margin-left: 3%;
 }
 
-.fullwidthcreate main #bottone {
+.fullwidthcreate main #houseCreation .button {
   margin: 4% 0 2% 0;
   padding: 1% 2%;
   border-radius: 5px;
-  border: 1px solid #ffff;
-  background-color: #83cfe5;
-  color: #ffff;
-  font-weight: bold;
+  border: 1px solid #ececec;
+  background-color: #ffff;
+  color: #212529;
 }
 
-.fullwidthcreate main #bottone:hover {
-  background-color: #31b0d5;
+.fullwidthcreate main #houseCreation .button:hover {
+  background-color: #3490dc;
 }
 
 .fullwidthcreate main {
@@ -11645,79 +11593,71 @@ footer .right {
   flex-wrap: wrap;
 }
 
-.fullwidthcreate main label {
+.fullwidthcreate main #houseEdit label {
   margin: 3.5% 0 -1% 0;
 }
 
-.fullwidthcreate main .right {
+.fullwidthcreate main #houseEdit .right {
   height: 70%;
   width: 50%;
 }
 
-.fullwidthcreate main .right .title {
+.fullwidthcreate main #houseEdit .right .title {
   width: 300px;
   height: 40px;
 }
 
-.fullwidthcreate main .right .description {
+.fullwidthcreate main #houseEdit .right .description {
   width: 400px;
   height: 100px;
 }
 
-.fullwidthcreate main .right .sqm {
+.fullwidthcreate main #houseEdit .right .sqm {
   width: 65px;
 }
 
-.fullwidthcreate main .left {
+.fullwidthcreate main #houseEdit .left {
   height: 70%;
   width: 50%;
-  margin-bottom: 22.5%;
+  margin-bottom: 23%;
 }
 
-.fullwidthcreate main .left #address-input {
+.fullwidthcreate main #houseEdit .left #adress-input {
   width: 570px;
   border: 1px solid grey;
 }
 
-.fullwidthcreate main .left img {
+.fullwidthcreate main #houseEdit .left input.hide-clear[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.fullwidthcreate main #houseEdit .left .img {
   margin-top: 4%;
 }
 
-.fullwidthcreate main .left img #house_img {
-  border: 1px solid #ffff;
-  background-color: #83cfe5;
-  color: #ffff;
-  font-weight: bold;
-}
-
-.fullwidthcreate main .left img #house_img:hover {
-  background-color: #31b0d5;
-}
-
-.fullwidthcreate main .left .wrap {
+.fullwidthcreate main #houseEdit .left .wrap {
   margin-top: 5%;
   flex-direction: row;
 }
 
-.fullwidthcreate main .left .wrap label {
+.fullwidthcreate main #houseEdit .left .wrap label {
   margin-bottom: 1.5%;
 }
 
-.fullwidthcreate main .left .wrap label input {
+.fullwidthcreate main #houseEdit .left .wrap label input {
   margin-left: 3%;
 }
 
-.fullwidthcreate main #bottone {
+.fullwidthcreate main #houseEdit .button {
   margin: 4% 0 2% 0;
   padding: 1% 2%;
   border-radius: 5px;
-  border: 1px solid #ffff;
-  background-color: #83cfe5;
-  color: #ffff;
-  font-weight: bold;
+  border: 1px solid #ececec;
+  background-color: #ffff;
+  color: #212529;
 }
 
-.fullwidthcreate main #bottone:hover {
-  background-color: #31b0d5;
+.fullwidthcreate main #houseEdit .button:hover {
+  background-color: #3490dc;
 }
 

@@ -14,7 +14,7 @@
         <form id="houseCreation" >
           @csrf
           <div class="flex-two">
-            <input type="search" id="address-input" placeholder="Dove?" />
+            <input type="search" id="address-input" placeholder="Dove?" class="hide-clear" />
             <input id='bottone' type="submit" name="" value="CERCA">
           </div>
         <script type="text/javascript">
@@ -28,7 +28,7 @@
           var query;
 
            placesAutocomplete.on('change', e => query = e.suggestion);
-           
+
                 $("#houseCreation").submit(function (event) {
                     event.preventDefault();
                     var data = {
@@ -45,6 +45,6 @@
     </div>
 
     @endsection
-  
+
 
 {{-- qua ricerca appartamento + log in o registrazione --}}

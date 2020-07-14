@@ -8,6 +8,8 @@
   }
 
 
+
+
   main{
 
     @include main-fullwidth-ui;
@@ -37,6 +39,10 @@
 
       #address-input{
         width: 99%;
+      }
+
+      input.hide-clear[type="search"]::-webkit-search-cancel-button{
+        display: none;
       }
 
       #bottone{

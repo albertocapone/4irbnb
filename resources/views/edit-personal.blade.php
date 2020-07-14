@@ -54,7 +54,7 @@
             <label for="address">Indirizzo</label>
           </div>
           <div class="">
-            <input type="search" id="address-input" value="{{old('address',$house['address'])}}" data-parsley-trigger="focusout" required/>
+            <input type="search" id="address-input" value="{{old('address',$house['address'])}}" data-parsley-trigger="focusout" required class="hide-clear"/>
           </div>
           <div class="">
             <label for="house_img">Immagine</label>
@@ -80,7 +80,7 @@
 
         </div>
 
-        <input id='bottone'type="submit" name="" value="Modifica Appartamento">
+        <input class="button" id='bottone'type="submit" name="" value="Modifica Appartamento">
     </main>
   </div>
   <script type="text/javascript">
