@@ -107,7 +107,7 @@
 
         var data = new FormData();
         data.append("title", $('input[name="title"]').val());
-        data.append("description", $('input[name="description"]').val());
+        data.append("description", $('textarea[name="description"]').val());
         data.append("rooms", $('input[name="rooms"]').val());
         data.append("beds", $('input[name="beds"]').val());
         data.append("bathrooms", $('input[name="bathrooms"]').val());

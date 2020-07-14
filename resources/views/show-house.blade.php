@@ -1,7 +1,7 @@
 @extends('layouts.layout-sidebar')
 
 @section('sidebar')
-
+  @include('components.sidebar-filters')
 @endsection
 
 @section('main-content')
@@ -46,8 +46,7 @@
       </div>
 
       <div class="box map">
-        <h3>Indirizzo</h3>
-        {{$house->address}}
+        <div id="map" data-lat="{{$house->lat}}" data-lng="{{$house->lng}}"></div>
       </div>
 
       <div class="box message">
@@ -64,6 +63,135 @@
   </div>
 
 
+
+
+
+<script type="text/javascript">
+
+  var lat = $('#map').data('lat');
+  var lng = $('#map').data('lng');
+  console.log(lat,lng);
+  var map = L.map('map',{
+    scrollWheelZoom: false,
+    zoomControl: true
+  }).setView([lat, lng], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  {
+    minZoom: 5,
+    maxZoom: 16,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  L.marker([lat, lng]).addTo(map);
+
+
+
+        // creare uno slider
+$(document).ready(function(){
+
+  //EVENTI AL CLICK
+
+    // freccia next
+   $('.next').click(
+     nextImg
+   );
+
+   // freccia prev
+    $('.prev').click(
+      prevImg
+    );
+
+    //click sul pallino
+    $('.nav i').click(
+      seeImgBal
+    );
+
+
+
+  //FUNZIONI
+
+   // funzione NEXT --------------------------------
+  function nextImg() {
+
+     // salvo ref a img attiva al momento del click
+     var imgActive = $('.images img.active');
+     // salvo il pallino attivo
+     var ballActive = $('.nav i.active');
+     // tolgo la classe active all'img selezionata
+     imgActive.removeClass('active');
+     // tolgo la classe active al pallino selezionato
+     ballActive.removeClass('active');
+
+     // verifico se questa img era l'ultima
+     if(imgActive.hasClass('last')){
+       $('.images img.first').addClass('active');
+       $('.nav i.first').addClass('active');
+     } else {
+       // applica classe active alla prox img
+       imgActive.next().addClass('active');
+       ballActive.next().addClass('active');
+     }
+  }
+
+  // funzione PREV ---------------------------------------
+  function prevImg() {
+
+    // salvo ref a img e ball attiva al momento del click
+    var imgActive = $('.images img.active');
+    var ballActive = $('.nav i.active');
+    // tolgo la classe active all'img e ball selezionati
+    imgActive.removeClass('active');
+    ballActive.removeClass('active');
+
+    // verifico se questa img era la prima
+    if(imgActive.hasClass('first')){
+      $('.images img.last').addClass('active');
+      $('.nav i.last').addClass('active');
+    } else {
+      // applica classe active alla prox img
+      imgActive.prev().addClass('active');
+      ballActive.prev().addClass('active');
+    }
+  }
+
+  // funzione BALL ---------------------------------------
+  function seeImgBal() {
+    // salvo ref a img e ball attiva al momento del click
+    var imgActive = $('.images img.active');
+    var ballActive = $('.nav i.active');
+    // tolgo la classe active all'img e ball selezionati
+    imgActive.removeClass('active');
+    ballActive.removeClass('active');
+
+    //assegno l'active all img con lo stesso index del ball selezionato
+    var idx = $('.nav i').index(this);
+    console.log(idx);
+    $('.images img').eq(idx).addClass('active');
+    $(this).addClass('active');
+  }
+
+
+
+
+//assegnare classi diverse a immagini senza classe (per riconoscimento)
+  // var imgOfImages = $('.images img');
+  //
+  // for (var i = 0; i <= imgOfImages.length; i++) {
+  //
+  //   var selectorImg = '.images img:nth-child'+'('+ i +')';
+  //   var classToAddImg = 'img'+i ;
+  //   $(selectorImg).addClass(classToAddImg);
+  //
+  // }
+  //
+
+
+
+
+
+});
+
+
+        </script>
 
 
 @endsection
