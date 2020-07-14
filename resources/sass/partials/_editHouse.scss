@@ -54,6 +54,17 @@
 
         img{
           margin-top: 4%;
+          #house_img{
+            border: 1px solid #ffff;
+            background-color: #83cfe5;
+            color: #ffff;
+            font-weight: bold;
+
+            &:hover{
+              background-color: #31b0d5;
+            }
+
+          }
         }
 
         .wrap{
@@ -74,7 +85,15 @@
         margin:4% 0 2% 0;
         padding: 1% 2%;
         border-radius: 5px;
-        border: 1px solid grey;
+        border: 1px solid #ffff;
+        background-color: #83cfe5;
+        color: #ffff;
+        font-weight: bold;
+
+        &:hover{
+          background-color: #31b0d5;
+        }
+
       }
 
     }

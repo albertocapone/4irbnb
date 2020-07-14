@@ -80,7 +80,7 @@
 
         </div>
 
-        <input id='bottone'type="submit" name="" value="MODIFICA">
+        <input id='bottone'type="submit" name="" value="Modifica Appartamento">
     </main>
   </div>
   <script type="text/javascript">

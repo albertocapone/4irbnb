@@ -78,7 +78,7 @@
       </div>
 
 
-      <input id='bottone' type="submit" name="" value="CREA">
+      <input id='bottone' type="submit" name="" value="Crea Appartamento">
 
     </main>
   </div>
@@ -97,10 +97,12 @@
 
     $("#houseCreation").submit(function (event) {
         event.preventDefault();
+        console.log('premuto!');
 
         var services = [];
         $(':checkbox:checked').each(function(i){
         services[i] = $(this).val();
+        console.log(services[i]);
         });
 
         var data = new FormData();

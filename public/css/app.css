@@ -11074,12 +11074,6 @@ footer .right {
   /* regole navigazione */
 }
 
-.sidebarLayout * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .sidebarLayout .flex-container {
   display: flex;
 }
@@ -11588,7 +11582,7 @@ footer .right {
 .fullwidthcreate main .left {
   height: 70%;
   width: 50%;
-  margin-bottom: 22.5%;
+  margin-bottom: 23%;
 }
 
 .fullwidthcreate main .left #address-input {
@@ -11598,6 +11592,17 @@ footer .right {
 
 .fullwidthcreate main .left img {
   margin-top: 4%;
+}
+
+.fullwidthcreate main .left img #house_img {
+  border: 1px solid #ffff;
+  background-color: #83cfe5;
+  color: #ffff;
+  font-weight: bold;
+}
+
+.fullwidthcreate main .left img #house_img:hover {
+  background-color: #31b0d5;
 }
 
 .fullwidthcreate main .left .wrap {
@@ -11617,7 +11622,14 @@ footer .right {
   margin: 4% 0 2% 0;
   padding: 1% 2%;
   border-radius: 5px;
-  border: 1px solid grey;
+  border: 1px solid #ffff;
+  background-color: #83cfe5;
+  color: #ffff;
+  font-weight: bold;
+}
+
+.fullwidthcreate main #bottone:hover {
+  background-color: #31b0d5;
 }
 
 .fullwidthcreate main {
@@ -11671,6 +11683,17 @@ footer .right {
   margin-top: 4%;
 }
 
+.fullwidthcreate main .left img #house_img {
+  border: 1px solid #ffff;
+  background-color: #83cfe5;
+  color: #ffff;
+  font-weight: bold;
+}
+
+.fullwidthcreate main .left img #house_img:hover {
+  background-color: #31b0d5;
+}
+
 .fullwidthcreate main .left .wrap {
   margin-top: 5%;
   flex-direction: row;
@@ -11688,6 +11711,13 @@ footer .right {
   margin: 4% 0 2% 0;
   padding: 1% 2%;
   border-radius: 5px;
-  border: 1px solid grey;
+  border: 1px solid #ffff;
+  background-color: #83cfe5;
+  color: #ffff;
+  font-weight: bold;
+}
+
+.fullwidthcreate main #bottone:hover {
+  background-color: #31b0d5;
 }
 
