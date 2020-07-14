@@ -25,6 +25,10 @@
             container: document.querySelector('#address-input'),
           });
 
+          var query;
+
+           placesAutocomplete.on('change', e => query = e.suggestion);
+           
                 $("#houseCreation").submit(function (event) {
                     event.preventDefault();
                     var data = {
@@ -35,17 +39,6 @@
                     data = $.param(data);
                     window.location.replace("http://localhost:8000/houses-index/?" + data);
                   });
-
-              var data = {
-                'value':query.value,
-                'lat':query.latlng.lat,
-                'long':query.latlng.lng,
-              };
-              data=JSON.stringify(data);
-              window.location.replace("http://localhost:8000/houses-index/" + data);
-
-            });
-
         </script>
         </form>
       </main>
