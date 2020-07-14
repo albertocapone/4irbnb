@@ -1,7 +1,7 @@
 @extends('layouts.layout-sidebar')
 
 @section('sidebar')
-  {{-- @include('components.sidebar-home') --}}
+  @include('components.sidebar-home')
 @endsection
 
 @section('main-content')
