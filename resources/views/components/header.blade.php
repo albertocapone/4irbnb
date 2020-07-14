@@ -2,7 +2,7 @@
 <nav class="flex">
   <div id="logo">
     {{-- <img src="{{(asset('sass/img/logo.png'))}}" alt="logo airbnb"> --}}
-    <a href="{{route ('welcome')}}"><i class="fab fa-airbnb"></i></a>
+    <a href="{{route ('welcome')}}"> <i class="fab fa-airbnb"> </i></a>
   </div>
 
 
@@ -16,13 +16,34 @@
     @if (Route::has('login'))
 
       @auth
-          <a href="{{ url('/home') }}">Home</a>
 
-          <span><a class="dropdown">{{ Auth::user()->name }} </a>
+          <a href="{{ url('/home') }}">Profilo </a>
 
-            <div class="dropcontent">
+          @if ( Auth::user()->name)
 
-              <div><a href="{{route('house-create')}}" >Diventa host</a></div>
+            <span><a class="dropdown">{{ Auth::user()->name }} </a>
+
+              <div class="dropcontent">
+
+                <div><a href="{{route('house-create')}}" >Diventa host</a></div>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                <div>
+                  <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                  </a>
+                </div>
+
+              </div>
+            </span>
+
+          @else
+
+            <span>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   @csrf
               </form>
@@ -34,10 +55,9 @@
                   {{ __('Logout') }}
                 </a>
               </div>
+            </span>
 
-            </div>
-
-          </span>
+        @endif
 
       @else
           <a href="{{ route('login') }}">Login</a>
@@ -45,11 +65,12 @@
           @if (Route::has('register'))
               <a href="{{ route('register') }}">Register</a>
           @endif
+
       @endauth
 
     @endif
 
-      
+
 
   </div>
 

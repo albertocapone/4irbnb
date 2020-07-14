@@ -1,51 +1,87 @@
 @extends('layouts.layout-base')
+
 @section('content')
-  <form id="houseCreation" enctype="multipart/form-data" data-parsley-validate>
-    @csrf
-  <div class="">
-      <label for="title">Titolo</label>
-      <input type="text" name="title" value="" data-parsley-trigger="focusout" required autofocus>
-    </div>
-    <div class="">
-      <label for="description">Descizione</label>
-      <input type="text" name="description" value="" data-parsley-trigger="focusout" required>
-    </div>
-    <div class="">
-      <label for="rooms">Stanze</label>
-      <input type="number" name="rooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
-    </div>
-    <div class="">
-      <label for="beds">Letti</label>
-      <input type="number" name="beds" value="" data-parsley-trigger="focusout" required min="1" max="20">
-    </div>
-    <div class="">
-      <label for="bathrooms">Bagni</label>
-      <input type="number" name="bathrooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
-    </div>
-    <div class="">
-      <label for="sqm">Metri🟪</label>
-      <input type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5">
-    </div>
-    <div class="">
-      <label for="address">Indirizzo</label>
-      <input type="search" id="address-input" value="" data-parsley-trigger="focusout" required/>
-    </div>
-    <div class="">
-      <label for="house_img">Immagine</label>
-      <input type="file" name="house_img" id="house_img" value="" data-parsley-trigger="focusout" required>
-    </div>
-    <div class="">
-      <label for="services[]">Servizi</label><br>
-      @foreach ($services as $service)
-        <input type="checkbox" name="services[]" value="{{$service->id}}"
-        @if($service->id == 1)
-          required
-        @endif
-        >
-        {{$service->name}}
-      @endforeach
-    </div>
-    <input id='bottone'type="submit" name="" value="SUBMITTA">
+
+  <div class="fullwidthcreate">
+
+    <main>
+      <form class="flex" id="houseCreation" enctype="multipart/form-data" data-parsley-validate>
+        @csrf
+
+      <div class="right">
+        <div class="">
+            <label for="title">Titolo</label>
+        </div>
+        <div>
+            <input class="title" type="text" name="title" value="" data-parsley-trigger="focusout" required autofocus>
+        </div>
+        <div class="">
+          <label for="description">Descrizione</label>
+        </div>
+        <div>
+          <textarea class="description" type="text" name="description" value="" data-parsley-trigger="focusout" required></textarea>
+        </div>
+
+        <div class="">
+          <label for="rooms">Stanze</label>
+        </div>
+        <div class="">
+          <input type="number" name="rooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
+        </div>
+        <div class="">
+          <label for="beds">Letti</label>
+        </div>
+        <div class="">
+          <input type="number" name="beds" value="" data-parsley-trigger="focusout" required min="1" max="20">
+        </div>
+        <div class="">
+          <label for="bathrooms">Bagni</label>
+        </div>
+        <div class="">
+          <input type="number" name="bathrooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
+        </div>
+        <div class="">
+          <label for="sqm">M<sup>2</sup></label>
+        </div>
+        <div class="">
+          <input class="sqm" type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5">
+        </div>
+
+      </div>
+
+
+      <div class="left">
+        <div class="">
+          <label for="address">Indirizzo</label>
+        </div>
+        <div class="">
+          <input type="search" id="address-input" value="" data-parsley-trigger="focusout" required/>
+        </div>
+        <div class="">
+          <label for="house_img">Immagine</label>
+        </div>
+        <div class="img">
+          <input type="file" name="house_img" id="house_img" value="" data-parsley-trigger="focusout" required>
+        </div>
+
+        <div class="wrap">
+          <label for="services[]">Servizi</label><br>
+          @foreach ($services as $service)
+            <input type="checkbox" name="services[]" value="{{$service->id}}"
+            @if($service->id == 1)
+              required
+            @endif
+            >
+            {{$service->name}}
+          @endforeach
+        </div>
+      </div>
+
+
+      <input id='bottone' type="submit" name="" value="CREA">
+
+    </main>
+  </div>
 
   <script type="text/javascript">
 
@@ -58,7 +94,7 @@
     var query;
 
     placesAutocomplete.on('change', e => query = e.suggestion);
-  
+
     $("#houseCreation").submit(function (event) {
         event.preventDefault();
 
@@ -66,7 +102,7 @@
         $(':checkbox:checked').each(function(i){
         services[i] = $(this).val();
         });
-        
+
         var data = new FormData();
         data.append("title", $('input[name="title"]').val());
         data.append("description", $('input[name="description"]').val());

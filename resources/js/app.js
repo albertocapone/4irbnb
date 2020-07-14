@@ -32,8 +32,21 @@ const app = new Vue({
 
 $(document).ready(function(){
 
+  $('html').click(
+    function(){
+    $('div.dropcontent').hide();
+    }
+  );
+
+  $('.dropdown').click(function(e){
+      e.stopPropagation();
+  });
+
   $('.dropdown').click(function() {
     $('div.dropcontent').fadeToggle();
   });
+
+
+
 
 });

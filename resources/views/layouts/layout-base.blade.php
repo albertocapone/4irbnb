@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="ltr" >
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="{{asset('js/parsley.min.js')}}" ></script>
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1/leaflet.css" />
     <script src="https://cdn.jsdelivr.net/leaflet/1/leaflet.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <title></title>
+    <title>AirbnBool</title>
     <script src="https://kit.fontawesome.com/f544440f57.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">

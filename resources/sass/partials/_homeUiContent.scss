@@ -1,4 +1,5 @@
 .fullwidth{
+
   .flex-two{
     display: flex;
     flex-direction: row;
@@ -9,15 +10,8 @@
 
   main{
 
-    background-image: url("../assets/images/gre3.jpg");
-    min-width:100%;
-    min-height:calc(100vh - 70px - 60px);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    @include main-fullwidth-ui;
+    @include background-jpg;
 
     .blulogo{
       background-color: #2aace1;
@@ -39,7 +33,7 @@
       padding: 1%;
       border-top-left-radius: 10px;
       border-bottom-left-radius:10px;
-      opacity: 0.7;
+      opacity: 0.9;
 
       #address-input{
         width: 99%;
@@ -48,7 +42,7 @@
       #bottone{
         border-radius: 5px;
         border: none;
-        padding: 1%;
+        padding: 1% 1.2%;
       }
 
     }

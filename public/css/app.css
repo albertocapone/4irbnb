@@ -10940,7 +10940,10 @@ a {
 }
 
 header {
+  width: 100%;
   height: 70px;
+  background-color: #fff;
+  border-bottom: 1px solid #ececec;
 }
 
 header nav {
@@ -10982,7 +10985,7 @@ header nav .rightheader span .dropcontent {
   display: none;
   position: absolute;
   background-color: #ffff;
-  min-width: 180px;
+  min-width: 150px;
   border-radius: 5px;
   padding: 1%;
   overflow: auto;
@@ -11000,15 +11003,15 @@ header nav .rightheader span .dropcontent {
 }
 
 .fullwidth main {
-  background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
   min-width: 100%;
   min-height: calc(100vh - 70px - 60px);
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .fullwidth main .blulogo {
@@ -11030,7 +11033,7 @@ header nav .rightheader span .dropcontent {
   padding: 1%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .fullwidth main #houseCreation #address-input {
@@ -11040,7 +11043,13 @@ header nav .rightheader span .dropcontent {
 .fullwidth main #houseCreation #bottone {
   border-radius: 5px;
   border: none;
-  padding: 1%;
+  padding: 1% 1.2%;
+}
+
+footer {
+  background-color: #fff;
+  border-top: 1px solid #ececec;
+  height: 60px;
 }
 
 footer .left {
@@ -11438,24 +11447,24 @@ footer .right {
 }
 
 .fullwidth main {
-  background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
   min-width: 100%;
   min-height: calc(100vh - 70px - 60px);
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .fullwidth main .register {
-  margin: 0 0 0 30%;
+  margin-left: 30%;
   background-color: #fff;
   width: 45%;
   padding: 1% 7%;
   border-radius: 5px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .fullwidth main .register h5 {
@@ -11476,25 +11485,29 @@ footer .right {
 .fullwidth main .register button {
   padding: 1% 2%;
   border-radius: 5px;
-  margin: 3% 0 2% 44%;
+  margin: 3% 0 2% 43.5%;
   border: 1px groove #C0C0C0;
   font-size: 12px;
 }
 
-.fullwidth main .register strong {
+.fullwidth main .register strong,
+.fullwidth main .register input.parsley-error,
+.fullwidth main .register select.parsley-error,
+.fullwidth main .register textarea.parsley-error,
+.fullwidth main .register .parsley-errors-list {
   margin-left: 8%;
 }
 
 .fullwidth main {
-  background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
   min-width: 100%;
   min-height: calc(100vh - 70px - 60px);
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-image: url(/images/gre3.jpg?c73ad0ad3bd73f44e41d377f160a716c);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .fullwidth main .login {
@@ -11507,7 +11520,7 @@ footer .right {
 }
 
 .fullwidth main .login input {
-  width: 400px;
+  width: 450px;
 }
 
 .fullwidth main .login .title {
@@ -11530,5 +11543,151 @@ footer .right {
 
 .fullwidth main .login .form-group {
   margin-top: 5%;
+}
+
+.fullwidth main .login strong {
+  margin-left: 8%;
+}
+
+.fullwidthcreate main {
+  min-width: 100%;
+  min-height: calc(100vh - 70px - 60px);
+}
+
+.fullwidthcreate main #houseCreation {
+  padding: 2% 12% 0 12%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.fullwidthcreate main label {
+  margin: 3.5% 0 -1% 0;
+}
+
+.fullwidthcreate main .right {
+  height: 70%;
+  width: 50%;
+}
+
+.fullwidthcreate main .right .title {
+  width: 300px;
+  height: 40px;
+}
+
+.fullwidthcreate main .right .description {
+  width: 400px;
+  height: 100px;
+}
+
+.fullwidthcreate main .right .sqm {
+  width: 65px;
+}
+
+.fullwidthcreate main .left {
+  height: 70%;
+  width: 50%;
+  margin-bottom: 22.5%;
+}
+
+.fullwidthcreate main .left #address-input {
+  width: 570px;
+  border: 1px solid grey;
+}
+
+.fullwidthcreate main .left img {
+  margin-top: 4%;
+}
+
+.fullwidthcreate main .left .wrap {
+  margin-top: 5%;
+  flex-direction: row;
+}
+
+.fullwidthcreate main .left .wrap label {
+  margin-bottom: 1.5%;
+}
+
+.fullwidthcreate main .left .wrap label input {
+  margin-left: 3%;
+}
+
+.fullwidthcreate main #bottone {
+  margin: 4% 0 2% 0;
+  padding: 1% 2%;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.fullwidthcreate main {
+  min-width: 100%;
+  min-height: calc(100vh - 70px - 60px);
+}
+
+.fullwidthcreate main #houseEdit {
+  padding: 2% 12% 0 12%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.fullwidthcreate main label {
+  margin: 3.5% 0 -1% 0;
+}
+
+.fullwidthcreate main .right {
+  height: 70%;
+  width: 50%;
+}
+
+.fullwidthcreate main .right .title {
+  width: 300px;
+  height: 40px;
+}
+
+.fullwidthcreate main .right .description {
+  width: 400px;
+  height: 100px;
+}
+
+.fullwidthcreate main .right .sqm {
+  width: 65px;
+}
+
+.fullwidthcreate main .left {
+  height: 70%;
+  width: 50%;
+  margin-bottom: 22.5%;
+}
+
+.fullwidthcreate main .left #address-input {
+  width: 570px;
+  border: 1px solid grey;
+}
+
+.fullwidthcreate main .left img {
+  margin-top: 4%;
+}
+
+.fullwidthcreate main .left .wrap {
+  margin-top: 5%;
+  flex-direction: row;
+}
+
+.fullwidthcreate main .left .wrap label {
+  margin-bottom: 1.5%;
+}
+
+.fullwidthcreate main .left .wrap label input {
+  margin-left: 3%;
+}
+
+.fullwidthcreate main #bottone {
+  margin: 4% 0 2% 0;
+  padding: 1% 2%;
+  border-radius: 5px;
+  border: 1px solid grey;
 }
 

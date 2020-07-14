@@ -49706,6 +49706,12 @@ var app = new Vue({
 }); //qui è nostro sopra tutta merda laravel
 
 $(document).ready(function () {
+  $('html').click(function () {
+    $('div.dropcontent').hide();
+  });
+  $('.dropdown').click(function (e) {
+    e.stopPropagation();
+  });
   $('.dropdown').click(function () {
     $('div.dropcontent').fadeToggle();
   });
