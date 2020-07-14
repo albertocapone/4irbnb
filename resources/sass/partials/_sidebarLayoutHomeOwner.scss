@@ -7,13 +7,10 @@
   width: calc( 50% - 30px);
   height: 250px;
   margin-bottom: 30px;
+  margin-right: 30px;
 
   box-shadow: 0px 0px 3px 1px #0000002b;
   border-radius: 3px;
-
-  &:first-child{
-    margin-right: 30px;
-  }
 
   .immagine, {
     width: 100%;

@@ -74,6 +74,7 @@
 
     aside{
       @include width-side;
+      background:white;
 
       .side-container{
         width: 100%;

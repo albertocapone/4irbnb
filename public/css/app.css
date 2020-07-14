@@ -11070,8 +11070,6 @@ footer .right {
   font-family: "Montserrat", "Nunito", sans-serif;
   /* ---- CAROUSEL ---- */
   /* regole generali blocco slider */
-  /* regole del blocco imgs */
-  /* regole navigazione */
 }
 
 .sidebarLayout .flex-container {
@@ -11088,6 +11086,7 @@ footer .right {
 .sidebarLayout main aside {
   width: 20%;
   min-width: 220px;
+  background: white;
 }
 
 .sidebarLayout main aside .side-container {
@@ -11155,12 +11154,9 @@ footer .right {
   width: calc( 50% - 30px);
   height: 250px;
   margin-bottom: 30px;
+  margin-right: 30px;
   box-shadow: 0px 0px 3px 1px #0000002b;
   border-radius: 3px;
-}
-
-.sidebarLayout .house-preview:first-child {
-  margin-right: 30px;
 }
 
 .sidebarLayout .house-preview .immagine {
@@ -11180,6 +11176,21 @@ footer .right {
   flex-wrap: wrap;
 }
 
+.sidebarLayout .features-container .img-container {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  margin: 0px 20px 20px 0px;
+  border-radius: 3px;
+}
+
+.sidebarLayout .features-container .img-container img {
+  width: 100%;
+}
+
 .sidebarLayout .box {
   width: calc( 50% - 20px);
   height: 250px;
@@ -11187,6 +11198,7 @@ footer .right {
   margin-right: 20px;
   box-shadow: 0px 0px 3px 1px #0000002b;
   border-radius: 3px;
+  background: white;
 }
 
 .sidebarLayout .house-name {
@@ -11274,72 +11286,6 @@ footer .right {
 
 .sidebarLayout .message form input[type=submit]:hover {
   background: #6cb2eb;
-}
-
-.sidebarLayout .container {
-  width: 100%;
-}
-
-.sidebarLayout .slider-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  overflow: hidden;
-  height: 350px;
-  position: relative;
-  border-radius: 3px;
-}
-
-.sidebarLayout .images {
-  width: 100%;
-}
-
-.sidebarLayout .images img {
-  width: 100%;
-  display: none;
-}
-
-.sidebarLayout .images img.active {
-  display: inline-block;
-}
-
-.sidebarLayout .prev,
-.sidebarLayout .next {
-  position: absolute;
-  cursor: pointer;
-}
-
-.sidebarLayout .prev i,
-.sidebarLayout .next i {
-  font-size: 40px;
-  color: white;
-}
-
-.sidebarLayout .prev {
-  top: 50%;
-  left: 5px;
-  transform: translate(0, -50%);
-}
-
-.sidebarLayout .next {
-  top: 50%;
-  right: 5px;
-  transform: translate(0, -50%);
-}
-
-.sidebarLayout .nav i {
-  cursor: pointer;
-}
-
-.sidebarLayout .nav i img {
-  width: 80px;
-  height: 80px;
-  margin: 10px 5px;
-  border-radius: 3px;
-}
-
-.sidebarLayout .nav i.active {
-  color: red;
 }
 
 .sidebarLayout .property-features .property-title {
