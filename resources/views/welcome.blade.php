@@ -41,15 +41,13 @@
 
                 $("#houseCreation").submit(function (event) {
                     event.preventDefault();
-
                     var data = {
-                      'value':query.value,
+                      'address':query.value,
                       'lat':query.latlng.lat,
-                      'long':query.latlng.lng,
+                      'lng':query.latlng.lng,
                     };
-                    data=JSON.stringify(data);
-                    window.location.replace("http://localhost:8000/houses-index/" + data);
-
+                    data = $.param(data);
+                    window.location.replace("http://localhost:8000/houses-index/?" + data);
                   });
 
               </script>
