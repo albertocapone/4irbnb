@@ -10956,7 +10956,7 @@ header nav #logo {
 
 header nav #logo .fa-airbnb {
   font-size: 40px;
-  color: #2aace1;
+  color: #6cb2eb;
 }
 
 header nav .rightheader {
@@ -11222,8 +11222,9 @@ footer .right {
 
 .sidebarLayout .house-name {
   width: 100%;
-  height: 30%;
-  padding: 20px 20px 0px 20px;
+  height: 25%;
+  padding: 12px 20px 0px 20px;
+  border-bottom: 1px solid #ececec;
 }
 
 .sidebarLayout .description {
@@ -11398,7 +11399,7 @@ footer .right {
 
 .sidebarLayout .property-features .bottoni a {
   width: 100%;
-  height: calc(50% - 8px);
+  height: calc(33% - 8px);
   text-align: center;
   margin: 0px 4px;
   border-radius: 2px;
@@ -11420,7 +11421,7 @@ footer .right {
   background: #e3342f;
 }
 
-.sidebarLayout .property-features .bottoni .view-message {
+.sidebarLayout .property-features .bottoni .visibility {
   background: #38c172;
 }
 
@@ -11475,6 +11476,11 @@ footer .right {
 
 .sidebarLayout .title h6 {
   font-weight: bold;
+}
+
+.sidebarLayout .index-houses-preview-services {
+  font-size: 12px;
+  margin-right: 8px;
 }
 
 .fullwidth main {
@@ -11586,71 +11592,104 @@ footer .right {
 }
 
 .fullwidthcreate main #houseCreation {
-  padding: 2% 12% 0 12%;
+  margin: 5% 17%;
+  width: 65%;
+  background-color: #fff;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #ececec;
+  box-shadow: 0px 0px 30px #ececec;
 }
 
-.fullwidthcreate main #houseCreation label {
-  margin: 3.5% 0 -1% 0;
+.fullwidthcreate main #houseCreation h5 {
+  padding: 4% 22% 2% 20%;
+  margin-left: 17%;
+  border-bottom: 1px groove #C0C0C0;
 }
 
-.fullwidthcreate main #houseCreation .right {
-  height: 70%;
-  width: 50%;
+.fullwidthcreate main #houseCreation .padding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2% 0 2% 20%;
 }
 
-.fullwidthcreate main #houseCreation .right .title {
-  width: 300px;
+.fullwidthcreate main #houseCreation .padding label {
+  margin: 4% 0 -1% 0;
+}
+
+.fullwidthcreate main #houseCreation .padding input,
+.fullwidthcreate main #houseCreation .padding textarea {
+  border: 1px solid #CCC;
+}
+
+.fullwidthcreate main #houseCreation .padding .label {
+  padding-top: 4%;
+}
+
+.fullwidthcreate main #houseCreation .padding .title,
+.fullwidthcreate main #houseCreation .padding .description {
+  padding-left: 2%;
+  width: 500px;
+}
+
+.fullwidthcreate main #houseCreation .padding .title {
   height: 40px;
 }
 
-.fullwidthcreate main #houseCreation .right .description {
-  width: 400px;
+.fullwidthcreate main #houseCreation .padding .description {
   height: 100px;
 }
 
-.fullwidthcreate main #houseCreation .right .sqm {
-  width: 65px;
+.fullwidthcreate main #houseCreation .padding .numbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 4%;
+  width: 60%;
 }
 
-.fullwidthcreate main #houseCreation .left {
-  height: 70%;
-  width: 50%;
-  margin-bottom: 23%;
+.fullwidthcreate main #houseCreation .padding .numbers input {
+  width: 70px;
+  height: 40px;
 }
 
-.fullwidthcreate main #houseCreation .left #adress-input {
-  width: 570px;
-  border: 1px solid grey;
+.fullwidthcreate main #houseCreation .padding .divsmq {
+  padding-top: 4%;
 }
 
-.fullwidthcreate main #houseCreation .left input.hide-clear[type=search]::-webkit-search-cancel-button {
+.fullwidthcreate main #houseCreation .padding .sqm {
+  height: 40px;
+}
+
+.fullwidthcreate main #houseCreation .padding input.hide-clear[type=search]::-webkit-search-cancel-button {
   display: none;
 }
 
-.fullwidthcreate main #houseCreation .left .img {
-  margin-top: 4%;
-}
-
-.fullwidthcreate main #houseCreation .left .wrap {
+.fullwidthcreate main #houseCreation .padding .wrap {
+  width: 100%;
   margin-top: 5%;
-  flex-direction: row;
 }
 
-.fullwidthcreate main #houseCreation .left .wrap label {
-  margin-bottom: 1.5%;
+.fullwidthcreate main #houseCreation .padding .wrap label {
+  padding-bottom: 1.5%;
 }
 
-.fullwidthcreate main #houseCreation .left .wrap label input {
-  margin-left: 3%;
+.fullwidthcreate main #houseCreation .padding .wrap label input {
+  padding-left: 3%;
+}
+
+.fullwidthcreate main #houseCreation .padding .wrap i {
+  font-size: 30px;
+  margin: 3% 6% 0 1%;
+  color: #6cb2eb;
 }
 
 .fullwidthcreate main #houseCreation .button {
-  margin: 4% 0 2% 0;
-  padding: 1% 2%;
+  margin: 4% 0 6% 35%;
+  padding: 2% 3%;
   border-radius: 5px;
   border: 1px solid #ececec;
   background-color: #ffff;
@@ -11667,71 +11706,104 @@ footer .right {
 }
 
 .fullwidthcreate main #houseEdit {
-  padding: 2% 12% 0 12%;
+  margin: 5% 17%;
+  width: 65%;
+  background-color: #fff;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #ececec;
+  box-shadow: 0px 0px 30px #ececec;
 }
 
-.fullwidthcreate main #houseEdit label {
-  margin: 3.5% 0 -1% 0;
+.fullwidthcreate main #houseEdit h5 {
+  padding: 4% 22% 2% 20%;
+  margin-left: 17%;
+  border-bottom: 1px groove #C0C0C0;
 }
 
-.fullwidthcreate main #houseEdit .right {
-  height: 70%;
-  width: 50%;
+.fullwidthcreate main #houseEdit .padding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2% 0 2% 20%;
 }
 
-.fullwidthcreate main #houseEdit .right .title {
-  width: 300px;
+.fullwidthcreate main #houseEdit .padding label {
+  margin: 4% 0 -1% 0;
+}
+
+.fullwidthcreate main #houseEdit .padding input,
+.fullwidthcreate main #houseEdit .padding textarea {
+  border: 1px solid #CCC;
+}
+
+.fullwidthcreate main #houseEdit .padding .label {
+  padding-top: 4%;
+}
+
+.fullwidthcreate main #houseEdit .padding .title,
+.fullwidthcreate main #houseEdit .padding .description {
+  padding-left: 2%;
+  width: 500px;
+}
+
+.fullwidthcreate main #houseEdit .padding .title {
   height: 40px;
 }
 
-.fullwidthcreate main #houseEdit .right .description {
-  width: 400px;
+.fullwidthcreate main #houseEdit .padding .description {
   height: 100px;
 }
 
-.fullwidthcreate main #houseEdit .right .sqm {
-  width: 65px;
+.fullwidthcreate main #houseEdit .padding .numbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 4%;
+  width: 60%;
 }
 
-.fullwidthcreate main #houseEdit .left {
-  height: 70%;
-  width: 50%;
-  margin-bottom: 23%;
+.fullwidthcreate main #houseEdit .padding .numbers input {
+  width: 70px;
+  height: 40px;
 }
 
-.fullwidthcreate main #houseEdit .left #adress-input {
-  width: 570px;
-  border: 1px solid grey;
+.fullwidthcreate main #houseEdit .padding .divsmq {
+  padding-top: 4%;
 }
 
-.fullwidthcreate main #houseEdit .left input.hide-clear[type=search]::-webkit-search-cancel-button {
+.fullwidthcreate main #houseEdit .padding .sqm {
+  height: 40px;
+}
+
+.fullwidthcreate main #houseEdit .padding input.hide-clear[type=search]::-webkit-search-cancel-button {
   display: none;
 }
 
-.fullwidthcreate main #houseEdit .left .img {
-  margin-top: 4%;
-}
-
-.fullwidthcreate main #houseEdit .left .wrap {
+.fullwidthcreate main #houseEdit .padding .wrap {
+  width: 100%;
   margin-top: 5%;
-  flex-direction: row;
 }
 
-.fullwidthcreate main #houseEdit .left .wrap label {
-  margin-bottom: 1.5%;
+.fullwidthcreate main #houseEdit .padding .wrap label {
+  padding-bottom: 1.5%;
 }
 
-.fullwidthcreate main #houseEdit .left .wrap label input {
-  margin-left: 3%;
+.fullwidthcreate main #houseEdit .padding .wrap label input {
+  padding-left: 3%;
+}
+
+.fullwidthcreate main #houseEdit .padding .wrap i {
+  font-size: 30px;
+  margin: 3% 6% 0 1%;
+  color: #6cb2eb;
 }
 
 .fullwidthcreate main #houseEdit .button {
-  margin: 4% 0 2% 0;
-  padding: 1% 2%;
+  margin: 4% 0 6% 35%;
+  padding: 2% 3%;
   border-radius: 5px;
   border: 1px solid #ececec;
   background-color: #ffff;

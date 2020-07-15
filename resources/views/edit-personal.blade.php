@@ -7,61 +7,68 @@
       <form class="flex" id="houseEdit" enctype="multipart/form-data" data-parsley-validate>
         @csrf
 
-        <div class="right">
+                  <h5>Modifica il tuo appartamento</h5>
 
-          <div class="">
+
+        <div class="padding">
+
+          <div class="label">
             <label for="title">Titolo</label>
           </div>
-          <div class="">
+          <div>
             <input class="title" type="text" name="title" value="{{old('title',$house['title'])}}" data-parsley-trigger="focusout" required>
           </div>
-          <div class="">
+          <div class="label">
             <label for="description">Descrizione</label>
           </div>
-          <div class="">
+          <div >
             <textarea class="description" type="text" name="description" value="{{old('description',$house['description'])}}" data-parsley-trigger="focusout" required></textarea>
           </div>
-          <div class="">
-            <label for="rooms">Stanze</label>
+
+          <div class="numbers">
+            <div class="">
+              <label for="rooms">Stanze</label>
+
+              <input type="number" name="rooms" value="{{old('rooms',$house['rooms'])}}" data-parsley-trigger="focusout" required min="1" max="10">
+            </div>
+
+            <div class="">
+              <label for="beds">Letti</label>
+
+              <input type="number" name="beds" value="{{old('beds',$house['beds'])}}" data-parsley-trigger="focusout" required min="1" max="20">
+            </div>
+
+            <div class="bagno">
+              <label for="bathrooms">Bagni</label>
+
+              <input type="number" name="bathrooms" value="{{old('bathrooms',$house['bathrooms'])}}" data-parsley-trigger="focusout" required min="1" max="10">
+            </div>
           </div>
-          <div class="">
-            <input type="number" name="rooms" value="{{old('rooms',$house['rooms'])}}" data-parsley-trigger="focusout" required min="1" max="10">
-          </div>
-          <div class="">
-            <label for="beds">Letti</label>
-          </div>
-          <div class="">
-            <input type="number" name="beds" value="{{old('beds',$house['beds'])}}" data-parsley-trigger="focusout" required min="1" max="20">
-          </div>
-          <div class="">
-            <label for="bathrooms">Bagni</label>
-          </div>
-          <div class="">
-            <input type="number" name="bathrooms" value="{{old('bathrooms',$house['bathrooms'])}}" data-parsley-trigger="focusout" required min="1" max="10">
-          </div>
-          <div class="">
+
+          <div class="divsmq">
             <label for="sqm">M<sup>2</sup></label>
           </div>
           <div class="">
             <input class="sqm" type="number" name="sqm" value="{{old('sqm',$house['sqm'])}}" data-parsley-trigger="focusout" min="5">
           </div>
 
-        </div>
 
-        <div class="left">
 
-          <div class="">
+
+
+          <div class="label">
             <label for="address">Indirizzo</label>
           </div>
           <div class="">
-            <input type="search" id="address-input" value="{{old('address',$house['address'])}}" data-parsley-trigger="focusout" required class="hide-clear"/>
+            <input type="search" id="address-input" value="{{old('address',$house['address'])}}" data-parsley-trigger="focusout" required class="hide-clear" style='width: 600px;'/>
           </div>
-          <div class="">
+          <div class="label">
             <label for="house_img">Immagine</label>
           </div>
           <div class="img">
             <input type="file" name="house_img" id="house_img" value="{{old('house_img',$house['house_img'])}}" data-lat="{{$house['lat']}}" data-lng="{{$house['lng']}}" data-parsley-trigger="focusout" required>
           </div>
+
           <div class="wrap">
             <label for="services[]">Servizi</label><br>
             @foreach ($services as $dbservice)
@@ -74,7 +81,25 @@
                     checked
                   @endif
               @endforeach>
-              {{$dbservice->name}}
+
+              @if($dbservice->name == 'Wifi')
+                  <i class="fas fa-wifi"></i>
+              @endif
+              @if($dbservice->name == 'Parking')
+                  <i class="fas fa-parking"></i>
+              @endif
+              @if($dbservice->name == 'Pool')
+                  <i class="fas fa-swimming-pool"></i>
+              @endif
+              @if($dbservice->name == 'Concierge')
+                  <i class="fas fa-concierge-bell"></i>
+              @endif
+              @if($dbservice->name == 'Sauna')
+                  <i class="fas fa-hot-tub"></i>
+              @endif
+              @if($dbservice->name == 'Seaview')
+                  <i class="fas fa-water"></i>
+              @endif
             @endforeach
           </div>
 
@@ -127,7 +152,7 @@
           contentType: false,
           success: function(res) {
           console.log(res)
-          window.location.assign("http://localhost:8000");
+          window.location.assign("http://localhost:8000/home");
           },
           error: function(err){
             console.log(err)

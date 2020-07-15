@@ -17,7 +17,7 @@ class CreateViewsTable extends Migration
             $table->id();
             $table->bigInteger('house_id')->unsigned()->index();
             $table->string('ip_address');
-            $table->date('view_date');
+            // $table->date('view_date');
             $table->timestamps();
         });
     }

@@ -37,10 +37,26 @@
       <div class="box bottoni flex-container">
         <a class="edit flex-container" href="{{route('edit-personal', $house->id)}}"> <h3>Modifica</h3> </a>
         <a class="delete flex-container" href="{{route('delete-personal', $house->id)}}"><h3>Elimina</h3></a>
+        <a class="visibility flex-container" data-house="{{$house->id}}" id="setVisibility"
+          @if ($visibilityState == 'Mostra')
+            style="background:#38c172"
+          @elseif ($visibilityState == 'Nascondi')
+              style="background:#f6993f"
+          @endif
+          ><h3>
+          {{$visibilityState}}
+        </h3></a>
       </div>
 
   </div>
-
+  <script>
+    $('#setVisibility').click(function(){
+      var visibilityButton = $('#visibilityButton');
+      $.get('/set-personal-visibility/' + $('#setVisibility').data('house'), function(visibilityState){
+        $('#setVisibility').html(visibilityState);
+      });
+    });
+  </script>
 
 @endsection
 

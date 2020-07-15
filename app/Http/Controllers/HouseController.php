@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Service;
 use App\House;
+use App\View;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class HouseController extends Controller
     $address = $request->address;
     $lat = $request->lat;
     $lng = $request->lng;
-    $radius = ($request->radius === null) ? 20 : $request->radius;   // 1km = 1radius
+    $radius = ($request->radius === null) ? 50 : $request->radius;   // 1km = 1radius
     $houses = House::select(
       DB::raw("*,
                               ( 6371 * acos( cos( radians(?) ) *
@@ -33,30 +34,30 @@ class HouseController extends Controller
       ->setBindings([$lat, $lng, $lat, $radius])
       ->get();
 
+      //scrematura visibility
+      $houses = $houses->where('visibility', '=', 1);
 
-      if ($request->rooms > 1) {
+      if (request()->has('rooms')) {
         $houses = $houses->where('rooms', '>=', $request->rooms);
         $roomsInputValue = $request->rooms;
       }
-      
-      
-      if ($request->beds > 1) {
+
+      if (request()->has('beds')) {
         $houses = $houses->where('beds', '>=', $request->beds);
         $bedsInputValue = $request->beds;
       }
-    
+
       if(request()->has('services')) {
         $servicesFilter = $request->services;
-        foreach ($houses as $house) {
+        foreach ($houses as $index => $house) {
           $houseServicesIds = $house->services->pluck('id')->all();
           foreach($servicesFilter as $filter){
-            if( ! (in_array((int)$filter, $houseServicesIds) ) ) {
-              $houses->forget($house->id);
+            if(!(in_array($filter, $houseServicesIds))) {
+              $houses->forget($index);
             }
          }
         }
       }
-        
         
         $houses = $houses->paginate(25)->appends([
           'rooms'=>request('rooms'),
@@ -73,10 +74,28 @@ class HouseController extends Controller
     return view('houses-index', compact('houses', 'servicesList', 'servicesFilter', 'address', 'lat', 'lng', 'roomsInputValue', 'bedsInputValue', 'radius'));
   }
 
-  public function show($id) 
+  public function show(Request $request, $id) 
   {
+
+    $clientIP = $request->ip();
+    $now = date('Y-m-d H:i:s');
+    $from = date('Y-m-d H:i:s', strtotime("-1 days"));
+    // dd($from, $now);
+    $DBviews = View::where('house_id','=', $id)
+                                              ->where('ip_address', '=', $clientIP)
+                                              ->whereBetween('created_at', [$from, $now])
+                                              ->get();
+    // dd($DBviews);
+    if(!count($DBviews)){
+      $view = new View;
+      $view['house_id'] = $id;
+      $view['ip_address'] = $clientIP;
+      $view->save();
+    }
+
     $house = House::findOrFail($id);
 
     return view('show-house', compact('house'));
+
   }
 }
