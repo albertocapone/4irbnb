@@ -17,7 +17,7 @@
           </a>
         </div>
       </div>
-      <div class="box promuovi flex-container">
+      <div class="box promuovi flex-container {{$panelIsVisible}}">
         <a href="{{route('ad-payment', $house->id)}}">
           <div class="overlay flex-container">
             <h3>Promuovi</h3>
