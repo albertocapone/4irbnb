@@ -113,10 +113,11 @@ class HomeController extends Controller
     $messages = $house->messages;
     $views = $house->views;
     $ads = Ad::all();
-    $house_ads = $house->ads->where('ending_date','>=',date('Y-m-d H:i:s'));
-    $panelIsVisible = 'hidden';
+    $house_ads = $house->ads()->whereDate('ending_date','>',date('Y-m-d H:i:s'))->get();
+    // dd($house_ads);
+    $panelIsVisible = 'promo-off';
     if (count($house_ads)) {
-      $panelIsVisible = 'visible';
+      $panelIsVisible = 'promo-on';
     }
     return view('show-personal', compact('messages', 'views', 'ads', 'house', 'visibilityState','panelIsVisible'));
   }
