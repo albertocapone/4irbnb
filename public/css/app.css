@@ -11665,7 +11665,6 @@ footer .right {
 .fullwidthcreate main #houseCreation .padding .wrap {
   width: 100%;
   margin-top: 5%;
-  flex-direction: row;
 }
 
 .fullwidthcreate main #houseCreation .padding .wrap label {
@@ -11674,6 +11673,12 @@ footer .right {
 
 .fullwidthcreate main #houseCreation .padding .wrap label input {
   padding-left: 3%;
+}
+
+.fullwidthcreate main #houseCreation .padding .wrap i {
+  font-size: 30px;
+  margin: 3% 6% 0 1%;
+  color: #6cb2eb;
 }
 
 .fullwidthcreate main #houseCreation .button {
@@ -11774,7 +11779,6 @@ footer .right {
 .fullwidthcreate main #houseEdit .padding .wrap {
   width: 100%;
   margin-top: 5%;
-  flex-direction: row;
 }
 
 .fullwidthcreate main #houseEdit .padding .wrap label {
@@ -11783,6 +11787,12 @@ footer .right {
 
 .fullwidthcreate main #houseEdit .padding .wrap label input {
   padding-left: 3%;
+}
+
+.fullwidthcreate main #houseEdit .padding .wrap i {
+  font-size: 30px;
+  margin: 3% 6% 0 1%;
+  color: #6cb2eb;
 }
 
 .fullwidthcreate main #houseEdit .button {

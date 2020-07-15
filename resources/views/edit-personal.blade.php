@@ -81,7 +81,25 @@
                     checked
                   @endif
               @endforeach>
-              {{$dbservice->name}}
+        
+              @if($dbservice->name == 'Wifi')
+                  <i class="fas fa-wifi"></i>
+              @endif
+              @if($dbservice->name == 'Parking')
+                  <i class="fas fa-parking"></i>
+              @endif
+              @if($dbservice->name == 'Pool')
+                  <i class="fas fa-swimming-pool"></i>
+              @endif
+              @if($dbservice->name == 'Concierge')
+                  <i class="fas fa-concierge-bell"></i>
+              @endif
+              @if($dbservice->name == 'Sauna')
+                  <i class="fas fa-hot-tub"></i>
+              @endif
+              @if($dbservice->name == 'Seaview')
+                  <i class="fas fa-water"></i>
+              @endif
             @endforeach
           </div>
 

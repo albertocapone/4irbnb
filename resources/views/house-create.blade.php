@@ -12,7 +12,7 @@
                 <h5>Crea il tuo appartamento</h5>
 
         <div class="padding">
-          
+
 
           <div class="label">
               <label for="title">Titolo</label>
@@ -83,7 +83,25 @@
                 required
               @endif
               >
-              {{$service->name}}
+
+              @if($service->name == 'Wifi')
+                  <i class="fas fa-wifi"></i>
+              @endif
+              @if($service->name == 'Parking')
+                  <i class="fas fa-parking"></i>
+              @endif
+              @if($service->name == 'Pool')
+                  <i class="fas fa-swimming-pool"></i>
+              @endif
+              @if($service->name == 'Concierge')
+                  <i class="fas fa-concierge-bell"></i>
+              @endif
+              @if($service->name == 'Sauna')
+                  <i class="fas fa-hot-tub"></i>
+              @endif
+              @if($service->name == 'Seaview')
+                  <i class="fas fa-water"></i>
+              @endif
             @endforeach
           </div>
         </div>
