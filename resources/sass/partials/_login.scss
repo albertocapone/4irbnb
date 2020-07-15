@@ -32,9 +32,15 @@
         margin: 3% 0 1% 0;
       }
 
-      .form-check-input{
-          margin-top: 4%;
+      .form-check{
+        .form-check-input{
+            margin-top: 4%;
+            margin-left: -50%;
+            vertical-align: middle;
+        }
       }
+
+
 
       .form-group{
         margin-top: 5%;

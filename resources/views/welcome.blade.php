@@ -6,12 +6,15 @@
 
     <div class="fullwidth">
       <main>
+
         <div class="blulogo">
           <h1>AirBnBool</h1>
         </div>
+
         @if (!empty($success))
-            <div>{{$success}}</div>
+            <div class="success">{{$success}}</div>
         @endif
+        
         <form id="houseCreation" >
           @csrf
           <div class="flex-two">

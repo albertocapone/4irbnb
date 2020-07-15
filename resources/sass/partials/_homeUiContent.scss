@@ -8,12 +8,18 @@
   }
 
 
-
-
   main{
 
     @include main-fullwidth-ui;
     @include background-jpg;
+
+    .success{
+      position:absolute;
+      background-color: #fff;
+      width: 20%;
+      padding: 2%;
+      margin-left: 5%;
+    }
 
     .blulogo{
       background-color: #2aace1;

@@ -11020,6 +11020,14 @@ header nav .rightheader span .dropcontent {
   background-size: cover;
 }
 
+.fullwidth main .success {
+  position: absolute;
+  background-color: #fff;
+  width: 20%;
+  padding: 2%;
+  margin-left: 5%;
+}
+
 .fullwidth main .blulogo {
   background-color: #2aace1;
   height: 130px;
@@ -11587,8 +11595,10 @@ footer .right {
   margin: 3% 0 1% 0;
 }
 
-.fullwidth main .login .form-check-input {
+.fullwidth main .login .form-check .form-check-input {
   margin-top: 4%;
+  margin-left: -50%;
+  vertical-align: middle;
 }
 
 .fullwidth main .login .form-group {
@@ -11776,7 +11786,7 @@ footer .right {
   justify-content: space-between;
   flex-wrap: wrap;
   padding-top: 4%;
-  width: 60%;
+  width: 80%;
 }
 
 .fullwidthcreate main #houseEdit .padding .numbers input {
@@ -11890,6 +11900,61 @@ footer .right {
   border: 1px groove #ececec;
   width: 35.3%;
   padding: 2%;
+}
+
+.fullwidthads {
+  min-width: 100%;
+  min-height: calc(100vh - 70px - 60px);
+  padding-bottom: 2%;
+}
+
+.fullwidthads main {
+  margin: 5% 20%;
+  width: 65%;
+  padding: 4%;
+  background-color: #fff;
+  border: 1px solid #ececec;
+  box-shadow: 0px 0px 30px #ececec;
+}
+
+.fullwidthads main .payment h5 {
+  border-bottom: 1px groove #C0C0C0;
+  margin-bottom: 4%;
+}
+
+.fullwidthads main .payment form section label {
+  width: 60%;
+  padding-bottom: 5%;
+}
+
+.fullwidthads main .payment form section label .input-label {
+  margin-right: 5%;
+}
+
+.fullwidthads main .payment form section label #amount {
+  border-radius: 5px;
+  width: 90px;
+  padding: 1%;
+}
+
+.fullwidthads main .payment form section .bt-drop-in-wrapper {
+  padding: 4% 35%;
+  width: 20%;
+  margin-top: 6%;
+}
+
+.fullwidthads main .button {
+  margin: 6% 0 3% 40%;
+  padding: 2% 3%;
+  border-radius: 5px;
+  border: 1px solid #ececec;
+  background-color: #ffff;
+  color: #212529;
+}
+
+.fullwidthads main .button:hover {
+  background-color: #3490dc;
+  color: #ffff;
 }
 
 .fullwidthcreate {
