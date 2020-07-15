@@ -104,6 +104,7 @@ class HomeController extends Controller
     $house = House::findOrFail($id);
     $userId = Auth::user()->id;
     $userOwnsIt = ($house['user_id'] == $userId) ? true : false;
+    $visibilityState = ($house['visibility'] == 0) ? "Mostra" : "Nascondi";
 
     if (!$userOwnsIt) {
       return redirect()->route('home');
@@ -112,7 +113,7 @@ class HomeController extends Controller
     $messages = $house->messages;
     $views = $house->views;
     $ads = Ad::all();
-    return view('show-personal', compact('messages', 'views', 'ads', 'house'));
+    return view('show-personal', compact('messages', 'views', 'ads', 'house', 'visibilityState'));
   }
 
 
@@ -168,7 +169,6 @@ class HomeController extends Controller
     $house['beds'] = $validatedData["beds"];
     $house['bathrooms'] = $validatedData["bathrooms"];
     $house['sqm'] = $validatedData["sqm"];
-    // $house['house_img'] = $validatedData["house_img"];
     $house['address'] = $validatedData["address"];
     $house['lat'] = $validatedData["lat"];
     $house['lng'] = $validatedData["long"];
@@ -188,5 +188,13 @@ class HomeController extends Controller
     }
     $house->delete();
     return redirect()->route('home');
+  }
+
+  public function setVisibility($id){
+    $house = House::findOrFail($id);
+    $house['visibility'] = ($house['visibility'] == 0) ? 1 : 0;
+    $house->save();
+    $visibilityState = ($house['visibility'] == 0) ? "Mostra" : "Nascondi";
+    return $visibilityState;
   }
 }

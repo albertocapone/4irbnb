@@ -34,10 +34,18 @@
       <div class="box bottoni flex-container">
         <a class="edit flex-container" href="{{route('edit-personal', $house->id)}}"> <p>Modifica</p> </a>
         <a class="delete flex-container" href="{{route('delete-personal', $house->id)}}"><p>Elimina</p></a>
+        <a data-house="{{$house->id}}" id="setVisibility">{{$visibilityState}}</a>
       </div>
 
   </div>
-
+  <script>
+    $('#setVisibility').click(function(){
+      var visibilityButton = $('#visibilityButton');
+      $.get('/set-personal-visibility/' + $('#setVisibility').data('house'), function(visibilityState){
+        $('#setVisibility').html(visibilityState);
+      });
+    });
+  </script>
 
 @endsection
 
