@@ -49,7 +49,7 @@
             <label for="sqm">M<sup>2</sup></label>
           </div>
           <div class="">
-            <input class="sqm" type="number" name="sqm" value="{{old('sqm',$house['sqm'])}}" data-parsley-trigger="focusout" min="5">
+            <input class="sqm" type="number" name="sqm" value="{{old('sqm',$house['sqm'])}}" data-parsley-trigger="focusout" min="5" required>
           </div>
 
 

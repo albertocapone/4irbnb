@@ -27,12 +27,18 @@
     }
 
     button{
-      padding:1% 2%;
+      padding: 1% 4%;
       border-radius: 5px;
-      margin: 3% 0 2% 43.5%;
-      border:1px groove #C0C0C0;
-      font-size: 12px;
+      margin: 3% 0 2% 40%;
+      border: 1px solid #ececec;
+      background-color: #ffff;
+      color: #212529;
+      &:hover{
+        background-color: #3490dc;
+        color: #ffff;
+      }
     }
+
 
     strong,
     input.parsley-error,
