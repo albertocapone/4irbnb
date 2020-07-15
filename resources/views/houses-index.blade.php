@@ -61,6 +61,50 @@
   <h4 class="page-index-title">
     Ecco le proprietà presso {{$address}}
   </h4>
+  
+  @if(count($promoHouses))                         {{-- inizio case sponsorizzate  --}}
+  <h5>Le nostre sponsorizzazioni</h5> 
+  <div class="houses-preview-container flex-container sponsorizzate">   
+    @foreach ($promoHouses as $promoHouse)
+      <div class="house-preview" data-rooms="{{$promoHouse->rooms}}" data-beds="{{$promoHouse->beds}}" data-lat="{{$promoHouse->lat}}" data-lng="{{$promoHouse->lng}}"
+        data-services="@foreach($promoHouse->services as $service){{$service->id}};@endforeach">
+        <div class="immagine">
+          <img src="{{$promoHouse -> house_img}}" alt="">
+        </div>
+        <div class="title">
+          <a href="{{route('show-house', $promoHouse->id)}}">
+            <h6>{{$promoHouse -> title}}</h6>
+          </a>
+          @foreach ($promoHouse -> services as $service)
+            <span class="index-houses-preview-services">
+              {{$service -> name}}
+              @if($service->name == 'Wifi')
+                  <i class="fas fa-wifi"></i>
+              @endif
+              @if($service->name == 'Parking')
+                  <i class="fas fa-parking"></i>
+              @endif
+              @if($service->name == 'Pool')
+                  <i class="fas fa-swimming-pool"></i>
+              @endif
+              @if($service->name == 'Concierge')
+                  <i class="fas fa-concierge-bell"></i>
+              @endif
+              @if($service->name == 'Sauna')
+                  <i class="fas fa-hot-tub"></i>
+              @endif
+              @if($service->name == 'Seaview')
+                  <i class="fas fa-water"></i>
+              @endif
+            </span>
+          @endforeach
+        </div>
+      </div>
+    @endforeach
+  </div>
+  <br><br><br><br><br> 
+  @endif {{-- fine case sponsorizzate  --}}
+
   <div class="houses-preview-container flex-container">
     @foreach ($houses as $house)
       <div class="house-preview" data-rooms="{{$house->rooms}}" data-beds="{{$house->beds}}" data-lat="{{$house->lat}}" data-lng="{{$house->lng}}"

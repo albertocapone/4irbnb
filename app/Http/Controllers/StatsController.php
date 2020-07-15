@@ -12,42 +12,41 @@ class StatsController extends Controller
 {
     public function index($house_id) {
 
-        $now = date('Y-m-d H:i:s');
-        $from = date('Y-m-d H:i:s', strtotime("-31 days"));
-        // dd($from, $now);
+        $allViews = count(View::where('house_id', '=', $house_id)->get());
 
-        $lastMonthViews = View::where('house_id', '=', $house_id)
-                                ->whereBetween('created_at', [$from, $now])
-                                ->get();
-
-        $lastMonthMessages = Message::where('house_id', '=', $house_id)
-                                    ->whereBetween('created_at', [$from, $now])
-                                    ->get();
+        $allMessages = count(Message::where('house_id', '=', $house_id)->get());
 
         $house = House::findOrFail($house_id);
         
-        return view('stats-index', compact('lastMonthViews','lastMonthMessages', 'house'));
+        return view('stats-index', compact('allViews', 'allMessages', 'house'));
     }
 
     public function get(Request $request) {
         
         $house_id = $request->house_id;
-        $searchedDate = explode("-", $request->date);
-        
+        $searchedDate = $request->date;
+       
+        $viewsPerMonth = [];
+        for ($m = 1; $m <= 12; $m++) {
+            $searchedViews = View::where('house_id', '=', $house_id)
+            ->whereMonth('created_at', '=', $m)
+            ->whereYear('created_at', '=', $searchedDate)
+            ->get();
+            $viewsPerMonth[] = count($searchedViews);
+        }
 
-        $searchedViews = View::where('house_id', '=', $house_id)
-            ->whereMonth('created_at', '=', $searchedDate[1])
-            ->whereYear('created_at', '=', $searchedDate[0])
+        $messagesPerMonth = [];
+        for ($m = 1; $m <= 12; $m++) {
+            $searchedMessaages = Message::where('house_id', '=', $house_id)
+            ->whereMonth('created_at', '=', $m)
+            ->whereYear('created_at', '=', $searchedDate)
             ->get();
-        
-        $searchedMessages = Message::where('house_id', '=', $house_id)
-            ->whereMonth('created_at', '=', $searchedDate[1])
-            ->whereYear('created_at', '=', $searchedDate[0])
-            ->get();
+            $messagesPerMonth[] = count($searchedMessaages);
+        }
 
         $data = [
-            "searchedViews" => $searchedViews,
-            "searchedMessages" => $searchedMessages,
+            "viewsPerMonth" => $viewsPerMonth,
+            "messagesPerMonth" => $messagesPerMonth
         ];
 
         $data = json_encode($data);

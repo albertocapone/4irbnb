@@ -22,7 +22,7 @@ class HouseController extends Controller
     $address = $request->address;
     $lat = $request->lat;
     $lng = $request->lng;
-    $radius = ($request->radius === null) ? 50 : $request->radius;   // 1km = 1radius
+    $radius = ($request->radius === null) ? 20 : $request->radius;   // 1km = 1radius
     $houses = House::select(
       DB::raw("*,
                               ( 6371 * acos( cos( radians(?) ) *
@@ -62,16 +62,15 @@ class HouseController extends Controller
       }
 
       $promoHouses = [];
-      $prova = [];
       foreach ($houses as $house) {
-        $prova[] = $house->ads->where('ending_date','>',date('Y-m-d H:i:s'));
-        // if (count($house->ads->where('ending_date','>=',date('Y-m-d H:i:s')))) {
-        //   $promoHouses[] =$house;
-        // }
-
+        $house_ads = $house->ads()->whereDate('ending_date', '>', date('Y-m-d H:i:s'))->get();
+        if (count($house_ads)) {
+          $promoHouses[] = $house;
+        }
       }
-      dd($prova);
-      // $promoHouses = $house->ads->where('ending_date','>=',date('Y-m-d H:i:s'))
+      // dd($promoHouses);
+     
+
         $houses = $houses->paginate(25)->appends([
           'rooms'=>request('rooms'),
           'beds' => request('beds'),
@@ -84,7 +83,7 @@ class HouseController extends Controller
 
     $servicesList = Service::all();
 
-    return view('houses-index', compact('houses', 'servicesList', 'servicesFilter', 'address', 'lat', 'lng', 'roomsInputValue', 'bedsInputValue', 'radius'));
+    return view('houses-index', compact('houses', 'promoHouses', 'servicesList', 'servicesFilter', 'address', 'lat', 'lng', 'roomsInputValue', 'bedsInputValue', 'radius'));
   }
 
   public function show(Request $request, $id)
