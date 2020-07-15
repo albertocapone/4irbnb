@@ -17,12 +17,13 @@
           </a>
         </div>
       </div>
-
       <div class="box promuovi flex-container">
-        <div class="overlay flex-container">
-          <h3>Promuovi</h3>
-           {{-- comparsa tendina sotto pulsanti --}}
-        </div>
+        <a href="{{route('ad-payment', $house->id)}}">
+          <div class="overlay flex-container">
+            <h3>Promuovi</h3>
+             {{-- comparsa tendina sotto pulsanti --}}
+          </div>
+        </a>
       </div>
 
       <div class="box statistiche flex-container">

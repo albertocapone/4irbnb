@@ -17,7 +17,8 @@ class CreateAdHouseTable extends Migration
             $table->id();
             $table->tinyInteger('ad_id')->unsigned()->index();
             $table->bigInteger('house_id')->unsigned()->index();
-            $table->timestamp('ending_date');
+            $table->datetime('ending_date');
+            $table->string('transaction_code');
             $table->timestamps();
         });
     }

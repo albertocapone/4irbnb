@@ -17,12 +17,12 @@ class AdsSeeder extends Seeder
     //       $house = House::inRandomOrder()->take(rand(0,8))->get();
     //       $ad-> houses() -> attach($house);
     //   });
-    $houses =App\House::all();
-
-      App\Ad::all()->each(function($ad) use($houses){
-        $ad->houses()->attach(
-        $houses->random(rand(1,15))->pluck('id')->toArray()
-        );
-      });
+    // $houses =App\House::all();
+    //
+    //   App\Ad::all()->each(function($ad) use($houses){
+    //     $ad->houses()->attach(
+    //     $houses->random(rand(1,15))->pluck('id')->toArray()
+    //     );
+    //   });
     }
 }
