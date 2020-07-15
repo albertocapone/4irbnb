@@ -11477,6 +11477,10 @@ footer .right {
   font-weight: bold;
 }
 
+.sidebarLayout .index-houses-preview-services {
+  margin-right: 10px;
+}
+
 .fullwidth main {
   min-width: 100%;
   min-height: calc(100vh - 70px - 60px);

@@ -25,7 +25,28 @@
               checked
             @endif
         @endforeach
-          > {{$service->name}}<br>
+          > {{$service->name}}
+          @if($service->name == 'Wifi')
+              <i class="fas fa-wifi"></i>
+          @endif
+          @if($service->name == 'Parking')
+              <i class="fas fa-parking"></i>
+          @endif
+          @if($service->name == 'Pool')
+              <i class="fas fa-swimming-pool"></i>
+          @endif
+          @if($service->name == 'Concierge')
+              <i class="fas fa-concierge-bell"></i>
+          @endif
+          @if($service->name == 'Sauna')
+              <i class="fas fa-hot-tub"></i>
+          @endif
+          @if($service->name == 'Seaview')
+              <i class="fas fa-water"></i>
+          @endif
+
+
+          <br>
       @endforeach
     </div>
     <div class="bottoni flex-container">
@@ -37,7 +58,9 @@
 
 @section('main-content')
 
-  <h4 class="page-index-title">Ecco le proprietà presso [luogo inserito in ricerca]</h4>
+  <h4 class="page-index-title">
+    Ecco le proprietà presso {{$address}}
+  </h4>
   <div class="houses-preview-container flex-container">
     @foreach ($houses as $house)
       <div class="house-preview" data-rooms="{{$house->rooms}}" data-beds="{{$house->beds}}" data-lat="{{$house->lat}}" data-lng="{{$house->lng}}"
@@ -50,7 +73,27 @@
             <h6>{{$house -> title}}</h6>
           </a>
           @foreach ($house -> services as $service)
-            <span>{{$service -> name}}</span>
+            <span class="index-houses-preview-services">
+              {{$service -> name}}
+              @if($service->name == 'Wifi')
+                  <i class="fas fa-wifi"></i>
+              @endif
+              @if($service->name == 'Parking')
+                  <i class="fas fa-parking"></i>
+              @endif
+              @if($service->name == 'Pool')
+                  <i class="fas fa-swimming-pool"></i>
+              @endif
+              @if($service->name == 'Concierge')
+                  <i class="fas fa-concierge-bell"></i>
+              @endif
+              @if($service->name == 'Sauna')
+                  <i class="fas fa-hot-tub"></i>
+              @endif
+              @if($service->name == 'Seaview')
+                  <i class="fas fa-water"></i>
+              @endif
+            </span>
           @endforeach
         </div>
       </div>
