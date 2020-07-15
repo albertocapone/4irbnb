@@ -1,70 +1,9 @@
 .sidebarLayout{
   font-family: $font-family-sans-serif;
 
-
-  // *{
-  //   margin:0;
-  //   padding:0;
-  //   box-sizing: border-box;
-  // }
-
   .flex-container{
     display:flex;
   }
-
-
-  // header{
-  //   width: 100%;
-  //   height: 70px;
-
-  //   .header-container{
-  //     width: 100%;
-  //     height: 100%;
-  //     flex-wrap: nowrap;
-  //     // box-shadow: 1px 1.2px 2px 0px #6cb2eb8a;
-  //     border-bottom: 1px solid $borders;
-
-  //     .logo-container{
-  //       @include width-side;
-  //       height: 100%;
-  //       border-right: 1px solid $borders;
-
-  //       justify-content: center;
-  //       align-items: center;
-
-  //       .fa-airbnb{
-  //         font-size: 40px;
-  //         color: #2aace1;
-  //       }
-  //     }
-
-  //     .header-content{
-  //       @include width-main;
-  //       justify-content: flex-end;
-  //       align-items: center;
-
-  //       .rightheader{
-  //         width:120px;
-  //         margin-right: $margin-right;
-  //         font-size:16px;
-  //         .fa-globe{
-  //           font-size: 25px;
-  //           color: #000;
-  //           padding-top: 2%;
-  //         }
-  //         .fa-chevron-down{
-  //           font-size: 10px;
-  //           color: #000;
-  //           vertical-align:super;
-  //         }
-  //       } //fine rightheader
-
-  //     } // header-content
-
-  //   } //header-container
-
-  // } // fine header
-
 
   main{
     flex-wrap: nowrap;
@@ -79,13 +18,19 @@
       .side-container{
         width: 100%;
         height: 100%;
-        padding: 20px 15px;
+        padding: 20px 20px;
         border-right: 1px solid $borders;
 
         font-family: $font-family-sans-serif;
 
+        nav{
+          width: 100%
+        }
+
         ul{
           list-style-type: none;
+          padding: 0;
+          margin: 0;
 
           a{
             text-decoration: none;
@@ -137,5 +82,6 @@
   @import 'partials/_sidebarLayoutHomeOwner';
   @import 'partials/_sidebarLayoutShowHouse';
   @import 'partials/_sidebarLayoutShowPersonal';
+  @import 'partials/_sidebarLayoutIndexHouses';
 
 } // fine sidebarLayout

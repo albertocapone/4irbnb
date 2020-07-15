@@ -1,14 +1,15 @@
-@extends('layouts.layout-base')
-@section('content')
-  {{-- qui vengono mostrati i filtri --}}
-  <div>
-    <h4>Filtri</h4>
+
+@extends('layouts.layout-sidebar')
+
+@section('sidebar')
+  <div class="sidebar-index-filters">
+    <h5>Filtra la tua ricerca</h5>
     <div>
-      <label for="rooms">Numero stanze</label>
+      <label for="radius">Numero di stanze</label>
        <input type="number" name="rooms" min="1" max="10" value="{{$roomsInputValue}}">
     </div>
      <div>
-       <label for="beds">Numero posti letto</label>
+       <label for="radius">Posti letto</label>
        <input type="number" name="beds" min="1" max="20" value="{{$bedsInputValue}}">
     </div>
      <div>
@@ -16,7 +17,7 @@
        <input type="range" data-address="{{$address}}" data-lat="{{$lat}}" data-lng="{{$lng}}" name="radius" min="1" max="50" value="{{$radius}}" step="1">
     </div>
      <div>
-      <label for="services">Servizi minimi</label><br>
+      <label for="services">Servizi</label>
       @foreach ($servicesList as $service)
           <input type="checkbox" name="{{$service->id}}"
            @foreach ($servicesFilter as $serviceFilter)
@@ -24,26 +25,39 @@
               checked
             @endif
         @endforeach
-          >{{$service->name}}
+          > {{$service->name}}<br>
       @endforeach
     </div>
-    <button id="filter">Filtra</button>
-    <button id="reset">Reset</button>
+    <div class="bottoni flex-container">
+      <button id="filter">Filtra</button>
+      <button id="reset">Reset</button>
+    </div>
   </div>
-  <br><br><br>
+@endsection
 
-  {{-- qui sotto vengono mostrate tutte le case --}}
-  <div>
-    <h4>Case</h4>
+@section('main-content')
+
+  <h4 class="page-index-title">Ecco le proprietà presso [luogo inserito in ricerca]</h4>
+  <div class="houses-preview-container flex-container">
     @foreach ($houses as $house)
-        <div class="house" data-rooms="{{$house->rooms}}" data-beds="{{$house->beds}}" data-lat="{{$house->lat}}" data-lng="{{$house->lng}}" 
-          data-services="@foreach($house->services as $service){{$service->id}};@endforeach">
-          <a href="{{route('show-house', $house->id)}}">
-            {{$house->title}}
-          </a>
+      <div class="house-preview" data-rooms="{{$house->rooms}}" data-beds="{{$house->beds}}" data-lat="{{$house->lat}}" data-lng="{{$house->lng}}"
+        data-services="@foreach($house->services as $service){{$service->id}};@endforeach">
+        <div class="immagine">
+          <img src="{{$house -> img_url}}" alt="">
         </div>
+        <div class="title">
+          <a href="{{route('show-house', $house->id)}}">
+            <h6>{{$house -> title}}</h6>
+          </a>
+          @foreach ($house -> services as $service)
+            <span>{{$service -> name}}</span>
+          @endforeach
+        </div>
+      </div>
     @endforeach
-  </div><br><br>
+  </div>
+
+  {{-- impaginazione --}}
   <div>
     {{ $houses->links() }}
   </div>
@@ -57,14 +71,14 @@
         lat: $('input[name="radius"]').data('lat'),
         lng: $('input[name="radius"]').data('lng'),
         address: $('input[name="radius"]').data('address'),
-        services: [] 
+        services: []
       };
-      $(':checkbox:checked').each(function() {filters.services.push($(this).attr("name")) } ) 
+      $(':checkbox:checked').each(function() {filters.services.push($(this).attr("name")) } )
       filters = $.param(filters);
       window.location.href = window.location.origin + "/houses-index/?" + filters;
     });
 
-    $('#reset').click(function(event) {   
+    $('#reset').click(function(event) {
       var defaultData = {
         lat: $('input[name="radius"]').data('lat'),
         lng: $('input[name="radius"]').data('lng'),

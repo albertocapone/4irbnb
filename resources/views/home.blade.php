@@ -14,7 +14,9 @@
       <div class="houses-preview-container flex-container">
         @foreach ($houses as $house)
           <div class="house-preview">
-            <div class="immagine">{{$house -> img_url}}</div>
+            <div class="immagine">
+              <img src="{{$house -> img_url}}" alt=""> 
+            </div>
             <div class="title">
               <a href="{{route('show-personal', $house->id)}}">
                 <h6>{{$house -> title}}</h6>
