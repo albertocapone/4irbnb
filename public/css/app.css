@@ -10957,6 +10957,7 @@ header nav #logo {
 header nav #logo .fa-airbnb {
   font-size: 40px;
   color: #6cb2eb;
+  margin-left: -10%;
 }
 
 header nav .rightheader {
@@ -10979,6 +10980,11 @@ header nav .rightheader .fa-chevron-down {
 
 header nav .rightheader span {
   cursor: pointer;
+}
+
+header nav .rightheader span a.dropdown:hover {
+  color: #3490dc;
+  text-decoration: underline;
 }
 
 header nav .rightheader span .dropcontent {
@@ -11048,6 +11054,7 @@ header nav .rightheader span .dropcontent {
   border-radius: 5px;
   border: none;
   padding: 1% 1.2%;
+  margin-right: 1%;
 }
 
 footer {
@@ -11514,11 +11521,17 @@ footer .right {
 }
 
 .fullwidth main .register button {
-  padding: 1% 2%;
+  padding: 1% 4%;
   border-radius: 5px;
-  margin: 3% 0 2% 43.5%;
-  border: 1px groove #C0C0C0;
-  font-size: 12px;
+  margin: 3% 0 2% 40%;
+  border: 1px solid #ececec;
+  background-color: #ffff;
+  color: #212529;
+}
+
+.fullwidth main .register button:hover {
+  background-color: #3490dc;
+  color: #ffff;
 }
 
 .fullwidth main .register strong,
@@ -11624,7 +11637,7 @@ footer .right {
 
 .fullwidthcreate main #houseCreation .padding .title,
 .fullwidthcreate main #houseCreation .padding .description {
-  padding-left: 2%;
+  padding: 2%;
   width: 500px;
 }
 
@@ -11642,7 +11655,7 @@ footer .right {
   justify-content: space-between;
   flex-wrap: wrap;
   padding-top: 4%;
-  width: 60%;
+  width: 80%;
 }
 
 .fullwidthcreate main #houseCreation .padding .numbers input {
@@ -11682,7 +11695,7 @@ footer .right {
 }
 
 .fullwidthcreate main #houseCreation .button {
-  margin: 4% 0 6% 35%;
+  margin: 4% 0 6% 38%;
   padding: 2% 3%;
   border-radius: 5px;
   border: 1px solid #ececec;
@@ -11692,6 +11705,7 @@ footer .right {
 
 .fullwidthcreate main #houseCreation .button:hover {
   background-color: #3490dc;
+  color: #ffff;
 }
 
 .fullwidthcreate main {
@@ -11806,5 +11820,74 @@ footer .right {
 
 .fullwidthcreate main #houseEdit .button:hover {
   background-color: #3490dc;
+  color: #ffff;
+}
+
+.fullwidthcreate {
+  min-width: 100%;
+  min-height: calc(100vh - 70px - 60px);
+}
+
+.fullwidthcreate main .posta {
+  margin: 5% 12%;
+  width: 80%;
+  height: 70%;
+  background-color: #fff;
+  padding: 4%;
+  border: 1px solid #ececec;
+  box-shadow: 0px 0px 30px #ececec;
+}
+
+.fullwidthcreate main .posta h5 {
+  border-bottom: 1px groove #C0C0C0;
+  margin-bottom: 4%;
+}
+
+.fullwidthcreate main .posta .messaggi {
+  margin: 0 9%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px groove #C0C0C0;
+}
+
+.fullwidthcreate main .posta .messaggi .email {
+  width: 35%;
+  padding: 1% 1% 0 1%;
+}
+
+.fullwidthcreate main .posta .messaggi .email h6 {
+  font-weight: bold;
+  margin-right: 2%;
+}
+
+.fullwidthcreate main .posta .messaggi .email h6 i {
+  margin-right: 4%;
+  font-size: 20px;
+  color: #6cb2eb;
+  vertical-align: middle;
+}
+
+.fullwidthcreate main .posta .messaggi .text {
+  padding: 2% 1.5% 0 5%;
+}
+
+.fullwidthcreate main .posta .messaggi p.textintero {
+  display: none;
+}
+
+.fullwidthcreate main .posta .messaggi p.textmeta:hover + p.textintero {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  border: 1px groove #ececec;
+  width: 35.3%;
+  padding: 2%;
+}
+
+.fullwidthcreate {
+  min-width: 100%;
+  min-height: calc(100vh - 70px - 60px);
 }
 

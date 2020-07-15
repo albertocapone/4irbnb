@@ -24,6 +24,7 @@ header{
       .fa-airbnb{
         font-size: 40px;
         color: #6cb2eb;
+        margin-left: -10%;
       }
     }
 
@@ -44,6 +45,10 @@ header{
 
       span{
         cursor: pointer;
+        a.dropdown:hover{
+          color:#3490dc;
+          text-decoration: underline;
+        }
         .dropcontent{
 
           display: none;

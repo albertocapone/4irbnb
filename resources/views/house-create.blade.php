@@ -53,7 +53,7 @@
                 <label for="sqm">M<sup>2</sup></label>
               </div>
               <div class="">
-                <input class="sqm" type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5">
+                <input class="sqm" type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5" required>
               </div>
 
 

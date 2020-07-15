@@ -1,19 +1,23 @@
 @extends('layouts.layout-base')
 
 @section('content')
-<div>
-    <h2>MESSAGGI</h2>
-    <h3>{{count($lastMonthMessages)}}</h3>
-</div>
-<div>
-    <h2>VIEWS</h2>
-    <h3>{{count($lastMonthViews)}}</h3>
-</div>
-<form>
-<input type="month" name="" data-house="{{$house->id}}" id="getStatsByDate">
-    <button>Search</button>
-</form>
 
+<div class="fullwidthcreate">
+  <main>
+    <div>
+        <h2>MESSAGGI</h2>
+        <h3>{{count($lastMonthMessages)}}</h3>
+    </div>
+    <div>
+        <h2>VIEWS</h2>
+        <h3>{{count($lastMonthViews)}}</h3>
+    </div>
+    <form>
+    <input type="month" name="" data-house="{{$house->id}}" id="getStatsByDate">
+        <button>Search</button>
+    </form>
+  </main>
+</div>
 <script>
     $('button').click(function(event){
         event.preventDefault();

@@ -46,7 +46,4 @@ $(document).ready(function(){
     $('div.dropcontent').fadeToggle();
   });
 
-
-
-
 });

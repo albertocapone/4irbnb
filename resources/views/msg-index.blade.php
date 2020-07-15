@@ -1,11 +1,33 @@
 @extends('layouts.layout-base')
 
 @section('content')
-<h2>MESSAGGI</h2>
-@foreach ($messages as $message)
-<div>
-    <h4>{{$message->email}}</h4>
-    <p>{{$message->text}}</p>
+
+<div class="fullwidthcreate">
+
+
+  <main>
+
+    <div class="posta">
+
+      <h5>MESSAGGI</h5>
+      @foreach ($messages as $message)
+      <div class='messaggi'>
+        <div class="email">
+          <h6> <i class="far fa-envelope"></i> {{$message->email}}</h6>
+        </div>
+        <div class="text">
+          <p class="textmeta"> <b>Info:</b> {!! Str::words($message->text, 8, '...')!!}
+          <p class="textintero"> {{$message->text}}</p></p>
+
+        </div>
+      </div>
+      @endforeach
+    </div>
+
+
+  </main>
+
 </div>
-@endforeach
+
+
 @endsection
