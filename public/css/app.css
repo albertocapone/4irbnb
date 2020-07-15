@@ -11229,8 +11229,9 @@ footer .right {
 
 .sidebarLayout .house-name {
   width: 100%;
-  height: 30%;
-  padding: 20px 20px 0px 20px;
+  height: 25%;
+  padding: 12px 20px 0px 20px;
+  border-bottom: 1px solid #ececec;
 }
 
 .sidebarLayout .description {
@@ -11405,7 +11406,7 @@ footer .right {
 
 .sidebarLayout .property-features .bottoni a {
   width: 100%;
-  height: calc(50% - 8px);
+  height: calc(33% - 8px);
   text-align: center;
   margin: 0px 4px;
   border-radius: 2px;
@@ -11427,7 +11428,7 @@ footer .right {
   background: #e3342f;
 }
 
-.sidebarLayout .property-features .bottoni .view-message {
+.sidebarLayout .property-features .bottoni .visibility {
   background: #38c172;
 }
 
@@ -11482,6 +11483,11 @@ footer .right {
 
 .sidebarLayout .title h6 {
   font-weight: bold;
+}
+
+.sidebarLayout .index-houses-preview-services {
+  font-size: 12px;
+  margin-right: 8px;
 }
 
 .fullwidth main {

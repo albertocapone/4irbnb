@@ -8,7 +8,7 @@
   <div class="features-container flex-container">
 
     <div class="img-container">
-      <img src="{{$house -> img_url}}" alt="">
+      <img src="{{$house -> house_img}}" alt="">
     </div>
 
       <div class="box title">
@@ -21,7 +21,27 @@
         <div class="services">
           <h5>Servizi:</h5>
            @foreach ($house -> services as $service)
-             <span>{{$service->name}}</span>
+             <span class="index-houses-preview-services">
+               {{$service->name}}
+               @if($service->name == 'Wifi')
+                   <i class="fas fa-wifi"></i>
+               @endif
+               @if($service->name == 'Parking')
+                   <i class="fas fa-parking"></i>
+               @endif
+               @if($service->name == 'Pool')
+                   <i class="fas fa-swimming-pool"></i>
+               @endif
+               @if($service->name == 'Concierge')
+                   <i class="fas fa-concierge-bell"></i>
+               @endif
+               @if($service->name == 'Sauna')
+                   <i class="fas fa-hot-tub"></i>
+               @endif
+               @if($service->name == 'Seaview')
+                   <i class="fas fa-water"></i>
+               @endif
+             </span>
            @endforeach
         </div>
       </div> {{-- box title --}}

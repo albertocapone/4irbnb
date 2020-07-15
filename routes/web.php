@@ -32,6 +32,8 @@ Route::get('/set-personal-visibility/{id}', 'HomeController@setVisibility'); //d
 Route::post('/update-personal/{id}', 'HomeController@update')->name('update-personal');
 Route::get('/delete-personal/{id}', 'HomeController@delete')->name('delete-personal');
 Route::post('/store-message/{house_id}','MessageController@store')->name('store-message');
-Route::get('/msg-index/{house_id}', 'MessageController@index')->name('msg-index');  //da schermare
-Route::get('/stats-index/{house_id}', 'StatsController@index')->name('stats-index'); //da schermare
+Route::get('/ad-payment/{house_id}', 'PaymentController@transaction')->name('ad-payment');
+Route::post('/checkout/{house_id}', 'PaymentController@checkout')->name('checkout');
 Route::get('/get-stats', 'StatsController@get');
+Route::get('/stats-index/{house_id}', 'StatsController@index')->name('stats-index'); //da schermare
+Route::get('/msg-index/{house_id}', 'MessageController@index')->name('msg-index');  //da schermare

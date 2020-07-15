@@ -158,7 +158,7 @@
           contentType: false,
           success: function(res) {
           console.log(res);
-          window.location.assign("http://localhost:8000");
+          window.location.assign("http://localhost:8000/home");
           },
           error: function(a, b, c){
             console.log(a, b, c)

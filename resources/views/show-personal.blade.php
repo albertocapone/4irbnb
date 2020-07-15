@@ -17,12 +17,13 @@
           </a>
         </div>
       </div>
-
-      <div class="box promuovi flex-container">
-        <div class="overlay flex-container">
-          <h3>Promuovi</h3>
-           {{-- comparsa tendina sotto pulsanti --}}
-        </div>
+      <div class="box promuovi flex-container {{$panelIsVisible}}">
+        <a href="{{route('ad-payment', $house->id)}}">
+          <div class="overlay flex-container">
+            <h3>Promuovi</h3>
+             {{-- comparsa tendina sotto pulsanti --}}
+          </div>
+        </a>
       </div>
 
       <div class="box statistiche flex-container">
@@ -36,7 +37,15 @@
       <div class="box bottoni flex-container">
         <a class="edit flex-container" href="{{route('edit-personal', $house->id)}}"> <h3>Modifica</h3> </a>
         <a class="delete flex-container" href="{{route('delete-personal', $house->id)}}"><h3>Elimina</h3></a>
-        <a data-house="{{$house->id}}" id="setVisibility">{{$visibilityState}}</a>
+        <a class="visibility flex-container" data-house="{{$house->id}}" id="setVisibility"
+          @if ($visibilityState == 'Mostra')
+            style="background:#38c172"
+          @elseif ($visibilityState == 'Nascondi')
+              style="background:#f6993f"
+          @endif
+          ><h3>
+          {{$visibilityState}}
+        </h3></a>
       </div>
 
   </div>

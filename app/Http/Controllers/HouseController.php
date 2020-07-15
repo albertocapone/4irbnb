@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Collection;
 use App\Service;
 use App\House;
 use App\View;
@@ -11,11 +12,11 @@ use Illuminate\Http\Request;
 class HouseController extends Controller
 {
   public function index(Request $request){
-    
+
     $roomsInputValue = 1;
     $bedsInputValue = 1;
     $servicesFilter = [];
-    
+
     //screma sempre per distanza
     $address = $request->address;
     $lat = $request->lat;
@@ -58,7 +59,18 @@ class HouseController extends Controller
          }
         }
       }
-        
+
+      $promoHouses = [];
+      $prova = [];
+      foreach ($houses as $house) {
+        $prova[] = $house->ads->where('ending_date','>',date('Y-m-d H:i:s'));
+        // if (count($house->ads->where('ending_date','>=',date('Y-m-d H:i:s')))) {
+        //   $promoHouses[] =$house;
+        // }
+
+      }
+      dd($prova);
+      // $promoHouses = $house->ads->where('ending_date','>=',date('Y-m-d H:i:s'))
         $houses = $houses->paginate(25)->appends([
           'rooms'=>request('rooms'),
           'beds' => request('beds'),
@@ -68,13 +80,13 @@ class HouseController extends Controller
           'address' => request('address'),
           'services' => request('services'),
           ]);
-          
+
     $servicesList = Service::all();
 
     return view('houses-index', compact('houses', 'servicesList', 'servicesFilter', 'address', 'lat', 'lng', 'roomsInputValue', 'bedsInputValue', 'radius'));
   }
 
-  public function show(Request $request, $id) 
+  public function show(Request $request, $id)
   {
 
     $clientIP = $request->ip();
@@ -82,9 +94,9 @@ class HouseController extends Controller
     $from = date('Y-m-d H:i:s', strtotime("-1 days"));
     // dd($from, $now);
     $DBviews = View::where('house_id','=', $id)
-                                              ->where('ip_address', '=', $clientIP)
-                                              ->whereBetween('created_at', [$from, $now])
-                                              ->get();
+                  ->where('ip_address', '=', $clientIP)
+                  ->whereBetween('created_at', [$from, $now])
+                  ->get();
     // dd($DBviews);
     if(!count($DBviews)){
       $view = new View;

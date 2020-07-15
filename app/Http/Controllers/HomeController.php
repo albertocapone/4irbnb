@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-  
+
   use UploadTrait;
 
   /**
@@ -51,7 +51,7 @@ class HomeController extends Controller
 
   public function store(Request $request)
   {
-    
+
     $validatedData = $request->validate([
       "title" => 'required|string',
       "description" => 'required|string',
@@ -113,7 +113,12 @@ class HomeController extends Controller
     $messages = $house->messages;
     $views = $house->views;
     $ads = Ad::all();
-    return view('show-personal', compact('messages', 'views', 'ads', 'house', 'visibilityState'));
+    $house_ads = $house->ads->where('ending_date','>=',date('Y-m-d H:i:s'));
+    $panelIsVisible = 'hidden';
+    if (count($house_ads)) {
+      $panelIsVisible = 'visible';
+    }
+    return view('show-personal', compact('messages', 'views', 'ads', 'house', 'visibilityState','panelIsVisible'));
   }
 
 
@@ -133,7 +138,7 @@ class HomeController extends Controller
 
 
   public function update(Request $request, $id)
-  { 
+  {
     $validatedData = $request->validate([
       "title" => 'required|string',
       "description" => 'required|string',
