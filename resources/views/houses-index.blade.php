@@ -66,7 +66,7 @@
       <div class="house-preview" data-rooms="{{$house->rooms}}" data-beds="{{$house->beds}}" data-lat="{{$house->lat}}" data-lng="{{$house->lng}}"
         data-services="@foreach($house->services as $service){{$service->id}};@endforeach">
         <div class="immagine">
-          <img src="{{$house -> img_url}}" alt="">
+          <img src="{{$house -> house_img}}" alt="">
         </div>
         <div class="title">
           <a href="{{route('show-house', $house->id)}}">

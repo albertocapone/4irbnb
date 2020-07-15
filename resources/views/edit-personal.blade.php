@@ -81,7 +81,7 @@
                     checked
                   @endif
               @endforeach>
-        
+
               @if($dbservice->name == 'Wifi')
                   <i class="fas fa-wifi"></i>
               @endif
@@ -152,7 +152,7 @@
           contentType: false,
           success: function(res) {
           console.log(res)
-          window.location.assign("http://localhost:8000");
+          window.location.assign("http://localhost:8000/home");
           },
           error: function(err){
             console.log(err)
