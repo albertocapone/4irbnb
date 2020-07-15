@@ -11096,13 +11096,19 @@ footer .right {
 .sidebarLayout main aside .side-container {
   width: 100%;
   height: 100%;
-  padding: 20px 15px;
+  padding: 20px 20px;
   border-right: 1px solid #ececec;
   font-family: "Montserrat", "Nunito", sans-serif;
 }
 
+.sidebarLayout main aside .side-container nav {
+  width: 100%;
+}
+
 .sidebarLayout main aside .side-container ul {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebarLayout main aside .side-container ul a {
@@ -11131,7 +11137,7 @@ footer .right {
 .sidebarLayout main section .main-container {
   width: 100%;
   padding: 20px;
-  padding-right: 140px;
+  padding-right: 150px;
   height: 100%;
 }
 
@@ -11152,13 +11158,13 @@ footer .right {
 .sidebarLayout .houses-preview-container {
   width: 100%;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .sidebarLayout .house-preview {
-  width: calc( 50% - 30px);
+  width: calc( 50% - 15px);
   height: 250px;
   margin-bottom: 30px;
-  margin-right: 30px;
   box-shadow: 0px 0px 3px 1px #0000002b;
   border-radius: 3px;
 }
@@ -11166,6 +11172,14 @@ footer .right {
 .sidebarLayout .house-preview .immagine {
   width: 100%;
   height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.sidebarLayout .house-preview .immagine img {
+  width: 100%;
 }
 
 .sidebarLayout .house-preview .title {
@@ -11178,6 +11192,7 @@ footer .right {
 .sidebarLayout .features-container {
   width: 100%;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .sidebarLayout .features-container .img-container {
@@ -11188,7 +11203,7 @@ footer .right {
   align-items: center;
   justify-content: space-around;
   overflow: hidden;
-  margin: 0px 20px 20px 0px;
+  margin: 0px 0px 20px 0px;
   border-radius: 3px;
 }
 
@@ -11200,7 +11215,6 @@ footer .right {
   width: calc( 50% - 20px);
   height: 250px;
   margin-bottom: 20px;
-  margin-right: 20px;
   box-shadow: 0px 0px 3px 1px #0000002b;
   border-radius: 3px;
   background: white;
@@ -11330,11 +11344,24 @@ footer .right {
   background: none;
 }
 
-.sidebarLayout .property-features .promuovi {
-  background: url(/images/promote.jpg?d278a4b1632c761d6e1502a558ca9ef2);
-  background-position: center;
+.sidebarLayout .property-features .messaggi {
+  background: url(/images/communication.png?286657b8458b38528abd7fd49c8d1546);
+  background-position: 20px;
   background-repeat: no-repeat;
-  background-size: cover;
+  -webkit-filter: grayscale(0.9);
+          filter: grayscale(0.9);
+  transition: all 0.5s linear;
+}
+
+.sidebarLayout .property-features .messaggi:hover {
+  -webkit-filter: grayscale(0.1);
+          filter: grayscale(0.1);
+}
+
+.sidebarLayout .property-features .promuovi {
+  background: url(/images/project.png?a079108ef963193066628046ef123b4f);
+  background-position: 20px;
+  background-repeat: no-repeat;
   -webkit-filter: grayscale(0.9);
           filter: grayscale(0.9);
   transition: all 0.5s linear;
@@ -11346,10 +11373,9 @@ footer .right {
 }
 
 .sidebarLayout .property-features .statistiche {
-  background: url(/images/stats.png?3475b3e330f017cf374f68164c6517f4);
-  background-position: center;
+  background: url(/images/infographic.png?e212010325aa917bc63d1c267888af83);
+  background-position: 20px;
   background-repeat: no-repeat;
-  background-size: cover;
   -webkit-filter: grayscale(0.9);
           filter: grayscale(0.9);
   transition: all 0.5s linear;
@@ -11361,19 +11387,21 @@ footer .right {
 }
 
 .sidebarLayout .property-features .bottoni {
+  background: none;
   padding: 0px;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: none;
   border-radius: none;
 }
 
 .sidebarLayout .property-features .bottoni a {
   width: 100%;
-  height: 33%;
+  height: calc(50% - 8px);
   text-align: center;
-  margin: 2px;
+  margin: 0px 4px;
   border-radius: 2px;
-  vertical-align: middle;
   align-items: center;
   justify-content: center;
   transition: all 0.3s linear;
@@ -11394,6 +11422,59 @@ footer .right {
 
 .sidebarLayout .property-features .bottoni .view-message {
   background: #38c172;
+}
+
+.sidebarLayout .sidebar-index-filters label {
+  display: block;
+  margin: 0px 2px 2px 0px;
+}
+
+.sidebarLayout .sidebar-index-filters input[type=number] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ececec;
+  margin-bottom: 10px;
+  -moz-appearance: textfield;
+}
+
+.sidebarLayout .sidebar-index-filters input[type=number]::-webkit-inner-spin-button,
+.sidebarLayout .sidebar-index-filters input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.sidebarLayout .sidebar-index-filters input[type=checkbox] {
+  outline: 1px solid #c4c4c4;
+}
+
+.sidebarLayout .sidebar-index-filters .bottoni {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.sidebarLayout .sidebar-index-filters .bottoni button {
+  width: calc(50% - 5px);
+  margin-top: 20px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px #00000057;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s linear;
+  background: none;
+  border: none;
+}
+
+.sidebarLayout .sidebar-index-filters .bottoni button:hover {
+  background: #6cb2eb;
+}
+
+.sidebarLayout .page-index-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebarLayout .title h6 {
+  font-weight: bold;
 }
 
 .fullwidth main {

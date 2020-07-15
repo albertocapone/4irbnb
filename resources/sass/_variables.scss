@@ -20,9 +20,10 @@ $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
 $borders: #ececec;
+$logo: #2aace1;
 
 // grandezze
-$margin-right: 140px;
+$margin-right: 150px;
 
 // mixins [martina]
 @mixin full-witdh-and-padding {
@@ -56,9 +57,9 @@ $margin-right: 140px;
 }
 
 @mixin show-personal-boxes {
-    background-position: center;
+    background-position: 20px;
     background-repeat: no-repeat;
-    background-size: cover;
+    // background-size: cover;
     filter: grayscale(0.9);
     transition: all 0.5s linear;
 
