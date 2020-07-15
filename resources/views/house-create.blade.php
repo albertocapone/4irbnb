@@ -9,74 +9,84 @@
       <form class="flex" id="houseCreation" enctype="multipart/form-data" data-parsley-validate>
         @csrf
 
-      <div class="right">
-        <div class="">
-            <label for="title">Titolo</label>
-        </div>
-        <div>
-            <input class="title" type="text" name="title" value="" data-parsley-trigger="focusout" required autofocus>
-        </div>
-        <div class="">
-          <label for="description">Descrizione</label>
-        </div>
-        <div>
-          <textarea class="description" type="text" name="description" value="" data-parsley-trigger="focusout" required></textarea>
-        </div>
+                <h5>Crea il tuo appartamento</h5>
 
-        <div class="">
-          <label for="rooms">Stanze</label>
-        </div>
-        <div class="">
-          <input type="number" name="rooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
-        </div>
-        <div class="">
-          <label for="beds">Letti</label>
-        </div>
-        <div class="">
-          <input type="number" name="beds" value="" data-parsley-trigger="focusout" required min="1" max="20">
-        </div>
-        <div class="">
-          <label for="bathrooms">Bagni</label>
-        </div>
-        <div class="">
-          <input type="number" name="bathrooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
-        </div>
-        <div class="">
-          <label for="sqm">M<sup>2</sup></label>
-        </div>
-        <div class="">
-          <input class="sqm" type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5">
-        </div>
+        <div class="padding">
+          
 
-      </div>
+          <div class="label">
+              <label for="title">Titolo</label>
+          </div>
+          <div>
+              <input class="title" type="text" name="title" value="" data-parsley-trigger="focusout" required autofocus>
+          </div>
+          <div class="label">
+            <label for="description">Descrizione</label>
+          </div>
+          <div>
+            <textarea class="description" type="text" name="description" value="" data-parsley-trigger="focusout" required></textarea>
+          </div>
+
+            <div class="numbers">
+              <div class="">
+                <label for="rooms">Stanze</label>
+
+                <input type="number" name="rooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
+              </div>
+
+              <div class="">
+                <label for="beds">Letti</label>
+
+                <input type="number" name="beds" value="" data-parsley-trigger="focusout" required min="1" max="20">
+              </div>
+
+              <div class="bagno">
+                <label for="bathrooms">Bagni</label>
+
+                <input type="number" name="bathrooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
+              </div>
+            </div>
 
 
-      <div class="left">
-        <div class="">
-          <label for="address">Indirizzo</label>
-        </div>
-        <div class="">
-          <input type="search" id="address-input" value="" data-parsley-trigger="focusout" required class="hide-clear"/>
-        </div>
-        <div class="">
-          <label for="house_img">Immagine</label>
-        </div>
-        <div class="img">
-          <input type="file" name="house_img" id="house_img" value="" data-parsley-trigger="focusout" required>
-        </div>
 
-        <div class="wrap">
-          <label for="services[]">Servizi</label><br>
-          @foreach ($services as $service)
-            <input type="checkbox" name="services[]" value="{{$service->id}}"
-            @if($service->id == 1)
-              required
-            @endif
-            >
-            {{$service->name}}
-          @endforeach
+              <div class="divsmq">
+                <label for="sqm">M<sup>2</sup></label>
+              </div>
+              <div class="">
+                <input class="sqm" type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5">
+              </div>
+
+
+
+
+
+
+
+          <div class="label">
+            <label for="address">Indirizzo</label>
+          </div>
+          <div class="">
+            <input type="search" id="address-input" value="" data-parsley-trigger="focusout" required class="hide-clear" style='width: 600px;'/>
+          </div>
+          <div class="label">
+            <label for="house_img">Immagine</label>
+          </div>
+          <div class="img">
+            <input type="file" name="house_img" id="house_img" value="" data-parsley-trigger="focusout" required>
+          </div>
+
+          <div class="wrap">
+            <label for="services[]">Servizi</label><br>
+            @foreach ($services as $service)
+              <input type="checkbox" name="services[]" value="{{$service->id}}"
+              @if($service->id == 1)
+                required
+              @endif
+              >
+              {{$service->name}}
+            @endforeach
+          </div>
         </div>
-      </div>
 
 
       <input class="button" id='bottone' type="submit" name="" value="Crea Appartamento">

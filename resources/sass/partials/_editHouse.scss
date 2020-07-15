@@ -1,5 +1,4 @@
 
-
 .fullwidthcreate{
   main{
 
@@ -7,70 +6,106 @@
     min-height: calc(100vh - 70px - 60px);
 
     #houseEdit{
-      padding: 2% 12% 0 12%;
+      margin: 5% 17%;
+      width:65%;
+      background-color: #fff;
 
       display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
 
 
-    label{
-      margin: 3.5% 0 -1% 0;
-    }
 
-    .right{
-      height: 70%;
-      width: 50%;
+      border: 1px solid #ececec;
+      box-shadow: 0px 0px 30px  #ececec;
 
+      h5{
+        padding: 4% 22% 2% 20%;
+        margin-left: 17%;
+        border-bottom: 1px groove #C0C0C0;
+      }
+
+      .padding{
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2% 0 2% 20%;
+
+
+
+
+      label{
+        margin: 4% 0 -1% 0;
+      }
+
+      input, textarea{
+        border:1px solid #CCC;
+      }
+
+      .label{
+        padding-top: 4%;
+      }
+
+      .title,
+      .description{
+        padding-left: 2%;
+        width: 500px;
+      }
       .title{
-        width: 300px;
         height: 40px;
       }
       .description{
-        width: 400px;
         height: 100px;
       }
+
+      .numbers{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        padding-top: 4%;
+
+        width: 60%;
+
+        input{
+          width: 70px;
+          height: 40px;
+
+        }
+      }
+
+      .divsmq{
+        padding-top: 4%;
+
+      }
+
       .sqm{
-        width: 65px;
+        height: 40px;
       }
-    }
 
-    .left{
-      height: 70%;
-      width: 50%;
-      margin-bottom: 23%;
-
-      #adress-input{
-        width: 570px;
-        border: 1px solid grey;
-      }
 
       input.hide-clear[type="search"]::-webkit-search-cancel-button{
         display: none;
       }
 
-      .img{
-        margin-top: 4%;
-      }
-
       .wrap{
+        width:100%;
         margin-top: 5%;
         flex-direction: row;
         label{
-          margin-bottom: 1.5%;
+        padding-bottom: 1.5%;
           input{
-            margin-left: 3%;
+            padding-left: 3%;
           }
         }
       }
-
-
     }
 
     .button{
-      margin: 4% 0 2% 0;
-      padding: 1% 2%;
+      margin: 4% 0 6% 40%;
+      padding: 2% 3%;
       border-radius: 5px;
       border: 1px solid #ececec;
       background-color: #ffff;
