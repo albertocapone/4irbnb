@@ -115,11 +115,18 @@ class HomeController extends Controller
     $ads = Ad::all();
     $house_ads = $house->ads()->whereDate('ending_date','>',date('Y-m-d H:i:s'))->get();
     // dd($house_ads);
+    $endingDate = null;
+    foreach($house_ads as $ad){
+      // dd($ad->pivot);
+     $endingDate = $ad->pivot->ending_date;
+    }
+
+    // dd($endingDate);
     $panelIsVisible = 'promo-off';
     if (count($house_ads)) {
       $panelIsVisible = 'promo-on';
     }
-    return view('show-personal', compact('messages', 'views', 'ads', 'house', 'visibilityState','panelIsVisible'));
+    return view('show-personal', compact('messages', 'views', 'ads', 'house', 'visibilityState','panelIsVisible', 'endingDate'));
   }
 
 

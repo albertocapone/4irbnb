@@ -25,7 +25,9 @@ class House extends Model
 
     public function ads()
     {
-        return $this->belongsToMany(Ad::class);
+        return $this->belongsToMany(Ad::class)
+                            ->withPivot('ending_date', 'transaction_code')
+                            ->withTimestamps();
     }
 
     public function views() {

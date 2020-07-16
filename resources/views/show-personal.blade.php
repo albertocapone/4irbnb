@@ -21,6 +21,9 @@
         <a href="{{route('ad-payment', $house->id)}}">
           <div class="overlay flex-container">
             <h3>Promuovi</h3>
+            @if ($endingDate !== null)
+                <h4>Promo attiva fino ad {{$endingDate}} </h4>
+            @endif
              {{-- comparsa tendina sotto pulsanti --}}
           </div>
         </a>
