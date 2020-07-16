@@ -77,7 +77,7 @@ class PaymentController extends Controller
         $house->ads()->attach($ad_id,['transaction_code'=>$transaction->id,'ending_date'=>$ending_date]);
 
 
-        return view('welcome')->withSuccess('IT WORKS!'. $transaction->id);
+        return redirect()->route('show-personal',$house_id);
       } else {
         $errorString = "";
 

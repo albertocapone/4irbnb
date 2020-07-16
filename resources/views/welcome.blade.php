@@ -10,10 +10,6 @@
         <div class="blulogo">
           <h1>AirBnBool</h1>
         </div>
-
-        @if (!empty($success))
-            <div class="success">{{$success}}</div>
-        @endif
         
         <form id="houseCreation" >
           @csrf
