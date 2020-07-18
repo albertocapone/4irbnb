@@ -58,10 +58,14 @@
 }
 
 .title{
-
-  h6{
-    font-weight: bold;
+  .name-and-owner{
+    align-items: baseline;
+    h6{
+      font-weight: bold;
+      padding: 0px 4px;
+    }
   }
+
 }
 
 .index-houses-preview-services{

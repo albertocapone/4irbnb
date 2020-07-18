@@ -7,8 +7,10 @@
 @section('main-content')
 
     @if (count($houses) == 0)
-      <div class="prova">
-        <p>non ci sono case</p> {{-- <?php // TODO:  ?> --}}
+      <div class="empy flex-container">
+        <p>Non hai ancora aggiunto nessuna proprietà.</p>
+        <p>Crea il tuo appartamento e diventa subito host</p>
+        <a href="{{route('house-create')}}">Diventa Host</a>
       </div>
     @else
       <div class="houses-preview-container flex-container">

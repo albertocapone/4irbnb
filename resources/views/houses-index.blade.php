@@ -61,10 +61,10 @@
   <h4 class="page-index-title">
     Ecco le proprietà presso {{$address}}
   </h4>
-  
+
   @if(count($promoHouses))                         {{-- inizio case sponsorizzate  --}}
-  <h5>Le nostre sponsorizzazioni</h5> 
-  <div class="houses-preview-container flex-container sponsorizzate">   
+  <h5>Le nostre sponsorizzazioni</h5>
+  <div class="houses-preview-container flex-container sponsorizzate">
     @foreach ($promoHouses as $promoHouse)
       <div class="house-preview" data-rooms="{{$promoHouse->rooms}}" data-beds="{{$promoHouse->beds}}" data-lat="{{$promoHouse->lat}}" data-lng="{{$promoHouse->lng}}"
         data-services="@foreach($promoHouse->services as $service){{$service->id}};@endforeach">
@@ -102,7 +102,7 @@
       </div>
     @endforeach
   </div>
-  <br><br><br><br><br> 
+  <br><br><br><br><br>
   @endif {{-- fine case sponsorizzate  --}}
 
   <div class="houses-preview-container flex-container">
@@ -114,7 +114,13 @@
         </div>
         <div class="title">
           <a href="{{route('show-house', $house->id)}}">
-            <h6>{{$house -> title}}</h6>
+            <div class="name-and-owner flex-container">
+              <p>House: </p>
+              <h6>{{$house -> title}}</h6>
+              <p> - Owner: </p>
+              <p>{{$house -> users_id}}</p>
+            </div>
+
           </a>
           @foreach ($house -> services as $service)
             <span class="index-houses-preview-services">

@@ -11168,6 +11168,29 @@ footer .right {
   color: #3490dc;
 }
 
+.sidebarLayout .empy {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sidebarLayout .empy a {
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px #00000057;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s linear;
+}
+
+.sidebarLayout .empy a:hover {
+  background: #6cb2eb;
+}
+
 .sidebarLayout .houses-preview-container {
   width: 100%;
   flex-wrap: wrap;
@@ -11560,8 +11583,13 @@ footer .right {
   margin-bottom: 30px;
 }
 
-.sidebarLayout .title h6 {
+.sidebarLayout .title .name-and-owner {
+  align-items: baseline;
+}
+
+.sidebarLayout .title .name-and-owner h6 {
   font-weight: bold;
+  padding: 0px 4px;
 }
 
 .sidebarLayout .index-houses-preview-services {
