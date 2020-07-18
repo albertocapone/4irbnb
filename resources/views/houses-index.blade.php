@@ -120,31 +120,32 @@
               <p> - Owner: </p>
               <p>{{$house -> users_id}}</p>
             </div>
-
           </a>
-          @foreach ($house -> services as $service)
-            <span class="index-houses-preview-services">
-              {{$service -> name}}
-              @if($service->name == 'Wifi')
-                  <i class="fas fa-wifi"></i>
-              @endif
-              @if($service->name == 'Parking')
-                  <i class="fas fa-parking"></i>
-              @endif
-              @if($service->name == 'Pool')
-                  <i class="fas fa-swimming-pool"></i>
-              @endif
-              @if($service->name == 'Concierge')
-                  <i class="fas fa-concierge-bell"></i>
-              @endif
-              @if($service->name == 'Sauna')
-                  <i class="fas fa-hot-tub"></i>
-              @endif
-              @if($service->name == 'Seaview')
-                  <i class="fas fa-water"></i>
-              @endif
-            </span>
-          @endforeach
+          <div class="services-container flex-container">
+            @foreach ($house -> services as $service)
+              <span class="index-houses-preview-services">
+                {{$service -> name}}
+                @if($service->name == 'Wifi')
+                    <i class="fas fa-wifi"></i>
+                @endif
+                @if($service->name == 'Parking')
+                    <i class="fas fa-parking"></i>
+                @endif
+                @if($service->name == 'Pool')
+                    <i class="fas fa-swimming-pool"></i>
+                @endif
+                @if($service->name == 'Concierge')
+                    <i class="fas fa-concierge-bell"></i>
+                @endif
+                @if($service->name == 'Sauna')
+                    <i class="fas fa-hot-tub"></i>
+                @endif
+                @if($service->name == 'Seaview')
+                    <i class="fas fa-water"></i>
+                @endif
+              </span>
+            @endforeach
+          </div>
         </div>
       </div>
     @endforeach
