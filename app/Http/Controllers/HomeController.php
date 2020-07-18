@@ -207,7 +207,7 @@ class HomeController extends Controller
     $house = House::findOrFail($id);
     $house['visibility'] = ($house['visibility'] == 0) ? 1 : 0;
     $house->save();
-    $visibilityState = ($house['visibility'] == 0) ? "Mostra" : "Nascondi";
+    $visibilityState = ($house['visibility'] == 0) ? "<h3>Mostra</h3>" : "<h3>Nascondi</h3>";
     return $visibilityState;
   }
 }

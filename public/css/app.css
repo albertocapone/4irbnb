@@ -11087,8 +11087,6 @@ footer .right {
 
 .sidebarLayout {
   font-family: "Montserrat", "Nunito", sans-serif;
-  /* ---- CAROUSEL ---- */
-  /* regole generali blocco slider */
 }
 
 .sidebarLayout .flex-container {
@@ -11180,6 +11178,7 @@ footer .right {
   width: calc( 50% - 15px);
   height: 250px;
   margin-bottom: 30px;
+  position: relative;
   box-shadow: 0px 0px 3px 1px #0000002b;
   border-radius: 3px;
 }
@@ -11202,6 +11201,46 @@ footer .right {
   background: white;
   width: 100%;
   height: 30%;
+}
+
+.sidebarLayout .visible .overlay {
+  display: none;
+}
+
+.sidebarLayout .visible .visibility-tag {
+  display: none;
+}
+
+.sidebarLayout .hidden {
+  position: relative;
+}
+
+.sidebarLayout .hidden .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ffffffb8;
+  width: 100%;
+  height: 70%;
+  display: block;
+}
+
+.sidebarLayout .hidden .visibility-tag {
+  position: absolute;
+  top: 0;
+  left: 78%;
+  transform: rotate(10deg);
+  padding: 10px;
+  background: #ececec;
+  color: #f6993f;
+  font-weight: bold;
+  border-radius: 3px;
+  display: block;
+}
+
+.sidebarLayout .hidden .visibility-tag h5 {
+  margin: 0;
+  font-weight: bold;
 }
 
 .sidebarLayout .features-container {
@@ -11328,10 +11367,33 @@ footer .right {
   background: #6cb2eb;
 }
 
-.sidebarLayout .property-features .property-title {
-  text-align: center;
+.sidebarLayout .property-features .title-container {
   width: 100%;
+  justify-content: center;
+}
+
+.sidebarLayout .property-features .property-title {
+  display: table-cell;
   margin-bottom: 20px;
+  position: relative;
+}
+
+.sidebarLayout .property-features .visibility-tag {
+  position: absolute;
+  top: 0;
+  left: 110%;
+  transform: rotate(10deg);
+  padding: 10px;
+  background: #ececec;
+  color: #f6993f;
+  font-weight: bold;
+  border-radius: 3px;
+  display: none;
+}
+
+.sidebarLayout .property-features .visibility-tag h5 {
+  margin: 0;
+  font-weight: bold;
 }
 
 .sidebarLayout .property-features .box {
@@ -11349,7 +11411,7 @@ footer .right {
   position: absolute;
   top: 0;
   left: 0;
-  background: #ffffffb3;
+  background: #ffffffb8;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -11426,6 +11488,11 @@ footer .right {
 
 .sidebarLayout .property-features .bottoni a:hover {
   opacity: 0.8;
+  color: #ececec;
+}
+
+.sidebarLayout .property-features .bottoni a h3 {
+  margin: 0;
 }
 
 .sidebarLayout .property-features .bottoni .edit {
@@ -11436,7 +11503,11 @@ footer .right {
   background: #e3342f;
 }
 
-.sidebarLayout .property-features .bottoni .visibility {
+.sidebarLayout .property-features .bottoni .visible {
+  background: #f6993f;
+}
+
+.sidebarLayout .property-features .bottoni .hidden {
   background: #38c172;
 }
 

@@ -1,9 +1,35 @@
 .property-features{
-  .property-title{
-    text-align: center;
+
+  .title-container{
     width: 100%;
-    margin-bottom: 20px;
+    justify-content: center;
   }
+
+  .property-title{
+    display:table-cell;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .visibility-tag{
+    position: absolute;
+    top: 0;
+    left: 110%;
+    transform: rotate(10deg);
+    padding: 10px;
+    background: $borders;
+    // border: 1px solid $orange;
+    color: $orange;
+    font-weight: bold;
+    border-radius: 3px;
+    display: none;
+
+    h5{
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+
 
   .box{
     padding: 20px;
@@ -19,7 +45,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: #ffffffb3;
+      background: #ffffffb8;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
@@ -70,6 +96,11 @@
 
       &:hover{
         opacity: 0.8;
+        color: $borders;
+      }
+
+      h3{
+        margin: 0;
       }
     }
 
@@ -81,8 +112,12 @@
       background: $red;
     }
 
-    .visibility{
-      background: $green;
+    .visible{
+      background:$orange;
+    }
+
+    .hidden{
+      background:$green;
     }
   }
 

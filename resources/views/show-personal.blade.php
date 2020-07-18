@@ -2,13 +2,19 @@
 @extends('layouts.layout-sidebar')
 
 @section('sidebar')
-  {{-- @include('components.sidebar-show') --}}
+  @include('components.sidebar-home')
 @endsection
 
 @section('main-content')
   <div class="features-container flex-container property-features">
 
-    <h1 class="property-title">{{$house->title}}</h1>
+    <div class="title-container flex-container">
+      <h1 class="property-title">{{$house->title}}
+        <div class="visibility-tag" data-visibility="{{($house->visibility == 0) ? 'hidden' : 'visible'}}">
+          <h5>Nascosto</h5>
+        </div>
+      </h1>
+    </div>
 
       <div class="box messaggi flex-container">
         <div class="overlay flex-container">
@@ -39,45 +45,49 @@
 
       <div class="box bottoni flex-container">
         <a class="edit flex-container" href="{{route('edit-personal', $house->id)}}"> <h3>Modifica</h3> </a>
+        <a id="setVisibility" class="flex-container" data-house="{{$house->id}}" data-visibility="{{($house->visibility == 0) ? 'hidden' : 'visible'}}" ><h3>{{$visibilityState}}</h3></a>
         <a class="delete flex-container" href="{{route('delete-personal', $house->id)}}"><h3>Elimina</h3></a>
-        <a class="visibility flex-container" data-house="{{$house->id}}" id="setVisibility"
-          @if ($visibilityState == 'Mostra')
-            style="background:#38c172"
-          @elseif ($visibilityState == 'Nascondi')
-              style="background:#f6993f"
-          @endif
-          ><h3>
-          {{$visibilityState}}
-        </h3></a>
       </div>
 
   </div>
   <script>
+    function checkVisibilityState(){
+      var state = $('#setVisibility').data('visibility');
+      console.log(state);
+      if (state == 'hidden') {
+        $('#setVisibility').addClass('hidden');
+        $('.visibility-tag').show();
+      } else if (state == 'visible') {
+        $('#setVisibility').addClass('visible');
+        $('.visibility-tag').hide();
+      };
+    };
+
+    checkVisibilityState();
+
+
+
     $('#setVisibility').click(function(){
       var visibilityButton = $('#visibilityButton');
       $.get('/set-personal-visibility/' + $('#setVisibility').data('house'), function(visibilityState){
         $('#setVisibility').html(visibilityState);
       });
     });
+
+
+    $('#setVisibility').click(function(){
+      var state = $('#setVisibility').hasClass('hidden');
+      if (state) {
+        $('#setVisibility').removeClass('hidden');
+        $('#setVisibility').addClass('visible');
+        $('.visibility-tag').fadeOut();
+      } else{
+        $('#setVisibility').removeClass('visible');
+        $('#setVisibility').addClass('hidden');
+        $('.visibility-tag').fadeIn();
+      }
+    });
+
   </script>
 
 @endsection
-
-
-
-
-
-
-
-{{-- @extends('layouts.layout-base')
-
-
-    <div class="sponsor">
-
-      @foreach ($ads as $ad)
-        <p>{{$ad->price/100}}&euro; per la sponsorizzazione {{$ad->name}} della durata di {{$ad->duration}}</p>
-      @endforeach
-      <button type="submit" name="button">SPONSORIZZAMELO</button>
-    </div>
-  </div>
-@endsection --}}

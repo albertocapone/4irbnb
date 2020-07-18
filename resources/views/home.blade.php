@@ -13,7 +13,13 @@
     @else
       <div class="houses-preview-container flex-container">
         @foreach ($houses as $house)
-          <div class="{{($house->visibility == 0) ? "hidden" : "visible"}} house-preview">
+          <div class="house-preview {{($house->visibility == 0) ? 'hidden' : 'visible'}} ">
+            <div class="overlay"></div>{{-- / overlay --}}
+            {{-- visibility tag --}}
+            <div class="visibility-tag">
+              <h5>Nascosto</h5>
+            </div>
+            {{-- / visibility tag --}}
             <div class="immagine">
               <img src="{{$house -> house_img}}" alt="">
             </div>
@@ -25,26 +31,27 @@
                 <span class="index-houses-preview-services">
                   {{$service->name}}
                   @if($service->name == 'Wifi')
-                      <i class="fas fa-wifi"></i>
+                    <i class="fas fa-wifi"></i>
                   @endif
                   @if($service->name == 'Parking')
-                      <i class="fas fa-parking"></i>
+                    <i class="fas fa-parking"></i>
                   @endif
                   @if($service->name == 'Pool')
-                      <i class="fas fa-swimming-pool"></i>
+                    <i class="fas fa-swimming-pool"></i>
                   @endif
                   @if($service->name == 'Concierge')
-                      <i class="fas fa-concierge-bell"></i>
+                    <i class="fas fa-concierge-bell"></i>
                   @endif
                   @if($service->name == 'Sauna')
-                      <i class="fas fa-hot-tub"></i>
+                    <i class="fas fa-hot-tub"></i>
                   @endif
                   @if($service->name == 'Seaview')
-                      <i class="fas fa-water"></i>
+                    <i class="fas fa-water"></i>
                   @endif
                 </span>
               @endforeach
             </div>
+
           </div>
         @endforeach
       </div>
