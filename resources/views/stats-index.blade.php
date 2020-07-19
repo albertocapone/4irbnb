@@ -8,7 +8,9 @@
       <div id="messages">
           <h5>MESSAGGI</h5>
           <h6>Totali: <b>{{$allMessages}}</b></h6>
-          <canvas id="messagesPerMonth" ></canvas>
+          <div class="chart">
+            <canvas id="messagesPerMonth" ></canvas>
+          </div>
           <form>
             <input type="number" id="getStatsByDate" data-house="{{$house->id}}" min="1900" max="2099" step="1" value="2020" />
             <button class="button">CERCA</button>
@@ -17,7 +19,9 @@
       <div id="views">
           <h5>VISUALIZZAZIONI</h5>
           <h6>Totali: <b>{{$allViews}}</b></h6>
-          <canvas id="viewsPerMonth" ></canvas>
+          <div class="chart">
+            <canvas id="viewsPerMonth" ></canvas>
+          </div>
           <form>
             <input type="number" id="getStatsByDate" data-house="{{$house->id}}" min="1900" max="2099" step="1" value="2020" />
             <button class="button">CERCA</button>

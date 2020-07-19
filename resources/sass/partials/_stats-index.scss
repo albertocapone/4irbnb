@@ -23,9 +23,10 @@
           border-bottom: 1px solid #C0C0C0;
           margin-bottom: 3%;
         }
-        canvas{
-          width:500px;
+        .chart{
+          width:450px;
         }
+
         form{
         width: 100%;
         margin: 4% 0 0 3%;
@@ -67,8 +68,54 @@
           margin: 5% 0 5% 18%;
           width: 60%;
         }
-        canvas{
-          width:400px;
+        .chart{
+          width:500px;
+          canvas{
+            margin-left: 10%;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 900px){
+  .fullwidthstats{
+    main{
+      .canvas{
+
+        #messages,
+        #views{
+          margin-left: 2%;
+          width: 80%;
+        }
+        .chart{
+          canvas{
+            margin-left: 10%;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media all and (max-width: 768px){
+  .fullwidthstats{
+    main{
+      .canvas{
+
+        #messages,
+        #views{
+          margin-left: 2%;
+          width: 84%;
+        }
+        .chart{
+          width: 400px;
+          canvas{
+            margin-left: 6%;
+          }
         }
       }
     }
@@ -79,15 +126,37 @@
   .fullwidthstats{
     main{
       .canvas{
-        flex-direction: column;
-
         #messages,
         #views{
-          margin: 5% 0 5% 5%;
-          width: 90%;
+          margin:0;
+          width: 100%;
         }
-        canvas{
-          width:400px;
+        .chart{
+          width: 300px;
+          canvas{
+            margin-left: 2%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 468px){
+  .fullwidthstats{
+    main{
+      .canvas{
+        // #messages,
+        // #views{
+        //   margin:0;
+        //   width: 100%;
+        // }
+        .chart{
+          width: 200px;
+          canvas{
+            width:200px;
+            margin-left: 0;
+          }
         }
       }
     }
