@@ -45,12 +45,34 @@
 
     .button{
 
-      margin: 6% 0 3% 0;
-      margin-left: calc(70% / 2);
-      @include button;
+      margin: 6% 0 3% 38%;
+      @include button-full;
 
     }
 
+  }
+}
+
+
+@media all and (max-width: 1200px){
+  .fullwidthads {
+    main{
+      .button{
+          margin-left: 33%;
+      }
+
+    }
+  }
+}
+
+@media all and (max-width: 900px){
+  .fullwidthads {
+    main{
+      .button{
+          margin-left: 31%;
+      }
+
+    }
   }
 }
 
@@ -58,7 +80,7 @@
   .fullwidthads {
     main{
       .button{
-          margin-left: calc(60% / 2);
+          margin-left: 28%;
       }
 
     }
@@ -80,7 +102,7 @@
   .fullwidthads {
     main{
       .button{
-          margin-left: calc(28% / 2);
+          margin-left: 10%;
       }
 
     }

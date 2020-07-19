@@ -21,7 +21,7 @@
         padding: 2%;
 
         h5{
-          border-bottom: 1px groove #C0C0C0;
+          border-bottom: 1px solid #C0C0C0;
           margin-bottom: 3%;
         }
         canvas{
@@ -35,14 +35,27 @@
             border: 1px solid #ececec;
           }
           .button{
-            @include button;
+            border-radius: 5px;
+            padding: 1% 4%;
+            border: 1px solid #ececec;
+            background-color: #ffff;
+            color: #212529;
+            transition: all 0.3s linear;
+            &:hover{
+              background-color: #3490dc;
+              color: #ffff;
+            }
           }
         }
       }
     }
   }
-
 }
+
+
+
+
+
 
 @media all and (max-width: 1200px){
   .fullwidthstats{

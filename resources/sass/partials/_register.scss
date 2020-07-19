@@ -32,7 +32,7 @@
       input{
         width: calc( 100% / 2);
         margin-right: 2%;
-        padding: 1.5%;
+        padding: 3%;
       }
       label{
         margin-right: -4%;
@@ -61,8 +61,9 @@
     }
 
     button{
-      margin: 3% 0 2% 40%;
-      @include button;
+      margin: 3% 0 2% 8%;
+      @include button-full;
+      padding: 1% 4%;
     }
 
 
@@ -80,6 +81,10 @@
 
 }
 
+
+
+
+
 @media all and (max-width: 1200px){
   .fullwidth{
     main{
@@ -92,11 +97,9 @@
       }
     }
   }
-
-
 }
 
-@media all and (max-width: 992px){
+@media all and (max-width: 900px){
   .fullwidth{
     main{
       .register{
@@ -133,9 +136,6 @@
         input {
            width: 300px;
         }
-        button{
-          margin: 3% 0 2% 33%;
-        }
       }
     }
   }
@@ -146,6 +146,7 @@
     main{
       .register{
         width: 100%;
+        border-radius: 0;
         margin-left: 0;
         input {
            width: 300px;
@@ -159,15 +160,13 @@
   .fullwidth{
     main{
       .register{
+        border-radius: 0;
         .name,
         .lastname{
-          input: 70px;
+          input: 50px;
         }
         input {
-           width: 180px;
-        }
-        button{
-        margin-left: 33%;
+           width: 250px;
         }
       }
     }

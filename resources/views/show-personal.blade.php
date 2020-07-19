@@ -23,17 +23,28 @@
           </a>
         </div>
       </div>
-      <div class="box promuovi flex-container {{$panelIsVisible}}">
-        <a href="{{route('ad-payment', $house->id)}}">
-          <div class="overlay flex-container">
-            <h3>Promuovi</h3>
-            @if ($endingDate !== null)
-                <h4>Promo attiva fino ad {{$endingDate}} </h4>
-            @endif
-             {{-- comparsa tendina sotto pulsanti --}}
-          </div>
-        </a>
-      </div>
+      @if ($endingDate !== null)
+        <div class="box promuovi-on flex-container {{$panelIsVisible}}">
+          <a href="{{route('ad-payment', $house->id)}}">
+            <div class="overlay flex-container">
+              <h3 id="fonton">Promuovi</h3>
+                <div class="promo-tag">
+                  <h5>Promo attiva fino al {{$endingDate}} </h5>
+                </div>
+              {{-- comparsa tendina sotto pulsanti --}}
+            </div>
+          </a>
+        </div>
+      @else
+        <div class="box promuovi flex-container {{$panelIsVisible}}">
+          <a href="{{route('ad-payment', $house->id)}}">
+            <div class="overlay flex-container">
+              <h3>Promuovi</h3>
+              {{-- comparsa tendina sotto pulsanti --}}
+            </div>
+          </a>
+        </div>
+      @endif
 
       <div class="box statistiche flex-container">
         <div class="overlay flex-container">

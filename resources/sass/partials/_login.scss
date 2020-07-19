@@ -34,6 +34,7 @@
 
 
       .form-check{
+        margin-left: 0.5%;
         input[type='checkbox']{
             margin-top: 3.7%;
         }
@@ -46,9 +47,18 @@
       strong{
         margin-left: 8%;
       }
+
+      button{
+        @include button-full;
+        padding: 1% 4%;
+      }
     }
   }
 }
+
+
+
+
 
 @media all and (max-width: 1200px){
   .fullwidth{

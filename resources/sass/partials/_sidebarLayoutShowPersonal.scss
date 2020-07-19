@@ -30,7 +30,6 @@
     }
   }
 
-
   .box{
     padding: 20px;
     flex-direction: column;
@@ -121,6 +120,30 @@
     }
   }
 
+  // PROMO ON -----------------------------------------------
+  .promuovi-on{
+    background: url('assets/images/projectB&W.png');
+    background-color: #C0C0C0;
+    @include show-personal-boxes;
+    #fonton{
+      color: #000;
+    }
+  }
 
+  .promo-tag{
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    transform: rotate(11deg);
+    padding: 10px;
+    background: $borders;
+    color: $red;
+    font-weight: bold;
+    border-radius: 3px;
 
+    h5{
+      margin: 0;
+      font-weight: bold;
+    }
+  }
 }

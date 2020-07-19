@@ -96,7 +96,7 @@ $margin-right: 150px;
   min-height: calc(100vh - 70px - 60px);
 }
 
-@mixin button{
+@mixin button-full{
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #ececec;
