@@ -88,6 +88,7 @@ class HouseController extends Controller
 
   public function show(Request $request, $id)
   {
+    $comesFromIndex = (strpos(url()->previous(), 'houses-index')) > 0;
 
     $clientIP = $request->ip();
     $now = date('Y-m-d H:i:s');
@@ -107,7 +108,7 @@ class HouseController extends Controller
 
     $house = House::findOrFail($id);
 
-    return view('show-house', compact('house'));
+    return view('show-house', compact('house', 'comesFromIndex'));
 
   }
 }

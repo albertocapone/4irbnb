@@ -85,7 +85,7 @@
                     <label for="password-confirm" >{{ __('Confirm Password') }}</label>
 
                     <div class="">
-                        <input id="password-confirm" type="password" name="password_confirmation" data-parsley-trigger="focusout" required minlength="8">
+                        <input id="password-confirm" type="password" name="password_confirmation" data-parsley-trigger="focusout" data-parsley-equalto="#password" required minlength="8">
                     </div>
                 </div>
 

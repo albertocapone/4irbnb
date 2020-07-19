@@ -4,13 +4,12 @@
   <div class="fullwidthcreate">
     <main>
 
-      <form class="flex" id="houseEdit" enctype="multipart/form-data" data-parsley-validate>
+      <form class="flex" id="houseEdit" enctype="multipart/form-data">
         @csrf
 
         <div class="h5">
           <h5>Modifica il tuo appartamento</h5>
         </div>
-
 
         <div class="padding">
 
@@ -24,7 +23,7 @@
             <label for="description">Descrizione</label>
           </div>
           <div >
-            <textarea class="description" type="text" name="description" value="{{old('description',$house['description'])}}" data-parsley-trigger="focusout" required></textarea>
+          <textarea class="description" name="description" data-parsley-trigger="focusout" required>{{ old('description', $house['description']) }}</textarea>
           </div>
 
           <div class="numbers">
@@ -58,13 +57,17 @@
             <label for="address">Indirizzo</label>
           </div>
           <div class="address">
-            <input type="search" id="address-input" value="{{old('address',$house['address'])}}" data-parsley-trigger="focusout" required class="hide-clear"/>
+            <input type="search" id="address-input" data-lat="{{$house['lat']}}" data-lng="{{$house['lng']}}" value="{{old('address',$house['address'])}}" data-parsley-trigger="focusout" required class="hide-clear"/>
           </div>
           <div class="label">
-            <label for="house_img">Immagine</label>
+            <label for="house_img">Immagine (Choose one or leave unchanged)</label>
           </div>
           <div class="img">
-            <input type="file" name="house_img" id="house_img" value="{{old('house_img',$house['house_img'])}}" data-lat="{{$house['lat']}}" data-lng="{{$house['lng']}}" data-parsley-trigger="focusout" required>
+            <input type="file" name="house_img" id="house_img" data-parsley-trigger="focusout">
+            <div id="old_img">
+              <img style="width: 100px; margin-top: 5px;" src="{{$house['house_img']}}" alt="">
+              <h5 style="display: inline-block; vertical-align: bottom; font-size: 9px; color: green;">Actually displayed</h5>
+            </div>
           </div>
 
           <div class="services">
@@ -100,13 +103,16 @@
               @endif
             @endforeach
           </div>
-
         </div>
-
         <input class="button" id='bottone'type="submit" name="" value="MODIFICA APPARTAMENTO">
+      </form>
+
     </main>
   </div>
+
   <script type="text/javascript">
+  
+    $("#houseEdit").parsley(); //parsley form binding
 
     var pathname = window.location.pathname
     var id = pathname.slice(15)
@@ -119,16 +125,22 @@
     var query;
     placesAutocomplete.on('change', e => query = e.suggestion);
 
+    var imgFile;
+    $('input[type="file"]').change(function (e) { 
+      imgFile = $('#house_img').prop("files")[0];
+    });
+
     $("#houseEdit").submit(function (event) {
       event.preventDefault();
+     
         var services = [];
-
         $(':checkbox:checked').each(function(i){
         services[i] = $(this).val();
         });
-         var data = new FormData();
+
+        var data = new FormData();
         data.append("title", $('input[name="title"]').val());
-        data.append("description", $('input[name="description"]').val());
+        data.append("description", $('textarea[name="description"]').val());
         data.append("rooms", $('input[name="rooms"]').val());
         data.append("beds", $('input[name="beds"]').val());
         data.append("bathrooms", $('input[name="bathrooms"]').val());
@@ -136,8 +148,10 @@
         data.append("address", (query)? query.value : $('#address-input').val());
         data.append("lat", (query)? query.latlng.lat : $('#address-input').data('lat'));
         data.append("long", (query)? query.latlng.lng : $('#address-input').data('lng'));
-        data.append("house_img", $('#house_img').prop("files")[0]);
         data.append("services", services);
+        if (imgFile) {
+          data.append("house_img", imgFile);
+        }
 
         $.ajax({
           headers: {
@@ -156,8 +170,7 @@
             console.log(err)
           }
         });
-      });
+    });
 
   </script>
-  </form>
 @endsection

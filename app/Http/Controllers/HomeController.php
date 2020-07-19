@@ -154,7 +154,7 @@ class HomeController extends Controller
       "beds" => 'required|min:1|max:20|integer',
       "bathrooms" => 'required|min:1|max:10|integer',
       "sqm" => 'required|min:5|integer',
-      "house_img" => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+      "house_img" => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
       "address" => 'required',
       "lat" => 'required',
       "long" => 'required',
@@ -163,18 +163,20 @@ class HomeController extends Controller
 
     $house = House::findOrFail($id);
 
-    // Get image file
-    $image = $request->file('house_img');
-    // Make a image name based on user name and current timestamp
-    $name = Str::slug($request->input('title')) . '_' . time();
-    // Define folder path
-    $folder = '/uploads/images/';
-    // Make a file path where image will be stored [ folder path + file name + file extension]
-    $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
-    // Upload image
-    $this->uploadOne($image, $folder, 'public', $name);
-    // Set house house_image path in database to filePath
-    $house->house_img = $filePath;
+    if(request()->has('house_img')) {
+      // Get image file
+      $image = $request->file('house_img');
+      // Make a image name based on user name and current timestamp
+      $name = Str::slug($request->input('title')) . '_' . time();
+      // Define folder path
+      $folder = '/uploads/images/';
+      // Make a file path where image will be stored [ folder path + file name + file extension]
+      $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
+      // Upload image
+      $this->uploadOne($image, $folder, 'public', $name);
+      // Set house house_image path in database to filePath
+      $house->house_img = $filePath;
+    }
 
     $house['title'] = $validatedData["title"];
     $house['description'] = $validatedData["description"];

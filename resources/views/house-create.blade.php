@@ -6,7 +6,7 @@
 
     <main>
 
-      <form class="flex" id="houseCreation" enctype="multipart/form-data" data-parsley-validate>
+      <form class="flex" id="houseCreation" enctype="multipart/form-data">
         @csrf
         <div class="h5">
           <h5>Crea il tuo appartamento</h5>
@@ -104,8 +104,11 @@
 
     </main>
   </div>
+  </form>
 
   <script type="text/javascript">
+
+  $("#houseCreation").parsley(); //parsley form binding
 
     var placesAutocomplete = places({
       appId: 'plPUBO3OQ2IL',
@@ -119,7 +122,6 @@
 
     $("#houseCreation").submit(function (event) {
         event.preventDefault();
-        console.log('premuto!');
 
         var services = [];
         $(':checkbox:checked').each(function(i){
@@ -158,7 +160,5 @@
           }
         });
       });
-
   </script>
-  </form>
 @endsection
