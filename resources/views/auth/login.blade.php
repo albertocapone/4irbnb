@@ -6,14 +6,14 @@
 
     <div class="login">
 
-      <div class="title">{{ __('Login') }}</div>
+      <h5 class="title">{{ __('LOGIN') }}</h5>
 
       <div class="">
           <form method="POST" action="{{ route('login') }}">
               @csrf
 
               <div class="email">
-                  <label for="email" class="">{{ __('E-Mail Address') }}</label>
+                  <label for="email" class="">{{ __('E-Mail') }}</label>
 
                   <div class="error">
                       <input class="error" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -51,8 +51,8 @@
 
               <div class="form-group">
                   <div class="">
-                      <button type="submit" class="btn btn-primary">
-                          {{ __('Login') }}
+                      <button id="button" type="submit" class="btn btn-primary">
+                          {{ __('LOGIN') }}
                       </button>
 
                       @if (Route::has('password.request'))

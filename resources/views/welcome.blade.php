@@ -15,7 +15,7 @@
           @csrf
           <div class="flex-two">
             <input type="search" id="address-input" placeholder="Dove?" class="hide-clear" />
-            <input id='bottone' type="submit" name="" value="Cerca">
+            <input id='bottone' type="submit" name="" value="CERCA">
           </div>
         <script type="text/javascript">
 

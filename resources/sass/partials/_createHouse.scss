@@ -104,9 +104,8 @@
       }
 
       .button{
-        margin: 4% 0 6% 0;
-        margin-left: calc(75% / 2);
-        padding: 2% 3%;
+        margin: 4% 0 6% 40%;
+        padding: 10px;
         @include button;
       }
     }
@@ -135,6 +134,9 @@
               font-size: 25px;
             }
           }
+        }
+        .button{
+          margin-left: 33%;
         }
       }
     }
@@ -176,9 +178,6 @@
               font-size: 20px;
             }
           }
-        }
-        .button{
-          margin-left: calc(68% / 2);
         }
       }
     }
@@ -235,9 +234,6 @@
 
             }
           }
-        }
-        .button{
-          margin-left: 33%;
         }
       }
 

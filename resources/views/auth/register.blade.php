@@ -4,39 +4,42 @@
   <div class="fullwidth">
     <main>
       <div class="register">
-        <h5>{{ __('Register') }}</h5>
+        <h5>{{ __('REGISTRAZIONE') }}</h5>
 
         <div>
             <form method="POST" action="{{ route('register') }}" data-parsley-validate>
                 @method('POST')
                 @csrf
-                <div>
-                    <label for="name" >{{ __('Name') }}</label>
+                <div class="flex class">
 
-                    <div class="">
-                        <input id="name" type="text" {{-- @error('name') is-invalid @enderror --}} name="name" value="{{ old('name') }}" autofocus>
+                      <div class="flex name">
+                          <label for="name" >{{ __('Name') }}</label>
+                          <input id="name" type="text" {{-- @error('name') is-invalid @enderror --}} name="name" value="{{ old('name') }}" autofocus>
 
-                        {{-- @error('name')
-                            <span role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror --}}
-                    </div>
+                          {{-- @error('name')
+                              <span role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror --}}
+                      </div>
+
+
+
+
+
+                      <div class="flex lastname">
+                          <label for="last_name" >{{ __('Lastname') }}</label>
+                          <input id="last_name" type="text" {{-- @error('last_name') is-invalid @enderror --}} name="last_name" value="{{ old('last_name') }}" >
+
+                          {{-- @error('last_name')
+                              <span role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror --}}
+                      </div>
+
                 </div>
 
-                 <div>
-                    <label for="last_name" >{{ __('Lastname') }}</label>
-
-                    <div class="">
-                        <input id="last_name" type="text" {{-- @error('last_name') is-invalid @enderror --}} name="last_name" value="{{ old('last_name') }}" >
-
-                        {{-- @error('last_name')
-                            <span role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror --}}
-                    </div>
-                </div>
                 <div >
                   <label for="date_of_birth">{{ __('Date Of Birth')}}</label>
 
@@ -69,7 +72,7 @@
 
                     <div class="">
                         <input id="password" type="password" {{--@error('password') is-invalid @enderror--}} name="password" data-parsley-trigger="focusout" required minlength="8">
-{{-- 
+{{--
                         @error('password')
                             <div role="alert">
                                 <strong>{{ $message }}</strong>
@@ -89,7 +92,7 @@
                 <div >
                     <div >
                         <button type="submit" >
-                            {{ __('Register') }}
+                            {{ __('REGISTRATI') }}
                         </button>
                     </div>
                 </div>

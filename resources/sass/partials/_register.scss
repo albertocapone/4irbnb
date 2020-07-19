@@ -7,36 +7,62 @@
     @include background-jpg;
 
     .register{
-      margin-left: 30%;
+      margin-left: 27%;
       background-color: #fff;
-      width: 45%;
-      padding: 1% 7%;
+      width: 48%;
+      padding: 2% 6%;
       border-radius: 5px;
       opacity: 0.9;
+
     h5{
       border-bottom: 1px groove #C0C0C0;
-      text-align: center;
-      padding-bottom: 4%;
+      text-align: left;
+      margin-left: 7%;
+
     }
+
+
+    .flex{
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .class{
+      padding: 4% 0 2% 2%;
+      input{
+        width: calc( 100% / 2);
+        margin-right: 2%;
+        padding: 1.5%;
+      }
+      label{
+        margin-right: -4%;
+      }
+    }
+
+    .lastname{
+      margin-right: 18%;
+    }
+    .name{
+      margin-left: 3%;
+    }
+
     label{
       margin: 1.5% 0 -1% 8%;
+      color: #000;
     }
     input {
-       width: 400px;
-       margin: 0 0 2% 8%;
+     width: 400px;
+     margin: 0 0 2% 8%;
+     border-radius: 5px;
+     height: 30px;
+     border: 1px solid #C0C0C0;
+     padding: 1.5%;
+     background-color: rgb(232, 240, 254);
     }
 
     button{
-      padding: 1% 4%;
-      border-radius: 5px;
       margin: 3% 0 2% 40%;
-      border: 1px solid #ececec;
-      background-color: #ffff;
-      color: #212529;
-      &:hover{
-        background-color: #3490dc;
-        color: #ffff;
-      }
+      @include button;
     }
 
 
@@ -52,4 +78,98 @@
 
   }
 
+}
+
+@media all and (max-width: 1200px){
+  .fullwidth{
+    main{
+      .register{
+        margin-left: 25%;
+        width: 55%;
+        input {
+           width: 370px;
+        }
+      }
+    }
+  }
+
+
+}
+
+@media all and (max-width: 992px){
+  .fullwidth{
+    main{
+      .register{
+        margin-left: 23%;
+        width: 55%;
+        input {
+           width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px){
+  .fullwidth{
+    main{
+      .register{
+        width:80%;
+        margin-left: 10%;
+        .lastname,
+        .name{
+          flex-direction: column;
+          input{
+            width: 100px;
+          }
+        }
+        .name{
+          margin-right: 20%;
+          margin-left: 5%;
+          label{
+            margin-right: 20%;
+          }
+        }
+        input {
+           width: 300px;
+        }
+        button{
+          margin: 3% 0 2% 33%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 600px){
+  .fullwidth{
+    main{
+      .register{
+        width: 100%;
+        margin-left: 0;
+        input {
+           width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 468px){
+  .fullwidth{
+    main{
+      .register{
+        .name,
+        .lastname{
+          input: 70px;
+        }
+        input {
+           width: 180px;
+        }
+        button{
+        margin-left: 33%;
+        }
+      }
+    }
+  }
 }

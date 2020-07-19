@@ -100,7 +100,7 @@
         </div>
 
 
-      <input class="button" id='bottone' type="submit" name="" value="Crea Appartamento">
+      <input class="button" id='bottone' type="submit" name="" value="CREA APPARTAMENTO">
 
     </main>
   </div>

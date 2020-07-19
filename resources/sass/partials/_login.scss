@@ -7,40 +7,37 @@
     @include background-jpg;
 
     .login{
-      margin: 2% 0 0 30%;
+      margin: 2% 0 0 25%;
       background-color: #fff;
-      width: 45%;
+      width: 50%;
       padding: 2% 7%;
       border-radius: 5px;
       opacity: 0.9;
 
-      input {
-         width: 450px;
+      #email,
+      #password{
+         width: 430px;
+         height: 30px;
+         border-radius: 5px;
+         border: 1px solid #C0C0C0;
+         padding-left: 2%;
       }
 
       .title{
         border-bottom: 1px groove #C0C0C0;
-        text-align: center;
-        padding-bottom: 2%;
-      }
-
-      .email{
-        margin-top: 3%;
+        text-align: left;
       }
 
       label{
-        margin: 3% 0 1% 0;
+        padding-top: 3%;
       }
+
 
       .form-check{
-        .form-check-input{
-            margin-top: 4%;
-            margin-left: -50%;
-            vertical-align: middle;
+        input[type='checkbox']{
+            margin-top: 3.7%;
         }
       }
-
-
 
       .form-group{
         margin-top: 5%;
@@ -51,4 +48,70 @@
       }
     }
   }
+}
+
+@media all and (max-width: 1200px){
+  .fullwidth{
+    main{
+      .login{
+        margin: 2% 0 0 20%;
+        width: 60%;
+        #email,
+        #password {
+           width: 400px;
+        }
+      }
+
+    }
+  }
+
+}
+
+@media all and (max-width: 900px){
+  .fullwidth{
+    main{
+      .login{
+        #email,
+        #password {
+           width: 300px;
+        }
+      }
+
+    }
+  }
+
+}
+
+@media all and (max-width: 700px){
+  .fullwidth{
+    main{
+      .login{
+        margin: 2% 0 0 16%;
+        width: 75%;
+        #email,
+        #password {
+           width: 300px;
+        }
+      }
+
+    }
+  }
+
+}
+
+@media all and (max-width: 480px){
+  .fullwidth{
+    main{
+      .login{
+        margin: 0;
+        width: 100%;
+        #email,
+        #password {
+           width: 200px;
+        }
+      }
+
+    }
+  }
+
 }

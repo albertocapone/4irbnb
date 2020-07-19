@@ -6,7 +6,7 @@
     <span> <a href="#">Contatti</a> &bull;</span>
     <span> <a href="#">Dettagli</a> </span>
     <span class="lingua"> <a href="#">Italiano(it)</a> </span>
-    <span> <a href="#">&euro; Euro</a> </span>
+    <span class="euro"> <a href="#">&euro; Euro</a> </span>
   </div>
 
   <div class="right">

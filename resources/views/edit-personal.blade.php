@@ -103,7 +103,7 @@
 
         </div>
 
-        <input class="button" id='bottone'type="submit" name="" value="Modifica Appartamento">
+        <input class="button" id='bottone'type="submit" name="" value="MODIFICA APPARTAMENTO">
     </main>
   </div>
   <script type="text/javascript">
