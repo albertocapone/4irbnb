@@ -1,155 +1,149 @@
 .fullwidthcreate{
 
-  @include fullwidth;
-  main{
+   @include fullwidth;
+   main{
 
-    .posta{
-      margin: 4% 10%;
-      width:80%;
-      padding: 4%;
+     .posta{
+       margin: 4% 10% 0 10%;
+       width: 80%;
+       padding: 4%;
 
-      @include borders-and-shadows;
+       @include borders-and-shadows;
 
-      h5{
-        border-bottom: 1px solid #C0C0C0;
-        margin-bottom: 4%;
-      }
+       h5{
+         border-bottom: 1px solid #C0C0C0;
+         margin-bottom: 4%;
+       }
 
-      .messaggi{
-        margin: 0 6%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
+       .messaggi{
+         margin: 0 6%;
+         display: flex;
+         flex-direction: row;
+         justify-content: flex-start;
+         align-items: center;
 
-        border: 1px solid #C0C0C0;
-        box-shadow: 0px 0px 2px #00000057;
+         border: 1px solid #C0C0C0;
+         box-shadow: 0px 0px 2px #00000057;
 
-        .email{
-          width: 36%;
-          padding: 1% 1% 0 1%;
+         &:hover{
+           color: #484848;
+           background: #e6edf4;
+           border: 1px solid #e6edf4;
+           transition: all 0.3s linear;
+         }
 
-          h6{
-            font-weight: bold;
+         .email{
+           width: 36%;
+           padding: 1% 1% 0 1%;
 
-            i{
-              margin-right: 2%;
-              font-size: 20px;
-              color: #6cb2eb;
-              vertical-align: middle;
-            }
-          }
+           h6{
+             font-weight: bold;
+             margin-bottom: 2%;
+
+             i{
+               margin-right: 2%;
+               font-size: 20px;
+               color: #00003f;
+               vertical-align: middle;
+             }
+           }
+         }
+
+         .text{
+           padding: 2% 2% 0 5%;
+           cursor: pointer;
+         }
+         .textintero{
+           display: none;
+           position: absolute;
+           background-color: #fff;
+           border: 1px solid #C0C0C0;
+           box-shadow: 0px 0px 2px #00000057;
+           border-radius: 5px;
+           width: 70%;
+           height: 40%;
+           padding: 3%;
+           top: 30%;
+           left: 15%;
+           text-align: justify;
+
+           .fa-times{
+             position: absolute;
+             right: 3%;
+             top: 9%;
+             color: #00003f;
+             font-size:20px;
+           }
+
+           h6{
+             border-bottom: 1px solid #00003f;
+             padding-bottom: 1.5%;
+             b{
+               margin-left: 6%;
+             }
+           }
+         }
+
+       }
+     }
+   }
+}
+
+@media all and (max-width: 1200px){
+  .fullwidthcreate{
+    main{
+      .posta{
+        width: 97%;
+        margin: 5% 4%;
+        .messaggi{
+          margin: 0 4%;
         }
+      }
+    }
+  }
+}
 
-        .text{
-          padding: 2% 2% 0 5%;
-          cursor: pointer;
+@media all and (max-width: 900px){
+  .fullwidthcreate{
+    main{
+      .posta{
+        .messaggi{
+          flex-direction: column;
+          align-items: flex-start;
+          .email{
+            width: 100%;
           }
-          div.textintero{
-            display:none;
-            position: absolute;
-            background-color: #fff;
-            border: 1px solid #C0C0C0;
-            box-shadow: 0px 0px 2px #00000057;
-            border-radius: 5px;
-            width: 28%;
-            padding: 2%;
-            top: 36%;
-            text-align: justify;
-
+          .textintero{
             h6{
-              border-bottom: 1px solid #6cb2eb;
-              border-bottom: 1.5%;
-              b{
-                margin-left: 6%;
-              }
+              padding-top: 2%;
             }
           }
-        //   p.textmeta:hover + p.textintero {
-        //     display:block;
-        //
-        // }
-      }
-    }
-  }
-}
-
- @media all and (max-width: 1200px){
-   .fullwidthcreate{
-     main{
-       .posta{
-         width:97%;
-         margin: 5% 4%;
-         .messaggi{
-           margin: 0 4%;
-           .text{
-             div.textintero{
-               width: 34%;
-               top: 46%;
-             }
-           }
-         }
-       }
-     }
-   }
- }
-
- @media all and (max-width: 900px){
-   .fullwidthcreate{
-     main{
-       .posta{
-         .messaggi{
-           flex-direction: column;
-           align-items: flex-start;
-           .email{
-             width: 100%;
-           }
-           .text{
-             div.textintero{
-               width: 41%;
-               top: 38%;
-               left: 50%;
-             }
-           }
         }
-
       }
     }
   }
 }
 
- @media all and (max-width: 768px){
-   .fullwidthcreate{
-     main{
-       .posta{
-         .messaggi{
-           .text{
-             div.textintero{
-               width: 52%;
-               top: 38%;
-               left: 38%;
-             }
-           }
-         }
-       }
-     }
-   }
- }
-
- @media all and (max-width: 600px){
-   .fullwidthcreate{
-     main{
-       .posta{
-         .messaggi{
-           .text{
-             div.textintero{
-               width: 74%;
-               top: 30%;
-               left: 18%;
-             }
-           }
-         }
-       }
-     }
-   }
- }
+@media all and (max-width: 768px){
+  .fullwidthcreate{
+    main{
+      .posta{
+        width: 100%;
+        height:100;
+        margin: 0;
+        .messaggi{
+          .textintero{
+            width:80%;
+            height: 50%;
+            h6{
+              padding-top: 3.5%;
+            }
+            .fa-times{
+              top:5%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

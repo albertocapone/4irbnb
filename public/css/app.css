@@ -12240,6 +12240,7 @@ footer .right {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border-radius: 5px;
   border: 1px solid #ececec;
   background-color: #fff;
   box-shadow: 0px 0px 3px 1px #0000002b;
@@ -12253,12 +12254,6 @@ footer .right {
 .fullwidthcreate main #houseCreation .h5 h5 {
   padding: 4%;
   border-bottom: 1px solid #ececec;
-}
-
-.fullwidthcreate main #houseCreation .h5 h5:hover {
-  background-color: #6cb2eb;
-  color: #ffff;
-  transition: all 0.3s linear;
 }
 
 .fullwidthcreate main #houseCreation .padding {
@@ -12527,6 +12522,7 @@ footer .right {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border-radius: 5px;
   border: 1px solid #ececec;
   background-color: #fff;
   box-shadow: 0px 0px 3px 1px #0000002b;
@@ -12541,12 +12537,6 @@ footer .right {
 .fullwidthcreate main #houseEdit .h5 h5 {
   padding: 4%;
   border-bottom: 1px solid #ececec;
-}
-
-.fullwidthcreate main #houseEdit .h5 h5:hover {
-  background-color: #6cb2eb;
-  color: #ffff;
-  transition: all 0.3s linear;
 }
 
 .fullwidthcreate main #houseEdit .padding {
@@ -12815,9 +12805,8 @@ footer .right {
 }
 
 .fullwidthcreate main .posta {
-  margin: 4% 10%;
+  margin: 4% 10% 0 10%;
   width: 80%;
-  height: 70%;
   padding: 4%;
   border: 1px solid #ececec;
   background-color: #fff;
@@ -12839,6 +12828,13 @@ footer .right {
   box-shadow: 0px 0px 2px #00000057;
 }
 
+.fullwidthcreate main .posta .messaggi:hover {
+  color: #484848;
+  background: #e6edf4;
+  border: 1px solid #e6edf4;
+  transition: all 0.3s linear;
+}
+
 .fullwidthcreate main .posta .messaggi .email {
   width: 36%;
   padding: 1% 1% 0 1%;
@@ -12846,37 +12842,56 @@ footer .right {
 
 .fullwidthcreate main .posta .messaggi .email h6 {
   font-weight: bold;
+  margin-bottom: 2%;
 }
 
 .fullwidthcreate main .posta .messaggi .email h6 i {
   margin-right: 2%;
   font-size: 20px;
-  color: #6cb2eb;
+  color: #00003f;
   vertical-align: middle;
 }
 
 .fullwidthcreate main .posta .messaggi .text {
   padding: 2% 2% 0 5%;
+  cursor: pointer;
 }
 
-.fullwidthcreate main .posta .messaggi p.textintero {
+.fullwidthcreate main .posta .messaggi .textintero {
   display: none;
-}
-
-.fullwidthcreate main .posta .messaggi p.textmeta:hover + p.textintero {
-  display: block;
   position: absolute;
   background-color: #fff;
   border: 1px solid #C0C0C0;
   box-shadow: 0px 0px 2px #00000057;
-  width: 37.3%;
-  padding: 2%;
-  top: 45;
+  border-radius: 5px;
+  width: 70%;
+  height: 40%;
+  padding: 3%;
+  top: 30%;
+  left: 15%;
+  text-align: justify;
+}
+
+.fullwidthcreate main .posta .messaggi .textintero .fa-times {
+  position: absolute;
+  right: 3%;
+  top: 9%;
+  color: #00003f;
+  font-size: 20px;
+}
+
+.fullwidthcreate main .posta .messaggi .textintero h6 {
+  border-bottom: 1px solid #00003f;
+  padding-bottom: 1.5%;
+}
+
+.fullwidthcreate main .posta .messaggi .textintero h6 b {
+  margin-left: 6%;
 }
 
 @media all and (max-width: 1200px) {
   .fullwidthcreate main .posta {
-    width: 95%;
+    width: 97%;
     margin: 5% 4%;
   }
 
@@ -12895,24 +12910,29 @@ footer .right {
     width: 100%;
   }
 
-  .fullwidthcreate main .posta .messaggi .text {
-    padding: 0.5% 2% 0 6%;
-  }
-
-  .fullwidthcreate main .posta .messaggi .text p.textintero {
-    width: 50%;
+  .fullwidthcreate main .posta .messaggi .textintero h6 {
+    padding-top: 2%;
   }
 }
 
 @media all and (max-width: 768px) {
-  .fullwidthcreate main .posta .messaggi .text {
-    padding: 0.5% 2% 0 7%;
+  .fullwidthcreate main .posta {
+    width: 100%;
+    height: 100;
+    margin: 0;
   }
-}
 
-@media all and (max-width: 600px) {
-  .fullwidthcreate main .posta .messaggi .text {
-    padding: 0.5% 2% 0 8%;
+  .fullwidthcreate main .posta .messaggi .textintero {
+    width: 80%;
+    height: 50%;
+  }
+
+  .fullwidthcreate main .posta .messaggi .textintero h6 {
+    padding-top: 3.5%;
+  }
+
+  .fullwidthcreate main .posta .messaggi .textintero .fa-times {
+    top: 5%;
   }
 }
 
@@ -13003,7 +13023,6 @@ footer .right {
 }
 
 .fullwidthstats main {
-  overflow-x: hidden;
   min-width: 100%;
   min-height: calc(100vh - 70px - 60px);
 }
@@ -13013,7 +13032,7 @@ footer .right {
 }
 
 .fullwidthstats main .canvas #messages {
-  margin-left: 10%;
+  margin-left: 12%;
   margin-right: 2%;
 }
 

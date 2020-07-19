@@ -16,12 +16,15 @@
           <h6> <i class="far fa-envelope"></i> {{$message->email}}</h6>
         </div>
         <div class="text">
-          <p class="textmeta"> <b>Info:</b> {!! Str::words($message->text, 5, '...')!!}
-          <div class="textintero">
-            <h6>DA:  <b>{{$message->email}}</b></h6><br>
-            <p> {{$message->text}}</p>
-          </div></p>
+          <p class="textmeta"> <b>Info:</b> {!! Str::words($message->text, 5, '...')!!}</p>
         </div>
+
+        <div class="textintero">
+          <i class="fas fa-times"></i>
+          <h6>DA:  <b>{{$message->email}}</b></h6><br>
+          <p> {{$message->text}}</p>
+        </div>
+
       </div>
       @endforeach
     </div>

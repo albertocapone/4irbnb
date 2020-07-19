@@ -49714,15 +49714,17 @@ $(document).ready(function () {
   });
   $('.dropdown').click(function () {
     $('div.dropcontent').fadeToggle();
-  });
-  $('.body').click(function () {
-    $('div.textintero').hide();
-  });
-  $('.posta').click(function (e) {
-    e.stopPropagation();
-  });
+  }); // $('.body').click(
+  //   function(){
+  //   $('div.textintero').hide();
+  //   }
+  // );
+
   $('.posta').on('click', '.text', function () {
-    $(this).children('div.textintero').fadeToggle();
+    $(this).siblings('div.textintero').fadeIn();
+  });
+  $('.fa-times').click(function () {
+    $('div.textintero').fadeOut();
   });
 });
 
