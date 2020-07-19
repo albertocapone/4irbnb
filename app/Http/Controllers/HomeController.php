@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Symfony\Component\Console\Input\Input;
+use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\User;
@@ -113,12 +114,14 @@ class HomeController extends Controller
     $messages = $house->messages;
     $views = $house->views;
     $ads = Ad::all();
-    $house_ads = $house->ads()->whereDate('ending_date','>',date('Y-m-d H:i:s'))->get();
+    $house_ads = $house->ads()->where('ending_date', '>=', Carbon::now())->get();
     // dd($house_ads);
     $endingDate = null;
     foreach($house_ads as $ad){
       // dd($ad->pivot);
      $endingDate = $ad->pivot->ending_date;
+     $endingDate = Carbon::parse(Carbon::createFromFormat('Y-m-d H:i:s', $endingDate, 'UTC')
+        ->setTimezone('Europe/Rome'))->format('d-m-Y H:i:s');
     }
 
     // dd($endingDate);

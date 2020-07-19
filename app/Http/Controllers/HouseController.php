@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Carbon;
 use App\Service;
 use App\House;
 use App\View;
@@ -60,10 +61,10 @@ class HouseController extends Controller
          }
         }
       }
-
+      // dd(Carbon::now());
       $promoHouses = [];
       foreach ($houses as $house) {
-        $house_ads = $house->ads()->whereDate('ending_date', '>', date('Y-m-d H:i:s'))->get();
+        $house_ads = $house->ads()->where('ending_date', '>=', Carbon::now())->get();
         if (count($house_ads)) {
           $promoHouses[] = $house;
         }

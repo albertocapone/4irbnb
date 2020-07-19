@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
 use App\House;
 use App\User;
 use App\Ad;
@@ -71,7 +72,8 @@ class PaymentController extends Controller
         $ad = Ad::findOrFail($ad_id);
         $duration = $ad->duration;
         $provaduration = (string)$duration/24;
-        $ending_date = date('Y-m-d H:i:s',strtotime('+'.$provaduration.'days'));
+        $ending_date = Carbon::now()->add($provaduration, 'day');
+        // date('Y-m-d H:i:s',strtotime('+'.$provaduration.'days'));
 
         $house = House::findOrFail($house_id);
         $house->ads()->attach($ad_id,['transaction_code'=>$transaction->id,'ending_date'=>$ending_date]);

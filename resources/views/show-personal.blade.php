@@ -25,7 +25,7 @@
       </div>
       @if ($endingDate !== null)
         <div class="box promuovi-on flex-container {{$panelIsVisible}}">
-          <a href="{{route('ad-payment', $house->id)}}">
+          <a>
             <div class="overlay flex-container">
               <h3 id="fonton">Promuovi</h3>
                 <div class="promo-tag">
