@@ -17,12 +17,18 @@
   justify-content: space-between;
 }
 
+.page-home-title{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .house-preview{
   width: calc( 50% - 15px);
   height: 250px;
   margin-bottom: 30px;
   position: relative;
-  min-width: 365px;
+  min-width: 220px;
 
   box-shadow: 0px 0px 3px 1px #0000002b;
   border-radius: 3px;
@@ -82,7 +88,7 @@
   .visibility-tag{
     position: absolute;
     top: 0;
-    left: 78%;
+    left: 72%;
     transform: rotate(10deg);
     padding: 10px;
     background: $borders;

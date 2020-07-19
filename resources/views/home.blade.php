@@ -14,6 +14,9 @@
       </div>
     @else
       <div class="houses-preview-container flex-container">
+        <h4 class="page-home-title">
+          Le tue proprietà
+        </h4>
         @foreach ($houses as $house)
           <div class="house-preview {{($house->visibility == 0) ? 'hidden' : 'visible'}} ">
             <div class="overlay"></div>{{-- / overlay --}}
@@ -25,7 +28,7 @@
             <div class="immagine">
               <img src="{{$house -> house_img}}" alt="">
             </div>
-            <div class="title">
+            <div class="title flex-container">
               <a href="{{route('show-personal', $house->id)}}">
                 <h6>{{$house -> title}}</h6>
               </a>

@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/parsley.css')}}">
+    <link rel="icon" href="{{asset('assets/images/logo.png')}}">
   </head>
 
   <body >
@@ -26,16 +27,26 @@
 
      {{-- **** SIDEBAR **** --}}
       <main class="flex-container">
-        {{-- side --}}
+
+        {{-- side full --}}
         <aside>
           <div class="side-container">
             <nav>
+              <div class="close-hamburger">
+                <i class="fa fa-times fa-2x"></i>
+              </div>
               <ul>
                 @yield('sidebar')
               </ul>
             </nav>
           </div>
         </aside>
+
+        {{-- side menu --}}
+        <div class="hamburger">
+          <i class="fa fa-bars fa-2x"></i>
+        </div>
+
 
         {{-- **** MAIN **** --}}
         <section>
@@ -48,6 +59,16 @@
     <footer>
       @include('components.footer')
     </footer>
+
+    <script type="text/javascript">
+      $('.hamburger').click(function(){
+        $('aside').slideToggle();
+      })
+
+      $('.close-hamburger').click(function(){
+        $('aside').slideToggle();
+      })
+    </script>
 
   </div>
 

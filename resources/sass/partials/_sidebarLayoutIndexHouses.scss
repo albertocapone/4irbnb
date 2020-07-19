@@ -58,6 +58,9 @@
 }
 
 .title{
+  flex-direction: column;
+  justify-content: space-between;
+
   .name-and-owner{
     align-items: baseline;
     h6{
@@ -68,7 +71,10 @@
 
 }
 
+.services-container{
+  flex-wrap: wrap;
+}
+
 .index-houses-preview-services{
   font-size: 12px;
-  // margin-right: 8px;
 }

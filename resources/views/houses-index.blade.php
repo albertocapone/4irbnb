@@ -71,7 +71,7 @@
         <div class="immagine">
           <img src="{{$promoHouse -> house_img}}" alt="">
         </div>
-        <div class="title">
+        <div class="title flex-container">
           <a href="{{route('show-house', $promoHouse->id)}}">
             <h6>{{$promoHouse -> title}}</h6>
           </a>

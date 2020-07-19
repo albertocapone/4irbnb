@@ -10,10 +10,12 @@
     width: 100%;
     min-height: calc(100vh - 70px - 60px);
     background-image: none;
+    position: relative;
 
     aside{
       @include width-side;
       background:white;
+      transition: all 0.8s linear;
 
       .side-container{
         width: 100%;
@@ -24,7 +26,22 @@
         font-family: $font-family-sans-serif;
 
         nav{
-          width: 100%
+          width: 100%;
+          position: relative;
+
+          .close-hamburger{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 70px;
+            display: none;
+            cursor: pointer;
+
+
+            .fa-times{
+              color: grey;
+            }
+          }
         }
 
         ul{
@@ -50,6 +67,23 @@
             }
           }
         }
+      }
+    }
+
+    .hamburger{
+      background: white;
+      border: 1px solid $borders;
+      height: 70.8px;
+      display: none;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+
+      .fa-bars{
+        padding: 20px;
+        color:grey;
       }
     }
 
@@ -90,28 +124,136 @@
   // RESPONSIVNESS -----------------------------------
 
   /* MAXI DESKTOP -------------------------------- */
-  @media screen and (min-width: 1016px){
+  @media screen and (min-width: 1041px){
 
 
   }
 
   /* DESKTOP -------------------------------- */
-  @media screen and (min-width: 992px) and (max-width:1015px ) {
+  @media screen and (min-width: 992px) and (max-width:1040px ) {
 
+    .house-preview{
+      .immagine{
+        height: 60%;
+      }
+      .title{
+        height: 40%;
+      }
+    }
+
+    .hidden{
+      .overlay{
+        height: 60%;
+      }
+    }
 
   }
 
   /* TABLET --------------------------------- */
   @media screen and (min-width: 768px) and (max-width: 991px) {
 
+    main{
+
+      aside{
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 100;
+        display: none;
+      }
+
+      .hamburger{
+        display: block;
+      }
+      .close-hamburger{
+        display: block !important;
+      }
+
+
+      section{
+        width: 100%;
+      }
+    }
+
+    .house-preview{
+
+      .immagine{
+        height: 60%;
+      }
+      .title{
+        height: 40%;
+      }
+    }
+
+    .hidden{
+      .overlay{
+        height: 60%;
+      }
+    }
+
+    .home-side-btn{
+      margin-top: 50px;
+    }
 
   }
 
   /* MOBILE --------------------------------- */
   @media screen and (max-width: 767px) {
+    main{
+
+      aside{
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 100;
+        display: none;
+      }
+
+      .hamburger{
+        display: block;
+      }
+      .close-hamburger{
+        display: block !important;
+      }
+
+      section{
+        width: 100%;
+      }
+    }
+
+    .house-preview{
+      width: 100%;
+      min-width: 150px;
+
+      .immagine{
+        height: 60%;
+      }
+      .title{
+        height: 40%;
+      }
+    }
+
+    .hidden{
+      .overlay{
+        height: 60%;
+      }
+    }
+
+    .property-features{
+      .box{
+        width: calc(100% - 20px);
+      }
+    }
+
+    .home-side-btn{
+      margin-top: 50px;
+    }
 
 
-
-  }
+  } //fine mobile
 
 } // fine sidebarLayout
