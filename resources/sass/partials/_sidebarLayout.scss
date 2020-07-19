@@ -29,6 +29,11 @@
           width: 100%;
           position: relative;
 
+          .side-home-btns{
+            height: 0;
+            opacity: 0;
+          }
+
           .close-hamburger{
             position: absolute;
             top: 0;
@@ -36,7 +41,7 @@
             height: 70px;
             display: none;
             cursor: pointer;
-
+            z-index: 99;
 
             .fa-times{
               color: grey;
@@ -124,13 +129,13 @@
   // RESPONSIVNESS -----------------------------------
 
   /* MAXI DESKTOP -------------------------------- */
-  @media screen and (min-width: 1041px){
+  @media screen and (min-width: 1025px){
 
 
   }
 
   /* DESKTOP -------------------------------- */
-  @media screen and (min-width: 992px) and (max-width:1040px ) {
+  @media screen and (min-width: 992px) and (max-width:1024px ) {
 
     .house-preview{
       .immagine{
@@ -145,6 +150,10 @@
       .overlay{
         height: 60%;
       }
+    }
+
+    .side-home-btns{
+      height: 40px !important;
     }
 
   }
@@ -160,7 +169,7 @@
         top: 0;
         left: 0;
         height: 100%;
-        z-index: 100;
+        z-index: 100000;
         display: none;
       }
 
@@ -193,8 +202,8 @@
       }
     }
 
-    .home-side-btn{
-      margin-top: 50px;
+    .side-home-btns{
+      height: 40px !important;
     }
 
   }
@@ -209,7 +218,7 @@
         top: 0;
         left: 0;
         height: 100%;
-        z-index: 100;
+        z-index: 100000;
         display: none;
       }
 
@@ -225,16 +234,12 @@
       }
     }
 
-    .house-preview{
-      width: 100%;
-      min-width: 150px;
+    h6{
+      font-size: 26px;
+    }
 
-      .immagine{
-        height: 60%;
-      }
-      .title{
-        height: 40%;
-      }
+    .index-houses-preview-services {
+      font-size: 20px;
     }
 
     .hidden{
@@ -249,8 +254,24 @@
       }
     }
 
-    .home-side-btn{
-      margin-top: 50px;
+    .side-home-btns{
+      height: 40px !important;
+    }
+
+    .house-preview{
+      width: 100%;
+      height: 350px;
+
+      .immagine{
+        height: 60%;
+      }
+      .title{
+        height: 40%;
+      }
+    }
+
+    .property-features .box{
+      width: 100% !important;
     }
 
 

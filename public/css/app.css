@@ -11278,6 +11278,11 @@ footer .right {
   position: relative;
 }
 
+.sidebarLayout main aside .side-container nav .side-home-btns {
+  height: 0;
+  opacity: 0;
+}
+
 .sidebarLayout main aside .side-container nav .close-hamburger {
   position: absolute;
   top: 0;
@@ -11285,6 +11290,7 @@ footer .right {
   height: 70px;
   display: none;
   cursor: pointer;
+  z-index: 99;
 }
 
 .sidebarLayout main aside .side-container nav .close-hamburger .fa-times {
@@ -11451,7 +11457,7 @@ footer .right {
 .sidebarLayout .hidden .visibility-tag {
   position: absolute;
   top: 0;
-  left: 72%;
+  right: 0;
   transform: rotate(10deg);
   padding: 10px;
   background: #ececec;
@@ -11841,7 +11847,7 @@ footer .right {
   font-size: 12px;
 }
 
-@media screen and (min-width: 992px) and (max-width: 1040px) {
+@media screen and (min-width: 992px) and (max-width: 1024px) {
   .sidebarLayout .house-preview .immagine {
     height: 60%;
   }
@@ -11852,6 +11858,10 @@ footer .right {
 
   .sidebarLayout .hidden .overlay {
     height: 60%;
+  }
+
+  .sidebarLayout .side-home-btns {
+    height: 40px !important;
   }
 }
 
@@ -11862,7 +11872,7 @@ footer .right {
     top: 0;
     left: 0;
     height: 100%;
-    z-index: 100;
+    z-index: 100000;
     display: none;
   }
 
@@ -11890,8 +11900,8 @@ footer .right {
     height: 60%;
   }
 
-  .sidebarLayout .home-side-btn {
-    margin-top: 50px;
+  .sidebarLayout .side-home-btns {
+    height: 40px !important;
   }
 }
 
@@ -11902,7 +11912,7 @@ footer .right {
     top: 0;
     left: 0;
     height: 100%;
-    z-index: 100;
+    z-index: 100000;
     display: none;
   }
 
@@ -11918,17 +11928,12 @@ footer .right {
     width: 100%;
   }
 
-  .sidebarLayout .house-preview {
-    width: 100%;
-    min-width: 150px;
+  .sidebarLayout h6 {
+    font-size: 26px;
   }
 
-  .sidebarLayout .house-preview .immagine {
-    height: 60%;
-  }
-
-  .sidebarLayout .house-preview .title {
-    height: 40%;
+  .sidebarLayout .index-houses-preview-services {
+    font-size: 20px;
   }
 
   .sidebarLayout .hidden .overlay {
@@ -11939,8 +11944,25 @@ footer .right {
     width: calc(100% - 20px);
   }
 
-  .sidebarLayout .home-side-btn {
-    margin-top: 50px;
+  .sidebarLayout .side-home-btns {
+    height: 40px !important;
+  }
+
+  .sidebarLayout .house-preview {
+    width: 100%;
+    height: 350px;
+  }
+
+  .sidebarLayout .house-preview .immagine {
+    height: 60%;
+  }
+
+  .sidebarLayout .house-preview .title {
+    height: 40%;
+  }
+
+  .sidebarLayout .property-features .box {
+    width: 100% !important;
   }
 }
 

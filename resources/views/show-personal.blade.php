@@ -9,7 +9,7 @@
   <div class="features-container flex-container property-features">
 
     <div class="title-container flex-container">
-      <h1 class="property-title">{{ ucfirst($house->title) }}
+      <h1 class="property-title">{{$house->title}}
         <div class="visibility-tag" data-visibility="{{($house->visibility == 0) ? 'hidden' : 'visible'}}">
           <h5>Nascosto</h5>
         </div>
@@ -17,41 +17,30 @@
     </div>
 
       <div class="box messaggi flex-container">
-        <div class="overlay flex-container">
-          <a href="{{route('msg-index', $house->id)}}">
+        <a href="{{route('msg-index', $house->id)}}">
+          <div class="overlay flex-container">
             <h3>Messaggi</h3>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
-      @if ($endingDate !== null)
-        <div class="box promuovi-on flex-container {{$panelIsVisible}}">
-          <a>
-            <div class="overlay flex-container">
-              <h3 id="fonton">Promuovi</h3>
-                <div class="promo-tag">
-                  <h5>Promo attiva fino al {{$endingDate}} </h5>
-                </div>
-              {{-- comparsa tendina sotto pulsanti --}}
-            </div>
-          </a>
-        </div>
-      @else
-        <div class="box promuovi flex-container {{$panelIsVisible}}">
-          <a href="{{route('ad-payment', $house->id)}}">
-            <div class="overlay flex-container">
-              <h3>Promuovi</h3>
-              {{-- comparsa tendina sotto pulsanti --}}
-            </div>
-          </a>
-        </div>
-      @endif
+      <div class="box promuovi flex-container {{$panelIsVisible}}">
+        <a href="{{route('ad-payment', $house->id)}}">
+          <div class="overlay flex-container">
+            <h3>Promuovi</h3>
+            @if ($endingDate !== null)
+                <h4>Promo attiva fino ad {{$endingDate}} </h4>
+            @endif
+             {{-- comparsa tendina sotto pulsanti --}}
+          </div>
+        </a>
+      </div>
 
       <div class="box statistiche flex-container">
-        <div class="overlay flex-container">
-           <a href="{{route('stats-index', $house->id)}}">
-          <h3>Statistiche</h3>
+        <a href="{{route('stats-index', $house->id)}}">
+          <div class="overlay flex-container">
+           <h3>Statistiche</h3>
+          </div>
         </a>
-        </div>
       </div>
 
       <div class="box bottoni flex-container">
