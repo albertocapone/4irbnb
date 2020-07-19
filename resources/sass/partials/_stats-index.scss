@@ -1,20 +1,83 @@
-.fullwidthcreate{
 
-  min-width: 100%;
-  min-height: calc(100vh - 70px - 60px);
+.fullwidthstats{
+
   main{
+    overflow-x: hidden;
+    @include fullwidth;
 
+  .canvas{
+    display: flex;
 
+    #messages{
+      margin-left: 10%;
+      margin-right: 2%;
+    }
+    #messages,
+      #views{
 
+        @include borders-and-shadows;
 
+        margin-top: 5%;
+        padding: 2%;
 
-
-
+        h5{
+          border-bottom: 1px groove #C0C0C0;
+          margin-bottom: 3%;
+        }
+        canvas{
+          width:500px;
+        }
+        form{
+        width: 100%;
+        margin: 4% 0 0 3%;
+          input{
+            padding: 0.8% 1%;
+            border: 1px solid #ececec;
+          }
+          .button{
+            @include button;
+          }
+        }
+      }
+    }
   }
 
+}
 
+@media all and (max-width: 1200px){
+  .fullwidthstats{
+    main{
+      .canvas{
+        flex-direction: column;
 
+        #messages,
+        #views{
+          margin: 5% 0 5% 18%;
+          width: 60%;
+        }
+        canvas{
+          width:400px;
+        }
+      }
+    }
+  }
+}
 
+@media all and (max-width: 600px){
+  .fullwidthstats{
+    main{
+      .canvas{
+        flex-direction: column;
 
-
+        #messages,
+        #views{
+          margin: 5% 0 5% 5%;
+          width: 90%;
+        }
+        canvas{
+          width:400px;
+        }
+      }
+    }
+  }
 }

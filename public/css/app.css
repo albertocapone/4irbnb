@@ -11085,10 +11085,12 @@ header nav .rightheader span .dropcontent {
   border: none;
   padding: 1% 1.2%;
   margin-right: 1%;
+  transition: all 0.3s linear;
 }
 
 .fullwidth main #houseCreation #bottone:hover {
   background-color: #2aace1;
+  color: #fff;
 }
 
 @media all and (max-width: 1200px) {
@@ -11307,18 +11309,17 @@ footer .right {
 }
 
 .sidebarLayout .empy a {
+  border-radius: 5px;
   padding: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-  cursor: pointer;
-  box-shadow: 0px 0px 2px #00000057;
-  text-decoration: none;
-  color: inherit;
+  border: 1px solid #ececec;
+  background-color: #ffff;
+  color: #212529;
   transition: all 0.3s linear;
 }
 
 .sidebarLayout .empy a:hover {
-  background: #6cb2eb;
+  background-color: #3490dc;
+  color: #ffff;
 }
 
 .sidebarLayout .houses-preview-container {
@@ -11744,37 +11745,70 @@ footer .right {
 }
 
 .fullwidth main .register {
-  margin-left: 30%;
+  margin-left: 27%;
   background-color: #fff;
-  width: 45%;
-  padding: 1% 6%;
+  width: 48%;
+  padding: 2% 6%;
   border-radius: 5px;
   opacity: 0.9;
 }
 
 .fullwidth main .register h5 {
   border-bottom: 1px groove #C0C0C0;
-  text-align: center;
-  padding-bottom: 4%;
+  text-align: left;
+  margin-left: 7%;
+}
+
+.fullwidth main .register .flex {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.fullwidth main .register .class {
+  padding: 4% 0 2% 2%;
+}
+
+.fullwidth main .register .class input {
+  width: calc( 100% / 2);
+  margin-right: 2%;
+  padding: 1.5%;
+}
+
+.fullwidth main .register .class label {
+  margin-right: -4%;
+}
+
+.fullwidth main .register .lastname {
+  margin-right: 18%;
+}
+
+.fullwidth main .register .name {
+  margin-left: 3%;
 }
 
 .fullwidth main .register label {
   margin: 1.5% 0 -1% 8%;
+  color: #000;
 }
 
 .fullwidth main .register input {
-  width: 370px;
+  width: 400px;
   margin: 0 0 2% 8%;
+  border-radius: 5px;
+  height: 30px;
+  border: 1px solid #C0C0C0;
+  padding: 1.5%;
+  background-color: #e8f0fe;
 }
 
 .fullwidth main .register button {
-  padding: 1% 4%;
-  margin: 3% 0 2% 0;
-  margin-left: calc(80% / 2);
+  margin: 3% 0 2% 40%;
   border-radius: 5px;
+  padding: 10px;
   border: 1px solid #ececec;
   background-color: #ffff;
   color: #212529;
+  transition: all 0.3s linear;
 }
 
 .fullwidth main .register button:hover {
@@ -11793,11 +11827,11 @@ footer .right {
 @media all and (max-width: 1200px) {
   .fullwidth main .register {
     margin-left: 25%;
-    width: 50%;
+    width: 55%;
   }
 
   .fullwidth main .register input {
-    width: 350px;
+    width: 370px;
   }
 }
 
@@ -11815,7 +11849,41 @@ footer .right {
 @media all and (max-width: 768px) {
   .fullwidth main .register {
     width: 80%;
-    margin: 4% 4% 4% 10%;
+    margin-left: 10%;
+  }
+
+  .fullwidth main .register .lastname,
+  .fullwidth main .register .name {
+    flex-direction: column;
+  }
+
+  .fullwidth main .register .lastname input,
+  .fullwidth main .register .name input {
+    width: 100px;
+  }
+
+  .fullwidth main .register .name {
+    margin-right: 20%;
+    margin-left: 5%;
+  }
+
+  .fullwidth main .register .name label {
+    margin-right: 20%;
+  }
+
+  .fullwidth main .register input {
+    width: 300px;
+  }
+
+  .fullwidth main .register button {
+    margin: 3% 0 2% 33%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .fullwidth main .register {
+    width: 100%;
+    margin-left: 0;
   }
 
   .fullwidth main .register input {
@@ -11823,21 +11891,10 @@ footer .right {
   }
 }
 
-@media all and (max-width: 560px) {
-  .fullwidth main .register {
-    margin-left: 18%;
-    width: 70%;
-  }
-
-  .fullwidth main .register input {
-    width: 250px;
-  }
-}
-
 @media all and (max-width: 468px) {
-  .fullwidth main .register {
-    margin-left: 18%;
-    width: 70%;
+  .fullwidth main .register .name,
+  .fullwidth main .register .lastname {
+    input: 70px;
   }
 
   .fullwidth main .register input {
@@ -11845,7 +11902,7 @@ footer .right {
   }
 
   .fullwidth main .register button {
-    margin-left: calc(70% / 2);
+    margin-left: 33%;
   }
 }
 
@@ -11870,22 +11927,22 @@ footer .right {
   opacity: 0.9;
 }
 
-.fullwidth main .login input {
+.fullwidth main .login #email,
+.fullwidth main .login #password {
   width: 430px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #C0C0C0;
+  padding-left: 2%;
 }
 
 .fullwidth main .login .title {
   border-bottom: 1px groove #C0C0C0;
-  text-align: center;
-  padding-bottom: 2%;
-}
-
-.fullwidth main .login .email {
-  margin-top: 3%;
+  text-align: left;
 }
 
 .fullwidth main .login label {
-  margin: 3% 0 1% 0;
+  padding-top: 3%;
 }
 
 .fullwidth main .login .form-check input[type=checkbox] {
@@ -11906,13 +11963,15 @@ footer .right {
     width: 60%;
   }
 
-  .fullwidth main .login input {
+  .fullwidth main .login #email,
+  .fullwidth main .login #password {
     width: 400px;
   }
 }
 
 @media all and (max-width: 900px) {
-  .fullwidth main .login input {
+  .fullwidth main .login #email,
+  .fullwidth main .login #password {
     width: 300px;
   }
 }
@@ -11923,7 +11982,8 @@ footer .right {
     width: 75%;
   }
 
-  .fullwidth main .login input {
+  .fullwidth main .login #email,
+  .fullwidth main .login #password {
     width: 300px;
   }
 }
@@ -11934,7 +11994,8 @@ footer .right {
     width: 100%;
   }
 
-  .fullwidth main .login input {
+  .fullwidth main .login #email,
+  .fullwidth main .login #password {
     width: 200px;
   }
 }
@@ -11951,8 +12012,8 @@ footer .right {
   flex-direction: column;
   align-items: flex-start;
   border: 1px solid #ececec;
-  box-shadow: 0px 0px 30px #ececec;
   background-color: #fff;
+  box-shadow: 0px 0px 3px 1px #0000002b;
 }
 
 .fullwidthcreate main #houseCreation .h5 {
@@ -12049,13 +12110,14 @@ footer .right {
 }
 
 .fullwidthcreate main #houseCreation .button {
-  margin: 4% 0 6% 0;
-  margin-left: calc(75% / 2);
-  padding: 2% 3%;
+  margin: 4% 0 6% 40%;
+  padding: 10px;
   border-radius: 5px;
+  padding: 10px;
   border: 1px solid #ececec;
   background-color: #ffff;
   color: #212529;
+  transition: all 0.3s linear;
 }
 
 .fullwidthcreate main #houseCreation .button:hover {
@@ -12083,6 +12145,10 @@ footer .right {
   .fullwidthcreate main #houseCreation .padding .services i {
     margin-bottom: 3%;
     font-size: 25px;
+  }
+
+  .fullwidthcreate main #houseCreation .button {
+    margin-left: 33%;
   }
 }
 
@@ -12121,10 +12187,6 @@ footer .right {
 
   .fullwidthcreate main #houseCreation .padding .services i {
     font-size: 20px;
-  }
-
-  .fullwidthcreate main #houseCreation .button {
-    margin-left: calc(68% / 2);
   }
 }
 
@@ -12179,10 +12241,6 @@ footer .right {
   .fullwidthcreate main #houseCreation .padding .services i {
     font-size: 15px;
   }
-
-  .fullwidthcreate main #houseCreation .button {
-    margin-left: 33%;
-  }
 }
 
 .fullwidthcreate main {
@@ -12197,8 +12255,8 @@ footer .right {
   flex-direction: column;
   align-items: flex-start;
   border: 1px solid #ececec;
-  box-shadow: 0px 0px 30px #ececec;
   background-color: #fff;
+  box-shadow: 0px 0px 3px 1px #0000002b;
 }
 
 .fullwidthcreate main #houseEdit .h5 {
@@ -12295,13 +12353,13 @@ footer .right {
 }
 
 .fullwidthcreate main #houseEdit .button {
-  margin: 4% 0 6% 0;
-  margin-left: calc(75% / 2);
-  padding: 2% 3%;
+  margin: 4% 0 6% 40%;
   border-radius: 5px;
+  padding: 10px;
   border: 1px solid #ececec;
   background-color: #ffff;
   color: #212529;
+  transition: all 0.3s linear;
 }
 
 .fullwidthcreate main #houseEdit .button:hover {
@@ -12329,6 +12387,10 @@ footer .right {
   .fullwidthcreate main #houseEdit .padding .services i {
     margin-bottom: 3%;
     font-size: 25px;
+  }
+
+  .fullwidthcreate main #houseEdit .button {
+    margin-left: 33%;
   }
 }
 
@@ -12367,10 +12429,6 @@ footer .right {
 
   .fullwidthcreate main #houseEdit .padding .services i {
     font-size: 20px;
-  }
-
-  .fullwidthcreate main #houseEdit .button {
-    margin-left: calc(68% / 2);
   }
 }
 
@@ -12425,10 +12483,6 @@ footer .right {
   .fullwidthcreate main #houseEdit .padding .services i {
     font-size: 15px;
   }
-
-  .fullwidthcreate main #houseEdit .button {
-    margin-left: 33%;
-  }
 }
 
 .fullwidthcreate {
@@ -12442,8 +12496,8 @@ footer .right {
   height: 70%;
   padding: 4%;
   border: 1px solid #ececec;
-  box-shadow: 0px 0px 30px #ececec;
   background-color: #fff;
+  box-shadow: 0px 0px 3px 1px #0000002b;
 }
 
 .fullwidthcreate main .posta h5 {
@@ -12546,8 +12600,8 @@ footer .right {
   width: 65%;
   padding: 4%;
   border: 1px solid #ececec;
-  box-shadow: 0px 0px 30px #ececec;
   background-color: #fff;
+  box-shadow: 0px 0px 3px 1px #0000002b;
 }
 
 .fullwidthads main .payment h5 {
@@ -12579,11 +12633,12 @@ footer .right {
 .fullwidthads main .button {
   margin: 6% 0 3% 0;
   margin-left: calc(70% / 2);
-  padding: 2% 3%;
   border-radius: 5px;
+  padding: 10px;
   border: 1px solid #ececec;
   background-color: #ffff;
   color: #212529;
+  transition: all 0.3s linear;
 }
 
 .fullwidthads main .button:hover {
@@ -12627,8 +12682,8 @@ footer .right {
 .fullwidthstats main .canvas #messages,
 .fullwidthstats main .canvas #views {
   border: 1px solid #ececec;
-  box-shadow: 0px 0px 30px #ececec;
   background-color: #fff;
+  box-shadow: 0px 0px 3px 1px #0000002b;
   margin-top: 5%;
   padding: 2%;
 }
@@ -12658,11 +12713,12 @@ footer .right {
 
 .fullwidthstats main .canvas #messages form .button,
 .fullwidthstats main .canvas #views form .button {
-  padding: 1% 4%;
   border-radius: 5px;
+  padding: 10px;
   border: 1px solid #ececec;
   background-color: #ffff;
   color: #212529;
+  transition: all 0.3s linear;
 }
 
 .fullwidthstats main .canvas #messages form .button:hover,

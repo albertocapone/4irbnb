@@ -2,22 +2,29 @@
 
 @section('content')
 
-<div class="fullwidthcreate">
-  <main style="display: flex">
-    <div id="messages" style="width: 500px">
-        <h2>MESSAGGI TOTALI</h2>
-        <h3>{{$allMessages}}</h3>
-        <canvas id="messagesPerMonth"></canvas>
+<div class="fullwidthstats">
+  <main>
+    <div class="canvas">
+      <div id="messages">
+          <h5>MESSAGGI</h5>
+          <h6>Totali: <b>{{$allMessages}}</b></h6>
+          <canvas id="messagesPerMonth" ></canvas>
+          <form>
+            <input type="number" id="getStatsByDate" data-house="{{$house->id}}" min="1900" max="2099" step="1" value="2020" />
+            <button class="button">CERCA</button>
+          </form>
+      </div>
+      <div id="views">
+          <h5>VISUALIZZAZIONI</h5>
+          <h6>Totali: <b>{{$allViews}}</b></h6>
+          <canvas id="viewsPerMonth" ></canvas>
+          <form>
+            <input type="number" id="getStatsByDate" data-house="{{$house->id}}" min="1900" max="2099" step="1" value="2020" />
+            <button class="button">CERCA</button>
+          </form>
+      </div>
     </div>
-    <div id="views" style="width: 500px">
-        <h2>VIEWS TOTALI</h2>
-        <h3>{{$allViews}}</h3>
-        <canvas id="viewsPerMonth"></canvas>
-    </div>
-    <form>
-    <input type="number" id="getStatsByDate" data-house="{{$house->id}}" min="1900" max="2099" step="1" value="2020" />
-        <button>Search</button>
-    </form>
+
   </main>
 </div>
 <script>
@@ -39,14 +46,15 @@
                     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                     datasets: [{
                         label: 'Views per month in ' + query.date,
-                        backgroundColor: 'rgb(255, 0, 0)',
-                        borderColor: 'rgb(0, 255, 0)',
+                        backgroundColor: 'rgb(2, 108, 181)',
+                        borderColor: 'rgb(215, 188, 106)',
                         data: data.viewsPerMonth
                     }]
                 },
 
                 // Configuration options go here
-                options: {}
+                options: {
+                }
             });
             console.log(chart.data.data)
 
@@ -59,18 +67,20 @@
                     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                     datasets: [{
                         label: 'Messages per month in ' + query.date,
-                        backgroundColor: 'rgb(0, 0, 255)',
-                        borderColor: 'rgb(0, 255, 0)',
+                        backgroundColor: 'rgb(168, 32, 78)',
+                        borderColor: 'rgb(215, 188, 106)',
                         data: data.messagesPerMonth
                     }]
                 },
 
                 // Configuration options go here
-                options: {}
+                options: {
+                }
             });
 
 
         });
     });
+
 </script>
 @endsection

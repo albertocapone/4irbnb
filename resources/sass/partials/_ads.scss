@@ -1,6 +1,6 @@
 .fullwidthads{
-  min-width: 100%;
-  min-height: calc(100vh - 70px - 60px);
+
+  @include fullwidth;
   padding-bottom: 2%;
 
   main{
@@ -9,9 +9,7 @@
     width:65%;
     padding: 4%;
 
-    background-color: #fff;
-    border: 1px solid #ececec;
-    box-shadow: 0px 0px 30px  #ececec;
+    @include borders-and-shadows;
 
 
     .payment{
@@ -47,21 +45,44 @@
 
     .button{
 
-      margin: 6% 0 3% 40%;
-      padding: 2% 3%;
-      border-radius: 5px;
-      border: 1px solid #ececec;
-      background-color: #ffff;
-      color: #212529;
-
-      &:hover{
-        background-color: #3490dc;
-        color: #ffff;
-      }
+      margin: 6% 0 3% 0;
+      margin-left: calc(70% / 2);
+      @include button;
 
     }
 
+  }
+}
 
+@media all and (max-width: 768px){
+  .fullwidthads {
+    main{
+      .button{
+          margin-left: calc(60% / 2);
+      }
 
+    }
+  }
+}
+
+@media all and (max-width: 600px){
+  .fullwidthads {
+    main{
+      .button{
+          margin-left: calc(50% / 2);
+      }
+
+    }
+  }
+}
+
+@media all and (max-width: 480px){
+  .fullwidthads {
+    main{
+      .button{
+          margin-left: calc(28% / 2);
+      }
+
+    }
   }
 }

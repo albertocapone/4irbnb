@@ -23,7 +23,7 @@
                 </div>
             </section>
             <input id="nonce" name="payment_method_nonce" type="hidden" />
-            <button class="button" type="submit"><span>Esegui il pagamento</span></button>
+            <button class="button" type="submit"><span>ESEGUI IL PAGAMENTO</span></button>
         </form>
     </div>
   </main>
