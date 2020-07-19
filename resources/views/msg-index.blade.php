@@ -17,8 +17,10 @@
         </div>
         <div class="text">
           <p class="textmeta"> <b>Info:</b> {!! Str::words($message->text, 5, '...')!!}
-          <p class="textintero"> {{$message->text}}</p></p>
-
+          <div class="textintero">
+            <h6>DA:  <b>{{$message->email}}</b></h6><br>
+            <p> {{$message->text}}</p>
+          </div></p>
         </div>
       </div>
       @endforeach

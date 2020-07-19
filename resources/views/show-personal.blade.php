@@ -9,7 +9,7 @@
   <div class="features-container flex-container property-features">
 
     <div class="title-container flex-container">
-      <h1 class="property-title">{{$house->title}}
+      <h1 class="property-title">{{ ucfirst($house->title) }}
         <div class="visibility-tag" data-visibility="{{($house->visibility == 0) ? 'hidden' : 'visible'}}">
           <h5>Nascosto</h5>
         </div>

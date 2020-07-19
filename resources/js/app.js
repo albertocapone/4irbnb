@@ -46,4 +46,18 @@ $(document).ready(function(){
     $('div.dropcontent').fadeToggle();
   });
 
+  $('.body').click(
+    function(){
+    $('div.textintero').hide();
+    }
+  );
+
+  $('.posta').click(function(e){
+      e.stopPropagation();
+  });
+
+  $('.posta').on('click', '.text', function() {
+    $(this).children('div.textintero').fadeToggle();
+  });
+
 });

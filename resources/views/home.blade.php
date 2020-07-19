@@ -30,7 +30,7 @@
             </div>
             <div class="title flex-container">
               <a href="{{route('show-personal', $house->id)}}">
-                <h6>{{$house -> title}}</h6>
+                <h6>{{ ucfirst($house -> title) }}</h6>
               </a>
               <div class="services-container flex-container">
                 @foreach ($house -> services as $service)

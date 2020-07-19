@@ -49715,6 +49715,15 @@ $(document).ready(function () {
   $('.dropdown').click(function () {
     $('div.dropcontent').fadeToggle();
   });
+  $('.body').click(function () {
+    $('div.textintero').hide();
+  });
+  $('.posta').click(function (e) {
+    e.stopPropagation();
+  });
+  $('.posta').on('click', '.text', function () {
+    $(this).children('div.textintero').fadeToggle();
+  });
 });
 
 /***/ }),
@@ -49851,8 +49860,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\info\Desktop\Boolean\4irbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\info\Desktop\Boolean\4irbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\sylwi\bool\4irbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\sylwi\bool\4irbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

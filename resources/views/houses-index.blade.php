@@ -73,7 +73,7 @@
         </div>
         <div class="title flex-container">
           <a href="{{route('show-house', $promoHouse->id)}}">
-            <h6>{{$promoHouse -> title}}</h6>
+            <h6>{{ ucfirst($promoHouse -> title) }}</h6>
           </a>
           @foreach ($promoHouse -> services as $service)
             <span class="index-houses-preview-services">
@@ -116,7 +116,7 @@
           <a href="{{route('show-house', $house->id)}}">
             <div class="name-and-owner flex-container">
               <p>House: </p>
-              <h6>{{$house -> title}}</h6>
+              <h6>{{ ucfirst($house -> title) }}</h6>
               <p> - Owner: </p>
               <p>{{$house -> users_id}}</p>
             </div>

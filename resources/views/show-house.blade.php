@@ -13,7 +13,7 @@
 
       <div class="box title">
         <div class="house-name">
-          <h2>{{$house->title}}</h2>
+          <h2>{{ ucfirst($house->title) }}</h2>
         </div>
         <div class="description">
           <p>{{$house->description}}</p>

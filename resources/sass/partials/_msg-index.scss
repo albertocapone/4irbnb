@@ -6,7 +6,6 @@
     .posta{
       margin: 4% 10%;
       width:80%;
-      height:70%;
       padding: 4%;
 
       @include borders-and-shadows;
@@ -44,20 +43,32 @@
 
         .text{
           padding: 2% 2% 0 5%;
+          cursor: pointer;
           }
-          p.textintero{
+          div.textintero{
             display:none;
-          }
-          p.textmeta:hover + p.textintero {
-            display:block;
             position: absolute;
             background-color: #fff;
             border: 1px solid #C0C0C0;
             box-shadow: 0px 0px 2px #00000057;
-            width: 37.3%;
+            border-radius: 5px;
+            width: 28%;
             padding: 2%;
-            top:45;
-        }
+            top: 36%;
+            text-align: justify;
+
+            h6{
+              border-bottom: 1px solid #6cb2eb;
+              border-bottom: 1.5%;
+              b{
+                margin-left: 6%;
+              }
+            }
+          }
+        //   p.textmeta:hover + p.textintero {
+        //     display:block;
+        //
+        // }
       }
     }
   }
@@ -67,10 +78,16 @@
    .fullwidthcreate{
      main{
        .posta{
-         width:95%;
+         width:97%;
          margin: 5% 4%;
          .messaggi{
            margin: 0 4%;
+           .text{
+             div.textintero{
+               width: 34%;
+               top: 46%;
+             }
+           }
          }
        }
      }
@@ -88,11 +105,12 @@
              width: 100%;
            }
            .text{
-             padding: 0.5% 2% 0 6%;
-             p.textintero{
-               width: 50%;
-            }
-          }
+             div.textintero{
+               width: 41%;
+               top: 38%;
+               left: 50%;
+             }
+           }
         }
 
       }
@@ -106,8 +124,12 @@
        .posta{
          .messaggi{
            .text{
-             padding: 0.5% 2% 0 7%;
+             div.textintero{
+               width: 52%;
+               top: 38%;
+               left: 38%;
              }
+           }
          }
        }
      }
@@ -120,8 +142,12 @@
        .posta{
          .messaggi{
            .text{
-             padding: 0.5% 2% 0 8%;
+             div.textintero{
+               width: 74%;
+               top: 30%;
+               left: 18%;
              }
+           }
          }
        }
      }

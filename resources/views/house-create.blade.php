@@ -9,7 +9,7 @@
       <form class="flex" id="houseCreation" enctype="multipart/form-data" data-parsley-validate>
         @csrf
         <div class="h5">
-          <h5>Crea il tuo appartamento</h5>
+          <h5>CREA IL TUO APPARTAMENTO</h5>
         </div>
 
 
