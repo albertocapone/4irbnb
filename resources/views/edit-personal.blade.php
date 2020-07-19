@@ -7,7 +7,9 @@
       <form class="flex" id="houseEdit" enctype="multipart/form-data" data-parsley-validate>
         @csrf
 
-                  <h5>Modifica il tuo appartamento</h5>
+        <div class="h5">
+          <h5>Modifica il tuo appartamento</h5>
+        </div>
 
 
         <div class="padding">
@@ -27,19 +29,19 @@
 
           <div class="numbers">
             <div class="">
-              <label for="rooms">Stanze</label>
+              <label for="rooms">Stanze</label><br>
 
               <input type="number" name="rooms" value="{{old('rooms',$house['rooms'])}}" data-parsley-trigger="focusout" required min="1" max="10">
             </div>
 
             <div class="">
-              <label for="beds">Letti</label>
+              <label for="beds">Letti</label><br>
 
               <input type="number" name="beds" value="{{old('beds',$house['beds'])}}" data-parsley-trigger="focusout" required min="1" max="20">
             </div>
 
             <div class="bagno">
-              <label for="bathrooms">Bagni</label>
+              <label for="bathrooms">Bagni</label><br>
 
               <input type="number" name="bathrooms" value="{{old('bathrooms',$house['bathrooms'])}}" data-parsley-trigger="focusout" required min="1" max="10">
             </div>
@@ -52,15 +54,11 @@
             <input class="sqm" type="number" name="sqm" value="{{old('sqm',$house['sqm'])}}" data-parsley-trigger="focusout" min="5" required>
           </div>
 
-
-
-
-
           <div class="label">
             <label for="address">Indirizzo</label>
           </div>
-          <div class="">
-            <input type="search" id="address-input" value="{{old('address',$house['address'])}}" data-parsley-trigger="focusout" required class="hide-clear" style='width: 600px;'/>
+          <div class="address">
+            <input type="search" id="address-input" value="{{old('address',$house['address'])}}" data-parsley-trigger="focusout" required class="hide-clear"/>
           </div>
           <div class="label">
             <label for="house_img">Immagine</label>
@@ -69,7 +67,7 @@
             <input type="file" name="house_img" id="house_img" value="{{old('house_img',$house['house_img'])}}" data-lat="{{$house['lat']}}" data-lng="{{$house['lng']}}" data-parsley-trigger="focusout" required>
           </div>
 
-          <div class="wrap">
+          <div class="services">
             <label for="services[]">Servizi</label><br>
             @foreach ($services as $dbservice)
               <input type="checkbox" name="services[]" value="{{$dbservice->id}}"

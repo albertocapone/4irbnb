@@ -15,6 +15,7 @@
     <title>AirbnBool</title>
     <script src="https://kit.fontawesome.com/f544440f57.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="icon" href="{{asset('assets/images/logo.png')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/parsley.css')}}">
   </head>

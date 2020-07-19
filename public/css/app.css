@@ -11001,6 +11001,28 @@ header nav .rightheader span .dropcontent {
   font-size: 15px;
 }
 
+@media all and (max-width: 992px) {
+  header nav {
+    padding-top: 1.8%;
+  }
+
+  header nav a {
+    margin-right: 4%;
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  header nav {
+    padding-top: 2%;
+  }
+
+  header nav a {
+    margin-right: 10%;
+    font-size: 16px;
+  }
+}
+
 .fullwidth .flex-two {
   display: flex;
   flex-direction: row;
@@ -11065,6 +11087,104 @@ header nav .rightheader span .dropcontent {
   margin-right: 1%;
 }
 
+.fullwidth main #houseCreation #bottone:hover {
+  background-color: #2aace1;
+}
+
+@media all and (max-width: 1200px) {
+  .fullwidth main .blulogo {
+    padding: 3.5% 2% 0 0;
+  }
+
+  .fullwidth main #houseCreation {
+    padding: 1.2%;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .fullwidth main .blulogo {
+    padding: 4% 2% 0 0;
+  }
+
+  .fullwidth main #houseCreation {
+    padding: 1.5%;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .fullwidth main .blulogo {
+    padding: 5% 2% 0 0;
+  }
+
+  .fullwidth main #houseCreation {
+    padding: 1.8%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .fullwidth main .blulogo {
+    font-size: !important 10px;
+    padding: 6% 2% 0 0;
+  }
+
+  .fullwidth main #houseCreation {
+    padding: 2%;
+  }
+
+  .fullwidth main #houseCreation #bottone {
+    padding: 2.2% 1.2%;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .fullwidth main .blulogo {
+    display: none;
+  }
+
+  .fullwidth main #houseCreation {
+    padding: 2.4%;
+    border-radius: 10px;
+    margin-left: 18%;
+  }
+
+  .fullwidth main #houseCreation #bottone {
+    padding: 2.5% 1.2%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .fullwidth main .blulogo {
+    display: none;
+  }
+
+  .fullwidth main #houseCreation {
+    padding: 2.8%;
+    border-radius: 10px;
+    margin-left: 18%;
+  }
+
+  .fullwidth main #houseCreation #bottone {
+    padding: 2.7% 1.2%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .fullwidth main .blulogo {
+    display: none;
+  }
+
+  .fullwidth main #houseCreation {
+    width: 70%;
+    padding: 3.5%;
+    border-radius: 10px;
+    margin-left: 18%;
+  }
+
+  .fullwidth main #houseCreation #bottone {
+    padding: 3% 1.2%;
+  }
+}
+
 footer {
   background-color: #fff;
   border-top: 1px solid #ececec;
@@ -11083,6 +11203,13 @@ footer .left .lingua {
 
 footer .right {
   margin: 1.4% 4% 0 0;
+}
+
+@media all and (max-width: 900px) {
+  .lingua,
+  .euro {
+    display: none;
+  }
 }
 
 .sidebarLayout {
@@ -11620,7 +11747,7 @@ footer .right {
   margin-left: 30%;
   background-color: #fff;
   width: 45%;
-  padding: 1% 7%;
+  padding: 1% 6%;
   border-radius: 5px;
   opacity: 0.9;
 }
@@ -11636,14 +11763,15 @@ footer .right {
 }
 
 .fullwidth main .register input {
-  width: 400px;
+  width: 370px;
   margin: 0 0 2% 8%;
 }
 
 .fullwidth main .register button {
   padding: 1% 4%;
+  margin: 3% 0 2% 0;
+  margin-left: calc(80% / 2);
   border-radius: 5px;
-  margin: 3% 0 2% 40%;
   border: 1px solid #ececec;
   background-color: #ffff;
   color: #212529;
@@ -11662,6 +11790,65 @@ footer .right {
   margin-left: 8%;
 }
 
+@media all and (max-width: 1200px) {
+  .fullwidth main .register {
+    margin-left: 25%;
+    width: 50%;
+  }
+
+  .fullwidth main .register input {
+    width: 350px;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .fullwidth main .register {
+    margin-left: 23%;
+    width: 55%;
+  }
+
+  .fullwidth main .register input {
+    width: 300px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .fullwidth main .register {
+    width: 80%;
+    margin: 4% 4% 4% 10%;
+  }
+
+  .fullwidth main .register input {
+    width: 300px;
+  }
+}
+
+@media all and (max-width: 560px) {
+  .fullwidth main .register {
+    margin-left: 18%;
+    width: 70%;
+  }
+
+  .fullwidth main .register input {
+    width: 250px;
+  }
+}
+
+@media all and (max-width: 468px) {
+  .fullwidth main .register {
+    margin-left: 18%;
+    width: 70%;
+  }
+
+  .fullwidth main .register input {
+    width: 180px;
+  }
+
+  .fullwidth main .register button {
+    margin-left: calc(70% / 2);
+  }
+}
+
 .fullwidth main {
   min-width: 100%;
   min-height: calc(100vh - 70px - 60px);
@@ -11675,16 +11862,16 @@ footer .right {
 }
 
 .fullwidth main .login {
-  margin: 2% 0 0 30%;
+  margin: 2% 0 0 25%;
   background-color: #fff;
-  width: 45%;
+  width: 50%;
   padding: 2% 7%;
   border-radius: 5px;
   opacity: 0.9;
 }
 
 .fullwidth main .login input {
-  width: 450px;
+  width: 430px;
 }
 
 .fullwidth main .login .title {
@@ -11701,10 +11888,8 @@ footer .right {
   margin: 3% 0 1% 0;
 }
 
-.fullwidth main .login .form-check .form-check-input {
-  margin-top: 4%;
-  margin-left: -50%;
-  vertical-align: middle;
+.fullwidth main .login .form-check input[type=checkbox] {
+  margin-top: 3.7%;
 }
 
 .fullwidth main .login .form-group {
@@ -11715,25 +11900,70 @@ footer .right {
   margin-left: 8%;
 }
 
+@media all and (max-width: 1200px) {
+  .fullwidth main .login {
+    margin: 2% 0 0 20%;
+    width: 60%;
+  }
+
+  .fullwidth main .login input {
+    width: 400px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .fullwidth main .login input {
+    width: 300px;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .fullwidth main .login {
+    margin: 2% 0 0 16%;
+    width: 75%;
+  }
+
+  .fullwidth main .login input {
+    width: 300px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .fullwidth main .login {
+    margin: 0;
+    width: 100%;
+  }
+
+  .fullwidth main .login input {
+    width: 200px;
+  }
+}
+
 .fullwidthcreate main {
   min-width: 100%;
   min-height: calc(100vh - 70px - 60px);
 }
 
 .fullwidthcreate main #houseCreation {
-  margin: 5% 17%;
-  width: 65%;
-  background-color: #fff;
+  margin: 5% 20%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border: 1px solid #ececec;
   box-shadow: 0px 0px 30px #ececec;
+  background-color: #fff;
 }
 
-.fullwidthcreate main #houseCreation h5 {
-  padding: 4% 22% 2% 20%;
-  margin-left: 17%;
+.fullwidthcreate main #houseCreation .h5 {
+  width: 70%;
+  margin-left: 16%;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.fullwidthcreate main #houseCreation .h5 h5 {
+  padding: 4% 0 2%;
   border-bottom: 1px groove #C0C0C0;
 }
 
@@ -11741,7 +11971,7 @@ footer .right {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2% 0 2% 20%;
+  padding: 2% 16%;
 }
 
 .fullwidthcreate main #houseCreation .padding label {
@@ -11760,7 +11990,7 @@ footer .right {
 .fullwidthcreate main #houseCreation .padding .title,
 .fullwidthcreate main #houseCreation .padding .description {
   padding: 2%;
-  width: 500px;
+  width: 480px;
 }
 
 .fullwidthcreate main #houseCreation .padding .title {
@@ -11775,13 +12005,11 @@ footer .right {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-wrap: wrap;
   padding-top: 4%;
-  width: 80%;
+  width: 100%;
 }
 
 .fullwidthcreate main #houseCreation .padding .numbers input {
-  width: 70px;
   height: 40px;
 }
 
@@ -11793,31 +12021,36 @@ footer .right {
   height: 40px;
 }
 
+.fullwidthcreate main #houseCreation .padding .address {
+  width: 100%;
+}
+
 .fullwidthcreate main #houseCreation .padding input.hide-clear[type=search]::-webkit-search-cancel-button {
   display: none;
 }
 
-.fullwidthcreate main #houseCreation .padding .wrap {
+.fullwidthcreate main #houseCreation .padding .services {
   width: 100%;
   margin-top: 5%;
 }
 
-.fullwidthcreate main #houseCreation .padding .wrap label {
+.fullwidthcreate main #houseCreation .padding .services label {
   padding-bottom: 1.5%;
 }
 
-.fullwidthcreate main #houseCreation .padding .wrap label input {
+.fullwidthcreate main #houseCreation .padding .services label input {
   padding-left: 3%;
 }
 
-.fullwidthcreate main #houseCreation .padding .wrap i {
+.fullwidthcreate main #houseCreation .padding .services i {
   font-size: 30px;
-  margin: 3% 6% 0 1%;
+  margin: 3% 4% 0 1%;
   color: #6cb2eb;
 }
 
 .fullwidthcreate main #houseCreation .button {
-  margin: 4% 0 6% 38%;
+  margin: 4% 0 6% 0;
+  margin-left: calc(75% / 2);
   padding: 2% 3%;
   border-radius: 5px;
   border: 1px solid #ececec;
@@ -11830,25 +12063,153 @@ footer .right {
   color: #ffff;
 }
 
+@media all and (max-width: 1200px) {
+  .fullwidthcreate main #houseCreation .padding .title,
+  .fullwidthcreate main #houseCreation .padding .description {
+    padding: 2%;
+    width: 360px;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .services {
+    flex-wrap: wrap;
+    width: calc(100% / 2);
+  }
+
+  .fullwidthcreate main #houseCreation .padding .services label {
+    margin-bottom: 2%;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .services input[type=checkbox],
+  .fullwidthcreate main #houseCreation .padding .services i {
+    margin-bottom: 3%;
+    font-size: 25px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .fullwidthcreate main #houseCreation .padding .title,
+  .fullwidthcreate main #houseCreation .padding .description {
+    padding: 2%;
+    width: 260px;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .numbers {
+    flex-wrap: wrap;
+    padding-top: 4%;
+    width: calc(100% / 4);
+  }
+
+  .fullwidthcreate main #houseCreation .padding .numbers div {
+    margin-bottom: 10%;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .numbers div input {
+    width: 100px;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .address {
+    width: 80%;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .img input[type=file] {
+    width: 80%;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .services {
+    width: calc(100% / 2);
+  }
+
+  .fullwidthcreate main #houseCreation .padding .services i {
+    font-size: 20px;
+  }
+
+  .fullwidthcreate main #houseCreation .button {
+    margin-left: calc(68% / 2);
+  }
+}
+
+@media all and (max-width: 768px) {
+  .fullwidthcreate main #houseCreation {
+    width: 100%;
+    margin: 0;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .title,
+  .fullwidthcreate main #houseCreation .padding .description {
+    width: 300px;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .services {
+    width: 100%;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .services i {
+    font-size: 15px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .fullwidthcreate main #houseCreation {
+    width: 100%;
+    margin: 0;
+  }
+
+  .fullwidthcreate main #houseCreation .padding {
+    padding: 2% 18%;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .title,
+  .fullwidthcreate main #houseCreation .padding .description {
+    padding: 2%;
+    width: 160px;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .numbers {
+    width: 50%;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .address {
+    width: 60%;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .services {
+    width: 100%;
+  }
+
+  .fullwidthcreate main #houseCreation .padding .services i {
+    font-size: 15px;
+  }
+
+  .fullwidthcreate main #houseCreation .button {
+    margin-left: 33%;
+  }
+}
+
 .fullwidthcreate main {
   min-width: 100%;
   min-height: calc(100vh - 70px - 60px);
 }
 
 .fullwidthcreate main #houseEdit {
-  margin: 5% 17%;
-  width: 65%;
-  background-color: #fff;
+  margin: 5% 20%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border: 1px solid #ececec;
   box-shadow: 0px 0px 30px #ececec;
+  background-color: #fff;
 }
 
-.fullwidthcreate main #houseEdit h5 {
-  padding: 4% 22% 2% 20%;
-  margin-left: 17%;
+.fullwidthcreate main #houseEdit .h5 {
+  width: 70%;
+  margin-left: 16%;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.fullwidthcreate main #houseEdit .h5 h5 {
+  padding: 4% 0 2%;
   border-bottom: 1px groove #C0C0C0;
 }
 
@@ -11856,7 +12217,7 @@ footer .right {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2% 0 2% 20%;
+  padding: 2% 16%;
 }
 
 .fullwidthcreate main #houseEdit .padding label {
@@ -11874,8 +12235,8 @@ footer .right {
 
 .fullwidthcreate main #houseEdit .padding .title,
 .fullwidthcreate main #houseEdit .padding .description {
-  padding-left: 2%;
-  width: 500px;
+  padding: 2%;
+  width: 480px;
 }
 
 .fullwidthcreate main #houseEdit .padding .title {
@@ -11890,13 +12251,11 @@ footer .right {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-wrap: wrap;
   padding-top: 4%;
-  width: 80%;
+  width: 100%;
 }
 
 .fullwidthcreate main #houseEdit .padding .numbers input {
-  width: 70px;
   height: 40px;
 }
 
@@ -11908,31 +12267,36 @@ footer .right {
   height: 40px;
 }
 
+.fullwidthcreate main #houseEdit .padding .address {
+  width: 100%;
+}
+
 .fullwidthcreate main #houseEdit .padding input.hide-clear[type=search]::-webkit-search-cancel-button {
   display: none;
 }
 
-.fullwidthcreate main #houseEdit .padding .wrap {
+.fullwidthcreate main #houseEdit .padding .services {
   width: 100%;
   margin-top: 5%;
 }
 
-.fullwidthcreate main #houseEdit .padding .wrap label {
+.fullwidthcreate main #houseEdit .padding .services label {
   padding-bottom: 1.5%;
 }
 
-.fullwidthcreate main #houseEdit .padding .wrap label input {
+.fullwidthcreate main #houseEdit .padding .services label input {
   padding-left: 3%;
 }
 
-.fullwidthcreate main #houseEdit .padding .wrap i {
+.fullwidthcreate main #houseEdit .padding .services i {
   font-size: 30px;
-  margin: 3% 6% 0 1%;
+  margin: 3% 4% 0 1%;
   color: #6cb2eb;
 }
 
 .fullwidthcreate main #houseEdit .button {
-  margin: 4% 0 6% 35%;
+  margin: 4% 0 6% 0;
+  margin-left: calc(75% / 2);
   padding: 2% 3%;
   border-radius: 5px;
   border: 1px solid #ececec;
@@ -11945,19 +12309,141 @@ footer .right {
   color: #ffff;
 }
 
+@media all and (max-width: 1200px) {
+  .fullwidthcreate main #houseEdit .padding .title,
+  .fullwidthcreate main #houseEdit .padding .description {
+    padding: 2%;
+    width: 360px;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .services {
+    flex-wrap: wrap;
+    width: calc(100% / 2);
+  }
+
+  .fullwidthcreate main #houseEdit .padding .services label {
+    margin-bottom: 2%;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .services input[type=checkbox],
+  .fullwidthcreate main #houseEdit .padding .services i {
+    margin-bottom: 3%;
+    font-size: 25px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .fullwidthcreate main #houseEdit .padding .title,
+  .fullwidthcreate main #houseEdit .padding .description {
+    padding: 2%;
+    width: 260px;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .numbers {
+    flex-wrap: wrap;
+    padding-top: 4%;
+    width: calc(100% / 4);
+  }
+
+  .fullwidthcreate main #houseEdit .padding .numbers div {
+    margin-bottom: 10%;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .numbers div input {
+    width: 100px;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .address {
+    width: 80%;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .img input[type=file] {
+    width: 80%;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .services {
+    width: calc(100% / 2);
+  }
+
+  .fullwidthcreate main #houseEdit .padding .services i {
+    font-size: 20px;
+  }
+
+  .fullwidthcreate main #houseEdit .button {
+    margin-left: calc(68% / 2);
+  }
+}
+
+@media all and (max-width: 768px) {
+  .fullwidthcreate main #houseEdit {
+    width: 100%;
+    margin: 0;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .title,
+  .fullwidthcreate main #houseEdit .padding .description {
+    width: 300px;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .services {
+    width: 100%;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .services i {
+    font-size: 15px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .fullwidthcreate main #houseEdit {
+    width: 100%;
+    margin: 0;
+  }
+
+  .fullwidthcreate main #houseEdit .padding {
+    padding: 2% 18%;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .title,
+  .fullwidthcreate main #houseEdit .padding .description {
+    padding: 2%;
+    width: 160px;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .numbers {
+    width: 50%;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .address {
+    width: 60%;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .services {
+    width: 100%;
+  }
+
+  .fullwidthcreate main #houseEdit .padding .services i {
+    font-size: 15px;
+  }
+
+  .fullwidthcreate main #houseEdit .button {
+    margin-left: 33%;
+  }
+}
+
 .fullwidthcreate {
   min-width: 100%;
   min-height: calc(100vh - 70px - 60px);
 }
 
 .fullwidthcreate main .posta {
-  margin: 5% 12%;
+  margin: 4% 10%;
   width: 80%;
   height: 70%;
-  background-color: #fff;
   padding: 4%;
   border: 1px solid #ececec;
   box-shadow: 0px 0px 30px #ececec;
+  background-color: #fff;
 }
 
 .fullwidthcreate main .posta h5 {
@@ -11966,7 +12452,7 @@ footer .right {
 }
 
 .fullwidthcreate main .posta .messaggi {
-  margin: 0 9%;
+  margin: 0 6%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -11975,24 +12461,23 @@ footer .right {
 }
 
 .fullwidthcreate main .posta .messaggi .email {
-  width: 35%;
+  width: 36%;
   padding: 1% 1% 0 1%;
 }
 
 .fullwidthcreate main .posta .messaggi .email h6 {
   font-weight: bold;
-  margin-right: 2%;
 }
 
 .fullwidthcreate main .posta .messaggi .email h6 i {
-  margin-right: 4%;
+  margin-right: 2%;
   font-size: 20px;
   color: #6cb2eb;
   vertical-align: middle;
 }
 
 .fullwidthcreate main .posta .messaggi .text {
-  padding: 2% 1.5% 0 5%;
+  padding: 2% 2% 0 5%;
 }
 
 .fullwidthcreate main .posta .messaggi p.textintero {
@@ -12004,8 +12489,50 @@ footer .right {
   position: absolute;
   background-color: #fff;
   border: 1px groove #ececec;
-  width: 35.3%;
+  width: 37.3%;
   padding: 2%;
+}
+
+@media all and (max-width: 1200px) {
+  .fullwidthcreate main .posta {
+    width: 95%;
+    margin: 5% 4%;
+  }
+
+  .fullwidthcreate main .posta .messaggi {
+    margin: 0 4%;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .fullwidthcreate main .posta .messaggi {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fullwidthcreate main .posta .messaggi .email {
+    width: 100%;
+  }
+
+  .fullwidthcreate main .posta .messaggi .text {
+    padding: 0.5% 2% 0 6%;
+  }
+
+  .fullwidthcreate main .posta .messaggi p.textintero {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .fullwidthcreate main .posta .messaggi .text {
+    padding: 0.5% 2% 0 7%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .fullwidthcreate main .posta .messaggi .text {
+    padding: 0.5% 2% 0 8%;
+  }
 }
 
 .fullwidthads {
@@ -12018,9 +12545,9 @@ footer .right {
   margin: 5% 20%;
   width: 65%;
   padding: 4%;
-  background-color: #fff;
   border: 1px solid #ececec;
   box-shadow: 0px 0px 30px #ececec;
+  background-color: #fff;
 }
 
 .fullwidthads main .payment h5 {
@@ -12050,7 +12577,8 @@ footer .right {
 }
 
 .fullwidthads main .button {
-  margin: 6% 0 3% 40%;
+  margin: 6% 0 3% 0;
+  margin-left: calc(70% / 2);
   padding: 2% 3%;
   border-radius: 5px;
   border: 1px solid #ececec;
@@ -12063,8 +12591,115 @@ footer .right {
   color: #ffff;
 }
 
-.fullwidthcreate {
+@media all and (max-width: 768px) {
+  .fullwidthads main .button {
+    margin-left: calc(60% / 2);
+  }
+}
+
+@media all and (max-width: 600px) {
+  .fullwidthads main .button {
+    margin-left: calc(50% / 2);
+  }
+}
+
+@media all and (max-width: 480px) {
+  .fullwidthads main .button {
+    margin-left: calc(28% / 2);
+  }
+}
+
+.fullwidthstats main {
+  overflow-x: hidden;
   min-width: 100%;
   min-height: calc(100vh - 70px - 60px);
+}
+
+.fullwidthstats main .canvas {
+  display: flex;
+}
+
+.fullwidthstats main .canvas #messages {
+  margin-left: 10%;
+  margin-right: 2%;
+}
+
+.fullwidthstats main .canvas #messages,
+.fullwidthstats main .canvas #views {
+  border: 1px solid #ececec;
+  box-shadow: 0px 0px 30px #ececec;
+  background-color: #fff;
+  margin-top: 5%;
+  padding: 2%;
+}
+
+.fullwidthstats main .canvas #messages h5,
+.fullwidthstats main .canvas #views h5 {
+  border-bottom: 1px groove #C0C0C0;
+  margin-bottom: 3%;
+}
+
+.fullwidthstats main .canvas #messages canvas,
+.fullwidthstats main .canvas #views canvas {
+  width: 500px;
+}
+
+.fullwidthstats main .canvas #messages form,
+.fullwidthstats main .canvas #views form {
+  width: 100%;
+  margin: 4% 0 0 3%;
+}
+
+.fullwidthstats main .canvas #messages form input,
+.fullwidthstats main .canvas #views form input {
+  padding: 0.8% 1%;
+  border: 1px solid #ececec;
+}
+
+.fullwidthstats main .canvas #messages form .button,
+.fullwidthstats main .canvas #views form .button {
+  padding: 1% 4%;
+  border-radius: 5px;
+  border: 1px solid #ececec;
+  background-color: #ffff;
+  color: #212529;
+}
+
+.fullwidthstats main .canvas #messages form .button:hover,
+.fullwidthstats main .canvas #views form .button:hover {
+  background-color: #3490dc;
+  color: #ffff;
+}
+
+@media all and (max-width: 1200px) {
+  .fullwidthstats main .canvas {
+    flex-direction: column;
+  }
+
+  .fullwidthstats main .canvas #messages,
+  .fullwidthstats main .canvas #views {
+    margin: 5% 0 5% 18%;
+    width: 60%;
+  }
+
+  .fullwidthstats main .canvas canvas {
+    width: 400px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .fullwidthstats main .canvas {
+    flex-direction: column;
+  }
+
+  .fullwidthstats main .canvas #messages,
+  .fullwidthstats main .canvas #views {
+    margin: 5% 0 5% 5%;
+    width: 90%;
+  }
+
+  .fullwidthstats main .canvas canvas {
+    width: 400px;
+  }
 }
 

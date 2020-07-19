@@ -21,3 +21,10 @@ footer{
   }
 
 }
+
+@media all and (max-width: 900px){
+  .lingua,
+  .euro{
+    display: none;
+  }
+}

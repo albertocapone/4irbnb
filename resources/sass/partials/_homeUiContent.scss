@@ -56,12 +56,124 @@
         border: none;
         padding: 1% 1.2%;
         margin-right: 1%;
+        &:hover{
+          background-color: #2aace1;
+        }
       }
 
     }
 
-
-
   }
 
+}
+
+@media all and (max-width:1200px) {
+  .fullwidth{
+    main{
+      .blulogo{
+        padding: 3.5% 2% 0 0;
+      }
+      #houseCreation{
+        padding: 1.2%;
+      }
+    }
+  }
+}
+
+@media all and (max-width:1000px) {
+  .fullwidth{
+    main{
+      .blulogo{
+        padding: 4% 2% 0 0;
+      }
+      #houseCreation{
+        padding: 1.5%;
+      }
+    }
+  }
+}
+
+@media all and (max-width:800px) {
+  .fullwidth{
+    main{
+      .blulogo{
+        padding: 5% 2% 0 0;
+      }
+      #houseCreation{
+        padding: 1.8%;
+      }
+    }
+  }
+}
+
+@media all and (max-width:768px) {
+  .fullwidth{
+    main{
+      .blulogo{
+        font-size: !important 10px;
+        padding: 6% 2% 0 0;
+      }
+      #houseCreation{
+        padding: 2%;
+        #bottone{
+          padding: 2.2% 1.2%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width:700px) {
+  .fullwidth{
+    main{
+      .blulogo{
+      display: none;
+      }
+      #houseCreation{
+        padding: 2.4%;
+        border-radius: 10px;
+        margin-left: 18%;
+        #bottone{
+          padding: 2.5% 1.2%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width:600px) {
+  .fullwidth{
+    main{
+      .blulogo{
+      display: none;
+      }
+      #houseCreation{
+        padding: 2.8%;
+        border-radius: 10px;
+        margin-left: 18%;
+        #bottone{
+          padding: 2.7% 1.2%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px){
+  .fullwidth{
+    main{
+      .blulogo{
+      display: none;
+      }
+      #houseCreation{
+        width: 70%;
+        padding: 3.5%;
+        border-radius: 10px;
+        margin-left: 18%;
+        #bottone{
+          padding: 3% 1.2%;
+        }
+      }
+    }
+  }
 }

@@ -66,4 +66,32 @@ header{
       }
     }
   }
+
+
+}
+
+@media all and (max-width: 992px){
+  header{
+    nav{
+      padding-top: 1.8%;
+      a{
+        margin-right: 4%;
+        font-size:16px;
+      }
+    }
+  }
+
+}
+
+@media all and (max-width: 600px){
+  header{
+    nav{
+      padding-top: 2%;
+      a{
+        margin-right: 10%;
+        font-size:16px;
+      }
+    }
+  }
+
 }

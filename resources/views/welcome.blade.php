@@ -10,12 +10,12 @@
         <div class="blulogo">
           <h1>AirBnBool</h1>
         </div>
-        
+
         <form id="houseCreation" >
           @csrf
           <div class="flex-two">
             <input type="search" id="address-input" placeholder="Dove?" class="hide-clear" />
-            <input id='bottone' type="submit" name="" value="CERCA">
+            <input id='bottone' type="submit" name="" value="Cerca">
           </div>
         <script type="text/javascript">
 

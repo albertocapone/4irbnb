@@ -1,34 +1,34 @@
 .fullwidthcreate{
   main{
 
-    min-width: 100%;
-    min-height: calc(100vh - 70px - 60px);
+    @include fullwidth;
 
     #houseEdit{
-      margin: 5% 17%;
-      width:65%;
-      background-color: #fff;
+      margin: 5% 20%;
+      width:60%;
 
       display: flex;
       flex-direction: column;
       align-items: flex-start;
 
+      @include borders-and-shadows;
 
-
-      border: 1px solid #ececec;
-      box-shadow: 0px 0px 30px  #ececec;
-
-      h5{
-        padding: 4% 22% 2% 20%;
-        margin-left: 17%;
-        border-bottom: 1px groove #C0C0C0;
+      .h5{
+        width: 70%;
+        margin-left: 16%;
+        text-align: center;
+        padding-top: 2%;
+        h5{
+          padding: 4% 0 2%;
+          border-bottom: 1px groove #C0C0C0;
+        }
       }
 
       .padding{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 2% 0 2% 20%;
+        padding: 2% 16%;
 
         label{
           margin: 4% 0 -1% 0;
@@ -44,8 +44,8 @@
 
         .title,
         .description{
-          padding-left: 2%;
-          width: 500px;
+          padding: 2%;
+          width: 480px;
         }
 
         .title{
@@ -60,14 +60,12 @@
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          flex-wrap: wrap;
 
           padding-top: 4%;
 
-          width: 80%;
+          width: 100%;
 
           input{
-            width: 70px;
             height: 40px;
           }
         }
@@ -79,12 +77,15 @@
         .sqm{
           height: 40px;
         }
+        .address{
+          width: 100%;
+        }
 
         input.hide-clear[type="search"]::-webkit-search-cancel-button{
         display: none;
         }
 
-        .wrap{
+        .services{
           width: 100%;
           margin-top:5%;
 
@@ -94,29 +95,152 @@
               padding-left:3%;
             }
           }
-
           i{
             font-size: 30px;
-            margin: 3% 6% 0 1%;
+            margin: 3% 4% 0 1%;
             color: #6cb2eb;
-            // opacity: 0.7;
           }
         }
       }
 
       .button{
-        margin: 4% 0 6% 35%;
+        margin: 4% 0 6% 0;
+        margin-left: calc(75% / 2);
         padding: 2% 3%;
-        border-radius: 5px;
-        border: 1px solid #ececec;
-        background-color: #ffff;
-        color: #212529;
+        @include button;
+      }
+    }
+  }
+}
 
-        &:hover{
-          background-color: #3490dc;
-          color: #ffff;
+@media all and (max-width: 1200px){
+  .fullwidthcreate{
+    main{
+      #houseEdit{
+        .padding{
+          .title,
+          .description{
+            padding: 2%;
+            width: 360px;
+          }
+          .services{
+            flex-wrap: wrap;
+            width: calc(100% / 2);
+            label{
+              margin-bottom: 2%;
+            }
+            input[type="checkbox"],
+            i{
+              margin-bottom: 3%;
+              font-size: 25px;
+            }
+          }
         }
       }
+    }
+  }
+}
+
+@media all and (max-width: 900px){
+  .fullwidthcreate{
+    main{
+      #houseEdit{
+        .padding{
+          .title,
+          .description{
+            padding: 2%;
+            width: 260px;
+          }
+          .numbers{
+            flex-wrap: wrap;
+            padding-top: 4%;
+            width: calc(100% / 4);
+            div{
+              margin-bottom: 10%;
+              input{
+                width: 100px;
+              }
+            }
+          }
+          .address{
+            width: 80%;
+          }
+          .img{
+            input[type='file']{
+              width: 80%;
+            }
+          }
+          .services{
+            width: calc(100% / 2);
+            i{
+              font-size: 20px;
+            }
+          }
+        }
+        .button{
+          margin-left: calc(68% / 2);
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px){
+  .fullwidthcreate{
+    main{
+      #houseEdit{
+        width: 100%;
+        margin: 0;
+        .padding{
+          .title,
+          .description{
+            width: 300px;
+          }
+          .services{
+            width: 100%;
+            i{
+              font-size: 15px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@media all and (max-width: 600px){
+  .fullwidthcreate{
+    main{
+      #houseEdit{
+        width:100%;
+        margin: 0;
+        .padding{
+          padding: 2% 18%;
+          .title,
+          .description{
+            padding: 2%;
+            width: 160px;
+          }
+          .numbers{
+            width: 50%;
+          }
+          .address{
+            width: 60%;
+          }
+          .services{
+            width:100%;
+            i{
+              font-size: 15px;
+
+            }
+          }
+        }
+        .button{
+          margin-left: 33%;
+        }
+      }
+
     }
   }
 }

@@ -8,8 +8,10 @@
 
       <form class="flex" id="houseCreation" enctype="multipart/form-data" data-parsley-validate>
         @csrf
+        <div class="h5">
+          <h5>Crea il tuo appartamento</h5>
+        </div>
 
-                <h5>Crea il tuo appartamento</h5>
 
         <div class="padding">
 
@@ -27,46 +29,37 @@
             <textarea class="description" type="text" name="description" value="" data-parsley-trigger="focusout" required></textarea>
           </div>
 
-            <div class="numbers">
-              <div class="">
-                <label for="rooms">Stanze</label>
+          <div class="numbers">
+            <div class="">
+              <label for="rooms">Stanze</label><br>
 
-                <input type="number" name="rooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
-              </div>
-
-              <div class="">
-                <label for="beds">Letti</label>
-
-                <input type="number" name="beds" value="" data-parsley-trigger="focusout" required min="1" max="20">
-              </div>
-
-              <div class="bagno">
-                <label for="bathrooms">Bagni</label>
-
-                <input type="number" name="bathrooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
-              </div>
+              <input type="number" name="rooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
             </div>
 
+            <div class="">
+              <label for="beds">Letti</label><br>
 
+              <input type="number" name="beds" value="" data-parsley-trigger="focusout" required min="1" max="20">
+            </div>
 
-              <div class="divsmq">
-                <label for="sqm">M<sup>2</sup></label>
-              </div>
-              <div class="">
-                <input class="sqm" type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5" required>
-              </div>
+            <div class="bagno">
+              <label for="bathrooms">Bagni</label><br>
 
-
-
-
-
-
+              <input type="number" name="bathrooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
+            </div>
+          </div>
+          <div class="divsmq">
+            <label for="sqm">M<sup>2</sup></label>
+          </div>
+          <div class="">
+            <input class="sqm" type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5" required>
+          </div>
 
           <div class="label">
             <label for="address">Indirizzo</label>
           </div>
-          <div class="">
-            <input type="search" id="address-input" value="" data-parsley-trigger="focusout" required class="hide-clear" style='width: 600px;'/>
+          <div class="address">
+            <input type="search" id="address-input" value="" data-parsley-trigger="focusout" required class="hide-clear"/>
           </div>
           <div class="label">
             <label for="house_img">Immagine</label>
@@ -75,7 +68,7 @@
             <input type="file" name="house_img" id="house_img" value="" data-parsley-trigger="focusout" required>
           </div>
 
-          <div class="wrap">
+          <div class="services">
             <label for="services[]">Servizi</label><br>
             @foreach ($services as $service)
               <input type="checkbox" name="services[]" value="{{$service->id}}"
