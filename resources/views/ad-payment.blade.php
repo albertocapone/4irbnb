@@ -1,4 +1,13 @@
 @extends('layouts.layout-base')
+
+@section('caching')
+  <script type="text/javascript" >
+    function preventBack(){window.history.forward();}
+      setTimeout("preventBack()", 0);
+      window.onunload=function(){null};
+  </script>
+@endsection
+
 @section('content')
 <div class="fullwidthads">
   <main>
@@ -8,15 +17,14 @@
         <form method="post" id="payment-form" action="{{ route('checkout',$house_id) }}">
             @csrf
             <section>
-                <label for="amount">
-                    <span class="input-label">Scegli la tariffa:</span>
-                      <select name="amount" id="amount">
-                        @foreach ($ads as $ad)
-                          <option value="{{$ad->price/100}}">{{$ad->price/100}}&euro;</option>
-                        @endforeach
-                      </select>
-                </label>
-
+                <label for="amount"></label>
+                <span class="input-label">Scegli la tariffa:</span>
+                  <select name="amount" id="amount">
+                    @foreach ($ads as $ad)
+                      <option value="{{$ad->price/100}}">{{$ad->price/100}}&euro;</option>
+                    @endforeach
+                  </select>
+              
                 <div class="bt-drop-in-wrapper">
                     <div id="bt-dropin"></div>
                 </div>
@@ -44,12 +52,14 @@
           }
           form.addEventListener('submit', function (event) {
             event.preventDefault();
+            
             instance.requestPaymentMethod(function (err, payload) {
               if (err) {
                 console.log('Request Payment Method Error', err);
                 return;
               }
               // Add the nonce to the form and submit
+              document.querySelectorAll("button[type=submit]")[0].disabled = true;
               document.querySelector('#nonce').value = payload.nonce;
               form.submit();
             });

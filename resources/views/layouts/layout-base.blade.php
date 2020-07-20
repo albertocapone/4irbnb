@@ -18,6 +18,7 @@
     <link rel="icon" href="{{asset('assets/images/logo.png')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/parsley.css')}}">
+    @yield('caching')
   </head>
   <body >
     <header>

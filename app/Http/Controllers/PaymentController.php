@@ -18,7 +18,7 @@ class PaymentController extends Controller
       $userOwnsIt = ($house['user_id'] == $userId) ? true : false;
       $isPromoActive = count($house->ads()->where('ending_date', '>=', Carbon::now())->get()) > 0;
       if (!$userOwnsIt || $isPromoActive) {
-        abort(403);
+        return redirect()->route('home');
       }
 
       $gateway = new Braintree\Gateway([
