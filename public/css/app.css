@@ -11651,6 +11651,16 @@ footer .right {
   background: none;
 }
 
+.sidebarLayout .property-features .box .overlay h4 {
+  width: 50%;
+  align-self: end;
+  padding: 10px;
+  background: #ececec;
+  border-radius: 3px;
+  margin-right: 10px;
+  color: #38c172;
+}
+
 .sidebarLayout .property-features .messaggi {
   background: url(/images/communication.png?286657b8458b38528abd7fd49c8d1546);
   background-position: 20px;
@@ -11823,6 +11833,10 @@ footer .right {
 .sidebarLayout .page-index-title {
   text-align: center;
   margin-bottom: 30px;
+}
+
+.sidebarLayout .sponsorizzate .house-preview {
+  border: 3px solid #6cb2eb;
 }
 
 .sidebarLayout .title {
@@ -13073,9 +13087,9 @@ footer .right {
   margin-bottom: 3%;
 }
 
-.fullwidthstats main .canvas #messages canvas,
-.fullwidthstats main .canvas #views canvas {
-  width: 500px;
+.fullwidthstats main .canvas #messages .chart,
+.fullwidthstats main .canvas #views .chart {
+  width: 450px;
 }
 
 .fullwidthstats main .canvas #messages form,
@@ -13117,24 +13131,67 @@ footer .right {
     width: 60%;
   }
 
-  .fullwidthstats main .canvas canvas {
+  .fullwidthstats main .canvas .chart {
+    width: 500px;
+  }
+
+  .fullwidthstats main .canvas .chart canvas {
+    margin-left: 10%;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .fullwidthstats main .canvas #messages,
+  .fullwidthstats main .canvas #views {
+    margin-left: 2%;
+    width: 80%;
+  }
+
+  .fullwidthstats main .canvas .chart canvas {
+    margin-left: 10%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .fullwidthstats main .canvas #messages,
+  .fullwidthstats main .canvas #views {
+    margin-left: 2%;
+    width: 84%;
+  }
+
+  .fullwidthstats main .canvas .chart {
     width: 400px;
+  }
+
+  .fullwidthstats main .canvas .chart canvas {
+    margin-left: 6%;
   }
 }
 
 @media all and (max-width: 600px) {
-  .fullwidthstats main .canvas {
-    flex-direction: column;
-  }
-
   .fullwidthstats main .canvas #messages,
   .fullwidthstats main .canvas #views {
-    margin: 5% 0 5% 5%;
-    width: 90%;
+    margin: 0;
+    width: 100%;
   }
 
-  .fullwidthstats main .canvas canvas {
-    width: 400px;
+  .fullwidthstats main .canvas .chart {
+    width: 300px;
+  }
+
+  .fullwidthstats main .canvas .chart canvas {
+    margin-left: 2%;
+  }
+}
+
+@media all and (max-width: 468px) {
+  .fullwidthstats main .canvas .chart {
+    width: 200px;
+  }
+
+  .fullwidthstats main .canvas .chart canvas {
+    width: 200px;
+    margin-left: 0;
   }
 }
 

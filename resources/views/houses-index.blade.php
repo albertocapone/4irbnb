@@ -73,31 +73,37 @@
         </div>
         <div class="title flex-container">
           <a href="{{route('show-house', $promoHouse->id)}}">
-            <h6>{{ ucfirst($promoHouse -> title) }}</h6>
+            <div class="name-and-owner flex-container">
+              <h6>{{ ucfirst($promoHouse -> title) }}</h6>
+              <p> - Owner: </p>
+              <p>{{$promoHouse -> users_id}}</p>
+            </div>
           </a>
-          @foreach ($promoHouse -> services as $service)
-            <span class="index-houses-preview-services">
-              {{$service -> name}}
-              @if($service->name == 'Wifi')
+          <div class="services-container flex-container">
+            @foreach ($promoHouse -> services as $service)
+              <span class="index-houses-preview-services">
+                {{$service -> name}}
+                @if($service->name == 'Wifi')
                   <i class="fas fa-wifi"></i>
-              @endif
-              @if($service->name == 'Parking')
+                @endif
+                @if($service->name == 'Parking')
                   <i class="fas fa-parking"></i>
-              @endif
-              @if($service->name == 'Pool')
+                @endif
+                @if($service->name == 'Pool')
                   <i class="fas fa-swimming-pool"></i>
-              @endif
-              @if($service->name == 'Concierge')
+                @endif
+                @if($service->name == 'Concierge')
                   <i class="fas fa-concierge-bell"></i>
-              @endif
-              @if($service->name == 'Sauna')
+                @endif
+                @if($service->name == 'Sauna')
                   <i class="fas fa-hot-tub"></i>
-              @endif
-              @if($service->name == 'Seaview')
+                @endif
+                @if($service->name == 'Seaview')
                   <i class="fas fa-water"></i>
-              @endif
-            </span>
-          @endforeach
+                @endif
+              </span>
+            @endforeach
+          </div>
         </div>
       </div>
     @endforeach
@@ -115,7 +121,6 @@
         <div class="title">
           <a href="{{route('show-house', $house->id)}}">
             <div class="name-and-owner flex-container">
-              <p>House: </p>
               <h6>{{ ucfirst($house -> title) }}</h6>
               <p> - Owner: </p>
               <p>{{$house -> users_id}}</p>
