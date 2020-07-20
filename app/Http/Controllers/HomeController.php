@@ -40,7 +40,6 @@ class HomeController extends Controller
     $id = Auth::user()->id;
     $houses = House::where('user_id', '=', $id)->get();
 
-
     return view('home', compact('houses'));
   }
 

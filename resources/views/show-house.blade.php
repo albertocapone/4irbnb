@@ -85,6 +85,10 @@
 
   $("#sendMessage").parsley(); //parsley form binding 
 
+  $('#sendMessage').submit(function(){
+     $(this).find(':submit').attr( 'disabled','disabled' );
+  });
+
   var lat = $('#map').data('lat');
   var lng = $('#map').data('lng');
   console.log(lat,lng);

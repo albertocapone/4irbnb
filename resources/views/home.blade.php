@@ -58,11 +58,16 @@
                 @endforeach
               </div>
             </div>
-
           </div>
         @endforeach
       </div>
     @endif
 
+    <script>
+      if(!!window.performance && window.performance.navigation.type === 2)
+        {
+          window.location.reload(); //forza refresh se arrivi da back button
+        }
+    </script>
 
 @endsection

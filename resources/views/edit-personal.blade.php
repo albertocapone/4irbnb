@@ -131,6 +131,7 @@
     });
 
     $("#houseEdit").submit(function (event) {
+      $(this).find(':submit').attr( 'disabled','disabled' );
       event.preventDefault();
      
         var services = [];
