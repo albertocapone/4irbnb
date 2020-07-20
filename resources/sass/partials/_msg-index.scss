@@ -75,6 +75,10 @@
            text-align: justify;
 
            overflow-y: scroll;
+
+           scrollbar-color: #3490dc #00003f;
+           scrollbar-width: thin;
+           
            &::-webkit-scrollbar {
             width: 10px;
           }
@@ -87,6 +91,8 @@
           &::-webkit-scrollbar-thumb:hover {
             background: #00003f;
           }
+
+
 
            .fa-times{
              position: absolute;

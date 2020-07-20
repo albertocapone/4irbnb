@@ -46,7 +46,7 @@
                 type: 'line',
                 // The data for our dataset
                 data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                     datasets: [{
                         label: 'Views per month in ' + query.date,
                         backgroundColor: 'rgb(2, 108, 181)',
@@ -67,7 +67,7 @@
                 type: 'line',
                 // The data for our dataset
                 data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                     datasets: [{
                         label: 'Messages per month in ' + query.date,
                         backgroundColor: 'rgb(168, 32, 78)',

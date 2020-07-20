@@ -2,8 +2,6 @@
 
   main{
 
-    @include fullwidth;
-
     #houseCreation{
       margin: 5% 20%;
       width:60%;
@@ -21,11 +19,6 @@
         h5{
           padding: 4%;
           border-bottom: 1px solid #ececec;
-          // &:hover{
-          //   background-color: #6cb2eb;
-          //   color: #ffff;
-          //   transition: all 0.3s linear;
-          // }
         }
       }
 
