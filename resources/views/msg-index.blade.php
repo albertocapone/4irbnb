@@ -15,20 +15,23 @@
         <div class="email">
           <h6> <i class="far fa-envelope"></i> {{$message->email}}</h6>
         </div>
+
         <div class="text">
           <p class="textmeta"> <b>Info:</b> {!! Str::words($message->text, 5, '...')!!}</p>
         </div>
-        <div>
-          <h6>
+        <div class="orario">
+          <p>
             {{$message->parsed_created_at($message->created_at)}}
-          </h6>
+          </p>
         </div>
+      
+
 
         <div class="textintero">
           <i class="fas fa-times"></i>
-          <h5>{{$message->parsed_created_at($message->created_at)}}</h5>
+          <p> IL: <b>{{$message->parsed_created_at($message->created_at)}}</b></p>
           <h6>DA:  <b>{{$message->email}}</b></h6><br>
-          <p> {{$message->text}}</p>
+          <p class="message"> {{$message->text}}</p>
         </div>
 
       </div>

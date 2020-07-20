@@ -16,11 +16,12 @@
        }
 
        .messaggi{
-         margin: 0 6%;
+         margin: 0;
          display: flex;
          flex-direction: row;
          justify-content: flex-start;
          align-items: center;
+         width: 100%;
 
          border: 1px solid #C0C0C0;
          box-shadow: 0px 0px 2px #00000057;
@@ -33,15 +34,14 @@
          }
 
          .email{
-           width: 36%;
-           padding: 1% 1% 0 1%;
+           width: 40%;
+           padding: 1% 0 0 1%;
 
            h6{
              font-weight: bold;
-             margin-bottom: 2%;
 
              i{
-               margin-right: 2%;
+               margin: 0 2% 1% 0;
                font-size: 20px;
                color: #00003f;
                vertical-align: middle;
@@ -50,8 +50,15 @@
          }
 
          .text{
-           padding: 2% 2% 0 5%;
+           padding-top: 2%;
            cursor: pointer;
+           width:40%;
+         }
+         .orario{
+           width: 20%;
+           font-size: 12px;
+           padding-top: 2%;
+           right: 0;
          }
          .textintero{
            display: none;
@@ -67,6 +74,20 @@
            left: 15%;
            text-align: justify;
 
+           overflow-y: scroll;
+           &::-webkit-scrollbar {
+            width: 10px;
+          }
+          &::-webkit-scrollbar-track {
+            background: #00003f;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: #3490dc;
+          }
+          &::-webkit-scrollbar-thumb:hover {
+            background: #00003f;
+          }
+
            .fa-times{
              position: absolute;
              right: 3%;
@@ -74,7 +95,11 @@
              color: #00003f;
              font-size:20px;
            }
-
+           p{
+             b{
+               margin-left: 7%;
+             }
+           }
            h6{
              border-bottom: 1px solid #00003f;
              padding-bottom: 1.5%;
@@ -83,7 +108,6 @@
              }
            }
          }
-
        }
      }
    }
@@ -96,7 +120,7 @@
         width: 97%;
         margin: 5% 4%;
         .messaggi{
-          margin: 0 4%;
+          margin: 0;
         }
       }
     }
@@ -107,17 +131,30 @@
   .fullwidthcreate{
     main{
       .posta{
+        width: 70%;
+        margin-left: 12%;
         .messaggi{
           flex-direction: column;
           align-items: flex-start;
-          .email{
+          .email,
+          .orario,
+          .text{
             width: 100%;
           }
-          .textintero{
-            h6{
-              padding-top: 2%;
-            }
+          .text{
+            padding-left: 7%;
+            padding-top: 0;
           }
+          .orario{
+            right:0;
+            padding-left: 7%;
+            padding-top: 0;
+          }
+          // .textintero{
+          //   h6{
+          //     padding-top: 1%;
+          //   }
+          // }
         }
       }
     }
@@ -136,7 +173,9 @@
             width:80%;
             height: 50%;
             h6{
-              padding-top: 3.5%;
+              b{
+                margin-left: 5%;
+              }
             }
             .fa-times{
               top:5%;
@@ -158,10 +197,12 @@
         .messaggi{
           .textintero{
             width:90%;
-            height: 60%;
+            height: 40%;
             left: 0;
             h6{
-              padding-top: 3.5%;
+              b{
+                margin-left: 5%;
+              }
             }
             .fa-times{
               top:5%;
