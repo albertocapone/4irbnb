@@ -32,7 +32,9 @@
       </a>
     </div>
     <div class="box promuovi flex-container {{$panelIsVisible}}">
-      <a href="{{route('ad-payment', $house->id)}}">
+      @if($endingDate == null)
+        <a href="{{route('ad-payment', $house->id)}}">
+      @endif
         <div class="overlay flex-container">
           <h3>Promuovi</h3>
           @if ($endingDate !== null)

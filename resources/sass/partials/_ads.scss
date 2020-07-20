@@ -22,7 +22,6 @@
           label{
 
             width:60%;
-            padding-bottom: 5%;
 
            .input-label{
             margin-right: 5%;
@@ -33,15 +32,28 @@
               padding: 1%;
             }
           }
-          .bt-drop-in-wrapper{
-            padding: 4% 35%;
-            width: 20%;
-            margin-top: 6%;
-          }
         }
       }
     }
 
+    .braintree-option__paypal{
+      display: none;
+    }
+    .braintree-option__card{
+      display: none;
+    }
+    [data-braintree-id="toggle"] {
+      display: none;
+    }
+    [data-braintree-id="choose-a-way-to-pay"]{
+      display: none;
+    }
+    .braintree-show-card {
+      display: block;
+    }
+    .braintree-card{
+      display: block;
+    }
 
     .button{
 
@@ -89,9 +101,12 @@
 
 @media all and (max-width: 600px){
   .fullwidthads {
+    padding-bottom: 0;
     main{
+      width:100%;
+      margin:0;
       .button{
-          margin-left: calc(50% / 2);
+          margin-left: 30%;
       }
 
     }
@@ -99,10 +114,10 @@
 }
 
 @media all and (max-width: 480px){
-  .fullwidthads {
+  .fullwidthads{
     main{
       .button{
-          margin-left: 10%;
+          margin-left: 20%;
       }
 
     }

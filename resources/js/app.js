@@ -46,11 +46,6 @@ $(document).ready(function(){
     $('div.dropcontent').fadeToggle();
   });
 
-  // $('.body').click(
-  //   function(){
-  //   $('div.textintero').hide();
-  //   }
-  // );
 
   $('.posta').on('click', '.text', function() {
     $(this).siblings('div.textintero').fadeIn();
@@ -61,5 +56,4 @@ $(document).ready(function(){
     $('div.textintero').fadeOut();
     }
   );
-
 });
