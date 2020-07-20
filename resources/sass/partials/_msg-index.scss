@@ -147,3 +147,28 @@
     }
   }
 }
+
+@media all and (max-width: 468px){
+  .fullwidthcreate{
+    main{
+      .posta{
+        width: 100%;
+        height:100;
+        margin: 0;
+        .messaggi{
+          .textintero{
+            width:90%;
+            height: 60%;
+            left: 0;
+            h6{
+              padding-top: 3.5%;
+            }
+            .fa-times{
+              top:5%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

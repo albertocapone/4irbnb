@@ -12307,6 +12307,7 @@ footer .right {
 .fullwidthcreate main #houseCreation .padding textarea {
   border: 1px solid #CCC;
   border-radius: 5px;
+  padding: 2%;
 }
 
 .fullwidthcreate main #houseCreation .padding .label {
@@ -12320,12 +12321,10 @@ footer .right {
 
 .fullwidthcreate main #houseCreation .padding .title {
   height: 40px;
-  padding: 2%;
 }
 
 .fullwidthcreate main #houseCreation .padding .description {
   height: 100px;
-  padding: 3%;
 }
 
 .fullwidthcreate main #houseCreation .padding .numbers {
@@ -12545,6 +12544,10 @@ footer .right {
   .fullwidthcreate main #houseCreation .padding .services {
     width: 100%;
   }
+
+  .fullwidthcreate main #houseCreation .button {
+    margin-left: 28%;
+  }
 }
 
 .fullwidthcreate main {
@@ -12590,6 +12593,7 @@ footer .right {
 .fullwidthcreate main #houseEdit .padding textarea {
   border: 1px solid #CCC;
   border-radius: 5px;
+  padding: 2%;
 }
 
 .fullwidthcreate main #houseEdit .padding .label {
@@ -12603,12 +12607,10 @@ footer .right {
 
 .fullwidthcreate main #houseEdit .padding .title {
   height: 40px;
-  padding: 2%;
 }
 
 .fullwidthcreate main #houseEdit .padding .description {
   height: 100px;
-  padding: 3%;
 }
 
 .fullwidthcreate main #houseEdit .padding .numbers {
@@ -12961,6 +12963,28 @@ footer .right {
   .fullwidthcreate main .posta .messaggi .textintero {
     width: 80%;
     height: 50%;
+  }
+
+  .fullwidthcreate main .posta .messaggi .textintero h6 {
+    padding-top: 3.5%;
+  }
+
+  .fullwidthcreate main .posta .messaggi .textintero .fa-times {
+    top: 5%;
+  }
+}
+
+@media all and (max-width: 468px) {
+  .fullwidthcreate main .posta {
+    width: 100%;
+    height: 100;
+    margin: 0;
+  }
+
+  .fullwidthcreate main .posta .messaggi .textintero {
+    width: 90%;
+    height: 60%;
+    left: 0;
   }
 
   .fullwidthcreate main .posta .messaggi .textintero h6 {
