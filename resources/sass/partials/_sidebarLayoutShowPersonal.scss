@@ -66,6 +66,13 @@
     }
   }
 
+  .fullwidth{
+    width: 100% !important;
+    height: 80px !important;
+    background: $green;
+    @include show-personal-boxes;
+  }
+
   .messaggi{
     background: url('assets/images/communication.png');
     @include show-personal-boxes;

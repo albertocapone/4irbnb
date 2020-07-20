@@ -75,8 +75,6 @@
           <a href="{{route('show-house', $promoHouse->id)}}">
             <div class="name-and-owner flex-container">
               <h6>{{ ucfirst($promoHouse -> title) }}</h6>
-              <p> - Owner: </p>
-              <p>{{$promoHouse -> users_id}}</p>
             </div>
           </a>
           <div class="services-container flex-container">
@@ -122,8 +120,6 @@
           <a href="{{route('show-house', $house->id)}}">
             <div class="name-and-owner flex-container">
               <h6>{{ ucfirst($house -> title) }}</h6>
-              <p> - Owner: </p>
-              <p>{{$house -> users_id}}</p>
             </div>
           </a>
           <div class="services-container flex-container">

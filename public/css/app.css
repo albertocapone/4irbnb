@@ -11661,6 +11661,22 @@ footer .right {
   color: #38c172;
 }
 
+.sidebarLayout .property-features .fullwidth {
+  width: 100% !important;
+  height: 80px !important;
+  background: #38c172;
+  background-position: 20px;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(0.9);
+          filter: grayscale(0.9);
+  transition: all 0.5s linear;
+}
+
+.sidebarLayout .property-features .fullwidth:hover {
+  -webkit-filter: grayscale(0.1);
+          filter: grayscale(0.1);
+}
+
 .sidebarLayout .property-features .messaggi {
   background: url(/images/communication.png?286657b8458b38528abd7fd49c8d1546);
   background-position: 20px;
@@ -11975,7 +11991,7 @@ footer .right {
     height: 40%;
   }
 
-  .sidebarLayout .property-features .box {
+  .sidebarLayout .box {
     width: 100% !important;
   }
 }

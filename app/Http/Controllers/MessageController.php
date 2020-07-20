@@ -23,8 +23,8 @@ class MessageController extends Controller
     }
 
     public function index($house_id) { 
-      $house  = House::findOrFail($house_id);
-      $messages  = $house->messages;
+      $house = House::findOrFail($house_id);
+      $messages = $house->messages()->orderBy('created_at', 'desc')->paginate(10);
       return view('msg-index', compact('messages'));
     }
 }
