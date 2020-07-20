@@ -164,7 +164,7 @@
           contentType: false,
           success: function(res) {
           console.log(res)
-          window.location.assign("http://localhost:8000/home");
+          window.location.assign(window.location.origin + "/home");
           },
           error: function(err){
             console.log(err)

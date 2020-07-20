@@ -15,6 +15,10 @@ class HouseController extends Controller
 {
   public function index(Request $request){
 
+    if(! (request()->has('lat') && request()->has('lng') && request()->has('address')) ) {
+      abort(403);
+    }
+
     $roomsInputValue = 1;
     $bedsInputValue = 1;
     $servicesFilter = [];

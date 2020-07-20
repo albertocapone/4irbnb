@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 class PaymentController extends Controller
 {
     public function transaction($house_id){
+      $house = House::findOrFail($house_id);
+      $userId = Auth::user()->id;
+      $userOwnsIt = ($house['user_id'] == $userId) ? true : false;
+      $isPromoActive = count($house->ads()->where('ending_date', '>=', Carbon::now())->get()) > 0;
+      if (!$userOwnsIt || $isPromoActive) {
+        abort(403);
+      }
 
       $gateway = new Braintree\Gateway([
        'environment' => config('services.braintree.environment'),
@@ -27,6 +34,10 @@ class PaymentController extends Controller
     }
 
     public function checkout(Request $request, $house_id){
+
+      if(! ($request->has('amount'))) {
+        abort(403);
+      }
 
       $gateway = new Braintree\Gateway([
         'environment' => config('services.braintree.environment'),

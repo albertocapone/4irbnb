@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,20 +21,20 @@ Route::get('/', function () {
 Auth::routes();
 
 // cambiare rotte e pagine
-Route::get('/houses-index', 'HouseController@index')->name('houses-index');
-Route::get('/show-house/{id}', 'HouseController@show')->name('show-house');
+Route::get('/houses-index', 'HouseController@index')->name('houses-index'); //ok
+Route::get('/show-house/{id}', 'HouseController@show')->name('show-house');  //ok
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/house-create', 'HomeController@create')->name('house-create');
-Route::post('/house-store', 'HomeController@store')->name('house-store');
-Route::get('/show-personal/{id}', 'HomeController@show')->name('show-personal');
-Route::get('/edit-personal/{id}', 'HomeController@edit')->name('edit-personal');
-Route::get('/set-personal-visibility/{id}', 'HomeController@setVisibility'); //da schermare
-Route::post('/update-personal/{id}', 'HomeController@update')->name('update-personal');
-Route::get('/delete-personal/{id}', 'HomeController@delete')->name('delete-personal');
-Route::post('/store-message/{house_id}','MessageController@store')->name('store-message');
-Route::get('/ad-payment/{house_id}', 'PaymentController@transaction')->name('ad-payment');
-Route::post('/checkout/{house_id}', 'PaymentController@checkout')->name('checkout');
-Route::get('/get-stats', 'StatsController@get');
-Route::get('/stats-index/{house_id}', 'StatsController@index')->name('stats-index'); //da schermare
-Route::get('/msg-index/{house_id}', 'MessageController@index')->name('msg-index');  //da schermare
+Route::get('/home', 'HomeController@index')->name('home'); //ok
+Route::get('/house-create', 'HomeController@create')->name('house-create'); //ok
+Route::any('/house-store', 'HomeController@store')->name('house-store'); //ok
+Route::get('/show-personal/{id}', 'HomeController@show')->name('show-personal'); //ok
+Route::get('/edit-personal/{id}', 'HomeController@edit')->name('edit-personal'); //ok
+Route::get('/set-personal-visibility/{id}', 'HomeController@setVisibility'); //ok
+Route::any('/update-personal/{id}', 'HomeController@update')->name('update-personal'); //ok
+Route::get('/delete-personal/{id}', 'HomeController@delete')->name('delete-personal'); //ok
+Route::any('/store-message/{house_id}','MessageController@store')->name('store-message'); //ok
+Route::get('/ad-payment/{house_id}', 'PaymentController@transaction')->name('ad-payment'); //ok
+Route::any('/checkout/{house_id}', 'PaymentController@checkout')->name('checkout'); //ok
+Route::get('/get-stats', 'StatsController@get'); //ok
+Route::get('/stats-index/{house_id}', 'StatsController@index')->name('stats-index'); //ok
+Route::get('/msg-index/{house_id}', 'MessageController@index')->name('msg-index');  //ok
