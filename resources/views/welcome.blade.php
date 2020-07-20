@@ -37,7 +37,7 @@
                       'lng':query.latlng.lng,
                     };
                     data = $.param(data);
-                    window.location.replace("http://localhost:8000/houses-index/?" + data);
+                    window.location.replace(window.location.origin + "/houses-index/?" + data);
                   });
         </script>
         </form>

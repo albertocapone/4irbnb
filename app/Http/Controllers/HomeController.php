@@ -52,6 +52,9 @@ class HomeController extends Controller
 
   public function store(Request $request)
   {
+    if(! ($request->has('title') )) {
+      abort(403);
+    }
 
     $validatedData = $request->validate([
       "title" => 'required|string',
@@ -108,7 +111,7 @@ class HomeController extends Controller
     $visibilityState = ($house['visibility'] == 0) ? "Mostra" : "Nascondi";
 
     if (!$userOwnsIt) {
-      return redirect()->route('home');
+      abort(403);
     }
 
     $messages = $house->messages;
@@ -140,7 +143,7 @@ class HomeController extends Controller
     $userOwnsIt = ($house['user_id'] == $userId) ? true : false;
 
     if (!$userOwnsIt) {
-      return redirect()->route('home');
+      abort(403);
     }
     $services = Service::all();
     return view('edit-personal', compact('services', 'house'));
@@ -150,6 +153,10 @@ class HomeController extends Controller
 
   public function update(Request $request, $id)
   {
+    if (!($request->has('title'))) {
+      abort(403);
+    }
+
     $validatedData = $request->validate([
       "title" => 'required|string',
       "description" => 'required|string',
@@ -202,14 +209,24 @@ class HomeController extends Controller
     $userOwnsIt = ($house['user_id'] == $userId) ? true : false;
 
     if (!$userOwnsIt) {
-      return redirect()->route('home');
+      abort(403);
     }
+
     $house->delete();
     return redirect()->route('home');
   }
 
   public function setVisibility($id){
+
     $house = House::findOrFail($id);
+
+    $userId = Auth::user()->id;
+    $userOwnsIt = ($house['user_id'] == $userId) ? true : false;
+
+    if (!$userOwnsIt) {
+      abort(403);
+    }
+
     $house['visibility'] = ($house['visibility'] == 0) ? 1 : 0;
     $house->save();
     $visibilityState = ($house['visibility'] == 0) ? "<h3>Mostra</h3>" : "<h3>Nascondi</h3>";
