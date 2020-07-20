@@ -32,9 +32,9 @@
       </a>
     </div>
     <div class="box promuovi flex-container {{$panelIsVisible}}">
-      @if($endingDate == null)
-        <a href="{{route('ad-payment', $house->id)}}">
-      @endif
+       @if ($endingDate === null)
+      <a href="{{route('ad-payment', $house->id)}}">
+        @endif
         <div class="overlay flex-container">
           <h3>Promuovi</h3>
           @if ($endingDate !== null)
@@ -71,7 +71,7 @@
         $('#setVisibility').addClass('visible');
         $('.visibility-tag').hide();
       };
-    };
+    }
 
     checkVisibilityState();
 
@@ -97,7 +97,7 @@
         $('.visibility-tag').fadeIn();
       }
     });
-
+    
   </script>
 
 @endsection
