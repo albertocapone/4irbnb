@@ -15,7 +15,6 @@
                           <option value="{{$ad->price/100}}">{{$ad->price/100}}&euro;</option>
                         @endforeach
                       </select>
-                    </div>
                 </label>
 
                 <div class="bt-drop-in-wrapper">
