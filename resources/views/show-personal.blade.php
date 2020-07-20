@@ -16,38 +16,46 @@
       </h1>
     </div>
 
-      <div class="box messaggi flex-container">
-        <a href="{{route('msg-index', $house->id)}}">
-          <div class="overlay flex-container">
-            <h3>Messaggi</h3>
-          </div>
-        </a>
-      </div>
-      <div class="box promuovi flex-container {{$panelIsVisible}}">
-        <a href="{{route('ad-payment', $house->id)}}">
-          <div class="overlay flex-container">
-            <h3>Promuovi</h3>
-            @if ($endingDate !== null)
-                <h4>Promo attiva fino ad {{$endingDate}} </h4>
-            @endif
-             {{-- comparsa tendina sotto pulsanti --}}
-          </div>
-        </a>
-      </div>
+    <div class="box fullwidth flex-container">
+      <a href= "{{route('show-house', $house['id'])}}">
+        <div class="overlay flex-container">
+          <h3>Vedi Scheda Pubblica</h3>
+        </div>
+      </a>
+    </div>
 
-      <div class="box statistiche flex-container">
-        <a href="{{route('stats-index', $house->id)}}">
-          <div class="overlay flex-container">
-           <h3>Statistiche</h3>
-          </div>
-        </a>
-      </div>
+    <div class="box messaggi flex-container">
+      <a href="{{route('msg-index', $house->id)}}">
+        <div class="overlay flex-container">
+          <h3>Messaggi</h3>
+        </div>
+      </a>
+    </div>
+    <div class="box promuovi flex-container {{$panelIsVisible}}">
+      <a href="{{route('ad-payment', $house->id)}}">
+        <div class="overlay flex-container">
+          <h3>Promuovi</h3>
+          @if ($endingDate !== null)
+              <h4>Promo attiva fino ad {{$endingDate}} </h4>
+          @endif
+           {{-- comparsa tendina sotto pulsanti --}}
+        </div>
+      </a>
+    </div>
 
-      <div class="box bottoni flex-container">
-        <a class="edit flex-container" href="{{route('edit-personal', $house->id)}}"> <h3>Modifica</h3> </a>
-        <a id="setVisibility" class="flex-container" data-house="{{$house->id}}" data-visibility="{{($house->visibility == 0) ? 'hidden' : 'visible'}}" ><h3>{{$visibilityState}}</h3></a>
-        <a class="delete flex-container" href="{{route('delete-personal', $house->id)}}"><h3>Elimina</h3></a>
-      </div>
+    <div class="box statistiche flex-container">
+      <a href="{{route('stats-index', $house->id)}}">
+        <div class="overlay flex-container">
+         <h3>Statistiche</h3>
+        </div>
+      </a>
+    </div>
+
+    <div class="box bottoni flex-container">
+      <a class="edit flex-container" href="{{route('edit-personal', $house->id)}}"> <h3>Modifica</h3> </a>
+      <a id="setVisibility" class="flex-container" data-house="{{$house->id}}" data-visibility="{{($house->visibility == 0) ? 'hidden' : 'visible'}}" ><h3>{{$visibilityState}}</h3></a>
+      <a class="delete flex-container" href="{{route('delete-personal', $house->id)}}"><h3>Elimina</h3></a>
+    </div>
 
   </div>
   <script>
