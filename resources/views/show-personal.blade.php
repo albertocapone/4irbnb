@@ -17,7 +17,7 @@
     </div>
 
     <div class="box fullwidth flex-container">
-      <a href= "{{route('show-house', $house['id'])}}">
+      <a href= "{{route('show-house', $house->id)}}">
         <div class="overlay flex-container">
           <h3>Vedi Scheda Pubblica</h3>
         </div>
