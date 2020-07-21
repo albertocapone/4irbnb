@@ -14,7 +14,9 @@
     </div>
      <div>
        <label for="radius">Distanza</label>
-       <input type="range" data-address="{{$address}}" data-lat="{{$lat}}" data-lng="{{$lng}}" name="radius" min="1" max="50" value="{{$radius}}" step="1">
+       <input type="range" data-address="{{$address}}" data-lat="{{$lat}}" data-lng="{{$lng}}" name="radius" min="1" max="30" value="{{$radius}}" step="1">
+       <input type="number" id="showRange" value="{{$radius}}" readonly="readonly">
+       <span>Km</span>
     </div>
      <div>
       <label for="services">Servizi</label>
@@ -158,6 +160,11 @@
   </div>
 
   <script>
+    $('input[name="radius"]').change(function() {
+      var range = $(this).val();
+      $('#showRange').val(range);
+    });
+
     $('#filter').click(function(){
       var filters =  {
         rooms: $('input[name="rooms"]').val(),
