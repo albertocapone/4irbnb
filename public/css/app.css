@@ -13143,8 +13143,8 @@ footer .right {
   margin-bottom: 4%;
 }
 
-.fullwidthads main .payment form section .input-label {
-  margin-right: 2%;
+.fullwidthads main .payment form section label {
+  width: 60%;
 }
 
 .fullwidthads main .payment form section #amount {
@@ -13178,7 +13178,29 @@ footer .right {
   box-shadow: 0px 0px 3px 1px #0000002b;
 }
 
+.fullwidthads main .payment .braintree-option__paypal {
+  display: none;
+}
+
+.fullwidthads main .payment [data-braintree-id=toggle] {
+  display: none;
+}
+
+.fullwidthads main .payment [data-braintree-id=choose-a-way-to-pay] {
+  display: none;
+}
+
+.fullwidthads main .payment .braintree-option__card {
+  border-radius: 5px;
+  border: 1px solid #ececec;
+  background-color: #fff;
+  color: #212529;
+  transition: all 0.3s linear;
+  box-shadow: 0px 0px 3px 1px #0000002b;
+}
+
 .fullwidthads main .payment .braintree-option__card:hover {
+<<<<<<< HEAD
   background-color: #577399;
   border: 1px solid #ececec;
 }
@@ -13195,6 +13217,10 @@ footer .right {
 
 .fullwidthads main .payment .braintree-sheet__header:hover {
   background-color: #577399;
+=======
+  background-color: #6cb2eb;
+  color: #ffff;
+>>>>>>> master
 }
 
 .fullwidthads main .payment .button {
@@ -13209,7 +13235,8 @@ footer .right {
 }
 
 .fullwidthads main .payment .button:hover {
-  background-color: #577399;
+  background-color: #3490dc;
+  color: #ffff;
 }
 
 @media all and (max-width: 1200px) {
