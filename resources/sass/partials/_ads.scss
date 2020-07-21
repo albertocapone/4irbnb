@@ -20,20 +20,20 @@
 
       form{
         section{
-          label{
-            width:60%;
            .input-label{
-            margin-right: 5%;
+             margin-right: 2%;
             }
             #amount{
               border-radius: 5px;
               width: 90px;
-              padding: 1%;
+              padding: 0.3%;
             }
-          }
         }
       }
 
+      .bt-drop-in-wrapper{
+        margin-top: 4%;
+      }
       .braintree-option__paypal{
         display: none;
       }
@@ -48,19 +48,28 @@
       .braintree-option__card{
         border-radius: 5px;
         border: 1px solid #ececec;
-        background-color: #fff;
+        background-color: #b4c1d4;
         color: #212529;
         transition: all 0.3s linear;
         box-shadow: 0px 0px 3px 1px #0000002b;
         &:hover{
-          background-color:#6cb2eb;
-          color:#ffff;
+          background-color:#577399;
         }
       }
       .button{
 
         margin: 6% 0 3% 38%;
-        @include button-full;
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid #ececec;
+        background-color: #ffff;
+        color: #212529;
+        transition: all 0.3s linear;
+        box-shadow: 0px 0px 3px 1px #0000002b;
+        &:hover{
+          background-color: #577399;
+          // color: #ffff;
+        }
 
       }
     }

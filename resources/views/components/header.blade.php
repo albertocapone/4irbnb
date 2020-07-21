@@ -25,7 +25,7 @@
 
               <div class="dropcontent">
 
-                <div><a href="{{route('house-create')}}" >Diventa Host</a></div>
+                <div><a href="{{route('house-create')}}" >Diventa host</a></div>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf

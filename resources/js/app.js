@@ -56,4 +56,15 @@ $(document).ready(function(){
     $('div.textintero').fadeOut();
     }
   );
+
+  $( function() {
+    $('services').tooltip();
+  } );
+
+  $('.container').keypress(function(enter) {
+    if ( enter.which == 13 ) {
+    $('#bottone').click();
+    }
+  });
+
 });

@@ -103,9 +103,10 @@ $margin-right: 150px;
   background-color: #ffff;
   color: #212529;
   transition: all 0.3s linear;
+  box-shadow: 0px 0px 3px 1px #0000002b;
   &:hover{
     background-color: #3490dc;
-    color: #ffff;
+    // color: #ffff;
   }
 
 }

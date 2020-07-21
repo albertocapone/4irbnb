@@ -60,13 +60,13 @@
             <input type="search" id="address-input" data-lat="{{$house['lat']}}" data-lng="{{$house['lng']}}" value="{{old('address',$house['address'])}}" data-parsley-trigger="focusout" required class="hide-clear"/>
           </div>
           <div class="label">
-            <label for="house_img">Immagine (Choose one or leave unchanged)</label>
+            <label for="house_img">Immagine (modifica o mantieni)</label>
           </div>
           <div class="img">
             <input type="file" name="house_img" id="house_img" data-parsley-trigger="focusout">
             <div id="old_img">
-              <img style="width: 100px; margin-top: 5px;" src="{{$house['house_img']}}" alt="">
-              <h5 style="display: inline-block; vertical-align: bottom; font-size: 9px; color: green;">Actually displayed</h5>
+              <img  src="{{$house['house_img']}}" alt="">
+              <h5 style="display: inline-block; vertical-align: bottom; font-size: 9px; color: #6cb2eb;">Immagine attuale</h5>
             </div>
           </div>
 
@@ -84,22 +84,22 @@
               @endforeach>
 
               @if($dbservice->name == 'Wifi')
-                  <i class="fas fa-wifi"></i>
+                  <i class="fas fa-wifi" title="Wifi"></i>
               @endif
               @if($dbservice->name == 'Parking')
-                  <i class="fas fa-parking"></i>
+                  <i class="fas fa-parking" title="Parcheggio"></i>
               @endif
               @if($dbservice->name == 'Pool')
-                  <i class="fas fa-swimming-pool"></i>
+                  <i class="fas fa-swimming-pool" title="Piscina"></i>
               @endif
               @if($dbservice->name == 'Concierge')
-                  <i class="fas fa-concierge-bell"></i>
+                  <i class="fas fa-concierge-bell" title="Portiere"></i>
               @endif
               @if($dbservice->name == 'Sauna')
-                  <i class="fas fa-hot-tub"></i>
+                  <i class="fas fa-hot-tub" title="Sauna"></i>
               @endif
               @if($dbservice->name == 'Seaview')
-                  <i class="fas fa-water"></i>
+                  <i class="fas fa-water" title="Vista Mare"></i>
               @endif
             @endforeach
           </div>
@@ -111,7 +111,7 @@
   </div>
 
   <script type="text/javascript">
-  
+
     $("#houseEdit").parsley(); //parsley form binding
 
     var pathname = window.location.pathname
@@ -126,14 +126,14 @@
     placesAutocomplete.on('change', e => query = e.suggestion);
 
     var imgFile;
-    $('input[type="file"]').change(function (e) { 
+    $('input[type="file"]').change(function (e) {
       imgFile = $('#house_img').prop("files")[0];
     });
 
     $("#houseEdit").submit(function (event) {
       $(this).find(':submit').attr( 'disabled','disabled' );
       event.preventDefault();
-     
+
         var services = [];
         $(':checkbox:checked').each(function(i){
         services[i] = $(this).val();

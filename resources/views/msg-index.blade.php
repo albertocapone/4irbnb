@@ -24,7 +24,7 @@
             {{$message->parsed_created_at($message->created_at)}}
           </p>
         </div>
-      
+
 
 
         <div class="textintero">

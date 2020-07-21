@@ -78,7 +78,7 @@
 
            scrollbar-color: #3490dc #00003f;
            scrollbar-width: thin;
-           
+
            &::-webkit-scrollbar {
             width: 10px;
           }
@@ -116,8 +116,13 @@
          }
        }
      }
-   }
+  }
 }
+
+
+
+
+
 
 @media all and (max-width: 1200px){
   .fullwidthcreate{
