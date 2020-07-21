@@ -29,27 +29,21 @@
           <div class="numbers">
             <div class="">
               <label for="rooms">Stanze</label><br>
-
               <input type="number" name="rooms" value="{{old('rooms',$house['rooms'])}}" data-parsley-trigger="focusout" required min="1" max="10">
             </div>
-
             <div class="">
               <label for="beds">Letti</label><br>
-
               <input type="number" name="beds" value="{{old('beds',$house['beds'])}}" data-parsley-trigger="focusout" required min="1" max="20">
             </div>
-
             <div class="bagno">
               <label for="bathrooms">Bagni</label><br>
-
               <input type="number" name="bathrooms" value="{{old('bathrooms',$house['bathrooms'])}}" data-parsley-trigger="focusout" required min="1" max="10">
             </div>
           </div>
-
           <div class="divsmq">
             <label for="sqm">M<sup>2</sup></label>
           </div>
-          <div class="">
+          <div>
             <input class="sqm" type="number" name="sqm" value="{{old('sqm',$house['sqm'])}}" data-parsley-trigger="focusout" min="5" required>
           </div>
 
@@ -109,6 +103,10 @@
 
     </main>
   </div>
+
+
+{{---------------------------------- SCRIPT ----------------------------------}}
+
 
   <script type="text/javascript">
 

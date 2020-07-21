@@ -10968,15 +10968,19 @@ header nav .rightheader {
 
 header nav .rightheader a {
   margin-right: 12%;
+  text-decoration: none;
 }
 
 header nav .rightheader span {
   cursor: pointer;
 }
 
+header nav .rightheader span a {
+  text-decoration: none;
+}
+
 header nav .rightheader span a.dropdown:hover {
   color: #3490dc;
-  text-decoration: underline;
 }
 
 header nav .rightheader span .dropcontent {
@@ -10998,9 +11002,15 @@ header nav .rightheader span .dropcontent a {
   font-size: 15px;
 }
 
+@media all and (max-width: 1200px) {
+  header nav {
+    padding-top: 1.2%;
+  }
+}
+
 @media all and (max-width: 900px) {
   header nav {
-    padding-top: 1.8%;
+    padding-top: 2%;
   }
 
   header nav a {
@@ -11019,7 +11029,7 @@ header nav .rightheader span .dropcontent a {
 
 @media all and (max-width: 600px) {
   header nav {
-    padding-top: 2%;
+    padding-top: 3%;
   }
 
   header nav .rightheader {
@@ -11028,12 +11038,13 @@ header nav .rightheader span .dropcontent a {
 
   header nav .rightheader span .dropcontent {
     left: 72%;
+    padding-left: 2%;
   }
 }
 
 @media all and (max-width: 468px) {
   header nav {
-    padding-top: 2%;
+    padding-top: 3.5%;
   }
 
   header nav .rightheader span .dropcontent {
@@ -11210,10 +11221,10 @@ footer {
   background-color: #fff;
   border-top: 1px solid #ececec;
   height: 60px;
+  padding: 1.2% 0;
 }
 
 footer .left {
-  margin-top: 1.4%;
   width: 60%;
   font-size: 10px;
 }
@@ -11223,13 +11234,35 @@ footer .left .lingua {
 }
 
 footer .right {
-  margin: 1.4% 4% 0 0;
+  padding-right: 4%;
+}
+
+@media all and (max-width: 1200px) {
+  footer {
+    padding: 1.8% 0;
+  }
 }
 
 @media all and (max-width: 900px) {
-  .lingua,
-  .euro {
+  footer {
+    padding: 2.1% 0;
+  }
+
+  footer .lingua,
+  footer .euro {
     display: none;
+  }
+}
+
+@media all and (max-width: 768px) {
+  footer {
+    padding: 2.3% 0;
+  }
+}
+
+@media all and (max-width: 468px) {
+  footer {
+    padding: 2.6% 0;
   }
 }
 
@@ -13167,8 +13200,27 @@ footer .right {
 }
 
 .fullwidthads main .payment .braintree-option__card:hover {
+<<<<<<< HEAD
+  background-color: #577399;
+  border: 1px solid #ececec;
+}
+
+.fullwidthads main .payment .braintree-card {
+  box-shadow: 0px 0px 3px 1px #0000002b;
+  border: 1px solid #577399;
+}
+
+.fullwidthads main .payment .braintree-sheet__header {
+  background-color: #b4c1d4;
+  transition: all 0.3s linear;
+}
+
+.fullwidthads main .payment .braintree-sheet__header:hover {
+  background-color: #577399;
+=======
   background-color: #6cb2eb;
   color: #ffff;
+>>>>>>> master
 }
 
 .fullwidthads main .payment .button {

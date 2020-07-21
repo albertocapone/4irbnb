@@ -1,8 +1,6 @@
 
 .fullwidth{
-
   main{
-
     @include main-fullwidth-ui;
     @include background-jpg;
 
@@ -13,7 +11,6 @@
       padding: 2% 7%;
       border-radius: 5px;
       opacity: 0.9;
-
       #email,
       #password{
          width: 430px;
@@ -32,7 +29,6 @@
       label{
         padding-top: 3%;
       }
-
 
       .form-check{
         margin-left: 0.5%;
@@ -61,7 +57,13 @@
 
 
 
+
+
+// MEDIA QUERY -----------------------------------------------------------------
+
+
 @media all and (max-width: 1200px){
+  
   .fullwidth{
     main{
       .login{
@@ -72,13 +74,12 @@
            width: 400px;
         }
       }
-
     }
   }
-
 }
 
 @media all and (max-width: 900px){
+
   .fullwidth{
     main{
       .login{
@@ -87,13 +88,12 @@
            width: 300px;
         }
       }
-
     }
   }
-
 }
 
 @media all and (max-width: 700px){
+
   .fullwidth{
     main{
       .login{
@@ -104,13 +104,12 @@
            width: 300px;
         }
       }
-
     }
   }
-
 }
 
 @media all and (max-width: 480px){
+
   .fullwidth{
     main{
       .login{
@@ -121,8 +120,6 @@
            width: 200px;
         }
       }
-
     }
   }
-
 }

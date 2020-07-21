@@ -17,6 +17,9 @@
             <input type="search" id="address-input" placeholder="Dove?" class="hide-clear" />
             <input id='bottone' type="submit" name="" value="CERCA">
           </div>
+
+{{---------------------------------- SCRIPT ----------------------------------}}
+
         <script type="text/javascript">
 
           var placesAutocomplete = places({
@@ -40,11 +43,11 @@
                     window.location.replace(window.location.origin + "/houses-index/?" + data);
                   });
         </script>
+{{----------------------------------- END ------------------------------------}}
+
+
         </form>
       </main>
     </div>
 
-    @endsection
-
-
-{{-- qua ricerca appartamento + log in o registrazione --}}
+  @endsection

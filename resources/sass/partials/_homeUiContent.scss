@@ -1,5 +1,4 @@
 .fullwidth{
-
   .flex-two{
     display: flex;
     flex-direction: row;
@@ -7,9 +6,7 @@
     align-items: center;
   }
 
-
   main{
-
     @include main-fullwidth-ui;
     @include background-jpg;
 
@@ -31,7 +28,6 @@
       text-align: right;
       padding: 3% 2% 0 0;
       opacity: 0.6;
-
     }
 
     #houseCreation{
@@ -42,7 +38,6 @@
       border-top-left-radius: 10px;
       border-bottom-left-radius:10px;
       opacity: 0.9;
-
       #address-input{
         width: 99%;
       }
@@ -63,18 +58,20 @@
           // color: #fff;
         }
       }
-
     }
-
   }
-
 }
 
 
 
 
 
-@media all and (max-width:1200px) {
+
+
+// MEDIA QUERY -----------------------------------------------------------------
+
+@media all and (max-width:1200px){
+
   .fullwidth{
     main{
       .blulogo{
@@ -87,7 +84,8 @@
   }
 }
 
-@media all and (max-width:1000px) {
+@media all and (max-width:1000px){
+
   .fullwidth{
     main{
       .blulogo{
@@ -100,7 +98,8 @@
   }
 }
 
-@media all and (max-width:800px) {
+@media all and (max-width:800px){
+
   .fullwidth{
     main{
       .blulogo{
@@ -113,7 +112,8 @@
   }
 }
 
-@media all and (max-width:768px) {
+@media all and (max-width:768px){
+
   .fullwidth{
     main{
       .blulogo{
@@ -130,7 +130,8 @@
   }
 }
 
-@media all and (max-width:700px) {
+@media all and (max-width:700px){
+
   .fullwidth{
     main{
       .blulogo{
@@ -148,7 +149,8 @@
   }
 }
 
-@media all and (max-width:600px) {
+@media all and (max-width:600px){
+
   .fullwidth{
     main{
       .blulogo{
@@ -167,6 +169,7 @@
 }
 
 @media all and (max-width: 480px){
+  
   .fullwidth{
     main{
       .blulogo{

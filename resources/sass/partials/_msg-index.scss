@@ -1,20 +1,16 @@
 .fullwidthcreate{
-
    @include fullwidth;
    main{
-
      .posta{
        margin: 4% 10% 2% 11%;
        width: 80%;
        padding: 4%;
-
        @include borders-and-shadows;
 
        h5{
          border-bottom: 1px solid #C0C0C0;
          margin-bottom: 4%;
        }
-
        .messaggi{
          margin: 0;
          display: flex;
@@ -24,10 +20,7 @@
          width: 100%;
 
          border: 1px solid #C0C0C0;
-         // box-shadow: 0px 0px 2px #00000057;
          box-shadow: 0px 0px 2px #00003f;
-
-
          &:hover{
            color: #484848;
            background: #e6edf4;
@@ -38,10 +31,8 @@
          .email{
            width: 40%;
            padding: 1% 0 0 1%;
-
            h6{
              font-weight: bold;
-
              i{
                margin: 0 2% 1% 0;
                font-size: 20px;
@@ -80,21 +71,18 @@
 
            scrollbar-color: #3490dc #00003f;
            scrollbar-width: thin;
-
            &::-webkit-scrollbar {
             width: 10px;
-          }
-          &::-webkit-scrollbar-track {
+           }
+           &::-webkit-scrollbar-track {
             background: #00003f;
-          }
-          &::-webkit-scrollbar-thumb {
+           }
+           &::-webkit-scrollbar-thumb {
             background: #3490dc;
-          }
-          &::-webkit-scrollbar-thumb:hover {
+           }
+           &::-webkit-scrollbar-thumb:hover {
             background: #00003f;
-          }
-
-
+           }
 
            .fa-times{
              position: absolute;
@@ -117,6 +105,7 @@
            }
          }
        }
+
        .pagination{
          margin:20% 0 0 45%;
          border:none;
@@ -142,15 +131,16 @@
 
 
 
+// MEDIA QUERY -----------------------------------------------------------------
 
 @media all and (max-width: 1200px){
+  
   .fullwidthcreate{
     main{
       padding-right: 4%;
       .posta{
         width: 97%;
         margin: 5% 4%;
-
         .messaggi{
           margin: 0;
         }
@@ -160,6 +150,7 @@
 }
 
 @media all and (max-width: 900px){
+
   .fullwidthcreate{
     main{
       .posta{
@@ -192,6 +183,7 @@
 }
 
 @media all and (max-width: 768px){
+
   .fullwidthcreate{
     main{
       padding: 0;
@@ -222,6 +214,7 @@
 }
 
 @media all and (max-width: 468px){
+
   .fullwidthcreate{
     main{
       padding: 0;
