@@ -160,7 +160,7 @@
   </div>
 
   <script>
-    $('input[name="radius"]').change(function() {
+    $('input[name="radius"]').on('input', function() {
       var range = $(this).val();
       $('#showRange').val(range);
     });
