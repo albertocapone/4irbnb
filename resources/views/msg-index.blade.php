@@ -36,10 +36,11 @@
 
       </div>
       @endforeach
+      <div>
+      {{ $messages->links() }}
     </div>
-    <div>
-    {{ $messages->links() }}
-  </div>
+    </div>
+
   </main>
 
 </div>
