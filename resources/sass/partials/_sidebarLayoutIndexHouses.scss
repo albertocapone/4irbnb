@@ -77,9 +77,10 @@
 }
 
 .services-container{
-  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .index-houses-preview-services{
   font-size: 12px;
+  padding-left: 6px;
 }

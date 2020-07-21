@@ -22,24 +22,24 @@
           <h5>Servizi:</h5>
            @foreach ($house -> services as $service)
              <span class="index-houses-preview-services">
-               {{$service->name}}
+
                @if($service->name == 'Wifi')
-                   <i class="fas fa-wifi"></i>
+                   <i class="fas fa-wifi" title="Wifi"></i>
                @endif
                @if($service->name == 'Parking')
-                   <i class="fas fa-parking"></i>
+                   <i class="fas fa-parking" title="Parcheggio"></i>
                @endif
                @if($service->name == 'Pool')
-                   <i class="fas fa-swimming-pool"></i>
+                   <i class="fas fa-swimming-pool" title="Piscina"></i>
                @endif
                @if($service->name == 'Concierge')
-                   <i class="fas fa-concierge-bell"></i>
+                   <i class="fas fa-concierge-bell" title="Portinaio"></i>
                @endif
                @if($service->name == 'Sauna')
-                   <i class="fas fa-hot-tub"></i>
+                   <i class="fas fa-hot-tub" title="Sauna"></i>
                @endif
                @if($service->name == 'Seaview')
-                   <i class="fas fa-water"></i>
+                   <i class="fas fa-water" title="Vista Mare"></i>
                @endif
              </span>
            @endforeach
@@ -83,7 +83,7 @@
 
 <script type="text/javascript">
 
-  $("#sendMessage").parsley(); //parsley form binding 
+  $("#sendMessage").parsley(); //parsley form binding
 
   $('#sendMessage').submit(function(){
      $(this).find(':submit').attr( 'disabled','disabled' );

@@ -56,9 +56,12 @@
   }
 
   .services-container{
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
+  .index-houses-preview-services{
+    padding-right: 4px;
+  }
 
 }
 
