@@ -11368,7 +11368,7 @@ footer .right {
 
 .sidebarLayout main section {
   width: 80%;
-  min-width: 500px;
+  min-width: 300px;
 }
 
 .sidebarLayout main section .main-container {
@@ -11854,6 +11854,15 @@ footer .right {
 
 .sidebarLayout .sidebar-index-filters input[type=checkbox] {
   outline: 1px solid #c4c4c4;
+  margin-right: 5px;
+}
+
+.sidebarLayout .sidebar-index-filters #showRange {
+  width: 50%;
+}
+
+.sidebarLayout .sidebar-index-filters #showRange:focus {
+  outline: none;
 }
 
 .sidebarLayout .sidebar-index-filters .bottoni {
@@ -11911,14 +11920,6 @@ footer .right {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1024px) {
-  .sidebarLayout .house-preview .immagine {
-    height: 60%;
-  }
-
-  .sidebarLayout .house-preview .title {
-    height: 40%;
-  }
-
   .sidebarLayout .hidden .overlay {
     height: 60%;
   }
@@ -11949,14 +11950,6 @@ footer .right {
 
   .sidebarLayout main section {
     width: 100%;
-  }
-
-  .sidebarLayout .house-preview .immagine {
-    height: 60%;
-  }
-
-  .sidebarLayout .house-preview .title {
-    height: 40%;
   }
 
   .sidebarLayout .hidden .overlay {
@@ -12014,14 +12007,6 @@ footer .right {
   .sidebarLayout .house-preview {
     width: 100%;
     height: 350px;
-  }
-
-  .sidebarLayout .house-preview .immagine {
-    height: 60%;
-  }
-
-  .sidebarLayout .house-preview .title {
-    height: 40%;
   }
 
   .sidebarLayout .box {

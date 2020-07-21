@@ -20,7 +20,15 @@
 
   input[type="checkbox"]{
     outline: 1px solid #c4c4c4;
-    // padding: 5px;
+    margin-right: 5px;
+  }
+
+  #showRange{
+    width: 50%;
+
+    &:focus{
+      outline: none;
+    }
   }
 
 
