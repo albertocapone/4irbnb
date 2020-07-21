@@ -87,7 +87,7 @@
                   <i class="fas fa-swimming-pool" title="Piscina"></i>
               @endif
               @if($dbservice->name == 'Concierge')
-                  <i class="fas fa-concierge-bell" title="Portiere"></i>
+                  <i class="fas fa-concierge-bell" title="Portinaio"></i>
               @endif
               @if($dbservice->name == 'Sauna')
                   <i class="fas fa-hot-tub" title="Sauna"></i>

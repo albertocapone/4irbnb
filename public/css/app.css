@@ -11457,7 +11457,11 @@ footer .right {
 }
 
 .sidebarLayout .house-preview .services-container {
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+
+.sidebarLayout .house-preview .index-houses-preview-services {
+  padding-right: 4px;
 }
 
 .sidebarLayout .visible .overlay {
@@ -11898,11 +11902,12 @@ footer .right {
 }
 
 .sidebarLayout .services-container {
-  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .sidebarLayout .index-houses-preview-services {
   font-size: 12px;
+  padding-left: 6px;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1024px) {
@@ -13179,7 +13184,6 @@ footer .right {
 }
 
 .fullwidthads main .payment .braintree-option__card:hover {
-<<<<<<< HEAD
   background-color: #577399;
   border: 1px solid #ececec;
 }
@@ -13196,10 +13200,6 @@ footer .right {
 
 .fullwidthads main .payment .braintree-sheet__header:hover {
   background-color: #577399;
-=======
-  background-color: #6cb2eb;
-  color: #ffff;
->>>>>>> master
 }
 
 .fullwidthads main .payment .button {
