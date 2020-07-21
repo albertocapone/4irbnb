@@ -4,8 +4,6 @@
   main{
     @include fullwidth;
 
-
-
     .charts{
       @include borders-and-shadows;
       width: 75%;
@@ -33,19 +31,16 @@
       }
 
     .canvas{
-
       display: flex;
       #messages{
         margin-left: 3%;
       }
-
       #views{
         margin-right: 4%;
       }
       #messages,
       #views{
           padding: 3% 2%;
-
           h5{
             border-bottom: 1px solid #C0C0C0;
             margin-bottom: 3%;
@@ -60,7 +55,13 @@
 }
 
 
+
+
+
+// MEDIA QUERY -----------------------------------------------------------------
+
 @media all and (max-width: 1200px){
+
   .fullwidthstats{
     main{
       .charts{
@@ -73,17 +74,16 @@
             canvas{
               margin-left: 10%;
             }
-
           }
         }
       }
-
     }
   }
 }
 
 
 @media all and (max-width: 768px){
+
   .fullwidthstats{
     main{
       .charts{
@@ -98,13 +98,13 @@
           }
         }
       }
-
     }
   }
 }
 
 
 @media all and (max-width: 468px){
+
   .fullwidthstats{
     main{
       .charts{

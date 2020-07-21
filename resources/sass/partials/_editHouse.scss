@@ -1,7 +1,5 @@
 .fullwidthcreate{
-
   main{
-
     @include fullwidth;
 
     #houseEdit{
@@ -11,14 +9,12 @@
       flex-direction: column;
       align-items: flex-start;
       border-radius: 5px;
-
       @include borders-and-shadows;
 
       .h5{
         width: 100%;
         text-align: center;
         vertical-align: middle;
-
         h5{
           padding: 4%;
           border-bottom: 1px solid #ececec;
@@ -30,7 +26,6 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 2% 22%;
-
         label{
           margin: 4% 0 -1% 0;
         }
@@ -41,20 +36,16 @@
           padding: 2%;
           box-shadow: 0px 0px 3px 1px #0000002b;
         }
-
         .label{
           padding-top: 4%;
         }
-
         .title,
         .description{
           width: 480px;
         }
-
         .title{
           height: 40px;
         }
-
         .description{
           height: 100px;
         }
@@ -63,7 +54,6 @@
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-
           padding-top: 4%;
           width: 80%;
 
@@ -77,15 +67,14 @@
         .divsmq{
           padding-top: 4%;
         }
-
         .sqm{
           height: 40px;
           padding-left: 4%;
         }
+
         .address{
           width: 100%;
         }
-
         input.hide-clear[type="search"]::-webkit-search-cancel-button{
         display: none;
         }
@@ -101,7 +90,6 @@
         .services{
           width: 100%;
           margin-top:5%;
-
           label{
             padding-bottom: 1.5%;
             input{
@@ -129,11 +117,11 @@
 
 
 
-
-
+// MEDIA QUERY -----------------------------------------------------------------
 
 
 @media all and (max-width: 1200px){
+
   .fullwidthcreate{
     main{
       #houseEdit{
@@ -163,6 +151,7 @@
 }
 
 @media all and (max-width: 900px){
+
   .fullwidthcreate{
     main{
       #houseEdit{
@@ -204,6 +193,7 @@
 }
 
 @media all and (max-width: 768px){
+
   .fullwidthcreate{
     main{
       #houseEdit{
@@ -238,6 +228,7 @@
 }
 
 @media all and (max-width: 600px){
+
   .fullwidthcreate{
     main{
       #houseEdit{
@@ -276,6 +267,7 @@
 }
 
 @media all and (max-width: 468px){
+  
   .fullwidthcreate{
     main{
       #houseEdit{

@@ -11,10 +11,7 @@
         <div class="h5">
           <h5>Crea il tuo appartamento</h5>
         </div>
-
-
         <div class="padding">
-
 
           <div class="label">
               <label for="title">Titolo</label>
@@ -30,18 +27,14 @@
           </div>
 
           <div class="numbers">
-            <div class="">
+            <div>
               <label for="rooms">Stanze</label><br>
-
               <input type="number" name="rooms" value="" data-parsley-trigger="focusout" required min="1" max="10">
             </div>
-
-            <div class="">
+            <div>
               <label for="beds">Letti</label><br>
-
               <input type="number" name="beds" value="" data-parsley-trigger="focusout" required min="1" max="20">
             </div>
-
             <div class="bagno">
               <label for="bathrooms">Bagni</label><br>
 
@@ -51,10 +44,9 @@
           <div class="divsmq">
             <label for="sqm">M<sup>2</sup></label>
           </div>
-          <div class="">
+          <div>
             <input class="sqm" type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5" required>
           </div>
-
           <div class="label">
             <label for="address">Indirizzo</label>
           </div>
@@ -100,11 +92,16 @@
         </div>
 
 
-      <input class="button" id='bottone' type="submit" name="" value="CREA APPARTAMENTO">
-
+        <input class="button" id='bottone' type="submit" name="" value="CREA APPARTAMENTO">
+      </form>
     </main>
   </div>
-  </form>
+
+
+
+{{---------------------------------- SCRIPT ----------------------------------}}
+
+
 
   <script type="text/javascript">
 
