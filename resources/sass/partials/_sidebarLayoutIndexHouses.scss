@@ -65,8 +65,37 @@
 }
 
 .sponsorizzate{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  background: #6cb2eb1c;
+  border-radius: 3px;
+  padding: 20px;
+  margin-bottom: 80px;
+  transition: all 0.6s linear;
+  scrollbar-width: thin;
+  scrollbar-color: $borders;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: lightgrey;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $borders;
+    border-radius: 20px;
+    border: 3px solid lightgrey;
+  }
+
+  &:hover{
+    overflow-x: scroll;
+  }
+
   .house-preview{
-    border: 3px solid $cyan;
+    flex: 0 0 auto;
+    margin-right: 20px;
+    margin-bottom: 0;
   }
 }
 

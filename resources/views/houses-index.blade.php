@@ -108,7 +108,6 @@
       </div>
     @endforeach
   </div>
-  <br><br><br><br><br>
   @endif {{-- fine case sponsorizzate  --}}
 
   <div class="houses-preview-container flex-container">

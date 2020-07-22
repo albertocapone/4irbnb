@@ -31,18 +31,17 @@
         </div>
       </a>
     </div>
+
     <div class="box promuovi flex-container {{$panelIsVisible}}">
-       @if ($endingDate === null)
-      <a href="{{route('ad-payment', $house->id)}}">
-        @endif
-        <div class="overlay flex-container">
-          <h3>Promuovi</h3>
-          @if ($endingDate !== null)
-              <h4>Promo attiva fino a {{$endingDate}} </h4>
-          @endif
-           {{-- comparsa tendina sotto pulsanti --}}
-        </div>
-      </a>
+      @if ($endingDate === null)
+        <a href="{{route('ad-payment', $house->id)}}">
+          <div class="overlay flex-container">
+            <h3>Promuovi</h3>
+          </div>
+        </a>
+      @elseif ($endingDate !== null)
+        <h4 id="promo">Promo attiva fino a {{$endingDate}} </h4>
+      @endif
     </div>
 
     <div class="box statistiche flex-container">
@@ -63,7 +62,6 @@
   <script>
     function checkVisibilityState(){
       var state = $('#setVisibility').data('visibility');
-      console.log(state);
       if (state == 'hidden') {
         $('#setVisibility').addClass('hidden');
         $('.visibility-tag').show();
@@ -91,11 +89,28 @@
         $('#setVisibility').removeClass('hidden');
         $('#setVisibility').addClass('visible');
         $('.visibility-tag').fadeOut();
-      } else{
+      } else {
         $('#setVisibility').removeClass('visible');
         $('#setVisibility').addClass('hidden');
         $('.visibility-tag').fadeIn();
       }
+    });
+
+    $('.promuovi').click(function(){
+
+      jQuery.fn.shake = function(interval,distance,times){
+         interval = typeof interval == "undefined" ? 100 : interval;
+         distance = typeof distance == "undefined" ? 10 : distance;
+         times = typeof times == "undefined" ? 3 : times;
+         var jTarget = $(this);
+         jTarget.css('position','relative');
+         for(var iter=0;iter<(times+1);iter++){
+            jTarget.animate({ left: ((iter%2==0 ? distance : distance*-1))}, interval);
+         }
+         return jTarget.animate({ left: 0},interval);
+      }
+      console.log('cazz!');
+      $('#promo').shake(100,10,5);
     });
 
   </script>

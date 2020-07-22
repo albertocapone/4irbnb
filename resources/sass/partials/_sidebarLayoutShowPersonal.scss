@@ -38,32 +38,24 @@
     cursor: pointer;
     position: relative;
 
-    .overlay{
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: #ffffffb8;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      transition: all 0.5s linear;
+    // .overlay{
+    //   width: 100%;
+    //   height: 100%;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   background: #ffffffb8;
+    //   flex-direction: column;
+    //   justify-content: space-around;
+    //   align-items: center;
+    //   transition: all 0.5s linear;
+    //
+    //   &:hover{
+    //     background: none;
+    //   }
 
-      &:hover{
-        background: none;
-      }
 
-      h4{
-        width: 50%;
-        align-self: end;
-        padding: 10px;
-        background: $borders;
-        border-radius: 3px;
-        margin-right: 10px;
-        color: $green;
-      }
-    }
+    // }
   }
 
   .fullwidth{
@@ -78,9 +70,31 @@
     @include show-personal-boxes;
   }
 
-  .promuovi{
+  .promo-off{
     background: url('assets/images/project.png');
     @include show-personal-boxes;
+  }
+
+  .promo-on{
+    background: url('assets/images/project.png');
+    background-position: 20px;
+    background-repeat: no-repeat;
+    filter: grayscale(0);
+    transition: all 0.5s linear;
+
+    &:hover {
+        filter: grayscale(0);
+    }
+
+    h4{
+      width: 50%;
+      align-self: flex-end;
+      padding: 10px;
+      background: $borders;
+      border-radius: 3px;
+      margin-right: 10px;
+      color: $green;
+    }
   }
 
   .statistiche{
@@ -129,38 +143,38 @@
     }
 
     .visible{
-      background:$orange;
+      background: $orange;
     }
 
     .hidden{
-      background:$green;
+      background: $green;
     }
   }
 
   // PROMO ON -----------------------------------------------
-  .promuovi-on{
-    background: url('assets/images/projectB&W.png');
-    background-color: #C0C0C0;
-    @include show-personal-boxes;
-    #fonton{
-      color: #000;
-    }
-  }
-
-  .promo-tag{
-    position: absolute;
-    top: 8%;
-    left: 10%;
-    transform: rotate(11deg);
-    padding: 10px;
-    background: $borders;
-    color: $red;
-    font-weight: bold;
-    border-radius: 3px;
-
-    h5{
-      margin: 0;
-      font-weight: bold;
-    }
-  }
+  // .promuovi-on{
+  //   background: url('assets/images/projectB&W.png');
+  //   background-color: #C0C0C0;
+  //   @include show-personal-boxes;
+  //   #fonton{
+  //     color: #000;
+  //   }
+  // }
+  //
+  // .promo-tag{
+  //   position: absolute;
+  //   top: 8%;
+  //   left: 10%;
+  //   transform: rotate(11deg);
+  //   padding: 10px;
+  //   background: $borders;
+  //   color: $red;
+  //   font-weight: bold;
+  //   border-radius: 3px;
+  //
+  //   h5{
+  //     margin: 0;
+  //     font-weight: bold;
+  //   }
+  // }
 }
