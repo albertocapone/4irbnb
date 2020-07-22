@@ -12,23 +12,26 @@
 
     -moz-appearance: textfield;
   }
+
   // nascondi spinner
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  }
+  // #showRange::-webkit-inner-spin-button,
+  // #showRange::-webkit-outer-spin-button {
+  // -webkit-appearance: none;
+  // }
 
   input[type="checkbox"]{
     outline: 1px solid #c4c4c4;
     margin-right: 5px;
   }
 
-  #showRange{
-    width: 50%;
+  #boxDistanza {
+    margin-bottom: 10px;
+  }
 
-    &:focus{
-      outline: none;
-    }
+  #showRange{
+    width: 60px;
+    vertical-align: bottom;
+    border: 1px solid white;
   }
 
 

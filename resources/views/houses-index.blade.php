@@ -12,11 +12,11 @@
        <label for="radius">Posti letto</label>
        <input type="number" name="beds" min="1" max="20" value="{{$bedsInputValue}}">
     </div>
-     <div>
+     <div id="boxDistanza">
        <label for="radius">Distanza</label>
+       <input type="text" id="showRange" value="{{$radius . ' km'}}" readonly="readonly">
        <input type="range" data-address="{{$address}}" data-lat="{{$lat}}" data-lng="{{$lng}}" name="radius" min="1" max="30" value="{{$radius}}" step="1">
-       <input type="number" id="showRange" value="{{$radius}}" readonly="readonly">
-       <span>Km</span>
+       {{-- <span>Km</span> --}}
     </div>
      <div>
       <label for="services">Servizi</label>
@@ -161,7 +161,7 @@
   <script>
     $('input[name="radius"]').on('input', function() {
       var range = $(this).val();
-      $('#showRange').val(range);
+      $('#showRange').val(range + " km");
     });
 
     $('#filter').click(function(){
