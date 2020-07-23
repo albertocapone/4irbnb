@@ -18,9 +18,9 @@
           <section>
               <label for="amount"></label>
               <span class="input-label">Scegli la tariffa:</span>
-                <select name="amount" id="amount">
+                <select style="width: 120px" name="amount" id="amount">
                   @foreach ($ads as $ad)
-                    <option value="{{$ad->price/100}}">{{$ad->price/100}}&euro;</option>
+                    <option  value="{{$ad->price/100}}">{{$ad->price/100}}&euro; - {{$ad->duration}}h</option>
                   @endforeach
                 </select>
 
