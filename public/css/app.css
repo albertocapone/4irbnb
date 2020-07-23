@@ -11438,7 +11438,7 @@ footer .right {
 
 .sidebarLayout .house-preview .immagine {
   width: 100%;
-  height: 70%;
+  height: 60%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -11449,11 +11449,16 @@ footer .right {
   width: 100%;
 }
 
+.sidebarLayout .house-preview .address {
+  font-size: min(max(8px, 4vw), 12px);
+}
+
 .sidebarLayout .house-preview .title {
   padding: 10px;
   background: white;
   width: 100%;
-  height: 30%;
+  height: 40%;
+  justify-content: space-between;
 }
 
 .sidebarLayout .house-preview .services-container {
@@ -11973,11 +11978,11 @@ footer .right {
   }
 
   .sidebarLayout h6 {
-    font-size: 26px;
+    font-size: 18px;
   }
 
   .sidebarLayout .index-houses-preview-services {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .sidebarLayout .hidden .overlay {

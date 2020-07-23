@@ -82,7 +82,9 @@
             <div class="name-and-owner flex-container">
               <h6>{{ ucfirst($promoHouse -> title) }}</h6>
             </div>
-             <h6>{{ ucfirst($promoHouse -> address) }}</h6>
+            <div class=" flex-container">
+              <h6 class="address">{{ ucfirst($promoHouse -> address) }}</h6>
+            </div>
           </a>
           <div class="services-container flex-container">
             @foreach ($promoHouse -> services as $service)
@@ -122,12 +124,14 @@
         <div class="immagine">
           <img src="{{$house -> house_img}}" alt="">
         </div>
-        <div class="title">
+        <div class="title flex-container">
           <a href="{{route('show-house', $house->id)}}">
             <div class="name-and-owner flex-container">
               <h6>{{ ucfirst($house -> title) }}</h6>
             </div>
-             <h6>{{ ucfirst($house -> address) }}</h6>
+            <div class="address-container flex-container">
+              <h6 class="address">{{ ucfirst($house -> address) }}</h6>
+            </div>
           </a>
           <div class="services-container flex-container">
             @foreach ($house -> services as $service)
