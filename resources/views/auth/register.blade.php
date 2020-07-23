@@ -13,7 +13,7 @@
                 <div class="flex class">
 
                       <div class="flex name">
-                          <label for="name" >{{ __('Name') }}</label>
+                          <label for="name" >{{ __('Nome') }}</label>
                           <input id="name" type="text" {{-- @error('name') is-invalid @enderror --}} name="name" value="{{ old('name') }}" autofocus>
 
                           {{-- @error('name')
@@ -28,7 +28,7 @@
 
 
                       <div class="flex lastname">
-                          <label for="last_name" >{{ __('Lastname') }}</label>
+                          <label for="last_name" >{{ __('Cognome') }}</label>
                           <input id="last_name" type="text" {{-- @error('last_name') is-invalid @enderror --}} name="last_name" value="{{ old('last_name') }}" >
 
                           {{-- @error('last_name')
@@ -41,7 +41,7 @@
                 </div>
 
                 <div >
-                  <label for="date_of_birth">{{ __('Date Of Birth')}}</label>
+                  <label for="date_of_birth">{{ __('Data di nascita')}}</label>
 
                   <div class="">
                       <input id='date_of_birth' type="date" {{--@error('date_of_birth') is-invalid @enderror--}} name="date_of_birth" value="{{ old('date_of_birth') }}">
@@ -54,7 +54,7 @@
                   </div>
                 </div>
                 <div>
-                    <label for="email">{{ __('E-Mail Address') }}</label>
+                    <label for="email">{{ __('E-Mail') }}</label>
 
                     <div class="">
                         <input id="email" type="email" @error('email') is-invalid @enderror name="email" value="{{ old('email') }}" required data-parsley-trigger="focusout">
@@ -82,7 +82,7 @@
                 </div>
 
                 <div >
-                    <label for="password-confirm" >{{ __('Confirm Password') }}</label>
+                    <label for="password-confirm" >{{ __('Conferma Password') }}</label>
 
                     <div class="">
                         <input id="password-confirm" type="password" name="password_confirmation" data-parsley-trigger="focusout" data-parsley-equalto="#password" required minlength="8">
