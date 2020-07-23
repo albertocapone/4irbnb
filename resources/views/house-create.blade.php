@@ -45,19 +45,19 @@
             <label for="sqm">M<sup>2</sup></label>
           </div>
           <div>
-            <input class="sqm" type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5" required>
+            <input class="sqm" type="number" name="sqm" value="" data-parsley-trigger="focusout" min="5" max="500" required>
           </div>
           <div class="label">
             <label for="address">Indirizzo</label>
           </div>
           <div class="address">
-            <input type="search" id="address-input" value="" data-parsley-trigger="focusout" required class="hide-clear"/>
+            <input type="search" id="address-input" value="" data-parsley-trigger="focusout" data-parsley-address required class="hide-clear"/>
           </div>
           <div class="label">
             <label for="house_img">Immagine</label>
           </div>
           <div class="img">
-            <input type="file" name="house_img" id="house_img" value="" data-parsley-trigger="focusout" required>
+            <input type="file" name="house_img" id="house_img" value="" accept="image/png, image/jpeg, image/gif, image/jpg" data-parsley-trigger="input" data-parsley-imagecheck="jpeg,png,gif,jpg" required>
           </div>
 
           <div class="services">
@@ -104,6 +104,27 @@
 
 
   <script type="text/javascript">
+  window.ParsleyValidator.addValidator('imagecheck', function (value, requirement) {
+        var file = $('#house_img').prop("files")[0];
+            requirement = requirement.split(',');
+            var fileExtension = (value.split('.').pop()).toLowerCase();
+            for (var i = 0; i < requirement.length; i++) {
+              if(fileExtension === requirement[i] && file.size <= 2103553) {
+              return true;
+              }
+            }
+            return false;
+        }, 32)
+        .addMessage('en', 'imagecheck', 'File must be an image (max 2048 KB)');
+
+        window.ParsleyValidator.addValidator('address', function (value) {
+          if(query && query.value == value){
+            return true;
+          } else {
+            return false;
+          }
+        }, 32)
+        .addMessage('en', 'address', 'Please, enter a valid address');
 
   $("#houseCreation").parsley(); //parsley form binding
 
@@ -118,6 +139,7 @@
     placesAutocomplete.on('change', e => query = e.suggestion);
 
     $("#houseCreation").submit(function (event) {
+      
         $(this).find(':submit').attr( 'disabled','disabled' );
         event.preventDefault();
 

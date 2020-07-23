@@ -15,7 +15,7 @@
      <div id="boxDistanza">
        <label for="radius">Distanza</label>
        <input type="text" id="showRange" value="{{$radius . ' km'}}" readonly="readonly">
-       <input type="range" data-address="{{$address}}" data-lat="{{$lat}}" data-lng="{{$lng}}" name="radius" min="1" max="30" value="{{$radius}}" step="1">
+       <input type="range" data-address="{{$address}}" data-lat="{{$lat}}" data-lng="{{$lng}}" name="radius" min="5" max="30" value="{{$radius}}" step="1">
        {{-- <span>Km</span> --}}
     </div>
      <div>
@@ -61,7 +61,11 @@
 @section('main-content')
 
   <h4 class="page-index-title">
+    @if(count($houses))
     Ecco le proprietà presso {{$address}}
+    @else
+    La ricerca non ha prodotto risultati
+    @endif
   </h4>
 
   @if(count($promoHouses))                         {{-- inizio case sponsorizzate  --}}
@@ -78,6 +82,7 @@
             <div class="name-and-owner flex-container">
               <h6>{{ ucfirst($promoHouse -> title) }}</h6>
             </div>
+             <h6>{{ ucfirst($promoHouse -> address) }}</h6>
           </a>
           <div class="services-container flex-container">
             @foreach ($promoHouse -> services as $service)
@@ -122,6 +127,7 @@
             <div class="name-and-owner flex-container">
               <h6>{{ ucfirst($house -> title) }}</h6>
             </div>
+             <h6>{{ ucfirst($house -> address) }}</h6>
           </a>
           <div class="services-container flex-container">
             @foreach ($house -> services as $service)

@@ -32,6 +32,7 @@
           <button class="button" type="submit"><span>ESEGUI IL PAGAMENTO</span></button>
       </form>
     </div>
+    @if (count($errors) > 0) <div class=""> <ul> @foreach ( $errors ->all() as $error) <li>{{$error}}</li> @endforeach </ul> </div> @endif
   </main>
 </div>
 

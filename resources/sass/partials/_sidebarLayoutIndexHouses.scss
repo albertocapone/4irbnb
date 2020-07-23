@@ -71,6 +71,7 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  overflow-y: hidden;
   background: #6cb2eb1c;
   border-radius: 3px;
   padding: 20px;
@@ -80,7 +81,7 @@
   scrollbar-color: $borders;
 
   &::-webkit-scrollbar {
-    height: 5px;
+    height: 6px;
   }
   &::-webkit-scrollbar-track {
     background: lightgrey;

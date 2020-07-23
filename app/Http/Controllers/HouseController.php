@@ -76,7 +76,7 @@ class HouseController extends Controller
       // dd($promoHouses);
      
 
-        $houses = $houses->paginate(25)->appends([
+        $houses = $houses->paginate(12)->appends([
           'rooms'=>request('rooms'),
           'beds' => request('beds'),
           'radius' => request('radius'),

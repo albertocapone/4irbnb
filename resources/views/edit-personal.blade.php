@@ -51,13 +51,13 @@
             <label for="address">Indirizzo</label>
           </div>
           <div class="address">
-            <input type="search" id="address-input" data-lat="{{$house['lat']}}" data-lng="{{$house['lng']}}" value="{{old('address',$house['address'])}}" data-parsley-trigger="focusout" required class="hide-clear"/>
+            <input type="search" id="address-input" data-lat="{{$house['lat']}}" data-lng="{{$house['lng']}}" data-address="{{$house['address']}}" value="{{old('address',$house['address'])}}" data-parsley-trigger="focusout" data-parsley-address required class="hide-clear"/>
           </div>
           <div class="label">
             <label for="house_img">Immagine (modifica o mantieni)</label>
           </div>
           <div class="img">
-            <input type="file" name="house_img" id="house_img" data-parsley-trigger="focusout">
+            <input type="file" name="house_img" id="house_img" accept="image/png, image/jpeg, image/gif, image/jpg" data-parsley-trigger="input" data-parsley-imagecheck="jpeg,png,gif,jpg">
             <div id="old_img">
               <img  src="{{$house['house_img']}}" alt="">
               <h5 style="display: inline-block; vertical-align: bottom; font-size: 9px; color: #6cb2eb;">Immagine attuale</h5>
@@ -110,6 +110,30 @@
 
   <script type="text/javascript">
 
+     window.ParsleyValidator.addValidator('imagecheck', function (value, requirement) {
+        var file = $('#house_img').prop("files")[0];
+            requirement = requirement.split(',');
+            var fileExtension = (value.split('.').pop()).toLowerCase();
+            for (var i = 0; i < requirement.length; i++) {
+              if(fileExtension === requirement[i] && file.size <= 2103553) {
+              return true;
+              }
+            }
+            return false;
+        }, 32)
+        .addMessage('en', 'imagecheck', 'File must be an image (max 2048 KB)');
+
+         window.ParsleyValidator.addValidator('address', function (value) {
+          if( (!query && value.includes(',')) || (query && query.value == value) ){
+            (!query) ? $('#address-input').val($('#address-input').data('address')) : "";
+            return true;
+          } else {
+            return false;
+          }
+        }, 32)
+        .addMessage('en', 'address', 'Please, enter a valid address');
+
+
     $("#houseEdit").parsley(); //parsley form binding
 
     var pathname = window.location.pathname
@@ -128,6 +152,13 @@
       imgFile = $('#house_img').prop("files")[0];
     });
 
+    // $('#address-input').focusout(function() {
+    //   if( (!query && $(this).data('address') != $(this).val() ) || (query && query.value != $(this).val()) ) {
+
+    //   document.getElementById('address-input').value = 'ehy';
+    //   }
+    // });
+
     $("#houseEdit").submit(function (event) {
       $(this).find(':submit').attr( 'disabled','disabled' );
       event.preventDefault();
@@ -144,7 +175,7 @@
         data.append("beds", $('input[name="beds"]').val());
         data.append("bathrooms", $('input[name="bathrooms"]').val());
         data.append("sqm", $('input[name="sqm"]').val());
-        data.append("address", (query)? query.value : $('#address-input').val());
+        data.append("address", (query)? query.value : $('#address-input').data('address'));
         data.append("lat", (query)? query.latlng.lat : $('#address-input').data('lat'));
         data.append("long", (query)? query.latlng.lng : $('#address-input').data('lng'));
         data.append("services", services);

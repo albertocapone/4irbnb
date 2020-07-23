@@ -12,14 +12,18 @@
         <div class="canvas">
           <div id="messages">
               <h5>MESSAGGI</h5>
-              <h6>Totali: <b>{{$allMessages}}</b></h6>
+              <h6>Totali: <b>{{$allMessages}}</b>
+                <span style="margin-left: 25px" id="msgsInYear"></span>
+              </h6>
               <div class="chart">
                 <canvas id="messagesPerMonth" ></canvas>
               </div>
           </div>
           <div id="views">
               <h5>VISUALIZZAZIONI</h5>
-              <h6>Totali: <b>{{$allViews}}</b></h6>
+              <h6>Totali: <b>{{$allViews}}</b>
+                <span style="margin-left: 25px" id="vwsInYear"></span>
+              </h6>
               <div class="chart">
                 <canvas id="viewsPerMonth" ></canvas>
               </div>
@@ -31,63 +35,88 @@
 
 
 {{---------------------------------- SCRIPT ----------------------------------}}
-
-
-
 <script>
+      var viewsCtx = document.getElementById('viewsPerMonth').getContext('2d');
+      var viewsChart = new Chart(viewsCtx, {
+          // The type of chart we want to create
+          type: 'line',
+          // The data for our dataset
+          data: {
+              labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+              datasets: [{
+                  label: "Visualizzazioni per l'anno selezionato",
+                  backgroundColor: 'rgb(2, 108, 181)',
+                  borderColor: 'rgb(215, 188, 106)',
+                  data: null
+              }]
+          },
+
+          // Configuration options go here
+          options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        stepSize: 1
+                    }
+                }]
+            }
+        }
+      });
+
+      var msgsCtx = document.getElementById('messagesPerMonth').getContext('2d');
+            var msgsChart = new Chart(msgsCtx, {
+                // The type of chart we want to create
+                type: 'line',
+                // The data for our dataset
+                data: {
+                    labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+                    datasets: [{
+                        label: "Messaggi per l'anno selezionato",
+                        backgroundColor: 'rgb(168, 32, 78)',
+                        borderColor: 'rgb(215, 188, 106)',
+                        data: null
+                    }]
+                },
+
+                // Configuration options go here
+               options: {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero: true,
+                              stepSize: 1
+                          }
+                      }]
+                  }
+              }
+            });
+
+
     $('button').click(function(event){
         event.preventDefault();
         var query = {
             date: $('#getStatsByDate').val(),
             house_id: $('#getStatsByDate').data('house')
         };
-        $.get('/get-stats/', query, function(data){
-            var data = JSON.parse(data);
-
-            var ctx = document.getElementById('viewsPerMonth').getContext('2d');
-            var chart = new Chart(ctx, {
-                // The type of chart we want to create
-                type: 'line',
-                // The data for our dataset
-                data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                    datasets: [{
-                        label: 'Views per month in ' + query.date,
-                        backgroundColor: 'rgb(2, 108, 181)',
-                        borderColor: 'rgb(215, 188, 106)',
-                        data: data.viewsPerMonth
-                    }]
-                },
-
-                // Configuration options go here
-                options: {
-                }
+        $.get('/get-stats/', query, function(stats){
+            var stats = JSON.parse(stats);
+            viewsChart.data.datasets.forEach((dataset) => {
+            dataset.label = 'Visualizzazioni (' + query.date + ')';
+            dataset.data = stats.viewsPerMonth;
             });
-            console.log(chart.data.data)
+            viewsChart.update();
+            $('#vwsInYear').html("Nel " + query.date + ": <b>" + stats.viewsPerMonth.reduce((a, b) => a + b, 0) + "</b>");
 
-            var ctx = document.getElementById('messagesPerMonth').getContext('2d');
-            var chart = new Chart(ctx, {
-                // The type of chart we want to create
-                type: 'line',
-                // The data for our dataset
-                data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                    datasets: [{
-                        label: 'Messages per month in ' + query.date,
-                        backgroundColor: 'rgb(168, 32, 78)',
-                        borderColor: 'rgb(215, 188, 106)',
-                        data: data.messagesPerMonth
-                    }]
-                },
-
-                // Configuration options go here
-                options: {
-                }
+            
+            msgsChart.data.datasets.forEach((dataset) => {
+            dataset.label = 'Messaggi (' + query.date + ')';
+            dataset.data = stats.messagesPerMonth;
             });
-
-
+            msgsChart.update();
+            $('#msgsInYear').html("Nel " + query.date + ": <b>" + stats.messagesPerMonth.reduce((a, b) => a + b, 0) + "</b>");
+          });
         });
-    });
 
 </script>
 @endsection
