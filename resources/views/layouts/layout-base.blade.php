@@ -24,8 +24,9 @@
     <header>
       @include('components.header')
     </header>
-    <div class="">
+    <div class="" style="position: relative;">
       @yield('content')
+      @include('components.disclaimer')
     </div>
     <footer>
       @include('components.footer')
