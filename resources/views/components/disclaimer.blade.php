@@ -1,4 +1,4 @@
-<div id="disclaimer" style="position: absolute;top: 50%;left: 50%;width: 250px;height: 350px;padding: 30px;/* margin: auto auto; */border: 1px solid red;background-color: lightgoldenrodyellow;color: red;transform: translate(-50%, -50%);text-align: center;border-radius: 15px;font-weight: 900; z-index: 5;">
+<div id="disclaimer" style="position: absolute;top: 50%;left: 50%;width: 250px; padding: 30px; border: 1px solid red;background-color: lightgoldenrodyellow;color: red;transform: translate(-50%, -50%);text-align: center;border-radius: 15px;font-weight: 900; z-index: 5;">
     <p>
     Questo sito esiste a scopo puramente dimostrativo.
     <br>

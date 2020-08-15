@@ -40,7 +40,7 @@
 {{---------------------------------- SCRIPT ----------------------------------}}
 
   <script>
-        $('disclaimer').append('<span>Card Test Code: 5555 5555 5555 4444<br>Card Test Exp.: 02/22</span>')
+        $('#disclaimer').append('<span>Card Test Code: 5555 5555 5555 4444<br>Card Test Exp.: 02/22</span>');
         var house_id = $('.payment').data('house')
         var form = document.querySelector('#payment-form');
         var client_token = "{{ $token }}";
