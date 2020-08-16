@@ -21,7 +21,7 @@ class ServicesSeeder extends Seeder
 
         App\Service::all()->each(function($service) use($houses){
           $service->houses()->attach(
-            $houses->random(rand(1,90))->pluck('id')->toArray()
+            $houses->random(rand(1,20000))->pluck('id')->toArray()
           );
         });
     }
