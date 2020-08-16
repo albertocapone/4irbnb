@@ -14,9 +14,11 @@ $factory->define(House::class, function (Faker $faker) {
 
   $geocoder->setApiKey(config('geocoder.key'));
 
+  $geocoder->setLanguage(config('geocoder.language', 'IT'));
+
   $latlng = [
-    "lat" => $faker->latitude($min = 35, $max = 47),
-    "lng" => $faker->longitude($min = 6, $max = 18),
+    "lat" => $faker->latitude($min = 36, $max = 46),
+    "lng" => $faker->longitude($min = 7, $max = 17),
   ];
 
   $address = $geocoder->getAddressForCoordinates($latlng["lat"], $latlng["lng"]);
