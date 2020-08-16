@@ -13,7 +13,7 @@ class ViewsSeeder extends Seeder
      */
     public function run()
     {
-        factory(View::class,100000)->make()->each(function($view){
+        factory(View::class,10000)->make()->each(function($view){
           $house=House::inRandomOrder()->first();
           $view->house()->associate($house);
           $view->save();
