@@ -9,7 +9,7 @@
     </button>
     <script>
         if(window.location.href.includes('ad-payment')){
-            $('#disclaimer').append('<span>Card Test Code: 5555 5555 5555 4444<br>Card Test Exp.: 02/22</span>');
+            $('#disclaimer').append('<span>Per attivare una sponsorizzazione usa i dati seguenti:</span><br><br><span>Card Test Code<br>5555 5555 5555 4444<br>Card Test Exp.Date<br>02/22</span>');
         }
         $('#close-disclaimer').click(function(){
             $('#disclaimer').hide();
