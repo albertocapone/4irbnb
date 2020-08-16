@@ -14,8 +14,8 @@ $factory->define(House::class, function (Faker $faker) {
       "bathrooms"=>rand(1,10),
       "sqm"=>rand(5,500),
       "address"=>$faker->address(),
-      "lat"=>$faker->latitude($min = 45, $max = 46),
-      "lng"=>$faker->longitude($min = 9, $max = 10),
+      "lat"=>$faker->latitude($min = 35, $max = 47),
+      "lng"=>$faker->longitude($min = 6, $max = 18),
       "house_img"=> "https://www.domusweb.it/content/domusweb20/en/architecture/archive/2017/07/03/straw_bale_house/jcr:content/image-preview.img.rmedium.jpg/1499154280967.jpg",
       "visibility"=>$faker->boolean()
     ];
