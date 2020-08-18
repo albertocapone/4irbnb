@@ -21,13 +21,13 @@ footer{
 // MEDIA QUERY -----------------------------------------------------------------
 
 
-@media all and (max-width: 1200px){
+@media all and (min-width: 901px) {
   footer{
     padding: 1.8% 0;
   }
 }
 
-@media all and (max-width: 900px){
+@media all and (min-width: 769px) and (max-width: 900px) {
   footer{
     padding: 2.1% 0;
     .lingua,
@@ -37,7 +37,7 @@ footer{
   }
 }
 
-@media all and (max-width: 768px){
+@media all and (min-width: 469px) and (max-width: 768px) {
   footer{
     padding: 2.3% 0;
   }

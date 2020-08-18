@@ -60,7 +60,7 @@
 
 // MEDIA QUERY -----------------------------------------------------------------
 
-@media all and (max-width: 1200px){
+@media all and (min-width: 769px) {
 
   .fullwidthstats{
     main{
@@ -82,7 +82,7 @@
 }
 
 
-@media all and (max-width: 768px){
+@media all and (min-width: 469px) and (max-width: 768px){
 
   .fullwidthstats{
     main{

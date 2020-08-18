@@ -81,7 +81,7 @@
 
 // MEDIA QUERY -----------------------------------------------------------------
 
-@media all and (max-width: 1200px){
+@media all and (min-width: 901px) and (max-width: 1200px) {
 
   .fullwidth{
     main{
@@ -96,7 +96,7 @@
   }
 }
 
-@media all and (max-width: 900px){
+@media all and (min-width: 769px) and (max-width: 900px){
 
   .fullwidth{
     main{
@@ -111,7 +111,7 @@
   }
 }
 
-@media all and (max-width: 768px){
+@media all and (min-width: 601px) and (max-width: 768px) {
 
   .fullwidth{
     main{
@@ -140,7 +140,7 @@
   }
 }
 
-@media all and (max-width: 600px){
+@media all and (min-width: 469px) and (max-width: 600px) {
 
   .fullwidth{
     main{
