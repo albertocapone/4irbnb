@@ -11002,13 +11002,13 @@ header nav .rightheader span .dropcontent a {
   font-size: 15px;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (min-width: 901px) {
   header nav {
     padding-top: 1.2%;
   }
 }
 
-@media all and (max-width: 900px) {
+@media all and (min-width: 769px) and (max-width: 900px) {
   header nav {
     padding-top: 2%;
   }
@@ -11027,7 +11027,7 @@ header nav .rightheader span .dropcontent a {
   }
 }
 
-@media all and (max-width: 600px) {
+@media all and (min-width: 469px) and (max-width: 768px) {
   header nav {
     padding-top: 3%;
   }
@@ -11123,7 +11123,7 @@ header nav .rightheader span .dropcontent a {
   background-color: #BDD5EA;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (min-width: 1001px) {
   .fullwidth main .blulogo {
     padding: 3.5% 2% 0 0;
   }
@@ -11133,7 +11133,7 @@ header nav .rightheader span .dropcontent a {
   }
 }
 
-@media all and (max-width: 1000px) {
+@media all and (min-width: 769px) and (max-width: 1000px) {
   .fullwidth main .blulogo {
     padding: 4% 2% 0 0;
   }
@@ -11143,7 +11143,7 @@ header nav .rightheader span .dropcontent a {
   }
 }
 
-@media all and (max-width: 800px) {
+@media all and (min-width: 601px) and (max-width: 768px) {
   .fullwidth main .blulogo {
     padding: 5% 2% 0 0;
   }
@@ -11151,11 +11151,9 @@ header nav .rightheader span .dropcontent a {
   .fullwidth main #houseCreation {
     padding: 1.8%;
   }
-}
 
-@media all and (max-width: 768px) {
   .fullwidth main .blulogo {
-    font-size: !important 10px;
+    font-size: 10px !important;
     padding: 6% 2% 0 0;
   }
 
@@ -11166,9 +11164,7 @@ header nav .rightheader span .dropcontent a {
   .fullwidth main #houseCreation #bottone {
     padding: 2.2% 1.2%;
   }
-}
 
-@media all and (max-width: 700px) {
   .fullwidth main .blulogo {
     display: none;
   }
@@ -11184,7 +11180,7 @@ header nav .rightheader span .dropcontent a {
   }
 }
 
-@media all and (max-width: 600px) {
+@media all and (min-width: 481px) and (max-width: 600px) {
   .fullwidth main .blulogo {
     display: none;
   }
@@ -11237,13 +11233,13 @@ footer .right {
   padding-right: 6%;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (min-width: 901px) {
   footer {
     padding: 1.8% 0;
   }
 }
 
-@media all and (max-width: 900px) {
+@media all and (min-width: 769px) and (max-width: 900px) {
   footer {
     padding: 2.1% 0;
   }
@@ -11254,7 +11250,7 @@ footer .right {
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 469px) and (max-width: 768px) {
   footer {
     padding: 2.3% 0;
   }
@@ -11268,7 +11264,6 @@ footer .right {
 
 .sidebarLayout {
   font-family: "Montserrat", "Nunito", sans-serif;
-  /* MAXI DESKTOP -------------------------------- */
   /* DESKTOP -------------------------------- */
   /* TABLET --------------------------------- */
   /* MOBILE --------------------------------- */
@@ -11307,14 +11302,14 @@ footer .right {
 }
 
 .sidebarLayout main aside .side-container nav .side-home-btns {
-  height: 0;
-  opacity: 0;
+  width: 80%;
+  margin: auto;
 }
 
 .sidebarLayout main aside .side-container nav .close-hamburger {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -15px;
+  right: -12px;
   height: 70px;
   display: none;
   cursor: pointer;
@@ -11601,7 +11596,7 @@ footer .right {
 }
 
 .sidebarLayout .message {
-  padding: 20px;
+  padding: 10px;
 }
 
 .sidebarLayout .message h3 {
@@ -11853,6 +11848,8 @@ footer .right {
 .sidebarLayout .page-index-title {
   text-align: center;
   margin-bottom: 30px;
+  width: 70%;
+  margin: 25px auto;
 }
 
 .sidebarLayout .sponsorizzate {
@@ -11912,13 +11909,9 @@ footer .right {
   padding-left: 6px;
 }
 
-@media screen and (min-width: 992px) and (max-width: 1024px) {
+@media screen and (min-width: 992px) {
   .sidebarLayout .hidden .overlay {
     height: 60%;
-  }
-
-  .sidebarLayout .side-home-btns {
-    height: 40px !important;
   }
 }
 
@@ -11939,6 +11932,8 @@ footer .right {
 
   .sidebarLayout main .close-hamburger {
     display: block !important;
+    top: -15px;
+    right: -12px;
   }
 
   .sidebarLayout main section {
@@ -11948,13 +11943,9 @@ footer .right {
   .sidebarLayout .hidden .overlay {
     height: 60%;
   }
-
-  .sidebarLayout .side-home-btns {
-    height: 40px !important;
-  }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 451px) and (max-width: 767px) {
   .sidebarLayout main aside {
     width: 50%;
     position: absolute;
@@ -11971,10 +11962,16 @@ footer .right {
 
   .sidebarLayout main .close-hamburger {
     display: block !important;
+    top: -15px;
+    right: -12px;
   }
 
   .sidebarLayout main section {
     width: 100%;
+  }
+
+  .sidebarLayout .sidebarLayout .box {
+    width: calc(100% - 20px);
   }
 
   .sidebarLayout h6 {
@@ -11993,8 +11990,83 @@ footer .right {
     width: calc(100% - 20px);
   }
 
-  .sidebarLayout .side-home-btns {
-    height: 40px !important;
+  .sidebarLayout .house-preview {
+    width: 100%;
+    height: 350px;
+  }
+
+  .sidebarLayout .box {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sidebarLayout main aside {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 100000;
+    display: none;
+  }
+
+  .sidebarLayout main .hamburger {
+    display: block;
+  }
+
+  .sidebarLayout main .close-hamburger {
+    display: block !important;
+    top: -15px;
+    right: -12px;
+  }
+
+  .sidebarLayout main section {
+    width: 100%;
+  }
+
+  .sidebarLayout header nav .rightheader {
+    width: unset;
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  .sidebarLayout .sidebarLayout .box {
+    width: calc(100% - 20px);
+  }
+
+  .sidebarLayout h6 {
+    font-size: 18px;
+  }
+
+  .sidebarLayout .index-houses-preview-services {
+    font-size: 15px;
+  }
+
+  .sidebarLayout .hidden .overlay {
+    height: 60%;
+  }
+
+  .sidebarLayout .property-features .box {
+    width: calc(100% - 20px);
+  }
+
+  .sidebarLayout .property-features h3 {
+    font-size: 1.175rem;
+  }
+
+  .sidebarLayout .property-features h4 {
+    font-size: 16px;
+  }
+
+  .sidebarLayout .property-features .property-title {
+    width: 70%;
+    margin: 25px auto;
+    position: relative;
+  }
+
+  .sidebarLayout .property-features .property-title h1 {
+    font-size: 1.6rem;
   }
 
   .sidebarLayout .house-preview {
@@ -12004,6 +12076,15 @@ footer .right {
 
   .sidebarLayout .box {
     width: 100% !important;
+  }
+
+  .sidebarLayout .features-container .img-container {
+    height: 220px;
+  }
+
+  .sidebarLayout .house-preview img,
+  .sidebarLayout .features-container .img-container img {
+    height: 100%;
   }
 }
 
@@ -12020,12 +12101,12 @@ footer .right {
 }
 
 .fullwidth main .register {
-  margin-left: 27%;
   background-color: #fff;
-  width: 48%;
+  width: 55%;
   padding: 2% 6%;
   border-radius: 5px;
   opacity: 0.9;
+  margin: 0 auto;
 }
 
 .fullwidth main .register h5 {
@@ -12036,7 +12117,7 @@ footer .right {
 
 .fullwidth main .register .flex {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
 }
 
 .fullwidth main .register .class {
@@ -12044,34 +12125,22 @@ footer .right {
 }
 
 .fullwidth main .register .class input {
-  width: calc( 100% / 2);
+  width: 50%;
   margin-right: 2%;
   padding: 3%;
   box-shadow: 0px 0px 3px 1px #0000002b;
 }
 
-.fullwidth main .register .class label {
-  margin-right: -4%;
-}
-
-.fullwidth main .register .lastname {
-  margin-right: 18%;
-}
-
-.fullwidth main .register .name {
-  margin-left: 3%;
-}
-
 .fullwidth main .register label {
-  margin: 1.5% 0 -1% 8%;
+  margin: 1.5% 0 0 8%;
   color: #000;
 }
 
 .fullwidth main .register input {
-  width: 400px;
-  margin: 0 0 2% 8%;
+  width: 90%;
+  margin: 0 0 1% 8%;
   border-radius: 5px;
-  height: 30px;
+  height: 25px;
   border: 1px solid #C0C0C0;
   padding: 1.5%;
   background-color: #e8f0fe;
@@ -12079,7 +12148,7 @@ footer .right {
 }
 
 .fullwidth main .register button {
-  margin: 3% 0 2% 8%;
+  margin: 3% 0 1% 8%;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #ececec;
@@ -12102,32 +12171,17 @@ footer .right {
   margin-left: 8%;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (min-width: 769px) and (max-width: 900px) {
   .fullwidth main .register {
-    margin-left: 25%;
     width: 55%;
-  }
-
-  .fullwidth main .register input {
-    width: 370px;
+    margin: 0 auto;
   }
 }
 
-@media all and (max-width: 900px) {
+@media all and (min-width: 601px) and (max-width: 768px) {
   .fullwidth main .register {
-    margin-left: 23%;
-    width: 55%;
-  }
-
-  .fullwidth main .register input {
-    width: 300px;
-  }
-}
-
-@media all and (max-width: 768px) {
-  .fullwidth main .register {
-    width: 80%;
-    margin-left: 10%;
+    width: 65%;
+    margin: 0 auto;
   }
 
   .fullwidth main .register .lastname,
@@ -12140,44 +12194,35 @@ footer .right {
     width: 100px;
   }
 
-  .fullwidth main .register .name {
-    margin-right: 20%;
-    margin-left: 5%;
-  }
-
   .fullwidth main .register .name label {
     margin-right: 20%;
   }
-
-  .fullwidth main .register input {
-    width: 300px;
-  }
 }
 
-@media all and (max-width: 600px) {
+@media all and (min-width: 469px) and (max-width: 600px) {
   .fullwidth main .register {
-    width: 100%;
-    border-radius: 0;
-    margin-left: 0;
-  }
-
-  .fullwidth main .register input {
-    width: 300px;
+    width: 75%;
+    margin: 0 auto;
   }
 }
 
 @media all and (max-width: 468px) {
   .fullwidth main .register {
-    border-radius: 0;
+    width: 85%;
+    margin: 0 auto;
   }
 
   .fullwidth main .register .name,
   .fullwidth main .register .lastname {
-    input: 50px;
+    width: 50px;
   }
 
   .fullwidth main .register input {
-    width: 250px;
+    width: 80%;
+  }
+
+  .fullwidth main .register .class input {
+    width: 50px;
   }
 }
 
@@ -12252,7 +12297,7 @@ footer .right {
   background-color: #3490dc;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (min-width: 901px) {
   .fullwidth main .login {
     margin: 2% 0 0 20%;
     width: 60%;
@@ -12264,14 +12309,14 @@ footer .right {
   }
 }
 
-@media all and (max-width: 900px) {
+@media all and (min-width: 701px) and (max-width: 900px) {
   .fullwidth main .login #email,
   .fullwidth main .login #password {
     width: 300px;
   }
 }
 
-@media all and (max-width: 700px) {
+@media all and (min-width: 481px) and (max-width: 700px) {
   .fullwidth main .login {
     margin: 2% 0 0 16%;
     width: 75%;
@@ -12296,8 +12341,8 @@ footer .right {
 }
 
 .fullwidthcreate main #houseCreation {
-  margin: 5% 20%;
-  width: 60%;
+  margin: 5% auto;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -12325,7 +12370,7 @@ footer .right {
 }
 
 .fullwidthcreate main #houseCreation .padding label {
-  margin: 4% 0 -1% 0;
+  margin: 4% 0 0 0;
 }
 
 .fullwidthcreate main #houseCreation .padding input,
@@ -12418,7 +12463,7 @@ footer .right {
   background-color: #3490dc;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (min-width: 901px) {
   .fullwidthcreate main #houseCreation .padding .title,
   .fullwidthcreate main #houseCreation .padding .description {
     padding: 2%;
@@ -12440,7 +12485,7 @@ footer .right {
   }
 }
 
-@media all and (max-width: 900px) {
+@media all and (min-width: 769px) and (max-width: 900px) {
   .fullwidthcreate main #houseCreation {
     width: 70%;
   }
@@ -12478,7 +12523,7 @@ footer .right {
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 601px) and (max-width: 768px) {
   .fullwidthcreate main #houseCreation {
     width: 100%;
     margin: 0;
@@ -12512,14 +12557,15 @@ footer .right {
   }
 }
 
-@media all and (max-width: 600px) {
+@media all and (min-width: 469px) and (max-width: 600px) {
   .fullwidthcreate main #houseCreation {
-    width: 100%;
-    margin: 0;
+    width: 75%;
+    margin: auto;
   }
 
   .fullwidthcreate main #houseCreation .padding {
-    padding: 2% 18%;
+    padding: 5px 10px 5px 10px;
+    width: 100%;
   }
 
   .fullwidthcreate main #houseCreation .padding .title,
@@ -12550,11 +12596,22 @@ footer .right {
   }
 
   .fullwidthcreate main #houseCreation .button {
-    margin-left: 30%;
+    margin: 0;
+    margin: 20px auto;
   }
 }
 
 @media all and (max-width: 468px) {
+  .fullwidthcreate main #houseCreation {
+    width: 80%;
+    margin: auto;
+  }
+
+  .fullwidthcreate main #houseCreation .padding {
+    padding: 5px 10px 5px 10px;
+    width: 100%;
+  }
+
   .fullwidthcreate main #houseCreation .padding .title,
   .fullwidthcreate main #houseCreation .padding .description {
     padding: 2%;
@@ -12570,8 +12627,17 @@ footer .right {
     margin-right: 2%;
   }
 
+  .fullwidthcreate main #houseCreation .padding .img input[type=file] {
+    width: 80%;
+  }
+
   .fullwidthcreate main #houseCreation .button {
-    margin-left: 28%;
+    margin: 0;
+    margin: 20px auto;
+  }
+
+  .ap-suggestion {
+    font-size: 9px;
   }
 }
 
@@ -12711,7 +12777,7 @@ footer .right {
   background-color: #3490dc;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (min-width: 901px) {
   .fullwidthcreate main #houseEdit .padding .title,
   .fullwidthcreate main #houseEdit .padding .description {
     padding: 2%;
@@ -12733,7 +12799,7 @@ footer .right {
   }
 }
 
-@media all and (max-width: 900px) {
+@media all and (min-width: 769px) and (max-width: 900px) {
   .fullwidthcreate main #houseEdit {
     width: 70%;
   }
@@ -12771,7 +12837,7 @@ footer .right {
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 601px) and (max-width: 768px) {
   .fullwidthcreate main #houseEdit {
     width: 100%;
     margin: 0;
@@ -12805,7 +12871,7 @@ footer .right {
   }
 }
 
-@media all and (max-width: 600px) {
+@media all and (min-width: 469px) and (max-width: 600px) {
   .fullwidthcreate main #houseEdit {
     width: 100%;
     margin: 0;
@@ -12843,11 +12909,22 @@ footer .right {
   }
 
   .fullwidthcreate main #houseEdit .button {
-    margin-left: 28%;
+    margin: 0;
+    margin: 20px auto;
   }
 }
 
 @media all and (max-width: 468px) {
+  .fullwidthcreate main #houseEdit {
+    margin: 5% auto;
+    width: 75%;
+  }
+
+  .fullwidthcreate main #houseEdit .padding {
+    padding: 5px 10px 5px 10px;
+    width: 100%;
+  }
+
   .fullwidthcreate main #houseEdit .padding .title,
   .fullwidthcreate main #houseEdit .padding .description {
     padding: 2%;
@@ -12863,8 +12940,13 @@ footer .right {
     margin-right: 2%;
   }
 
+  .fullwidthcreate main #houseEdit .padding .img input[type=file] {
+    width: 80%;
+  }
+
   .fullwidthcreate main #houseEdit .button {
-    margin-left: 24%;
+    margin: 0;
+    margin: 20px auto;
   }
 }
 
@@ -12874,8 +12956,8 @@ footer .right {
 }
 
 .fullwidthcreate main .posta {
-  margin: 4% 10% 2% 11%;
-  width: 80%;
+  margin: 2% auto;
+  width: 95%;
   padding: 4%;
   border: 1px solid #ececec;
   background-color: #fff;
@@ -12906,6 +12988,7 @@ footer .right {
 }
 
 .fullwidthcreate main .posta .messaggi .email {
+  cursor: pointer;
   width: 40%;
   padding: 1% 0 0 1%;
 }
@@ -12921,7 +13004,7 @@ footer .right {
   vertical-align: middle;
 }
 
-.fullwidthcreate main .posta .messaggi .text {
+.fullwidthcreate main .posta .messaggi .text.real {
   padding-top: 2%;
   cursor: pointer;
   width: 40%;
@@ -12936,17 +13019,19 @@ footer .right {
 
 .fullwidthcreate main .posta .messaggi .textintero {
   display: none;
-  position: absolute;
+  position: fixed;
   background-color: #fff;
   border: 1px solid #C0C0C0;
   box-shadow: 0px 0px 2px #00000057;
   border-radius: 5px;
-  width: 70%;
-  height: 40%;
+  width: 300px;
+  height: 300px;
   padding: 3%;
-  top: 30%;
-  left: 15%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: justify;
+  z-index: 30;
   overflow-y: scroll;
   scrollbar-color: #3490dc #00003f;
   scrollbar-width: thin;
@@ -12990,7 +13075,10 @@ footer .right {
 }
 
 .fullwidthcreate main .posta .pagination {
-  margin: 20% 0 0 45%;
+  margin: 25px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   border: none;
 }
 
@@ -13005,7 +13093,7 @@ footer .right {
   color: #ffff;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (min-width: 901px) and (max-width: 1200px) {
   .fullwidthcreate main {
     padding-right: 4%;
   }
@@ -13020,7 +13108,7 @@ footer .right {
   }
 }
 
-@media all and (max-width: 900px) {
+@media all and (min-width: 769px) and (max-width: 900px) {
   .fullwidthcreate main .posta {
     width: 70%;
     margin-left: 18%;
@@ -13028,7 +13116,7 @@ footer .right {
 
   .fullwidthcreate main .posta .messaggi {
     flex-direction: column;
-    align-items: flex-start;
+    align-content: flex-start;
   }
 
   .fullwidthcreate main .posta .messaggi .email,
@@ -13047,13 +13135,9 @@ footer .right {
     padding-left: 7%;
     padding-top: 0;
   }
-
-  .fullwidthcreate main .posta .pagination {
-    margin: 20% 0 0 40%;
-  }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 469px) and (max-width: 768px) {
   .fullwidthcreate main {
     padding: 0;
   }
@@ -13064,9 +13148,13 @@ footer .right {
     margin: 0;
   }
 
-  .fullwidthcreate main .posta .messaggi .textintero {
-    width: 80%;
-    height: 50%;
+  .fullwidthcreate main .posta .messaggi {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .fullwidthcreate main .posta .messaggi .text.real {
+    display: none;
   }
 
   .fullwidthcreate main .posta .messaggi .textintero h6 b {
@@ -13075,22 +13163,35 @@ footer .right {
 
   .fullwidthcreate main .posta .messaggi .textintero .fa-times {
     top: 5%;
-  }
-
-  .fullwidthcreate main .posta .pagination {
-    margin: 20% 0 0 40%;
   }
 }
 
 @media all and (max-width: 468px) {
+  header nav .rightheader {
+    width: unset;
+    margin-left: 0;
+    font-size: 15px;
+  }
+
   .fullwidthcreate main {
     padding: 0;
   }
 
-  .fullwidthcreate main .posta .messaggi .textintero {
-    width: 90%;
-    height: 40%;
-    left: 0;
+  .fullwidthcreate main .posta .messaggi {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .fullwidthcreate main .posta .messaggi .orario {
+    font-size: 11px;
+  }
+
+  .fullwidthcreate main .posta .messaggi h6 {
+    font-size: 0.7rem;
+  }
+
+  .fullwidthcreate main .posta .messaggi .text.real {
+    display: none;
   }
 
   .fullwidthcreate main .posta .messaggi .textintero h6 b {
@@ -13101,8 +13202,8 @@ footer .right {
     top: 5%;
   }
 
-  .fullwidthcreate main .posta .pagination {
-    margin: 20% 0 0 38%;
+  .fullwidthcreate main .posta .pagination .page-link {
+    padding: 7px;
   }
 }
 
@@ -13195,25 +13296,25 @@ footer .right {
   background-color: #577399;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (min-width: 901px) {
   .fullwidthads main .button {
     margin-left: 33%;
   }
 }
 
-@media all and (max-width: 900px) {
+@media all and (min-width: 769px) and (max-width: 900px) {
   .fullwidthads main .button {
     margin-left: 31%;
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 601px) and (max-width: 768px) {
   .fullwidthads main .button {
     margin-left: 28%;
   }
 }
 
-@media all and (max-width: 600px) {
+@media all and (min-width: 481px) and (max-width: 600px) {
   .fullwidthads {
     padding-bottom: 0;
   }
@@ -13229,6 +13330,11 @@ footer .right {
 }
 
 @media all and (max-width: 480px) {
+  .fullwidthads main {
+    margin: 5% auto;
+    width: 86%;
+  }
+
   .fullwidthads main .button {
     margin-left: 20%;
   }
@@ -13300,7 +13406,7 @@ footer .right {
   width: 400px;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (min-width: 769px) {
   .fullwidthstats main .charts .canvas {
     flex-direction: column;
   }
@@ -13314,7 +13420,7 @@ footer .right {
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 469px) and (max-width: 768px) {
   .fullwidthstats main .charts {
     width: 100%;
     margin: 0;
