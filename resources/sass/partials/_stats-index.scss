@@ -37,7 +37,7 @@
         margin-left: 3%;
       }
       #views{
-        margin-right: 4%;
+        margin-left: 3%;
       }
       #messages,
       #views{
@@ -89,6 +89,7 @@
     main{
       .charts{
         width:100%;
+        height: 100%;
         margin:0;
         .canvas{
           padding-right: 4%;
@@ -116,15 +117,19 @@
           margin: 3% 0 0 2.3%;
         }
         .canvas{
+          height: 600px;
           #messages,
           #views{
             padding: 3% 0;
+            height: 50%;
             .chart{
               width:250px;
+              height: 100%;
               canvas{
                 margin-left: 0;
                 padding-right: 6%;
                 width: 250px !important;
+                height: 50% !important;
                 font-size: 10px;
               }
             }

@@ -13388,7 +13388,7 @@ footer .right {
 }
 
 .fullwidthstats main .charts .canvas #views {
-  margin-right: 4%;
+  margin-left: 3%;
 }
 
 .fullwidthstats main .charts .canvas #messages,
@@ -13424,6 +13424,7 @@ footer .right {
 @media all and (min-width: 469px) and (max-width: 768px) {
   .fullwidthstats main .charts {
     width: 100%;
+    height: 100%;
     margin: 0;
   }
 
@@ -13447,14 +13448,20 @@ footer .right {
     margin: 3% 0 0 2.3%;
   }
 
+  .fullwidthstats main .charts .canvas {
+    height: 600px;
+  }
+
   .fullwidthstats main .charts .canvas #messages,
   .fullwidthstats main .charts .canvas #views {
     padding: 3% 0;
+    height: 50%;
   }
 
   .fullwidthstats main .charts .canvas #messages .chart,
   .fullwidthstats main .charts .canvas #views .chart {
     width: 250px;
+    height: 100%;
   }
 
   .fullwidthstats main .charts .canvas #messages .chart canvas,
@@ -13462,6 +13469,7 @@ footer .right {
     margin-left: 0;
     padding-right: 6%;
     width: 250px !important;
+    height: 50% !important;
     font-size: 10px;
   }
 }
