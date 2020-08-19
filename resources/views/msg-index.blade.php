@@ -9,11 +9,11 @@
 
         @foreach ($messages as $message)
           <div class='messaggi'>
-            <div class="email">
+            <div class="email text">
               <h6> <i class="far fa-envelope"></i> {{$message->email}}</h6>
             </div>
 
-            <div class="text">
+            <div class="text real">
               <p class="textmeta"> <b>Info:</b> {!! Str::words($message->text, 5, '...')!!}</p>
             </div>
             <div class="orario">

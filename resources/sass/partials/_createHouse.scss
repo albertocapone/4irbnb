@@ -1,8 +1,8 @@
 .fullwidthcreate{
   main{
     #houseCreation{
-      margin: 5% 20%;
-      width:60%;
+      margin: 5% auto;
+      width:70%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -24,7 +24,7 @@
         align-items: flex-start;
         padding: 2% 22%;
         label{
-          margin: 4% 0 -1% 0;
+          margin: 4% 0 0 0;
         }
 
         input, textarea{
@@ -109,7 +109,7 @@
 
 // MEDIA QUERY -----------------------------------------------------------------
 
-@media all and (max-width: 1200px){
+@media all and (min-width: 901px) {
 
   .fullwidthcreate{
     main{
@@ -139,7 +139,7 @@
   }
 }
 
-@media all and (max-width: 900px){
+@media all and (min-width: 769px) and (max-width: 900px) {
 
   .fullwidthcreate{
     main{
@@ -181,7 +181,7 @@
   }
 }
 
-@media all and (max-width: 768px){
+@media all and (min-width: 601px) and (max-width: 768px) {
 
   .fullwidthcreate{
     main{
@@ -216,15 +216,16 @@
   }
 }
 
-@media all and (max-width: 600px){
+@media all and (min-width: 469px) and (max-width: 600px) {
 
   .fullwidthcreate{
     main{
       #houseCreation{
-        width:100%;
-        margin: 0;
+        width: 75%;
+        margin: auto;
         .padding{
-          padding: 2% 18%;
+          padding: 5px 10px 5px 10px;
+          width: 100%;
           .title,
           .description{
             padding: 2%;
@@ -248,7 +249,8 @@
           }
         }
         .button{
-          margin-left: 30%;
+           margin: 0;
+           margin: 20px auto;
         }
       }
     }
@@ -260,7 +262,11 @@
   .fullwidthcreate{
     main{
       #houseCreation{
+        width: 80%;
+        margin: auto;
         .padding{
+           padding: 5px 10px 5px 10px;
+           width: 100%;
           .title,
           .description{
             padding: 2%;
@@ -274,11 +280,20 @@
               margin-right: 2%;
             }
           }
+           .img {
+               input[type="file"] {
+                   width: 80%;
+               }
+           }
         }
         .button{
-          margin-left: 28%;
+          margin: 0;
+          margin: 20px auto;
         }
       }
     }
+  }
+  .ap-suggestion {
+      font-size: 9px;
   }
 }

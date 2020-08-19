@@ -177,7 +177,7 @@
             width: 80%;
           }
           .img{
-            input[type='file']{
+            input[type="file"]{
               width: 80%;
             }
           }
@@ -260,7 +260,8 @@
           }
         }
         .button{
-          margin-left: 28%;
+          margin: 0;
+          margin: 20px auto;
         }
       }
     }
@@ -272,7 +273,11 @@
   .fullwidthcreate{
     main{
       #houseEdit{
+        margin: 5% auto;
+        width: 75%;
         .padding{
+          padding: 5px 10px 5px 10px;
+          width: 100%;
           .title,
           .description{
             padding: 2%;
@@ -285,9 +290,15 @@
               margin-right: 2%;
             }
           }
+          .img {
+              input[type="file"] {
+                  width: 80%;
+              }
+          }
         }
         .button{
-          margin-left: 24%;
+           margin: 0;
+           margin: 20px auto;
         }
       }
     }

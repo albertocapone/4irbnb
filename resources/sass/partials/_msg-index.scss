@@ -2,8 +2,8 @@
    @include fullwidth;
    main{
      .posta{
-       margin: 4% 10% 2% 11%;
-       width: 80%;
+       margin: 2% auto;
+       width: 95%;
        padding: 4%;
        @include borders-and-shadows;
 
@@ -29,6 +29,7 @@
          }
 
          .email{
+          cursor: pointer;
            width: 40%;
            padding: 1% 0 0 1%;
            h6{
@@ -42,7 +43,7 @@
            }
          }
 
-         .text{
+         .text.real{
            padding-top: 2%;
            cursor: pointer;
            width:40%;
@@ -55,18 +56,19 @@
          }
          .textintero{
            display: none;
-           position: absolute;
+           position: fixed;
            background-color: #fff;
            border: 1px solid #C0C0C0;
            box-shadow: 0px 0px 2px #00000057;
            border-radius: 5px;
-           width: 70%;
-           height: 40%;
+           width: 300px;
+           height: 300px;
            padding: 3%;
-           top: 30%;
-           left: 15%;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%,-50%);
            text-align: justify;
-
+           z-index: 30;
            overflow-y: scroll;
 
            scrollbar-color: #3490dc #00003f;
@@ -107,7 +109,8 @@
        }
 
        .pagination{
-         margin:20% 0 0 45%;
+         margin: 25px auto;
+         width: fit-content;
          border:none;
          li{
            .page-link{
@@ -158,7 +161,7 @@
         margin-left: 18%;
         .messaggi{
           flex-direction: column;
-          align-items: flex-start;
+          align-content: flex-start;
           .email,
           .orario,
           .text{
@@ -175,7 +178,7 @@
           }
         }
         .pagination{
-          margin:20% 0 0 40%;
+          // margin:20% 0 0 40%;
         }
       }
     }
@@ -192,9 +195,14 @@
         height: 100%;
         margin:0;
         .messaggi{
+          flex-direction: row;
+           justify-content: space-between;
+          .text.real {
+              display: none;
+          }
           .textintero{
-            width:80%;
-            height: 50%;
+            // width:80%;
+            // height: 50%;
             h6{
               b{
                 margin-left: 5%;
@@ -206,7 +214,7 @@
           }
         }
         .pagination{
-          margin: 20% 0 0 40%;
+          // margin: 20% 0 0 40%;
         }
       }
     }
@@ -214,16 +222,37 @@
 }
 
 @media all and (max-width: 468px){
+   
+  header {
+       nav {
+           .rightheader {
+               width: unset;
+               margin-left: 0;
+               font-size: 15px;
+           }
+       }
+   }
 
   .fullwidthcreate{
     main{
       padding: 0;
       .posta{
         .messaggi{
+          flex-direction: row;
+           justify-content: space-between;
+           .orario {
+             font-size: 11px;
+           }
+           h6 {
+              font-size: 0.7rem;
+           }
+           .text.real {
+               display: none;
+           }
           .textintero{
-            width:90%;
-            height: 40%;
-            left: 0;
+            // width:90%;
+            // height: 40%;
+            // left: 0;
             h6{
               b{
                 margin-left: 5%;
@@ -235,7 +264,10 @@
           }
         }
         .pagination{
-          margin: 20% 0 0 38%;
+          // margin: 20% 0 0 38%;
+          .page-link {
+            padding: 7px;
+          }
         }
       }
     }

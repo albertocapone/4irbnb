@@ -96,7 +96,7 @@
 // MEDIA QUERY -----------------------------------------------------------------
 
 
-@media all and (min-width: 901px) and (max-width: 1200px){
+@media all and (min-width: 901px){
 
   .fullwidthads {
     main{
@@ -147,6 +147,8 @@
 
   .fullwidthads{
     main{
+      margin: 5% auto;
+      width: 86%;
       .button{
           margin-left: 20%;
       }
