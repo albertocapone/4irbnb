@@ -44,7 +44,7 @@
           data: {
               labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
               datasets: [{
-                  label: "Visualizzazioni per l'anno selezionato",
+                  label: "Visualizzazioni",
                   backgroundColor: 'rgb(2, 108, 181)',
                   borderColor: 'rgb(215, 188, 106)',
                   data: null
@@ -72,7 +72,7 @@
                 data: {
                     labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
                     datasets: [{
-                        label: "Messaggi per l'anno selezionato",
+                        label: "Messaggi",
                         backgroundColor: 'rgb(168, 32, 78)',
                         borderColor: 'rgb(215, 188, 106)',
                         data: null

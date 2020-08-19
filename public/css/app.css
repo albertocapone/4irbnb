@@ -13380,6 +13380,7 @@ footer .right {
 
 .fullwidthstats main .charts .canvas {
   display: flex;
+  flex-direction: column;
 }
 
 .fullwidthstats main .charts .canvas #messages {
@@ -13430,8 +13431,14 @@ footer .right {
     padding-right: 4%;
   }
 
+  .fullwidthstats main .charts .canvas .chart {
+    width: 450px;
+  }
+
   .fullwidthstats main .charts .canvas .chart canvas {
     margin-left: 4%;
+    width: 450px !important;
+    font-size: 10px;
   }
 }
 
@@ -13447,13 +13454,15 @@ footer .right {
 
   .fullwidthstats main .charts .canvas #messages .chart,
   .fullwidthstats main .charts .canvas #views .chart {
-    width: 350px;
+    width: 250px;
   }
 
   .fullwidthstats main .charts .canvas #messages .chart canvas,
   .fullwidthstats main .charts .canvas #views .chart canvas {
     margin-left: 0;
     padding-right: 6%;
+    width: 250px !important;
+    font-size: 10px;
   }
 }
 

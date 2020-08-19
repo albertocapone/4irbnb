@@ -32,6 +32,7 @@
 
     .canvas{
       display: flex;
+      flex-direction: column;
       #messages{
         margin-left: 3%;
       }
@@ -92,8 +93,11 @@
         .canvas{
           padding-right: 4%;
           .chart{
+            width: 450px;
             canvas{
               margin-left: 4%;
+               width: 450px !important;
+               font-size: 10px;
             }
           }
         }
@@ -116,10 +120,12 @@
           #views{
             padding: 3% 0;
             .chart{
-              width:350px;
+              width:250px;
               canvas{
                 margin-left: 0;
                 padding-right: 6%;
+                width: 250px !important;
+                font-size: 10px;
               }
             }
           }
